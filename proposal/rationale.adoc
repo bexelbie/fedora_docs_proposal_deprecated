@@ -1,0 +1,53 @@
+= Why these Components
+:data-uri:
+:icons:
+
+== Why AsciiDoc?
+
+I selected AsciiDoc because it:
+
+* was chosen at the Docs FAD to be the markup of choice. footnote:[It has
+   recently been brought to my attention that some attendees of the FAD
+   understood that the goal was to develop a toolchain that could accept
+   any markup.  None of the four people who I spoke to who attended
+   the FAD conveyed this impression to me.  This kind of a tool is a
+   "holy grail" which has never really been built.  Additionally, I
+   don't believe we should be concerned with accepting any markup until
+   someone shows up with a sizeable quanity of contributed material.]
+* has a high level of adoption in various projects.  * has several
+implementations in several languages and is easy to
+   integrate.
+* many major platforms have AsciiDoc support or plugins.  * a fairly
+friction free writing experience.  * offers semantic and non-semantic
+markup experiences.
+
+== Why Pagure?
+
+I selected Pagure because it:
+
+* was already chosen at the Docs FAD.
+* it has been developed inside of Fedora and is the Fedora standard.
+* it is a compliant git forge that could be easily replaced if needed.  It
+   could be mirrored to GitHub and other forges as needed. footnote:[See
+   the GSoC work done for CentOS docs in the Summer of 2015.]
+
+== Why AsciiBinder?
+
+I selected AsciiBinder because it:
+
+* is solely an AsciiDoc processor. This will force us to the new format
+   without delay.
+* it has been adopted by several
+   https://github.com/openshift/openshift-docs[open source]
+   https://github.com/ManageIQ/manageiq_docs[project]
+   communities. Therefore, it is going to both have longevity and a lot of
+   people looking for bugs and suggesting and implementing new features.
+   Additionally, if it is ever deprecated multiple communities will be
+   impacted so a new solution and migration path should be easily found.
+* it has a
+   https://github.com/redhataccess/ascii_binder/graphs/contributors)[healthy
+   number of contributors].
+* it is a pure AsciiDoc toolchain with no conversions or other processing
+   footnote:[Pintail converts AsciiDoc, and I believe DocBook, to an
+   intermediate XML form of Mallard before processing documentation into
+   a site.]

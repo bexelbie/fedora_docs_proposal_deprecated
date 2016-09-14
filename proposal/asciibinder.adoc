@@ -1,0 +1,203 @@
+= Converting an Existing DocBook Repository to AsciiBinder
+:data-uri:
+:icons:
+
+== AsciiBinder Requirements
+
+AsciiBinder imposes a few requirements on a repository's structure:
+
+=== Directory Structure
+
+- Directory names may not begin with an underscore
+- The actual content must be stored in one or more sub-directories
+   underneath the root directory of the repository.
+- Grouped content must be stored in a directory.  Nested grouped content
+   must be stored in a content directory subdirectory. footnote:[This
+   is hard to describe, but basically if you think of nested folders,
+   those folders are directly related to how the content is nested for
+   navigation purposes.  AsciiBinder will not allow more than 2 layers of
+   grouping.  Think "Book:Chapter:Section" or "Collection:Theme:Topic."]
+- Images must be stored in a directory named `images` that is located
+   in the same directory as the AsciiDoc file that uses the image.
+- The few files required by AsciiBinder must be where required.
+
+==== Minimal AsciiBinder File and Directory Structure
+
+This diagram shows the minimal files and directory structure.  There is
+no content in this tree.
+
+```
+.
+├── _distro_map.yml
+├── _images
+│   └── fedora.svg
+├── index-main.html
+├── _javascripts
+├── _stylesheets
+│   └── asciibinder.css
+├── _templates
+│   ├── _css.html.erb
+│   ├── _nav.html.erb
+│   └── page.html.erb
+└── _topic_map.yml
+```
+
+This document does not attempt to cover how AsciiBinder works.  Please see
+the relevant http://www.asciibinder.org[documentation] for details.
+
+== Converting a Current Fedora DocBook Repository
+
+This is a rough set of steps.  This will need to be refined as we begin
+the actual migration.  These steps were developed during my testing.
+
+. Add the AsciiDoc formatted Common_Content subtree (see below)
++
+```
+git subtree add --prefix _Common_Content <repository_link> master --squash
+```
+  
+. Remove the old Common_Content
++
+```
+git rm -r en-US/Common_Content; git commit -m "Removing XML Common Content"
+```
+
+. Do a conversion from DocBook to AsciiDoc.  This is outside this set
+   of instructions.  Here is a quick, partial conversion with `pandoc`
+   that can be used for testing.
++
+```
+ls *.xml | xargs -L1 basename -s .xml $@ | \
+xargs -I fff pandoc -f docbook -t asciidoc fff.xml -o fff.adoc
+```
+
+. Rewrite all `image` macros to not include a directory reference.
+   Asciibinder provides the images directory when it runs.
++
+```
+sed -i -e 's/image:images\//image:/' *.adoc
+```
+
+. Convert the Entity File from DocBook to AsciiDoc format.
+
+. Rename the entity file `ENTITY.adoc` to make it easy for verification
+  of inclusion and later scripting.
+
+. Add an include line for the entity file to every AsciiDoc file.
++
+```
+\include::en-US/ENTITY.adoc[]
+```
+
+. Convert entities from DocBook format to AsciiDoc format.
++
+```
+sed -i -e 's/PRODUCT/{PRODUCT}/' *.adoc
+sed -i -e 's/BOOKID/{BOOKID}/' *.adoc
+sed -i -e 's/YEAR/{YEAR}/' *.adoc
+sed -i -e 's/HOLDER/{HOLDER}/' *.adoc
+sed -i -e 's/BZURL/{BZURL}/' *.adoc
+sed -i -e 's/NEXTVER/{NEXTVER}/' *.adoc
+sed -i -e 's/PRODVER/{PRODVER}/' *.adoc
+sed -i -e 's/PREVVER/{PREVVER}/' *.adoc
+sed -i -e 's/IGURL/{IGURL}/' *.adoc
+```
+
+. Copy over a minimal ascii_binder setup.  I built this based on the minimal file set above.
++
+```
+cp -ir ../min_asciibinder/* .
+cp -i ../min_asciibinder/.gitignore .
+```
+
+. Setup `_distro_map.yml`
++
+Typically this will be a stock file, based on this template:
++
+```
+---
+fedora_docs:
+  name: Fedora Docs Project
+  author: Fedora Docs Project <docs@lists.fedoraproject.org>
+  site: main
+  site_name: Fedora
+  site_url: https://docs.fedoraproject.org/
+  branches:
+    master-adoc:
+      name: Rawhide
+      dir: rawhide
+    f24-adoc:
+      name: 24
+      dir: f24
+    f23-adoc:
+      name: 23
+      dir: f23
+```
+
+. Setup `index-main.html`
++
+This is the default index page.  It is only ever used for local builds
+of this single documentation set or book.  It only needs to provide a
+link to the first topic of each branch.
+
+. Setup `_topic_map.yml` and reorganize the repository
++
+This is the most complex component.  This file defines the relationship
+of all of the topic files.  Remember, that AsciiBinder requires nested
+files to be in a nested directory structure.  A great way to start on
+this is to:
++
+  . Find the <guide>.xml file and create an initial `_topic_map.yml`
+    listing each of the included files.
+  . Review each included file above for additional includes.  If you find
+    any, create a directory and store those files in it.  Then add a
+    sub-topic for these files.  Remember, you have to flatten anything
+    after this depth.
+  . Move image files to the same directory as their referencing files
+    and place them in a directory called `images`.
+
+. Fix the `Preface.adoc` file to reference the common content.
+   Include directives should look something like this:
++
+```
+\include::_Common_Content/en-US/Conventions.adoc[]
+```
+
+. Don't forget to clean up unneeded adoc files (like `AuthorGroup.adoc`)
+
+. Repeat for all branches
+
+=== What is up with Common_Content?
+
+==== What is Common Content
+
+Common content is content that is shared across all publishable
+documentation.  It typically includes the License, Copyright Information,
+and information for reporting bugs and making contributions.
+
+==== How do we keep it in sync?
+
+With `publican`, the publishing tool knew where the common content
+was stored and would fetch it and insert it during the build process.
+AsciiBinder is built to not have any hidden content, therefore we needed
+a new solution.
+
+Rather than store a copy of the common content in every repository,
+where it could slowly drift out of sync, a git subtree is used.  The git
+subtree will *not* automatically synchronize the content, but it will
+allow for easy and scriptable updates.
+
+The theory is that we have an auto-checked out subdirectory that contains
+the common content.  The challenge is that we are git commit locked,
+so updates to the common content will require a subtree update on all
+repositories.  This can be automated.
+
+To add a git subtree, run the command above in the conversion steps.
+
+To update a git subtree run a command similar to this one:
+
+```
+git subtree pull --prefix en-US/Common_Content https://pagure.io/docs-common-content.git master --squash
+```
+
+Git subtree notes: https://developer.atlassian.com/blog/2015/05/the-power-of-git-subtree/

@@ -1,0 +1,84 @@
+= Translating AsciiDoc
+:data-uri:
+:icons:
+
+Today, Fedora Documentation is translated by generating `.pot`
+files from the DocBook source using `publican`.  These files are uploaded
+to Zanata.  When the translation is complete, `.po` files are downloaded
+and made available to publican to apply to the DocBook source.
+
+== What are the options?
+
+There is no standard process for working with AsciiDoc and Zanata. Today,
+Zanata doesn't support AsciiDoc as an input format. The only real options
+appear to be:
+
+. Stop publishing language translations until the Zanata team has a
+solution.  + This is not really optimal, but if a solution is imminent
+may not be devastating.
+
+. Perform language translations using transformations.
++
+This would involve converting AsciiDoc to a format, such as DocBook,
+that has a known `.pot/.po` toolchain. This could pose a real challenge
+to publishing depending on the tooling as not all tools can support all
+formats. I also feel like relying on multi-level automated conversions
+is ultimately fragile. footnote:[I feel very strongly that tools should
+do as little automated conversion as possible.  While most of the time
+nothing bad happens, when it does go sideways debugging is painful when
+multiple layers of conversions and intermediate platforms are involved.]
+
+. Find a tool to generate `.pot` files from AsciiDoc and to apply `.po` files to AsciiDoc.
++
+So far, the best tool appears to be
+https://po4a.alioth.debian.org/[po4a].
++
+po4a is packaged for Fedora. The project was started over 14 years
+ago and has mostly stabilized.  It has mostly been in mainaintenance
+mode for the last few years.  There is still an active, albeit small,
+community and new patches are being accepted.
+
+== Translating AsciiDoc with po4a and Zanata
+
+Translation is ultimately a five step process.
+
+. Generate `.pot` files.
++
+po4a will generate files in the `podir` format.  The code snip below
+will generate a full set of files.
++
+```
+find . -name '*.adoc' | sed -e 's/.adoc$//' | \
+xargs -I FILE po4a-gettextize -f asciidoc -m FILE.adoc -p ../pot/en-US/FILE.pot -M UTF-8
+```
+
+. Push the `.pot` files to Zanata
++
+This delivers the files for translation:
++
+```
+zanata push --url $zanataurl --project-id $zanataproject --project-version $zanataversion \
+--srcdir pot/$baselang --project-type podir
+```
+
+. Translate the content
++
+Magical work done by amazing people who are not within the scope of
+this document.
+
+. Pull the `.po` files from Zanata
++
+Retrieve the translations:
++
+```
+zanata publican pull --url $zanataurl --project-id $zanataproject \
+--project-version $zanataversion --lang $lang --transdir pot/ --project-type podir
+```
+
+. Apply the translations
++
+This will replace all translated text with the translation, in place.
++
+```
+po4a-translate -f asciidoc -m $file -l $file -p pot/$lang/$basename.po -M UTF-8 
+```

@@ -1,0 +1,288 @@
+= A Modest Proposal for a New Fedora Docs Toolchain
+:data-uri:
+:icons:
+
+This set of documents is a proposal an other considerations related to
+a new toolchain for producing the Fedora Docs.  The proposal is coded
+footnote:[https://github.com/bexelbie/fedora_docs_proposal] using the
+toolchain to have a self-documenting example.  A more complete example
+is also referenced in the proposal content.  The proposal is broken into
+the following sections.
+
+. Overview
+. link:rationale.html[Why these Components?]
+. link:converting.html[Converting DocBook to AsciiDoc]
+. link:asciibinder.html[Converting Documentation Collections to AsciiBinder]
+. link:translation.html[Translating AsciiDoc]
+. link:demo.html[Demonstration Script and Information]
+. link:nextsteps.html[Next Steps]
+
+TL;DR: The Fedora Docs Fad selected a toolchain of AsciiDoc+Pagure+Pintail
+but it hasn't been implemented. I think we can get to our goals
+faster if we replace pintail footnote:[If you're not familiar
+with link:https://github.com/projectmallard/pintail/[pintail],
+it is a mallard site generator that can also do conversions from
+link:https://github.com/projectmallard/pintail-asciidoc[AsciiDoc] and
+DocBook to XML for processing.  It uses CSS and XSL to build sites.
+It is being considered for adoption by the Gnome Community.] with
+AsciiBinder. A full proof of concept and plan of work has been developed.
+
+== Where are we today?
+
+In May 2016 there was a Fedora Activity Day (FAD) focused on Fedora Docs.
+I wasn't present, but having seen the outbound reporting and blog posts,
+I believe a reasoned and rational decision was made about a new tool
+chain to adopt.  Based on the information available at the time and the
+expected ability of those present to contribute an AsciiDoc+Pagure+Pintail
+with legacy DocBook support toolchain was selected.
+
+Since the FAD, however, work has progressed slowly.  Unfortunately, I
+don't believe all the parties involved have been able to find the time
+to make the contributions they envisioned.  It happens.
+
+Just before Flock this year, I began adding my efforts to making the
+proposed toolchain a reality.  The selected components are all great
+pieces of technology, but some of them still need non-trivial work.
+This work is ongoing and not complete.
+
+I am not aware of any project plan with a timeline for completion and
+current status reporting.  My assessment is that we are unlikely to be
+finished by Fedora 26.  This means that we will continue to be relying
+on DocBook and could not be fully converted to AsciiDoc until at least
+the release after completion of the tooling.
+
+== Why is this so hard?
+
+Documentation toolchains are challenging for a lot of reasons.  One of
+the biggest challenges is that, like many technology problems, this
+problem looks far more simple to solve than it really is.  If you're
+still reading, and think I am just "not getting it," consider how the
+mental solution you just mapped out would solve:
+
+* Multiple language (some of which are not translated against the most
+   recent revision)
+* Multiple versions of software available in parallel
+* Multiple books or documentation collections with varying levels of
+   availability by version and language
+* Producing the entire matrix of available materials and publishing it
+   to a single site or collection of related sites, logically
+* Drive by contributors who want zero friction
+* Regular contributors who want advanced tool sets
+* The need to produce both stage and production versions of everything
+* The need to generate a site with modern design and look and feel
+* Search
+* Making new material available for localization
+* Automating all the things
+
+And this list doesn't even get into the markup format war that can make
+`emacs` vs `vi` look like a tea party.
+
+Another challenge with documentation toolchains is the fact that many of
+the people closest to the problem are not engineers.  This means that
+there are generally very few implementing contributors and that the
+planning contributors are constantly trying to make sure their goals
+are understood.
+
+== My Proposal
+
+Therefore, I present this modest proposal footnote:[If you've not read
+link:https://en.wikipedia.org/wiki/A_Modest_Proposal[A Modest Proposal for
+Preventing the Children of Poor People From Being a Burthen to Their
+Parents or Country, and for Making Them Beneficial to the Publick]
+do so.] in order to accomplish the goals below:
+
+. A rapid conversion to AsciiDoc and away from DocBook.  This should
+   significantly reduce contributor friction.
+. The ability to launch with at least the same level of functionality
+   as we have today before Fedora 26.
+. Bringing the toolchain conversation to a close so we can focus on
+   what matters, **content**.
+
+Specifically, a toolchain needs to be able to do the following:
+
+* Transform markup into HTML
+* Assemble a multi-version site
+* Assemble a multi-language site
+* Support being packaged in Fedora
+* Be able to be automated
+* Provide a relatively easy set up experience for writers to test with
+* Interface with localization
+* Support Theming
+* Integrate with a search solution
+
+My proposal can be summarized as AsciiDoc+Pagure+AsciiBinder.  It looks
+very similar to the outcome of the FAD.  The parts are:
+
+- *AsciiDoc*: A lightweight markup language that can be
+   http://www.winglemeyer.org/technology/2016/09/08/semantic-asciidoc/[extended with
+   a limited vocabulary of semantic markup] , as needed. It is widely
+   used and link:http://www.methods.co.nz/asciidoc/index.html[extensively
+   documented].
+- *Pagure*: An open-source git forge developed on Fedora and used by the
+   Fedora Community. You can find it at https://pagure.io[pagure.io]
+- *AsciiBinder*: A documentation site builder that can build
+   multiple sites and versions from a single shared
+   documentation set.  http://www.asciibinder.org/[AsciiBinder] uses
+   http://asciidoctor.org/[Asciidoctor] to process AsciiDoc.  It is used
+   by the OpenShift and ManageIQ communities and is being considered by
+   Gluster for their AsciiDoc implementation.  It is heavily contributed
+   to by Red Hat.
+
+== Why AsciiBinder?
+
+I have selected AsciiBinder because it:
+
+* is solely an AsciiDoc processor. This will force us to the new format
+   without delay.
+* it has been adopted by several 
+   https://github.com/openshift/openshift-docs[open source]
+   https://github.com/ManageIQ/manageiq_docs[project]
+   communities. Therefore, it is going to both have longevity and a lot of
+   people looking for bugs and suggesting and implementing new features.
+   Additionally, if it is ever deprecated multiple communities will be
+   impacted so a new solution and migration path should be easily found.
+* it has a
+   https://github.com/redhataccess/ascii_binder/graphs/contributors[healthy
+   number of contributors].
+* it is a pure AsciiDoc toolchain with no conversions or other processing
+   footnote:[Pintail converts AsciiDoc, and I believe DocBook, to an
+   intermediate XML form of Mallard before processing documentation into
+   a site.  I feel very strongly that tools should do as little automated
+   conversion as possible.  While most of the time nothing bad happens,
+   when it does go sideways debugging is painful when multiple layers
+   of conversions and intermediate formats are involved.]
+
+== How does it work?
+
+My current implementation is architected around the following constraints:
+
+* Every book/document collection is stored in a separate repository,
+   as is done today.
+* Versions are controlled with branching.
+* Translations are done via Zanata
+* All documentation is written using AsciiDoc
+
+Each individual book/documentation collection repository is a valid
+AsciiBinder repository.  This allows the tool to be directly used for
+preview, staging, etc.  This also means that less transformation work
+is required to build the entire website.  These individual repository
+builds can be effected by directly running AsciiBinder so there is no
+need for any scripting or other indirection.
+
+The entire website is built using a builder script that builds an
+AsciiBinder repository consisting of all titles, versions and translations
+that are to be published.  The current builder applies translation files
+during this repository creation process.  AsciiBinder is then called
+to process this temporary repository and build the entire documentation
+website.
+
+This process is focused on reducing the amount of pre-processing,
+massaging, modifications, and special cases to zero with the goal of
+getting as close to a pure AsciiBinder implementation as possible.
+Therefore the builder, for example, does not modify content in
+any way other than is required for site building or applying
+translations. Specifically, it does note change the file structure.
+
+A sample of the proposed output
+http://www.winglemeyer.org/fedora_docs_proposal/sample/[is available].
+
+== Risks
+
+It isn't all rainbows and unicorns though, there are a few challenges:
+
+* `po4a`'s AsciiDoc support is not perfect and needs some code updates to
+   handle all components of the current AsciiDoc standard.
+
+* AsciiBinder has some opinions that differ from how Fedora works.
+
+  * So far, the upstream of AsciiBinder has been open to conversation,
+    but they are unashamedly opinionated.  AsciiBinder came out of OpenShift
+    to solve their documentation tooling problems, specifically the need
+    to produce three different websites for three related, but slightly
+    different versions of OpenShift from a single shared content repository.
+
+  * Specific Challenges Are:
+
+     . Single Repository Mindset in AsciiBinder
++
+AsciiBinder is written from a multi-site multi-version
+but single repository mindset. There is an open
+https://github.com/redhataccess/ascii_binder/issues/54[issue] discussing
+what to do with multi-repository documentation sets.  In the interim,
+I have developed a script for building out an AsciiBinder formatted
+repository from multiple repositories.
+
+     . Language Translation Support in AsciiBinder
++
+AsciiBinder has not considered the language translation question at
+all, as far as I can tell. In the interim, the script mentioned above
+implements a solution.
+
+     . AsciiDoc only support
++
+Because AsciiBinder only supports AsciiDoc, we need to quickly convert
+DocBook content.
+
+== Future Proofing Concerns
+
+=== AsciiDoc
+
+While AsciiDoc enjoys a high level of adoption future mark up changes
+could occur.  A method of protecting ourselves without violating
+YAGNI footnote:[You Ain't Gonna Need It.  A principal that says
+don't solve problems that might happen, stick to solving problems
+that are happening.]  is to refrain from violating the standards of
+AsciiDoc in any way footnote:[I've written a bit about this in the
+link:references/downstream-notes.html[downstream notes].].  This way
+we should have a clean migration path via tools that would arise in the
+case of a mass abandonment of AsciiDoc.
+
+=== Pagure
+
+Pagure is a standard git forge, as far as I know.  Therefore replacing
+it with another git forge should not be a problem in the future.  As the
+current migration away from `fedorahosted` shows, relying on Pagure for
+issues should not cause us problems.
+
+=== AsciiBinder
+
+AsciiBinder is a site builder that leverages the power of git and
+Asciidoctor to produce a full site.  It is based on standardized ruby
+templating and uses CSS and JavaScript to produce the final static site.
+
+Because AsciiBinder has been adopted by several major upstream projects
+which are backed by Red Hat, I believe a wholesale abandonment of the
+tooling is unlikely.  While we have relied on Red Hat maintained tooling
+before and had challenges, `publican` was not widely adopted.  The level
+of adoption leads me to believe that a path forward will always exist.
+
+That said, because AsciiBinder is just a site builder, as long as we
+maintain compatibility with AsciiDoc, we shouldn't have a problem moving
+to a new toolchain.
+
+=== po4a
+
+The `.pot/.po` tool, `po4a`, has a long history as an open source project.
+Its community has varied in size and activity over the 14+ years it has
+been around, but it has never been abandoned.  Fedora also has a packager
+maintaining it.
+
+There is no commonly accepted and standardized way of translating AsciiDoc
+with a tool like Zanata.  I believe this problem will only continue to
+become more and more acute until it is solved.  While this creates risk
+for the future and there is no path forward that seems obvious, it also
+creates opportunity for Fedora to lead the way in solving a problem.
+
+
+== Glossary
+
+I have tried to consistently use the following words in this document.
+
+[horizontal]
+*book*:: A single guide or title structured to be read from beginning
+   to end.
+*documentation collection*:: A collection of topics that are related. They
+   are not ordered in any way and try to be self-sufficient units of
+   knowledge.  They refer to other topics for pre-requisite information.
+*documentation set*:: The set of books and documentation collections
+   that comprise all of the documentation for a Project.

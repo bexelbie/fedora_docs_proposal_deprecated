@@ -1,0 +1,125 @@
+= Next Steps
+:data-uri:
+:icons:
+
+== Required Work for Implementation
+
+
+. Work with the Translation Team to determine how the hand off of updated content should work and how we will know when translations are ready to be published.  This may include:
+  - Building a repository to store current translation `.po` files to
+avoid having to pull them every time the site is rebuilt.
+  - A string-freeze or other style branching or commit marking system
+if translations are not be published with less than 100% completion.
+  - Definitive push pot script that generates `.pot` files and pushes
+them.
+
+* Make sure the site builder knows how to replace
+   `include::_Common_content/en-US/foo.adoc` and call the right language.
+
+. po4a needs some code updates to handle the latest AsciiDoc standard.
+   It is a perl based project so it will be slightly harder to find
+   programmers, but not unreasonably so.  The project is reasonably
+   documented and the original author is still involved.  I have already
+   made a few commits in this direction.
+
+. Resolve the question about what semantic markup we wish to use.
++
+A list has been started in the
+https://fedoraproject.org/wiki/Docs_Tag_Discussion:[Fedora Wiki]
+footnote:[I know ... I know.]
+
+. Create an AsciiDoc Style Guide.
++
+I believe we should start with
+https://github.com/openshift/openshift-docs/blob/master/contributing_to_docs/doc_guidelines.adoc[OpenShift's
+Style Guide] and adapt it for Fedora.
+
+. Determine if we want to convert all existing content.
++
+Are there books we should drop?  Can we only convert the latest version
+and let legacy versions remain on a `publican` site until they go EOL?
+
+. A conversion from DocBook to AsciiDoc needs to be planned, documented
+   and executed.  I believe we can do this as follows:
+.. Finish the final content for Fedora 25 and publish it using the
+existing tool chain.
+.. Declare a temporary halt to new contributions to create a small
+window to run automated conversions.  Do the first stage of an AsciiDoc
+conversion to just get the text moved over with errors.
+.. Allow and encourage contributions to the newly created AsciiDoc
+versions of the content.  Hopefully these contributions will include
+the clean up and polish needed.
+.. Regardless, begin a polishing project to move through the content
+in priority order and finish it.
+
+. Work with Fedora Design to get CSS built for the new site. footnote:[I
+   have pinged Ryan Lerch, but don't understand him to be the responsible
+   party.]
+
+=== Scripting and Automation
+
+. Whenever Common Content changes have a script that can update the
+  subtree in every repo.
+. Whenever a version of the docs stops being maintained, `_distro_map.yml`
+  needs to be updated in every repo.  This also applies for new version
+  branches.
+. Content PRs should be validated for:
+  - Running `asciibinder` successfully
+  - Not changing any content outside of the `en-US` directory
+  - All `.adoc` files are in `_topic_map.yml`
++
+Note: These may not all be blocking tests, but the results should be
+flagged flag.
+. Script to update the Common Content subtrees in all repositories when
+   there is a change.
+
+== Future Extensions and Goals
+
+=== Writing Improvements
+
+- Refactor existing books to make upstream/downstream collaboration
+   easier.
+- Adopt a topic based writing approach
+  +
+  This has the potential to increase contributions and consumption by making
+  the content shorter and more directed.  However, it is not easy to do.
+  We need to start by doing something basic like "defining topics" as even
+  that is subject to some debate footnote:[Many people take an "I know it
+  when I see it" approach here which is harder to onboard contributors too.
+  Others get lost in a world of DITA.] Once we have defined topics,
+  consider breaking Books in to collections of documents (topics)
+
+=== Search
+
+Implement search.  We should start by consulting with Fedora
+Infrastructure about what they will allow.  As a short term solution,
+perhaps we can leverage a commercial search provider, such as Google.
+
+=== Continuous Integration and Deployment
+
+Adopt a model where writers can easily commit and see a stage build.
+Implement testing with `emender`.  Automate content publishing when
+commits are made to a publishable branch.
+
+=== AsciiBinder
+
+- Implement multi-repository sources directly
+- Implement PDF and epub output.  The community is already considering
+   this.
+
+=== Publishing
+
+Develop a better method for producing the entire website.  Ideally a
+single version of a single documentation collection or book in a single
+language can be updated without having to rebuild the entire site.
+I have an idea based on the use of an external navigation file and Server
+Side Includes.
+
+=== Way Way out there Ideas
+
+- Implement alternative processor support in AsciiBinder to allow for
+   other markups, as they become a concern.
+- Implement a service that can build docs from repositories and publish
+   them automatically, similarly to https://readthedocs.org[Read
+   The Docs].  This could be provided as a service within Fedora to
+   encourage better documentation by making the infrastructure super easy.

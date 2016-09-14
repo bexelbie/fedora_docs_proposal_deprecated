@@ -1,0 +1,92 @@
+= Pintail Notes
+
+== Requirements Fit
+
+The Docs FAD selected
+https://github.com/projectmallard/pintail[pintail]. Pintail's answer to
+the requirements are, as I understand it:
+
+* Transform markup into HTML
++
+This is done by converting DocBook and AsciiDoc into an intermediate XML
+format (mallard?). This is then converted to HTML.
+
+* Assemble a multi-version site
++
+Multi-version support is done by specifying different branches of repos
+to be built at the same time.
+
+* Assemble a multi-language site
++
+Multi-lingual support is currently an unknown.
+
+* Support being packaged in Fedora
++
+Packages are working their way through the review process.
+
+* Be able to be automated
++
+This should be able to be done as there are no required manual steps
+that do not have a reasonably scriptable algorithm.
+
+* Provide a relatively easy set up experience for writers to test with
++
+Setup directions need to be improved, however it is able to be run from
+both a container and via a direct install.
+
+* Interface with Zanata (see above)
++
+This is an unknown. Presumably the intermediate XML format has easy
+`.pot/.po` processing.
+
+* Support Theming
++
+Pintail requires a combination of CSS and XSLT in order to theme. No one
+from the Fedora Design team has signed on to do the theming and it
+appears that the existing Fedora CSS theming is not easily reusable.
+
+* Able to integrate with a search solution
++
+Work is being done on integration with elastic-search.
+
+== Converting a docbook-publican repo for pintail
+
+Note: These are out of date.
+
+1. Add index.duck and pintail.cfg single repo versions
+
+2. Rename the entity file to Guide.ent to work with Common_Content. [no longer required]
+   Don't forget to update the xml files that loads it.
++   
+`sed -i -e s/Installation_Guide.ent/Guide.ent/ *.xml`
+   
+3. Add the Common_Content subtree
++
+`git subtree add --prefix _Common_Content https://pagure.io/docs-common-content.git master --squash`
+  
+4. Optionally, deleted doctype declarations from every file but the main
+   book file. This speeds up builds 7-10x.  For the Installation guide
+   time went from 20+ min to 2 min
++
+```   
+sed -i -e 's/PUBLIC "-\/\/OASIS\/\/DTD DocBook XML V4.5\/\/EN" "http:\/\/www.oasis-open.org\/docbook\/xml\/4.5\/docbookx.dtd" //' *.xml
+```   
++
+Note: Don't forget to `git checkout` the base xml file
++
+Note: If you do this, define nbsp as &#160 in the entity file
++
+```
+<!ENTITY nbsp '&#160;'>
+```
+
+5. Add `__pintail__` to the .gitignore
+
+== HTML build is broken with the pintail container
+
+Run:
+
+```
+find __pintail__/build -iname *.html | xargs -L1 sed -i -e 's/\/workdir\/__pintail__\/build\///' $@
+```
+

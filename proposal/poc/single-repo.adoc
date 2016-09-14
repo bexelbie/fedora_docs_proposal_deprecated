@@ -1,0 +1,166 @@
+= Build one Book or Documentation Collection
+:data-uri:
+:icons:
+
+== What is in the repository?
+
+For this, let's examine the _Installation Guide_ because it is the more
+complex of the two books in the Proof of Concept (POC).  Complexity in
+this case means that the content is nested.
+
+The guide is currently branched for three versions of Fedora:
+[options="header"]
+|=======
+|Fedora Version | Branch Name
+|Rawhide | master-adoc
+|24 | f24-adoc
+|23 | f23-adoc
+|=======
+
+This is the file tree for the `master-adoc` branch (abbreviated).
+
+```
+.
+|-- _Common_Content                 <1>
+|   |-- README.md
+|   `-- en-US
+|       |-- Conventions.adoc
+|       |-- Conventions.xml
+|       |-- Feedback.adoc
+|       |-- Feedback.xml
+|       |-- Legal_Notice.adoc
+|       |-- Legal_Notice.xml
+|       `-- images
+|           `-- title_logo.svg
+|-- _distro_map.yml                 <2>
+|-- _images                         <3>
+|   `-- fedora.svg
+|-- _javascripts                    <3>
+|-- _stylesheets                    <3>
+|   `-- asciibinder.css
+|-- _templates                      <3>
+|   |-- _css.html.erb
+|   |-- _nav.html.erb
+|   `-- page.html.erb
+|-- _topic_map.yml                  <4>
+|-- en-US                           <5>
+|   |-- After_Installation.xml
+|   |-- Author_Group.xml
+|   |-- ...
+|   |-- WelcomeSpoke.xml
+|   |-- after_installation
+|   |   |-- After_Installation.adoc
+|   |   |-- InitialSetupHub.adoc
+|   |   `-- images
+|   |       |-- afterinstall
+|   |       |   `-- gnome-initial-setup.png
+|   |       `-- anaconda
+|   |           `-- InitialSetupHub.png
+|   |-- images
+|   |   |-- boot
+|   |   |   |-- boot-menu.png
+|   |   |   |-- ...
+|   |   |   `-- vnc-options.png
+|   |   |-- partitions
+|   |   |   |-- compression.png
+|   |   |   |-- ...
+|   |   |   `-- used-formatted-drive.png
+|   |   `-- vnc
+|   |       `-- connection-details.png
+|   `-- installing_using_anaconda
+|       |-- CustomSpoke.adoc
+|       |-- ...
+|       |-- WelcomeSpoke.adoc
+|       `-- images
+`-- index-main.html                 <6>
+```
+
+<1> The common content git subtree
+<2> The `_distro_map.yml` file tells AsciiBinder to, in this case,
+   built a single site that contains the Rawhide, Fedora 24, and Fedora
+   23 versions of the content.
+<3> These files are used by AsciiBinder for building the site.
+<4> Each branch listed in the `_distro_map.yml` contains a
+   `_topic_map.yml` file.  This file lists all of the topics used for
+   this book and how they should be nested in the navigation.
+<5> The actual book content.  Many of the AsciiDoc files have been
+   deleted for space.  Notice the `image` subdirectories.  Image names
+   have also been deleted for space.  The `image` subdirectories contain
+   subdirectories because the quick conversion from DocBook to AsciiDoc
+   did not include refactoring image macros.  These sub-sub-directories
+   are not required.
+<6> This becomes the site's main index file.  This one is not styled or
+   well done.
+
+== Building One Version
+
+For staging and testing purposes it may be useful to build a single
+version of a book or documentation collection.  AsciiBinder has a
+`watcher` functionality that will do live reloading, but for this proof
+of concept will be use the preview building functionality.  The following
+commands will cause the entire version of the content for the branch
+you are on to be built.  We will use Rawhide as it is the most common
+use case.
+
+```
+git checkout master-adoc        <1>
+asciibinder build               <2>
+```
+
+<1> You must start the build on the branch that contains the version of
+   the content you want to build.
+<2> This is the magic. The default command is `build`, so it can be
+   omitted from the command line.
+
+There is a fairly verbose output that tells you what is being built and
+can provide alerts and warnings.
+
+The output will be placed in the `_preview` directory.  You can
+view your build in your web browser by opening the page at
+`_preview/ascii_binder/rawhide/en-US/Introduction.html`.
+
+We are opening a specific page of the book because we did not build a
+full site.
+
+== Building Every Version (or a Single Book Site)
+
+For staging and testing purposes it may be useful to build every version
+of the site.  AsciiBinder has a `watcher` functionality that will do
+live reloading, but for this proof of concept will be use the site
+building functionality.  The following commands will cause the entire
+site, all three versions of this book, to be built.
+
+Before you can build a specific version, you must have checked out that version's branch.
+
+```
+git checkout f24-adoc           <1>
+git checkout f23-adoc           <1>
+git checkout master-adoc        <2>
+asciibinder package             <3>
+```
+
+<1> These commands just make sure you have checked out the version
+   branches.
+<2> You must start the build on the branch that contains the
+   `_distro_map.yml` file you wish to use to guide site construction.
+<3> This is the magic.
+
+There is a fairly verbose output that tells you what is being built and
+can provide alerts and warnings.
+
+The output will be placed in the `_package` directory.  You can view your
+build in your web browser by opening the page at `_package/main/index.html`
+
+The ugly index page will let you choose a version to preview.  I suggest
+you start with the Rawhide version.
+
+At some point, take a look at the "Kickstart Syntax Reference" and scroll
+down a little bit to see a line that reads:
+
+```
+$ ksverdiff -f F23 -t F24
+```
+
+This line uses the macros for the current and previous versions of the
+product.  Now look at the same file in Fedora 24 and Fedora 23 and see
+the difference.

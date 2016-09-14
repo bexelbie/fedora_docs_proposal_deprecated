@@ -1,0 +1,166 @@
+= Demonstration Script and Information
+:data-uri:
+:icons:
+
+A proof of concept has been built to test all of these ideas.  It is
+incomplete, but shows most functionality.  You should, _hopefully_,
+be able to build this on your own.
+
+== Pre-Requisites
+
+In order to run this Proof of Concept (POC), you will need:
+
+- git
+- AsciiBinder (which includes Asciidoctor)
+- po4a
+- Zanata Client
+
+=== Install git
+
+```
+dnf install git
+```
+
+=== Install AsciiBinder
+
+AsciiBinder is not yet packaged for Fedora.  It is available as a docker
+image. It can also be installed directly.
+
+==== Docker Usage
+
+AsciiBinder has been containerized by the AsciiBinder team.  Pull the
+container with the command below:
+
+```
+docker pull projectatomic/ascii_binder
+```
+
+In future parts of this document when you are told to run the
+`asciibinder` command, replace `asciibinder` with:
+
+```
+docker run -it --rm -v `pwd`:/docs:z asciibinder
+```
+
+==== Manual Install
+
+This assumes you are using Fedora 24.
+
+. Install AsciiDoctor
++
+```
+dnf install rubygem-asciidoctor
+```
+
+. Install AsciiBinder
++
+AsciiBinder requires ffi version 1.9.14 which is newer than the most
+recent version in F24.  Therefore you will need various development tools.
++
+```
+dnf install ruby-devel gcc-c++ redhat-rpm-config make
+gem install ascii_binder
+```
+
+=== Install po4a
+
+`po4a` has been patched to improve the support for AsciiDoc.  This
+patch is recent and hasn't been included in Fedora yet.  This process
+monkey-patches `po4a`
+
+```
+dnf install po4a
+git clone https://alioth.debian.org/anonscm/git/po4a/po4a.git
+cp po4a/lib/Locale/Po4a/AsciiDoc.pm /usr/share/perl5/vendor_perl/Locale/Po4a/AsciiDoc.pm 
+```
+
+=== Install a Zanata Client
+
+For this demo you will need to install and configure the Zanata python
+client.  The Zanata team would prefer that everyone use their Java client.
+While it should be a drop-in replacement, I have no verified it.
+
+You will need to properly configure your client for use with Fedora's
+Zanata site.
+
+```
+dnf install zanata-python-client
+```
+
+== Clone the git repositories
+
+This demonstration uses 4 git repositories.  Clone them all using:
+
+```
+git clone <repo_url>
+```
+
+The repositories typically still have the original DocBook.xml files
+in them.  Ignore those files.  Additionally, they are typically using
+branch names that end in `-adoc`.  This is done as a convenience for me
+while working on the POC and is *not* required.
+
+=== Common Content
+
+The Common Content repository contains shared front matter, such as the
+copyright statement and bug reporting information.
+
+The only branch that matters in this repository is called `master-adoc`.
+
+Note: This is not a docs project official repository.
+
+Pagure URL: https://pagure.io/docs-common-content
+Repo URL: https://pagure.io/docs-common-content.git
+
+=== Virtualization Getting Started Guide
+
+This is a private repository contains a quickly converted copy of the
+Fedora _Virtualization Getting Started Guide_.  The conversion is not
+perfect and hasn't really been cleaned up.
+
+The guide is currently branched for three versions of Fedora:
+[options="header"]
+|=======
+|Fedora Version | Branch Name
+|Rawhide | master-adoc
+|24 | f24-adoc
+|23 | f23-adoc
+|=======
+
+Pagure URL: https://pagure.io/bex-virt-getting-started-guide/
+Repo URL: https://pagure.io/bex-virt-getting-started-guide.git
+
+=== Installation Guide
+
+This is a private repository contains a quickly converted copy of the
+Fedora _Installation Guide_.  The conversion is not perfect and hasn't
+really been cleaned up.
+
+The guide is currently branched for three versions of Fedora:
+[options="header"]
+|=======
+|Fedora Version | Branch Name
+|Rawhide | master-adoc
+|24 | f24-adoc
+|23 | f23-adoc
+|=======
+
+Pagure URL: https://pagure.io/bex-install-guide
+Repo URL: https://pagure.io/bex-install-guide.git
+
+=== Sample Site Repository
+
+This private repository contains the configuration and scripts necessary
+to build the full Fedora Docs web site.  In this POC, that is:
+
+- two books, the _Installation Guide_ and the _Virtualization Getting
+   Started Guide_ in English for all three versions of Fedora: Rawhide,
+   Fedora 24, and Fedora 23.
+- Japanese translations of all books and versions.
+- a French translation of just the _Installation Guide_ for all versions.
+
+Because this repository contains no actual content, there is only one
+branch, `master-adoc`.
+
+Pagure URL: https://pagure.io/docs-fp-o-asciibinder
+Repo URL: https://pagure.io/docs-fp-o-asciibinder.git

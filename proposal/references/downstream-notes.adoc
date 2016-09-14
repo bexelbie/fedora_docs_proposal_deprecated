@@ -1,0 +1,181 @@
+= Downstream Notes
+
+== Consuming AsciiBinder Repositories
+
+When downstream contributors wish to consume the documentation for
+publishing or private patches/publishing there are several considerations
+that should be paid.
+
+Note: I have written this document while thinking about a specific
+downstream contributors tooling.  This may not work in all situations.
+
+=== includes
+
+When one AsciiDoc file is included inside of another using an
+`include::file.adoc[]` style directive, file resolution can be a problem
+with other tools.
+
+This happens because AsciiBinder's opinionation causes it to believe
+that all included files should be referenced with full paths relative
+to the root directory of the repository.
+
+For comparison, consider this file tree and a desire to include `b.adoc`
+inside of `a.adoc`:
+
+```
+.
+└── title1
+    ├── a.adoc
+    └── b.adoc
+```
+
+When processing the file `a.adoc` with most AsciiDoc tools, for example,
+`asciidoctor`, the include statement in `a.adoc` would be written
+as follows:
+
+```
+\include::b.adoc[]
+```
+
+However, because of AsciiBinder's opinionation, when using AsciiBinder, the include directive would be written as follows:
+
+```
+\include::title1/b.adoc[]
+```
+
+This second form will break many other AsciiDoc processors.
+
+Two, untested, remediation solutions are:
+
+. Develop a pre-processor script which will correct these issues.
+   A possible solution would be:
++
+```
+TITLES="title1
+title2
+...
+titleN"
+
+for title in $TITLES; do
+    cd $title
+    sed -ie 's/include::$title\//include::/g`
+    cd ..
+done
+```
+
+. In the particular case of this consumer, they process the AsciiDoc
+   into a single file for further consumption by their toolchain.
+   In order to do this, they have a file, `master.adoc` which includes
+   all of the content.
++
+They should be able to place the content from the AsciiBinder Repository
+in a subdirectory of the `master.adoc` and still have it complete
+correctly.  For example:
++
+```
+.
+├── master.adoc
+└── title1
+    ├── a.adoc
+    └── b.adoc
+```
++
+I believe that most AsciiDoc tools follow a three step file resolution
+ruleset:
++
+. If the include is a full path, use the path.
+. Look in the current directory
+. Look in the directory from which the tool was run
++
+This third rule should allow for proper file inclusion.
+
+=== images
+
+AsciiBinder's opinionation about images is two fold:
+
+. Images must be in a directory called `images` located in the same
+   directory as the including file.
+. Images are referred to without any reference to the `images` directory
+   in their path.
+
+This tree represents what an AsciiBinder repository looks like if the
+files `foo.png` and `bar.png` are used in the files `a.adoc` and `b.adoc`.
+
+```
+.
+└── title1
+    ├── a.adoc
+    ├── b.adoc
+    └── images
+        ├── bar.png
+        └── foo.png
+```
+
+The image macro would be written as follows:
+
+```
+image::foo.png[alt text]
+```
+
+This will break many other AsciiDoc processors for similar reasons as
+with includes, above.
+
+Two, untested, solutions are:
+
+. Rewrite the image macros
++
+```
+sed -ie 's/image::/image::images\//g'
+```
+
+. Put images into the same directory as the AsciiDoc files like this:
++
+```
+.
+└── title1
+    ├── a.adoc
+    ├── b.adoc
+    ├── bar.png
+    └── foo.png
+```
+
+=== ifdef globbing
+
+This is the area I have studied the least.
+
+It has been reported to me that AsciiBinder allows `ifdef` evaluations
+to use globbing for attribute evaluation.
+
+For example, if you wish to conditionally include some text if either
+`attribute1` or `attribute2` is true, you would normally write this:
+
+```
+\ifdef::attribute1,attribute2[conditionally included text]
+```
+
+Apparently, AsciiBinder supports, but does not require the use of
+this syntax:
+
+```
+\ifdef::attribute*[conditionally included text]
+```
+
+One solution would be to work with upstreams to discourage the use of
+this syntax.
+
+Alternately, it should be possible to develop a script that will process
+these back into proper AsciiDoc, however, I do not have a code sample.
+Algorithmically it seems you would need to:
+
+. Scan the AsciiDoc files for attribute declarations and store all of
+   the attribute names.
+. Scan the AsciiDoc files for `ifdef[^[]*\*` and then expand the the
+   glob with your attribute list.
+
+This looks very fragile because you could accidentally expand the globbing
+for conditions it should never have checked for.  This, however, is the
+exact reason why this use of globbing is a bad idea and should be avoided.
+
+=== What else?
+
+I don't know.
