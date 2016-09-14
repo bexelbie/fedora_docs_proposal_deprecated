@@ -1,0 +1,166 @@
+= A Modest Proposal for a New Fedora Docs Toolchain
+:data-uri:
+:icons:
+
+This set of documents is a proposal an other considerations related to
+a new toolchain for producing the Fedora Docs.  The proposal is coded
+using the toolchain, where practical to have a self-documenting example.
+A more complete example is also referenced in the proposal content.
+The proposal is broken into the following sections.
+
+. Overview
+. link:converting.adoc[Converting DocBook to AsciiDoc]
+. link:asciibinder.adoc[Converting an Documentation Sets to AsciiBinder]
+. link:translation.adoc[Translating AsciiDoc with Zanata using po4a]
+. link:multirepo.adoc[Building a Multi-Repository Documentation Set with AsciiBinder]
+. link:nextsteps.adoc[Next Steps for Implementing this Proposal in Fedora]
+. link:extensions.adoc[Extensions to this Proposal and Future Work]
+. link:demo.adoc[Demonstration Script and Information]
+
+TL;DR: The Fedora Docs Fad selected a toolchain of AsciiDoc+Pagure+Pintail
+but it hasn't been implemented. I think we can get to our goals
+faster if we replace pintail footnote:[If you're not familiar
+with link:https://github.com/projectmallard/pintail/[pintail]
+it is a mallard site generator that can also do conversions from
+link:https://github.com/projectmallard/pintail-asciidoc[AsciiDoc] and
+DocBook to XML for processing.  It uses CSS and XSL to build sites.  It is
+being considered for adoption by the Gnome Community.] with AsciiBinder.
+
+
+== Where are we today?
+
+In May 2016 there was a Fedora Activity Day (FAD) focused on Fedora Docs.
+I wasn't present, but having seen the outbound reporting and blog posts,
+I believe a reasoned and rational decision was made about a new tool
+chain to adopt.  Based on the information available at the time and the
+expected ability of those present to contribute an AsciiDoc+Pagure+Pintail
+with legacy DocBook support toolchain was selected.
+
+Since the FAD, however, work has progressed slowly.  Unfortunately, I
+don't believe all the parties involved have been able to find the time
+to make the contributions they envisioned.  It happens.
+
+Just before Flock this year, I began adding my efforts to making the
+proposed toolchain a reality.  The selected components are all great
+pieces of technology, but some of them still need non-trivial work.
+This work is ongoing, but not complete.
+
+I am not aware of any project plan with timelines and estimates for
+completion.  My assessment is that we might be finished by Fedora 26, but
+I am not confident.  This assessment also means that we will continue to
+be relying on DocBook and may not be fully converted to AsciiDoc until
+at least Fedora 27.  Again, this is my estimate/gut feel.
+
+== Why is this so hard?
+
+Documentation toolchains are challenging for a lot of reasons.  One of
+the biggest challenges is that like many technology problems it looks
+far more simple to solve than it really is.  If you're still reading,
+and think I am just "not getting it," consider how the mental solution
+you just mapped out would solve:
+
+* Multiple language (some of which are not translated against the most
+   recent revision)
+* Multiple versions of software available in parallel
+* Multiple books or documentation sets with varying levels of availability
+   by version and language
+* Producing the entire matrix of available materials and publishing it
+   to a single site or collection of related sites, logically
+* Drive by contributors who want zero friction
+* Regular contributors who want advanced tool sets
+* The need to produce both stage and production versions of everything
+* The need to generate a site with modern design and look and feel
+* Search
+* Making new material available for localization
+* Automating all the things
+
+And this list doesn't even get into the markup format war that can make
+`emacs` vs `vi` look like a tea party.
+
+Another challenge with documentation toolchains is the fact that many of
+the people closest to the problem are not engineers.  This means that
+there are generally very few implementing contributors and that the
+planning contributors are constantly trying to make sure their goals
+are understood.
+
+== My Proposal
+
+Therefore, I present this modest proposal footnote:[If you've not read
+link:https://en.wikipedia.org/wiki/A_Modest_Proposal[A Modest Proposal for
+Preventing the Children of Poor People From Being a Burthen to Their
+Parents or Country, and for Making Them Beneficial to the Publick]
+do so.] in order to accomplish the goals below:
+
+. A rapid conversion to AsciiDoc and away from DocBook.  This should
+   significantly reduce contributor friction.
+. The ability to launch with at least the same level of functionality
+   as we have today before Fedora 26.
+. Bringing the toolchain conversation to a close so we can focus on
+   what matters, **content**.
+
+My proposal can be summarized as AsciiDoc+Pagure+AsciiBinder.  It looks
+very similar to the outcome of the FAD.  The parts are:
+
+- *AsciiDoc*: A lightweight markup language that can be
+   http://www.winglemeyer.org/technology/2016/09/08/semantic-asciidoc/[extended with
+   a limited vocabulary of semantic markup] , as needed. It is widely
+   used and link:http://www.methods.co.nz/asciidoc/index.html[extensively
+   documented].
+- *Pagure*: An open-source git forge developed on Fedora and used by the
+   Fedora Community. You can find it at https://pagure.io[pagure.io]
+- *AsciiBinder*: A documentation site builder that can build
+   multiple sites and versions from a single shared documentation
+   set.  http://www.asciibinder.org/[AsciiBinder] uses
+   http://asciidoctor.org/[Asciidoctor] to process AsciiDoc.  It is
+   used by the OpenShift and ManageIQ communities and being considered
+   by Gluster.  It is heavily contributed to by Red Hat.
+
+== Why AsciiBinder?
+
+I have selected AsciiBinder because it:
+
+* is solely an AsciiDoc processor. This will force us to the new format
+   without delay.
+* it has been adopted by several [open
+   source](https://github.com/openshift/openshift-docs)
+   [projects](https://github.com/ManageIQ/manageiq_docs)
+   communities. Therefore, it is going to both have longevity and a lot of
+   people looking for bugs and suggesting and implementing new features.
+   Additionally, if it is ever deprecated multiple communities will be
+   impacted so a new solution and migration path should be easily found.
+* it has a [healthy number of
+   contributors](https://github.com/redhataccess/ascii_binder/graphs/contributors).
+* it is a pure AsciiDoc toolchain with no conversions or other processing
+   footnote:[Pintail converts AsciiDoc, and I believe DocBook, to an
+   intermediate XML form of Mallard before processing documentation into
+   a site.]
+
+== How does it work?
+
+My current implementation is architected around the following constraints:
+
+* Every book/document set is stored in a separate repository, as is
+*  done today.
+* Versions are controlled with branching.
+* Translations are done via Zanata
+* All documentation is written using AsciiDoc
+
+Each individual book/documentation set repository is a valid AsciiBinder
+respository.  This allows the tool to be directly used for preview,
+staging, etc.  This also means that less transformation work is required
+to build the entire website.  These individual repository builds can
+be effected by directly running AsciiBinder so there is no need for any
+scripting or other indirection.
+
+The entire website is built using a builder script that builds an
+AsciiBinder repository consisting of all titles, versions and translations
+that are to be published.  The current builder applies translation files
+during this repository creation process.  AsciiBinder is then called
+to process this temporary repository and build the entire documentation
+website.
+
+This process is focused on reducing the amount of pre-processing,
+massaging, modifications, and special cases to zero with the goal of
+getting as close to a pure AsciiBinder implementation as possible.
+Therefore the builder, for example, does not modify content in any way
+other than applying translations and doesn't change the file structure.
