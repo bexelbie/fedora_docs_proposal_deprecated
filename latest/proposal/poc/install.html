@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Fedora Docs Toolchain Proposal Latest | Proposal | Proof of Concept (POC) | Pre-Requisites</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <link href="../../../latest/_stylesheets/asciibinder.css" rel="stylesheet" />
+
+   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+   <!--[if lt IE 9]>
+     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+   <![endif]-->
+
+   <!-- <link href="../../../latest/_images/favicon32x32.png" rel="shortcut icon" type="text/css"> -->
+  <!--[if IE]><link rel="shortcut icon" href="../../../latest/_images/favicon.ico"><![endif]-->
+  <meta content="AsciiBinder" name="application-name">
+</head>
+<body>
+  <div class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="http://www.winglemeyer.org/"><img alt="winglemeyer.org" src="../../../latest/_images/winglemeyer.org-logo.png"></a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <p class="toggle-nav visible-xs pull-left">
+      <button class="btn btn-default btn-sm" type="button" data-toggle="offcanvas">Toggle nav</button>
+    </p>
+    <ol class="breadcrumb">
+      <li class="sitename">
+        <a href="../../../index.html">even the horse knew</a>
+      </li>
+      <li class="hidden-xs active">
+        <a href="../../proposal/overview.html">Fedora Docs Toolchain Proposal Latest</a>
+      </li>
+      <li class="hidden-xs active">
+        <a href="../../proposal/overview.html">Proposal</a>
+      </li>
+      <li class="hidden-xs active"><a href="../../proposal/poc/install.html">Proof of Concept (POC)</a></li>
+      <li class="hidden-xs active">
+        Pre-Requisites
+      </li>
+    </ol>
+    <div class="row row-offcanvas row-offcanvas-left">
+      <div class="col-xs-8 col-sm-3 col-md-3 sidebar sidebar-offcanvas">
+        <ul class="nav nav-sidebar">
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup0">
+        <span id="tgSpan0" class="fa fa-angle-down"></span>Proposal
+      </a>
+      <ul id="topicGroup0" class="collapse in list-unstyled">
+            <li><a class="" href="../../proposal/overview.html">Overview</a></li>
+            <li><a class="" href="../../proposal/rationale.html">Why these Components?</a></li>
+            <li><a class="" href="../../proposal/converting.html">Converting DocBook to AsciiDoc</a></li>
+            <li><a class="" href="../../proposal/asciibinder.html">Converting Documentation Collections to AsciiBinder</a></li>
+            <li><a class="" href="../../proposal/translation.html">Translating AsciiDoc</a></li>
+            <li class="nav-header">
+              <a class="" href="#" data-toggle="collapse" data-target="#topicSubGroup-0-5">
+                <span id="sgSpan-0-5" class="fa fa-caret-down"></span>&nbsp;Proof of Concept (POC)
+              </a>
+              <ul id="topicSubGroup-0-5" class="nav-tertiary list-unstyled collapse in">
+                  <li><a class=" active" href="../../proposal/poc/install.html">Pre-Requisites</a></li>
+                  <li><a class="" href="../../proposal/poc/single-repo.html">Build one Book or Documentation Collection</a></li>
+                  <li><a class="" href="../../proposal/poc/multi-repo.html">Build the Entire Site</a></li>
+              </ul>
+            </li>
+            <li><a class="" href="../../proposal/nextsteps.html">Next Steps</a></li>
+      </ul>
+    </li>
+</ul>
+      </div>
+      <div class="col-xs-12 col-sm-9 col-md-9 main">
+        <div class="page-header">
+          <h2>Demonstration Script and Information</h2>
+        </div>
+        <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>A proof of concept has been built to test all of these ideas.  It is
+incomplete, but shows most functionality.  You should, <em>hopefully</em>,
+be able to build this on your own.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="pre-requisites"><a class="anchor" href="#pre-requisites"></a>Pre-Requisites</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In order to run this Proof of Concept (POC), you will need:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>git</p>
+</li>
+<li>
+<p>AsciiBinder (which includes Asciidoctor)</p>
+</li>
+<li>
+<p>po4a</p>
+</li>
+<li>
+<p>Zanata Client</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="install-git"><a class="anchor" href="#install-git"></a>Install git</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>dnf install git</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="install-asciibinder"><a class="anchor" href="#install-asciibinder"></a>Install AsciiBinder</h3>
+<div class="paragraph">
+<p>AsciiBinder is not yet packaged for Fedora.  It is available as a docker
+image. It can also be installed directly.</p>
+</div>
+<div class="sect3">
+<h4 id="docker-usage"><a class="anchor" href="#docker-usage"></a>Docker Usage</h4>
+<div class="paragraph">
+<p>AsciiBinder has been containerized by the AsciiBinder team.  Pull the
+container with the command below:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>docker pull projectatomic/ascii_binder</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In future parts of this document when you are told to run the
+<code>asciibinder</code> command, replace <code>asciibinder</code> with:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>docker run -it --rm -v `pwd`:/docs:z asciibinder</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="manual-install"><a class="anchor" href="#manual-install"></a>Manual Install</h4>
+<div class="paragraph">
+<p>This assumes you are using Fedora 24.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Install AsciiDoctor</p>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>dnf install rubygem-asciidoctor</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Install AsciiBinder</p>
+<div class="paragraph">
+<p>AsciiBinder requires ffi version 1.9.14 which is newer than the most
+recent version in F24.  Therefore you will need various development tools.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>dnf install ruby-devel gcc-c++ redhat-rpm-config make
+gem install ascii_binder</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="install-po4a"><a class="anchor" href="#install-po4a"></a>Install po4a</h3>
+<div class="paragraph">
+<p><code>po4a</code> has been patched to improve the support for AsciiDoc.  This
+patch is recent and hasn&#8217;t been included in Fedora yet.  This process
+monkey-patches <code>po4a</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>dnf install po4a
+git clone https://alioth.debian.org/anonscm/git/po4a/po4a.git
+cp po4a/lib/Locale/Po4a/AsciiDoc.pm /usr/share/perl5/vendor_perl/Locale/Po4a/AsciiDoc.pm</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="install-a-zanata-client"><a class="anchor" href="#install-a-zanata-client"></a>Install a Zanata Client</h3>
+<div class="paragraph">
+<p>For this demo you will need to install and configure the Zanata python
+client.  The Zanata team would prefer that everyone use their Java client.
+While it should be a drop-in replacement, I have no verified it.</p>
+</div>
+<div class="paragraph">
+<p>You will need to properly configure your client for use with Fedora&#8217;s
+Zanata site.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>dnf install zanata-python-client</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="clone-the-git-repositories"><a class="anchor" href="#clone-the-git-repositories"></a>Clone the git repositories</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This demonstration uses 4 git repositories.  Clone them all using:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>git clone &lt;repo_url&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The repositories typically still have the original DocBook.xml files
+in them.  Ignore those files.  Additionally, they are typically using
+branch names that end in <code>-adoc</code>.  This is done as a convenience for me
+while working on the POC and is <strong>not</strong> required.</p>
+</div>
+<div class="sect2">
+<h3 id="common-content"><a class="anchor" href="#common-content"></a>Common Content</h3>
+<div class="paragraph">
+<p>The Common Content repository contains shared front matter, such as the
+copyright statement and bug reporting information.</p>
+</div>
+<div class="paragraph">
+<p>The only branch that matters in this repository is called <code>master-adoc</code>.</p>
+</div>
+<div class="paragraph">
+<p>Note: This is not a docs project official repository.</p>
+</div>
+<div class="paragraph">
+<p>Pagure URL: <a href="https://pagure.io/docs-common-content" class="bare">https://pagure.io/docs-common-content</a>
+Repo URL: <a href="https://pagure.io/docs-common-content.git" class="bare">https://pagure.io/docs-common-content.git</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="virtualization-getting-started-guide"><a class="anchor" href="#virtualization-getting-started-guide"></a>Virtualization Getting Started Guide</h3>
+<div class="paragraph">
+<p>This is a private repository contains a quickly converted copy of the
+Fedora <em>Virtualization Getting Started Guide</em>.  The conversion is not
+perfect and hasn&#8217;t really been cleaned up.</p>
+</div>
+<div class="paragraph">
+<p>The guide is currently branched for three versions of Fedora:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Fedora Version</th>
+<th class="tableblock halign-left valign-top">Branch Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rawhide</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">master-adoc</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">24</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">f24-adoc</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">23</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">f23-adoc</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Pagure URL: <a href="https://pagure.io/bex-virt-getting-started-guide/" class="bare">https://pagure.io/bex-virt-getting-started-guide/</a>
+Repo URL: <a href="https://pagure.io/bex-virt-getting-started-guide.git" class="bare">https://pagure.io/bex-virt-getting-started-guide.git</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="installation-guide"><a class="anchor" href="#installation-guide"></a>Installation Guide</h3>
+<div class="paragraph">
+<p>This is a private repository contains a quickly converted copy of the
+Fedora <em>Installation Guide</em>.  The conversion is not perfect and hasn&#8217;t
+really been cleaned up.</p>
+</div>
+<div class="paragraph">
+<p>The guide is currently branched for three versions of Fedora:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Fedora Version</th>
+<th class="tableblock halign-left valign-top">Branch Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rawhide</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">master-adoc</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">24</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">f24-adoc</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">23</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">f23-adoc</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Pagure URL: <a href="https://pagure.io/bex-install-guide" class="bare">https://pagure.io/bex-install-guide</a>
+Repo URL: <a href="https://pagure.io/bex-install-guide.git" class="bare">https://pagure.io/bex-install-guide.git</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sample-site-repository"><a class="anchor" href="#sample-site-repository"></a>Sample Site Repository</h3>
+<div class="paragraph">
+<p>This private repository contains the configuration and scripts necessary
+to build the full Fedora Docs web site.  In this POC, that is:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>two books, the <em>Installation Guide</em> and the <em>Virtualization Getting
+Started Guide</em> in English for all three versions of Fedora: Rawhide,
+Fedora 24, and Fedora 23.</p>
+</li>
+<li>
+<p>Japanese translations of all books and versions.</p>
+</li>
+<li>
+<p>a French translation of just the <em>Installation Guide</em> for all versions.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Because this repository contains no actual content, there is only one
+branch, <code>master-adoc</code>.</p>
+</div>
+<div class="paragraph">
+<p>Pagure URL: <a href="https://pagure.io/docs-fp-o-asciibinder" class="bare">https://pagure.io/docs-fp-o-asciibinder</a>
+Repo URL: <a href="https://pagure.io/docs-fp-o-asciibinder.git" class="bare">https://pagure.io/docs-fp-o-asciibinder.git</a></p>
+</div>
+</div>
+</div>
+</div>
+      </div>
+    </div>
+  </div>
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+   <!-- Latest compiled and minified JavaScript -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+   <script type="text/javascript">
+    /*<![CDATA[*/
+    $(document).ready(function() {
+      $("[id^='topicGroup']").on('show.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicGroup']").on('hide.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicSubGroup']").on('show.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+      $("[id^='topicSubGroup']").on('hide.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+    });
+    /*]]>*/
+  </script>
+</body>
+</html>

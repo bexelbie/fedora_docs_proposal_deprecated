@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Fedora Docs Toolchain Proposal Latest | Proposal | Overview</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <link href="../../latest/_stylesheets/asciibinder.css" rel="stylesheet" />
+
+   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+   <!--[if lt IE 9]>
+     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+   <![endif]-->
+
+   <!-- <link href="../../latest/_images/favicon32x32.png" rel="shortcut icon" type="text/css"> -->
+  <!--[if IE]><link rel="shortcut icon" href="../../latest/_images/favicon.ico"><![endif]-->
+  <meta content="AsciiBinder" name="application-name">
+</head>
+<body>
+  <div class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="http://www.winglemeyer.org/"><img alt="winglemeyer.org" src="../../latest/_images/winglemeyer.org-logo.png"></a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <p class="toggle-nav visible-xs pull-left">
+      <button class="btn btn-default btn-sm" type="button" data-toggle="offcanvas">Toggle nav</button>
+    </p>
+    <ol class="breadcrumb">
+      <li class="sitename">
+        <a href="../../index.html">even the horse knew</a>
+      </li>
+      <li class="hidden-xs active">
+        <a href="../proposal/overview.html">Fedora Docs Toolchain Proposal Latest</a>
+      </li>
+      <li class="hidden-xs active">
+        <a href="../proposal/overview.html">Proposal</a>
+      </li>
+      
+      <li class="hidden-xs active">
+        Overview
+      </li>
+    </ol>
+    <div class="row row-offcanvas row-offcanvas-left">
+      <div class="col-xs-8 col-sm-3 col-md-3 sidebar sidebar-offcanvas">
+        <ul class="nav nav-sidebar">
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup0">
+        <span id="tgSpan0" class="fa fa-angle-down"></span>Proposal
+      </a>
+      <ul id="topicGroup0" class="collapse in list-unstyled">
+            <li><a class=" active" href="../proposal/overview.html">Overview</a></li>
+            <li><a class="" href="../proposal/rationale.html">Why these Components?</a></li>
+            <li><a class="" href="../proposal/converting.html">Converting DocBook to AsciiDoc</a></li>
+            <li><a class="" href="../proposal/asciibinder.html">Converting Documentation Collections to AsciiBinder</a></li>
+            <li><a class="" href="../proposal/translation.html">Translating AsciiDoc</a></li>
+            <li class="nav-header">
+              <a class="" href="#" data-toggle="collapse" data-target="#topicSubGroup-0-5">
+                <span id="sgSpan-0-5" class="fa fa-caret-right"></span>&nbsp;Proof of Concept (POC)
+              </a>
+              <ul id="topicSubGroup-0-5" class="nav-tertiary list-unstyled collapse">
+                  <li><a class="" href="../proposal/poc/install.html">Pre-Requisites</a></li>
+                  <li><a class="" href="../proposal/poc/single-repo.html">Build one Book or Documentation Collection</a></li>
+                  <li><a class="" href="../proposal/poc/multi-repo.html">Build the Entire Site</a></li>
+              </ul>
+            </li>
+            <li><a class="" href="../proposal/nextsteps.html">Next Steps</a></li>
+      </ul>
+    </li>
+</ul>
+      </div>
+      <div class="col-xs-12 col-sm-9 col-md-9 main">
+        <div class="page-header">
+          <h2>A Modest Proposal for a New Fedora Docs Toolchain</h2>
+        </div>
+        <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This set of documents is a proposal an other considerations related to
+a new toolchain for producing the Fedora Docs.  The proposal is coded
+<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</sup> using the
+toolchain to have a self-documenting example.  A more complete example
+is also referenced in the proposal content.  The proposal is broken into
+the following sections.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Overview</p>
+</li>
+<li>
+<p><a href="rationale.adoc">Why these Components?</a></p>
+</li>
+<li>
+<p><a href="converting.adoc">Converting DocBook to AsciiDoc</a></p>
+</li>
+<li>
+<p><a href="asciibinder.adoc">Converting Documentation Collections to AsciiBinder</a></p>
+</li>
+<li>
+<p><a href="translation.adoc">Translating AsciiDoc</a></p>
+</li>
+<li>
+<p><a href="demo.adoc">Demonstration Script and Information</a></p>
+</li>
+<li>
+<p><a href="nextsteps.adoc">Next Steps</a></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>TL;DR: The Fedora Docs Fad selected a toolchain of AsciiDoc+Pagure+Pintail
+but it hasn&#8217;t been implemented. I think we can get to our goals
+faster if we replace pintail <sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnote_2" title="View footnote.">2</a>]</sup> with AsciiBinder.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="where-are-we-today"><a class="anchor" href="#where-are-we-today"></a>Where are we today?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In May 2016 there was a Fedora Activity Day (FAD) focused on Fedora Docs.
+I wasn&#8217;t present, but having seen the outbound reporting and blog posts,
+I believe a reasoned and rational decision was made about a new tool
+chain to adopt.  Based on the information available at the time and the
+expected ability of those present to contribute an AsciiDoc+Pagure+Pintail
+with legacy DocBook support toolchain was selected.</p>
+</div>
+<div class="paragraph">
+<p>Since the FAD, however, work has progressed slowly.  Unfortunately, I
+don&#8217;t believe all the parties involved have been able to find the time
+to make the contributions they envisioned.  It happens.</p>
+</div>
+<div class="paragraph">
+<p>Just before Flock this year, I began adding my efforts to making the
+proposed toolchain a reality.  The selected components are all great
+pieces of technology, but some of them still need non-trivial work.
+This work is ongoing, but not complete.</p>
+</div>
+<div class="paragraph">
+<p>I am not aware of any project plan with a timeline for completion and
+current status reporting.  My assessment is that we might be finished by
+Fedora 26, but I am not confident.  This assessment also means that we
+will continue to be relying on DocBook and may not be fully converted to
+AsciiDoc until at least Fedora 27.  Again, this is my estimate/gut feel.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="why-is-this-so-hard"><a class="anchor" href="#why-is-this-so-hard"></a>Why is this so hard?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Documentation toolchains are challenging for a lot of reasons.  One of
+the biggest challenges is that like many technology problems it looks
+far more simple to solve than it really is.  If you&#8217;re still reading,
+and think I am just "not getting it," consider how the mental solution
+you just mapped out would solve:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Multiple language (some of which are not translated against the most
+recent revision)</p>
+</li>
+<li>
+<p>Multiple versions of software available in parallel</p>
+</li>
+<li>
+<p>Multiple books or documentation collections with varying levels of
+availability by version and language</p>
+</li>
+<li>
+<p>Producing the entire matrix of available materials and publishing it
+to a single site or collection of related sites, logically</p>
+</li>
+<li>
+<p>Drive by contributors who want zero friction</p>
+</li>
+<li>
+<p>Regular contributors who want advanced tool sets</p>
+</li>
+<li>
+<p>The need to produce both stage and production versions of everything</p>
+</li>
+<li>
+<p>The need to generate a site with modern design and look and feel</p>
+</li>
+<li>
+<p>Search</p>
+</li>
+<li>
+<p>Making new material available for localization</p>
+</li>
+<li>
+<p>Automating all the things</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>And this list doesn&#8217;t even get into the markup format war that can make
+<code>emacs</code> vs <code>vi</code> look like a tea party.</p>
+</div>
+<div class="paragraph">
+<p>Another challenge with documentation toolchains is the fact that many of
+the people closest to the problem are not engineers.  This means that
+there are generally very few implementing contributors and that the
+planning contributors are constantly trying to make sure their goals
+are understood.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="my-proposal"><a class="anchor" href="#my-proposal"></a>My Proposal</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Therefore, I present this modest proposal <sup class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnote_3" title="View footnote.">3</a>]</sup> in order to accomplish the goals below:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>A rapid conversion to AsciiDoc and away from DocBook.  This should
+significantly reduce contributor friction.</p>
+</li>
+<li>
+<p>The ability to launch with at least the same level of functionality
+as we have today before Fedora 26.</p>
+</li>
+<li>
+<p>Bringing the toolchain conversation to a close so we can focus on
+what matters, <strong>content</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Specifically, a toolchain needs to be able to do the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Transform markup into HTML</p>
+</li>
+<li>
+<p>Assemble a multi-version site</p>
+</li>
+<li>
+<p>Assemble a multi-language site</p>
+</li>
+<li>
+<p>Support being packaged in Fedora</p>
+</li>
+<li>
+<p>Be able to be automated</p>
+</li>
+<li>
+<p>Provide a relatively easy set up experience for writers to test with</p>
+</li>
+<li>
+<p>Interface with localization</p>
+</li>
+<li>
+<p>Support Theming</p>
+</li>
+<li>
+<p>Integrate with a search solution</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>My proposal can be summarized as AsciiDoc+Pagure+AsciiBinder.  It looks
+very similar to the outcome of the FAD.  The parts are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>AsciiDoc</strong>: A lightweight markup language that can be
+<a href="http://www.winglemeyer.org/technology/2016/09/08/semantic-asciidoc/">extended with
+a limited vocabulary of semantic markup</a> , as needed. It is widely
+used and <a href="http://www.methods.co.nz/asciidoc/index.html">extensively
+documented</a>.</p>
+</li>
+<li>
+<p><strong>Pagure</strong>: An open-source git forge developed on Fedora and used by the
+Fedora Community. You can find it at <a href="https://pagure.io">pagure.io</a></p>
+</li>
+<li>
+<p><strong>AsciiBinder</strong>: A documentation site builder that can build
+multiple sites and versions from a single shared documentation
+set.  <a href="http://www.asciibinder.org/">AsciiBinder</a> uses
+<a href="http://asciidoctor.org/">Asciidoctor</a> to process AsciiDoc.  It is
+used by the OpenShift and ManageIQ communities and being considered
+by Gluster.  It is heavily contributed to by Red Hat.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="why-asciibinder"><a class="anchor" href="#why-asciibinder"></a>Why AsciiBinder?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I have selected AsciiBinder because it:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>is solely an AsciiDoc processor. This will force us to the new format
+without delay.</p>
+</li>
+<li>
+<p>it has been adopted by several [open
+source](<a href="https://github.com/openshift/openshift-docs" class="bare">https://github.com/openshift/openshift-docs</a>)
+[projects](<a href="https://github.com/ManageIQ/manageiq_docs" class="bare">https://github.com/ManageIQ/manageiq_docs</a>)
+communities. Therefore, it is going to both have longevity and a lot of
+people looking for bugs and suggesting and implementing new features.
+Additionally, if it is ever deprecated multiple communities will be
+impacted so a new solution and migration path should be easily found.</p>
+</li>
+<li>
+<p>it has a [healthy number of
+contributors](<a href="https://github.com/redhataccess/ascii_binder/graphs/contributors" class="bare">https://github.com/redhataccess/ascii_binder/graphs/contributors</a>).</p>
+</li>
+<li>
+<p>it is a pure AsciiDoc toolchain with no conversions or other processing
+<sup class="footnote">[<a id="_footnoteref_4" class="footnote" href="#_footnote_4" title="View footnote.">4</a>]</sup></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="how-does-it-work"><a class="anchor" href="#how-does-it-work"></a>How does it work?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>My current implementation is architected around the following constraints:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Every book/document collection is stored in a separate repository,
+as is done today.</p>
+</li>
+<li>
+<p>Versions are controlled with branching.</p>
+</li>
+<li>
+<p>Translations are done via Zanata</p>
+</li>
+<li>
+<p>All documentation is written using AsciiDoc</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Each individual book/documentation collection repository is a valid
+AsciiBinder repository.  This allows the tool to be directly used for
+preview, staging, etc.  This also means that less transformation work
+is required to build the entire website.  These individual repository
+builds can be effected by directly running AsciiBinder so there is no
+need for any scripting or other indirection.</p>
+</div>
+<div class="paragraph">
+<p>The entire website is built using a builder script that builds an
+AsciiBinder repository consisting of all titles, versions and translations
+that are to be published.  The current builder applies translation files
+during this repository creation process.  AsciiBinder is then called
+to process this temporary repository and build the entire documentation
+website.</p>
+</div>
+<div class="paragraph">
+<p>This process is focused on reducing the amount of pre-processing,
+massaging, modifications, and special cases to zero with the goal of
+getting as close to a pure AsciiBinder implementation as possible.
+Therefore the builder, for example, does not modify content in any way
+other than applying translations and doesn&#8217;t change the file structure.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="glossary"><a class="anchor" href="#glossary"></a>Glossary</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I have tried to consistently use the following words in this document.</p>
+</div>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+<strong>book</strong>
+</td>
+<td class="hdlist2">
+<p>A single guide or title structured to be read from beginning
+to end.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<strong>documentation collection</strong>
+</td>
+<td class="hdlist2">
+<p>A collection of topics that are related. They
+are not ordered in any way and try to be self-sufficient units of
+knowledge.  They refer to other topics for pre-requisite information.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<strong>documentation set</strong>
+</td>
+<td class="hdlist2">
+<p>The set it books and documentation collections
+that comprise all of the documentation for a Project.</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnote_1">
+<a href="#_footnoteref_1">1</a>. <a href="https://github.com/bexelbie/fedora_docs_proposal" class="bare">https://github.com/bexelbie/fedora_docs_proposal</a>
+</div>
+<div class="footnote" id="_footnote_2">
+<a href="#_footnoteref_2">2</a>. If you&#8217;re not familiar with <a href="https://github.com/projectmallard/pintail/">pintail</a>, it is a mallard site generator that can also do conversions from <a href="https://github.com/projectmallard/pintail-asciidoc">AsciiDoc</a> and DocBook to XML for processing.  It uses CSS and XSL to build sites.  It is being considered for adoption by the Gnome Community.
+</div>
+<div class="footnote" id="_footnote_3">
+<a href="#_footnoteref_3">3</a>. If you&#8217;ve not read <a href="https://en.wikipedia.org/wiki/A_Modest_Proposal">A Modest Proposal for Preventing the Children of Poor People From Being a Burthen to Their Parents or Country, and for Making Them Beneficial to the Publick</a> do so.
+</div>
+<div class="footnote" id="_footnote_4">
+<a href="#_footnoteref_4">4</a>. Pintail converts AsciiDoc, and I believe DocBook, to an intermediate XML form of Mallard before processing documentation into a site.
+</div>
+</div>
+      </div>
+    </div>
+  </div>
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+   <!-- Latest compiled and minified JavaScript -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+   <script type="text/javascript">
+    /*<![CDATA[*/
+    $(document).ready(function() {
+      $("[id^='topicGroup']").on('show.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicGroup']").on('hide.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicSubGroup']").on('show.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+      $("[id^='topicSubGroup']").on('hide.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+    });
+    /*]]>*/
+  </script>
+</body>
+</html>

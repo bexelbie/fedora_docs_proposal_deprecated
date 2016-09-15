@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Fedora Docs Toolchain Proposal Latest | Proposal | Proof of Concept (POC) | Build one Book or Documentation Collection</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <link href="../../../latest/_stylesheets/asciibinder.css" rel="stylesheet" />
+
+   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+   <!--[if lt IE 9]>
+     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+   <![endif]-->
+
+   <!-- <link href="../../../latest/_images/favicon32x32.png" rel="shortcut icon" type="text/css"> -->
+  <!--[if IE]><link rel="shortcut icon" href="../../../latest/_images/favicon.ico"><![endif]-->
+  <meta content="AsciiBinder" name="application-name">
+</head>
+<body>
+  <div class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="http://www.winglemeyer.org/"><img alt="winglemeyer.org" src="../../../latest/_images/winglemeyer.org-logo.png"></a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <p class="toggle-nav visible-xs pull-left">
+      <button class="btn btn-default btn-sm" type="button" data-toggle="offcanvas">Toggle nav</button>
+    </p>
+    <ol class="breadcrumb">
+      <li class="sitename">
+        <a href="../../../index.html">even the horse knew</a>
+      </li>
+      <li class="hidden-xs active">
+        <a href="../../proposal/overview.html">Fedora Docs Toolchain Proposal Latest</a>
+      </li>
+      <li class="hidden-xs active">
+        <a href="../../proposal/overview.html">Proposal</a>
+      </li>
+      <li class="hidden-xs active"><a href="../../proposal/poc/install.html">Proof of Concept (POC)</a></li>
+      <li class="hidden-xs active">
+        Build one Book or Documentation Collection
+      </li>
+    </ol>
+    <div class="row row-offcanvas row-offcanvas-left">
+      <div class="col-xs-8 col-sm-3 col-md-3 sidebar sidebar-offcanvas">
+        <ul class="nav nav-sidebar">
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup0">
+        <span id="tgSpan0" class="fa fa-angle-down"></span>Proposal
+      </a>
+      <ul id="topicGroup0" class="collapse in list-unstyled">
+            <li><a class="" href="../../proposal/overview.html">Overview</a></li>
+            <li><a class="" href="../../proposal/rationale.html">Why these Components?</a></li>
+            <li><a class="" href="../../proposal/converting.html">Converting DocBook to AsciiDoc</a></li>
+            <li><a class="" href="../../proposal/asciibinder.html">Converting Documentation Collections to AsciiBinder</a></li>
+            <li><a class="" href="../../proposal/translation.html">Translating AsciiDoc</a></li>
+            <li class="nav-header">
+              <a class="" href="#" data-toggle="collapse" data-target="#topicSubGroup-0-5">
+                <span id="sgSpan-0-5" class="fa fa-caret-down"></span>&nbsp;Proof of Concept (POC)
+              </a>
+              <ul id="topicSubGroup-0-5" class="nav-tertiary list-unstyled collapse in">
+                  <li><a class="" href="../../proposal/poc/install.html">Pre-Requisites</a></li>
+                  <li><a class=" active" href="../../proposal/poc/single-repo.html">Build one Book or Documentation Collection</a></li>
+                  <li><a class="" href="../../proposal/poc/multi-repo.html">Build the Entire Site</a></li>
+              </ul>
+            </li>
+            <li><a class="" href="../../proposal/nextsteps.html">Next Steps</a></li>
+      </ul>
+    </li>
+</ul>
+      </div>
+      <div class="col-xs-12 col-sm-9 col-md-9 main">
+        <div class="page-header">
+          <h2>Build one Book or Documentation Collection</h2>
+        </div>
+        <div class="sect1">
+<h2 id="what-is-in-the-repository"><a class="anchor" href="#what-is-in-the-repository"></a>What is in the repository?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For this, let&#8217;s examine the <em>Installation Guide</em> because it is the more
+complex of the two books in the Proof of Concept (POC).  Complexity in
+this case means that the content is nested.</p>
+</div>
+<div class="paragraph">
+<p>The guide is currently branched for three versions of Fedora:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Fedora Version</th>
+<th class="tableblock halign-left valign-top">Branch Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rawhide</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">master-adoc</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">24</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">f24-adoc</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">23</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">f23-adoc</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>This is the file tree for the <code>master-adoc</code> branch (abbreviated).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>.
+|-- _Common_Content                 <i class="conum" data-value="1"></i><b>(1)</b>
+|   |-- README.md
+|   `-- en-US
+|       |-- Conventions.adoc
+|       |-- Conventions.xml
+|       |-- Feedback.adoc
+|       |-- Feedback.xml
+|       |-- Legal_Notice.adoc
+|       |-- Legal_Notice.xml
+|       `-- images
+|           `-- title_logo.svg
+|-- _distro_map.yml                 <i class="conum" data-value="2"></i><b>(2)</b>
+|-- _images                         <i class="conum" data-value="3"></i><b>(3)</b>
+|   `-- fedora.svg
+|-- _javascripts                    <i class="conum" data-value="3"></i><b>(3)</b>
+|-- _stylesheets                    <i class="conum" data-value="3"></i><b>(3)</b>
+|   `-- asciibinder.css
+|-- _templates                      <i class="conum" data-value="3"></i><b>(3)</b>
+|   |-- _css.html.erb
+|   |-- _nav.html.erb
+|   `-- page.html.erb
+|-- _topic_map.yml                  <i class="conum" data-value="4"></i><b>(4)</b>
+|-- en-US                           <i class="conum" data-value="5"></i><b>(5)</b>
+|   |-- After_Installation.xml
+|   |-- Author_Group.xml
+|   |-- ...
+|   |-- WelcomeSpoke.xml
+|   |-- after_installation
+|   |   |-- After_Installation.adoc
+|   |   |-- InitialSetupHub.adoc
+|   |   `-- images
+|   |       |-- afterinstall
+|   |       |   `-- gnome-initial-setup.png
+|   |       `-- anaconda
+|   |           `-- InitialSetupHub.png
+|   |-- images
+|   |   |-- boot
+|   |   |   |-- boot-menu.png
+|   |   |   |-- ...
+|   |   |   `-- vnc-options.png
+|   |   |-- partitions
+|   |   |   |-- compression.png
+|   |   |   |-- ...
+|   |   |   `-- used-formatted-drive.png
+|   |   `-- vnc
+|   |       `-- connection-details.png
+|   `-- installing_using_anaconda
+|       |-- CustomSpoke.adoc
+|       |-- ...
+|       |-- WelcomeSpoke.adoc
+|       `-- images
+`-- index-main.html                 <i class="conum" data-value="6"></i><b>(6)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The common content git subtree</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>The <code>_distro_map.yml</code> file tells AsciiBinder to, in this case,
+built a single site that contains the Rawhide, Fedora 24, and Fedora
+23 versions of the content.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>These files are used by AsciiBinder for building the site.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>Each branch listed in the <code>_distro_map.yml</code> contains a
+<code>_topic_map.yml</code> file.  This file lists all of the topics used for
+this book and how they should be nested in the navigation.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>The actual book content.  Many of the AsciiDoc files have been
+deleted for space.  Notice the <code>image</code> subdirectories.  Image names
+have also been deleted for space.  The <code>image</code> subdirectories contain
+subdirectories because the quick conversion from DocBook to AsciiDoc
+did not include refactoring image macros.  These sub-sub-directories
+are not required.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>This becomes the site&#8217;s main index file.  This one is not styled or
+well done.</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="building-one-version"><a class="anchor" href="#building-one-version"></a>Building One Version</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For staging and testing purposes it may be useful to build a single
+version of a book or documentation collection.  AsciiBinder has a
+<code>watcher</code> functionality that will do live reloading, but for this proof
+of concept will be use the preview building functionality.  The following
+commands will cause the entire version of the content for the branch
+you are on to be built.  We will use Rawhide as it is the most common
+use case.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>git checkout master-adoc        <i class="conum" data-value="1"></i><b>(1)</b>
+asciibinder build               <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>You must start the build on the branch that contains the version of
+the content you want to build.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>This is the magic. The default command is <code>build</code>, so it can be
+omitted from the command line.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>There is a fairly verbose output that tells you what is being built and
+can provide alerts and warnings.</p>
+</div>
+<div class="paragraph">
+<p>The output will be placed in the <code>_preview</code> directory.  You can
+view your build in your web browser by opening the page at
+<code>_preview/ascii_binder/rawhide/en-US/Introduction.html</code>.</p>
+</div>
+<div class="paragraph">
+<p>We are opening a specific page of the book because we did not build a
+full site.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="building-every-version-or-a-single-book-site"><a class="anchor" href="#building-every-version-or-a-single-book-site"></a>Building Every Version (or a Single Book Site)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For staging and testing purposes it may be useful to build every version
+of the site.  AsciiBinder has a <code>watcher</code> functionality that will do
+live reloading, but for this proof of concept will be use the site
+building functionality.  The following commands will cause the entire
+site, all three versions of this book, to be built.</p>
+</div>
+<div class="paragraph">
+<p>Before you can build a specific version, you must have checked out that version&#8217;s branch.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>git checkout f24-adoc           <i class="conum" data-value="1"></i><b>(1)</b>
+git checkout f23-adoc           <i class="conum" data-value="1"></i><b>(1)</b>
+git checkout master-adoc        <i class="conum" data-value="2"></i><b>(2)</b>
+asciibinder package             <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>These commands just make sure you have checked out the version
+branches.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>You must start the build on the branch that contains the
+<code>_distro_map.yml</code> file you wish to use to guide site construction.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>This is the magic.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>There is a fairly verbose output that tells you what is being built and
+can provide alerts and warnings.</p>
+</div>
+<div class="paragraph">
+<p>The output will be placed in the <code>_package</code> directory.  You can view your
+build in your web browser by opening the page at <code>_package/main/index.html</code></p>
+</div>
+<div class="paragraph">
+<p>The ugly index page will let you choose a version to preview.  I suggest
+you start with the Rawhide version.</p>
+</div>
+<div class="paragraph">
+<p>At some point, take a look at the "Kickstart Syntax Reference" and scroll
+down a little bit to see a line that reads:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>$ ksverdiff -f F23 -t F24</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This line uses the macros for the current and previous versions of the
+product.  Now look at the same file in Fedora 24 and Fedora 23 and see
+the difference.</p>
+</div>
+</div>
+</div>
+      </div>
+    </div>
+  </div>
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+   <!-- Latest compiled and minified JavaScript -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+   <script type="text/javascript">
+    /*<![CDATA[*/
+    $(document).ready(function() {
+      $("[id^='topicGroup']").on('show.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicGroup']").on('hide.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicSubGroup']").on('show.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+      $("[id^='topicSubGroup']").on('hide.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+    });
+    /*]]>*/
+  </script>
+</body>
+</html>

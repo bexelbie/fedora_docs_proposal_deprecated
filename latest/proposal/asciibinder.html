@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Fedora Docs Toolchain Proposal Latest | Proposal | Converting Documentation Collections to AsciiBinder</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <link href="../../latest/_stylesheets/asciibinder.css" rel="stylesheet" />
+
+   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+   <!--[if lt IE 9]>
+     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+   <![endif]-->
+
+   <!-- <link href="../../latest/_images/favicon32x32.png" rel="shortcut icon" type="text/css"> -->
+  <!--[if IE]><link rel="shortcut icon" href="../../latest/_images/favicon.ico"><![endif]-->
+  <meta content="AsciiBinder" name="application-name">
+</head>
+<body>
+  <div class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="http://www.winglemeyer.org/"><img alt="winglemeyer.org" src="../../latest/_images/winglemeyer.org-logo.png"></a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <p class="toggle-nav visible-xs pull-left">
+      <button class="btn btn-default btn-sm" type="button" data-toggle="offcanvas">Toggle nav</button>
+    </p>
+    <ol class="breadcrumb">
+      <li class="sitename">
+        <a href="../../index.html">even the horse knew</a>
+      </li>
+      <li class="hidden-xs active">
+        <a href="../proposal/overview.html">Fedora Docs Toolchain Proposal Latest</a>
+      </li>
+      <li class="hidden-xs active">
+        <a href="../proposal/overview.html">Proposal</a>
+      </li>
+      
+      <li class="hidden-xs active">
+        Converting Documentation Collections to AsciiBinder
+      </li>
+    </ol>
+    <div class="row row-offcanvas row-offcanvas-left">
+      <div class="col-xs-8 col-sm-3 col-md-3 sidebar sidebar-offcanvas">
+        <ul class="nav nav-sidebar">
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup0">
+        <span id="tgSpan0" class="fa fa-angle-down"></span>Proposal
+      </a>
+      <ul id="topicGroup0" class="collapse in list-unstyled">
+            <li><a class="" href="../proposal/overview.html">Overview</a></li>
+            <li><a class="" href="../proposal/rationale.html">Why these Components?</a></li>
+            <li><a class="" href="../proposal/converting.html">Converting DocBook to AsciiDoc</a></li>
+            <li><a class=" active" href="../proposal/asciibinder.html">Converting Documentation Collections to AsciiBinder</a></li>
+            <li><a class="" href="../proposal/translation.html">Translating AsciiDoc</a></li>
+            <li class="nav-header">
+              <a class="" href="#" data-toggle="collapse" data-target="#topicSubGroup-0-5">
+                <span id="sgSpan-0-5" class="fa fa-caret-right"></span>&nbsp;Proof of Concept (POC)
+              </a>
+              <ul id="topicSubGroup-0-5" class="nav-tertiary list-unstyled collapse">
+                  <li><a class="" href="../proposal/poc/install.html">Pre-Requisites</a></li>
+                  <li><a class="" href="../proposal/poc/single-repo.html">Build one Book or Documentation Collection</a></li>
+                  <li><a class="" href="../proposal/poc/multi-repo.html">Build the Entire Site</a></li>
+              </ul>
+            </li>
+            <li><a class="" href="../proposal/nextsteps.html">Next Steps</a></li>
+      </ul>
+    </li>
+</ul>
+      </div>
+      <div class="col-xs-12 col-sm-9 col-md-9 main">
+        <div class="page-header">
+          <h2>Converting an Existing DocBook Repository to AsciiBinder</h2>
+        </div>
+        <div class="sect1">
+<h2 id="asciibinder-requirements"><a class="anchor" href="#asciibinder-requirements"></a>AsciiBinder Requirements</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>AsciiBinder imposes a few requirements on a repository&#8217;s structure:</p>
+</div>
+<div class="sect2">
+<h3 id="directory-structure"><a class="anchor" href="#directory-structure"></a>Directory Structure</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Directory names may not begin with an underscore</p>
+</li>
+<li>
+<p>The actual content must be stored in one or more sub-directories
+underneath the root directory of the repository.</p>
+</li>
+<li>
+<p>Grouped content must be stored in a directory.  Nested grouped content
+must be stored in a content directory subdirectory. <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</sup></p>
+</li>
+<li>
+<p>Images must be stored in a directory named <code>images</code> that is located
+in the same directory as the AsciiDoc file that uses the image.</p>
+</li>
+<li>
+<p>The few files required by AsciiBinder must be where required.</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="minimal-asciibinder-file-and-directory-structure"><a class="anchor" href="#minimal-asciibinder-file-and-directory-structure"></a>Minimal AsciiBinder File and Directory Structure</h4>
+<div class="paragraph">
+<p>This diagram shows the minimal files and directory structure.  There is
+no content in this tree.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>.
+├── _distro_map.yml
+├── _images
+│   └── fedora.svg
+├── index-main.html
+├── _javascripts
+├── _stylesheets
+│   └── asciibinder.css
+├── _templates
+│   ├── _css.html.erb
+│   ├── _nav.html.erb
+│   └── page.html.erb
+└── _topic_map.yml</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This document does not attempt to cover how AsciiBinder works.  Please see
+the relevant <a href="http://www.asciibinder.org">documentation</a> for details.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="converting-a-current-fedora-docbook-repository"><a class="anchor" href="#converting-a-current-fedora-docbook-repository"></a>Converting a Current Fedora DocBook Repository</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is a rough set of steps.  This will need to be refined as we begin
+the actual migration.  These steps were developed during my testing.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Add the AsciiDoc formatted Common_Content subtree (see below)</p>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>git subtree add --prefix _Common_Content &lt;repository_link&gt; master --squash</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Remove the old Common_Content</p>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>git rm -r en-US/Common_Content; git commit -m "Removing XML Common Content"</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Do a conversion from DocBook to AsciiDoc.  This is outside this set
+of instructions.  Here is a quick, partial conversion with <code>pandoc</code>
+that can be used for testing.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>ls *.xml | xargs -L1 basename -s .xml $@ | \
+xargs -I fff pandoc -f docbook -t asciidoc fff.xml -o fff.adoc</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Rewrite all <code>image</code> macros to not include a directory reference.
+Asciibinder provides the images directory when it runs.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>sed -i -e 's/image:images\//image:/' *.adoc</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Convert the Entity File from DocBook to AsciiDoc format.</p>
+</li>
+<li>
+<p>Rename the entity file <code>ENTITY.adoc</code> to make it easy for verification
+of inclusion and later scripting.</p>
+</li>
+<li>
+<p>Add an include line for the entity file to every AsciiDoc file.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>include::en-US/ENTITY.adoc[]</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Convert entities from DocBook format to AsciiDoc format.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>sed -i -e 's/PRODUCT/{PRODUCT}/' *.adoc
+sed -i -e 's/BOOKID/{BOOKID}/' *.adoc
+sed -i -e 's/YEAR/{YEAR}/' *.adoc
+sed -i -e 's/HOLDER/{HOLDER}/' *.adoc
+sed -i -e 's/BZURL/{BZURL}/' *.adoc
+sed -i -e 's/NEXTVER/{NEXTVER}/' *.adoc
+sed -i -e 's/PRODVER/{PRODVER}/' *.adoc
+sed -i -e 's/PREVVER/{PREVVER}/' *.adoc
+sed -i -e 's/IGURL/{IGURL}/' *.adoc</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Copy over a minimal ascii_binder setup.  I built this based on the minimal file set above.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>cp -ir ../min_asciibinder/* .
+cp -i ../min_asciibinder/.gitignore .</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Setup <code>_distro_map.yml</code></p>
+<div class="paragraph">
+<p>Typically this will be a stock file, based on this template:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>---
+fedora_docs:
+  name: Fedora Docs Project
+  author: Fedora Docs Project &lt;docs@lists.fedoraproject.org&gt;
+  site: main
+  site_name: Fedora
+  site_url: https://docs.fedoraproject.org/
+  branches:
+    master-adoc:
+      name: Rawhide
+      dir: rawhide
+    f24-adoc:
+      name: 24
+      dir: f24
+    f23-adoc:
+      name: 23
+      dir: f23</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Setup <code>index-main.html</code></p>
+<div class="paragraph">
+<p>This is the default index page.  It is only ever used for local builds
+of this single documentation set or book.  It only needs to provide a
+link to the first topic of each branch.</p>
+</div>
+</li>
+<li>
+<p>Setup <code>_topic_map.yml</code> and reorganize the repository</p>
+<div class="paragraph">
+<p>This is the most complex component.  This file defines the relationship
+of all of the topic files.  Remember, that AsciiBinder requires nested
+files to be in a nested directory structure.  A great way to start on
+this is to:</p>
+</div>
+</li>
+<li>
+<p>Find the &lt;guide&gt;.xml file and create an initial <code>_topic_map.yml</code>
+listing each of the included files.</p>
+</li>
+<li>
+<p>Review each included file above for additional includes.  If you find
+any, create a directory and store those files in it.  Then add a
+sub-topic for these files.  Remember, you have to flatten anything
+after this depth.</p>
+</li>
+<li>
+<p>Move image files to the same directory as their referencing files
+and place them in a directory called <code>images</code>.</p>
+</li>
+<li>
+<p>Fix the <code>Preface.adoc</code> file to reference the common content.
+Include directives should look something like this:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>include::_Common_Content/en-US/Conventions.adoc[]</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Don&#8217;t forget to clean up unneeded adoc files (like <code>AuthorGroup.adoc</code>)</p>
+</li>
+<li>
+<p>Repeat for all branches</p>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="what-is-up-with-common_content"><a class="anchor" href="#what-is-up-with-common_content"></a>What is up with Common_Content?</h3>
+<div class="sect3">
+<h4 id="what-is-common-content"><a class="anchor" href="#what-is-common-content"></a>What is Common Content</h4>
+<div class="paragraph">
+<p>Common content is content that is shared across all publishable
+documentation.  It typically includes the License, Copyright Information,
+and information for reporting bugs and making contributions.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="how-do-we-keep-it-in-sync"><a class="anchor" href="#how-do-we-keep-it-in-sync"></a>How do we keep it in sync?</h4>
+<div class="paragraph">
+<p>With <code>publican</code>, the publishing tool knew where the common content
+was stored and would fetch it and insert it during the build process.
+AsciiBinder is built to not have any hidden content, therefore we needed
+a new solution.</p>
+</div>
+<div class="paragraph">
+<p>Rather than store a copy of the common content in every repository,
+where it could slowly drift out of sync, a git subtree is used.  The git
+subtree will <strong>not</strong> automatically synchronize the content, but it will
+allow for easy and scriptable updates.</p>
+</div>
+<div class="paragraph">
+<p>The theory is that we have an auto-checked out subdirectory that contains
+the common content.  The challenge is that we are git commit locked,
+so updates to the common content will require a subtree update on all
+repositories.  This can be automated.</p>
+</div>
+<div class="paragraph">
+<p>To add a git subtree, run the command above in the conversion steps.</p>
+</div>
+<div class="paragraph">
+<p>To update a git subtree run a command similar to this one:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>git subtree pull --prefix en-US/Common_Content https://pagure.io/docs-common-content.git master --squash</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Git subtree notes: <a href="https://developer.atlassian.com/blog/2015/05/the-power-of-git-subtree/" class="bare">https://developer.atlassian.com/blog/2015/05/the-power-of-git-subtree/</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnote_1">
+<a href="#_footnoteref_1">1</a>. This is hard to describe, but basically if you think of nested folders, those folders are directly related to how the content is nested for navigation purposes.  AsciiBinder will not allow more than 2 layers of grouping.  Think "Book:Chapter:Section" or "Collection:Theme:Topic."
+</div>
+</div>
+      </div>
+    </div>
+  </div>
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+   <!-- Latest compiled and minified JavaScript -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+   <script type="text/javascript">
+    /*<![CDATA[*/
+    $(document).ready(function() {
+      $("[id^='topicGroup']").on('show.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicGroup']").on('hide.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicSubGroup']").on('show.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+      $("[id^='topicSubGroup']").on('hide.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+    });
+    /*]]>*/
+  </script>
+</body>
+</html>

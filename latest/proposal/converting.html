@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Fedora Docs Toolchain Proposal Latest | Proposal | Converting DocBook to AsciiDoc</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <link href="../../latest/_stylesheets/asciibinder.css" rel="stylesheet" />
+
+   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+   <!--[if lt IE 9]>
+     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+   <![endif]-->
+
+   <!-- <link href="../../latest/_images/favicon32x32.png" rel="shortcut icon" type="text/css"> -->
+  <!--[if IE]><link rel="shortcut icon" href="../../latest/_images/favicon.ico"><![endif]-->
+  <meta content="AsciiBinder" name="application-name">
+</head>
+<body>
+  <div class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="http://www.winglemeyer.org/"><img alt="winglemeyer.org" src="../../latest/_images/winglemeyer.org-logo.png"></a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <p class="toggle-nav visible-xs pull-left">
+      <button class="btn btn-default btn-sm" type="button" data-toggle="offcanvas">Toggle nav</button>
+    </p>
+    <ol class="breadcrumb">
+      <li class="sitename">
+        <a href="../../index.html">even the horse knew</a>
+      </li>
+      <li class="hidden-xs active">
+        <a href="../proposal/overview.html">Fedora Docs Toolchain Proposal Latest</a>
+      </li>
+      <li class="hidden-xs active">
+        <a href="../proposal/overview.html">Proposal</a>
+      </li>
+      
+      <li class="hidden-xs active">
+        Converting DocBook to AsciiDoc
+      </li>
+    </ol>
+    <div class="row row-offcanvas row-offcanvas-left">
+      <div class="col-xs-8 col-sm-3 col-md-3 sidebar sidebar-offcanvas">
+        <ul class="nav nav-sidebar">
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup0">
+        <span id="tgSpan0" class="fa fa-angle-down"></span>Proposal
+      </a>
+      <ul id="topicGroup0" class="collapse in list-unstyled">
+            <li><a class="" href="../proposal/overview.html">Overview</a></li>
+            <li><a class="" href="../proposal/rationale.html">Why these Components?</a></li>
+            <li><a class=" active" href="../proposal/converting.html">Converting DocBook to AsciiDoc</a></li>
+            <li><a class="" href="../proposal/asciibinder.html">Converting Documentation Collections to AsciiBinder</a></li>
+            <li><a class="" href="../proposal/translation.html">Translating AsciiDoc</a></li>
+            <li class="nav-header">
+              <a class="" href="#" data-toggle="collapse" data-target="#topicSubGroup-0-5">
+                <span id="sgSpan-0-5" class="fa fa-caret-right"></span>&nbsp;Proof of Concept (POC)
+              </a>
+              <ul id="topicSubGroup-0-5" class="nav-tertiary list-unstyled collapse">
+                  <li><a class="" href="../proposal/poc/install.html">Pre-Requisites</a></li>
+                  <li><a class="" href="../proposal/poc/single-repo.html">Build one Book or Documentation Collection</a></li>
+                  <li><a class="" href="../proposal/poc/multi-repo.html">Build the Entire Site</a></li>
+              </ul>
+            </li>
+            <li><a class="" href="../proposal/nextsteps.html">Next Steps</a></li>
+      </ul>
+    </li>
+</ul>
+      </div>
+      <div class="col-xs-12 col-sm-9 col-md-9 main">
+        <div class="page-header">
+          <h2>Converting DocBook to AsciiDoc</h2>
+        </div>
+        <div class="sect1">
+<h2 id="the-challenge"><a class="anchor" href="#the-challenge"></a>The Challenge</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Converting DocBook to AsciiDoc is much more of a problem than it seems
+like it should be <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</sup>. There is no perfect or
+accepted best solution. Every tool has challenges and problems.</p>
+</div>
+<div class="paragraph">
+<p>Other groups that have done a format conversion tend to use one of
+two processes:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>"Burn it down" - Throw away everything and rewrite it from scratch.</p>
+<div class="paragraph">
+<p>This is not practical for the entire documentation set, however
+it could be used to reduce the amount of "cruft."  This could also
+effectively be used to sunset books that have not been republished
+or updated in a long time.</p>
+</div>
+</li>
+<li>
+<p>"Convert, Polish, Review" - use an automated tool; clean up the output;
+get it reviewed by several folks.</p>
+<div class="paragraph">
+<p>Talking with folks at Red Hat who have done
+similar conversions, the current best choice tool is
+<a href="https://github.com/asciidoctor/docbookrx:">DocBookRx</a>. It is not
+perfect. However, it will at least warn on unconverted tags.</p>
+</div>
+<div class="paragraph">
+<p>After the automated conversion, the work is all review and fixes. It
+is recommended that you use <code>elinks</code> to create two text files from
+the html output of the pre-conversion document and the post-conversion
+document. Then you can use <code>meld</code> to highlight a lot of the formatting
+differences. YMMV.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="additional-considerations-for-fedora"><a class="anchor" href="#additional-considerations-for-fedora"></a>Additional Considerations for Fedora</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Fedora, like all documentation projects, wants the highest quality
+documentation possible.  Markup languages that allow for semantic tagging
+can allow documentation to achieve three specific goals that contribute
+to quality:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Consistent presentation of similar types of content</p>
+</li>
+<li>
+<p>Higher quality localization through signals to translators and
+localizers about how content is being used</p>
+</li>
+<li>
+<p>Automated testing of content for errors and inconsistencies
+<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnote_2" title="View footnote.">2</a>]</sup></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Therefore, there is still a desire to retain
+<a href="https://fedoraproject.org/wiki/Docs_Tag_Discussion">some
+semantic tagging</a> after the conversion.  I have
+done a study of AsciiDoc and have proposed some
+<a href="http://www.winglemeyer.org/technology/2016/09/08/semantic-asciidoc/">specific
+ideas about how to implement semantic tagging</a>.</p>
+</div>
+<div class="paragraph">
+<p>Because we should know before we convert the markup format what semantic
+tagging is desired, we can theoretically improve our conversion by:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Converting the existing DocBook tags into the new AsciiDoc semantic
+tagging using text replacement, such as is provided by <code>sed</code>.</p>
+</li>
+<li>
+<p>Stripping almost all other non-block element tags from the DocBook
+source using a similar process.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>These two steps may clean up the DocBook source so much that there will
+beminimal conversion failures with most tools.  I have not tested this
+directly.</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnote_1">
+<a href="#_footnoteref_1">1</a>. This is even weirder when you consider how easy it is to go from AsciiDoc to DocBook.
+</div>
+<div class="footnote" id="_footnote_2">
+<a href="#_footnoteref_2">2</a>. This is still a fairly new field, however projects like <a href="https://github.com/emender">Emender</a> can provide a way forward.
+</div>
+</div>
+      </div>
+    </div>
+  </div>
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+   <!-- Latest compiled and minified JavaScript -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+   <script type="text/javascript">
+    /*<![CDATA[*/
+    $(document).ready(function() {
+      $("[id^='topicGroup']").on('show.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicGroup']").on('hide.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicSubGroup']").on('show.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+      $("[id^='topicSubGroup']").on('hide.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+    });
+    /*]]>*/
+  </script>
+</body>
+</html>
