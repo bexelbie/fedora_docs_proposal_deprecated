@@ -60,8 +60,8 @@
       <ul id="topicGroup0" class="collapse in list-unstyled">
             <li><a class="" href="../proposal/overview.html">Overview</a></li>
             <li><a class="" href="../proposal/rationale.html">Why these Components?</a></li>
-            <li><a class="" href="../proposal/converting.html">Converting DocBook to AsciiDoc</a></li>
-            <li><a class="" href="../proposal/asciibinder.html">Converting Documentation Collections to AsciiBinder</a></li>
+            <li><a class="" href="../proposal/converting.html">Converting DocBook</a></li>
+            <li><a class="" href="../proposal/asciibinder.html">Converting a Repository</a></li>
             <li><a class=" active" href="../proposal/translation.html">Translating AsciiDoc</a></li>
             <li class="nav-header">
               <a class="" href="#" data-toggle="collapse" data-target="#topicSubGroup-0-5">
@@ -74,6 +74,15 @@
               </ul>
             </li>
             <li><a class="" href="../proposal/nextsteps.html">Next Steps</a></li>
+            <li class="nav-header">
+              <a class="" href="#" data-toggle="collapse" data-target="#topicSubGroup-0-7">
+                <span id="sgSpan-0-7" class="fa fa-caret-right"></span>&nbsp;References
+              </a>
+              <ul id="topicSubGroup-0-7" class="nav-tertiary list-unstyled collapse">
+                  <li><a class="" href="../proposal/references/pintail-notes.html">Pintail Notes</a></li>
+                  <li><a class="" href="../proposal/references/downstream-notes.html">Downstream Integration Notes</a></li>
+              </ul>
+            </li>
       </ul>
     </li>
 </ul>
@@ -82,19 +91,23 @@
         <div class="page-header">
           <h2>Translating AsciiDoc</h2>
         </div>
-        <div class="sect1">
+        <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Today, Fedora Documentation is translated by generating <code>.pot</code>
+files from the DocBook source using <code>publican</code>.  These files are uploaded
+to Zanata.  When the translation is complete, <code>.po</code> files are downloaded
+and made available to publican to apply to the DocBook source.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="what-are-the-options"><a class="anchor" href="#what-are-the-options"></a>What are the options?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>There is no standard process for working with AsciiDoc and Zanata. Today,
 Zanata doesn&#8217;t support AsciiDoc as an input format. The only real options
 appear to be:</p>
-</div>
-<div class="paragraph">
-<p>Today, the Fedora Documentation is translated by generating <code>.pot</code>
-files from the DocBook source using <code>publican</code>.  These files are uploaded
-to Zanata.  When the translation is complete, <code>.po</code> files are downloaded
-and made available to publican to apply to the DocBook source.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">

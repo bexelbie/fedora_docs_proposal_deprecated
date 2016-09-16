@@ -60,8 +60,8 @@
       <ul id="topicGroup0" class="collapse in list-unstyled">
             <li><a class="" href="../proposal/overview.html">Overview</a></li>
             <li><a class=" active" href="../proposal/rationale.html">Why these Components?</a></li>
-            <li><a class="" href="../proposal/converting.html">Converting DocBook to AsciiDoc</a></li>
-            <li><a class="" href="../proposal/asciibinder.html">Converting Documentation Collections to AsciiBinder</a></li>
+            <li><a class="" href="../proposal/converting.html">Converting DocBook</a></li>
+            <li><a class="" href="../proposal/asciibinder.html">Converting a Repository</a></li>
             <li><a class="" href="../proposal/translation.html">Translating AsciiDoc</a></li>
             <li class="nav-header">
               <a class="" href="#" data-toggle="collapse" data-target="#topicSubGroup-0-5">
@@ -74,6 +74,15 @@
               </ul>
             </li>
             <li><a class="" href="../proposal/nextsteps.html">Next Steps</a></li>
+            <li class="nav-header">
+              <a class="" href="#" data-toggle="collapse" data-target="#topicSubGroup-0-7">
+                <span id="sgSpan-0-7" class="fa fa-caret-right"></span>&nbsp;References
+              </a>
+              <ul id="topicSubGroup-0-7" class="nav-tertiary list-unstyled collapse">
+                  <li><a class="" href="../proposal/references/pintail-notes.html">Pintail Notes</a></li>
+                  <li><a class="" href="../proposal/references/downstream-notes.html">Downstream Integration Notes</a></li>
+              </ul>
+            </li>
       </ul>
     </li>
 </ul>
@@ -82,34 +91,7 @@
         <div class="page-header">
           <h2>Why these Components</h2>
         </div>
-        <div id="preamble">
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><strong>AsciiDoc</strong>: A lightweight markup language that can be
-<a href="http://www.winglemeyer.org/technology/2016/09/08/semantic-asciidoc/">extended with
-a limited vocabulary of semantic markup</a> , as needed. It is widely
-used and <a href="http://www.methods.co.nz/asciidoc/index.html">extensively
-documented</a>.</p>
-</li>
-<li>
-<p><strong>Pagure</strong>: An open-source git forge developed on Fedora and used by the
-Fedora Community. You can find it at <a href="https://pagure.io">pagure.io</a></p>
-</li>
-<li>
-<p><strong>AsciiBinder</strong>: A documentation site builder that can build
-multiple sites and versions from a single shared documentation
-set.  <a href="http://www.asciibinder.org/">AsciiBinder</a> uses
-<a href="http://asciidoctor.org/">Asciidoctor</a> to process AsciiDoc.  It is
-used by the OpenShift and ManageIQ communities and being considered
-by Gluster.  It is heavily contributed to by Red Hat.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
+        <div class="sect1">
 <h2 id="why-asciidoc"><a class="anchor" href="#why-asciidoc"></a>Why AsciiDoc?</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -121,20 +103,14 @@ by Gluster.  It is heavily contributed to by Red Hat.</p>
 <p>was chosen at the Docs FAD to be the markup of choice. <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</sup></p>
 </li>
 <li>
-<p>has a high level of adoption in various projects.</p>
+<p>has a high level of adoption in various projects.  * has several
+implementations in several languages and is easy to
+   integrate.</p>
 </li>
 <li>
-<p>has several implementations in several languages and is easy to
-integrate.</p>
-</li>
-<li>
-<p>many major platforms have AsciiDoc support or plugins.</p>
-</li>
-<li>
-<p>a fairly friction free writing experience.</p>
-</li>
-<li>
-<p>offers semantic and non-semantic markup experiences.</p>
+<p>many major platforms have AsciiDoc support or plugins.  * a fairly
+friction free writing experience.  * offers semantic and non-semantic
+markup experiences.</p>
 </li>
 </ul>
 </div>
@@ -175,17 +151,18 @@ could be mirrored to GitHub and other forges as needed. <sup class="footnote">[<
 without delay.</p>
 </li>
 <li>
-<p>it has been adopted by several [open
-source](<a href="https://github.com/openshift/openshift-docs" class="bare">https://github.com/openshift/openshift-docs</a>)
-[projects](<a href="https://github.com/ManageIQ/manageiq_docs" class="bare">https://github.com/ManageIQ/manageiq_docs</a>)
+<p>it has been adopted by several
+<a href="https://github.com/openshift/openshift-docs">open source</a>
+<a href="https://github.com/ManageIQ/manageiq_docs">project</a>
 communities. Therefore, it is going to both have longevity and a lot of
 people looking for bugs and suggesting and implementing new features.
 Additionally, if it is ever deprecated multiple communities will be
 impacted so a new solution and migration path should be easily found.</p>
 </li>
 <li>
-<p>it has a [healthy number of
-contributors](<a href="https://github.com/redhataccess/ascii_binder/graphs/contributors" class="bare">https://github.com/redhataccess/ascii_binder/graphs/contributors</a>).</p>
+<p>it has a
+<a href="https://github.com/redhataccess/ascii_binder/graphs/contributors)">healthy
+number of contributors</a>.</p>
 </li>
 <li>
 <p>it is a pure AsciiDoc toolchain with no conversions or other processing
@@ -198,7 +175,7 @@ contributors](<a href="https://github.com/redhataccess/ascii_binder/graphs/contr
 <div id="footnotes">
 <hr>
 <div class="footnote" id="_footnote_1">
-<a href="#_footnoteref_1">1</a>. It has recently been brought to my attention that some attendees of the FAD understood that the goal was to develop a toolchain that could accept any markup.  None of the four people who I spoke to who attended the FAD conveyed this impression to me.
+<a href="#_footnoteref_1">1</a>. It has recently been brought to my attention that some attendees of the FAD understood that the goal was to develop a toolchain that could accept any markup.  None of the four people who I spoke to who attended the FAD conveyed this impression to me.  This kind of a tool is a "holy grail" which has never really been built.  Additionally, I don&#8217;t believe we should be concerned with accepting any markup until someone shows up with a sizeable quanity of contributed material.
 </div>
 <div class="footnote" id="_footnote_2">
 <a href="#_footnoteref_2">2</a>. See the GSoC work done for CentOS docs in the Summer of 2015.

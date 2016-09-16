@@ -60,8 +60,8 @@
       <ul id="topicGroup0" class="collapse in list-unstyled">
             <li><a class=" active" href="../proposal/overview.html">Overview</a></li>
             <li><a class="" href="../proposal/rationale.html">Why these Components?</a></li>
-            <li><a class="" href="../proposal/converting.html">Converting DocBook to AsciiDoc</a></li>
-            <li><a class="" href="../proposal/asciibinder.html">Converting Documentation Collections to AsciiBinder</a></li>
+            <li><a class="" href="../proposal/converting.html">Converting DocBook</a></li>
+            <li><a class="" href="../proposal/asciibinder.html">Converting a Repository</a></li>
             <li><a class="" href="../proposal/translation.html">Translating AsciiDoc</a></li>
             <li class="nav-header">
               <a class="" href="#" data-toggle="collapse" data-target="#topicSubGroup-0-5">
@@ -74,6 +74,15 @@
               </ul>
             </li>
             <li><a class="" href="../proposal/nextsteps.html">Next Steps</a></li>
+            <li class="nav-header">
+              <a class="" href="#" data-toggle="collapse" data-target="#topicSubGroup-0-7">
+                <span id="sgSpan-0-7" class="fa fa-caret-right"></span>&nbsp;References
+              </a>
+              <ul id="topicSubGroup-0-7" class="nav-tertiary list-unstyled collapse">
+                  <li><a class="" href="../proposal/references/pintail-notes.html">Pintail Notes</a></li>
+                  <li><a class="" href="../proposal/references/downstream-notes.html">Downstream Integration Notes</a></li>
+              </ul>
+            </li>
       </ul>
     </li>
 </ul>
@@ -98,29 +107,30 @@ the following sections.</p>
 <p>Overview</p>
 </li>
 <li>
-<p><a href="rationale.adoc">Why these Components?</a></p>
+<p><a href="rationale.html">Why these Components?</a></p>
 </li>
 <li>
-<p><a href="converting.adoc">Converting DocBook to AsciiDoc</a></p>
+<p><a href="converting.html">Converting DocBook to AsciiDoc</a></p>
 </li>
 <li>
-<p><a href="asciibinder.adoc">Converting Documentation Collections to AsciiBinder</a></p>
+<p><a href="asciibinder.html">Converting Documentation Collections to AsciiBinder</a></p>
 </li>
 <li>
-<p><a href="translation.adoc">Translating AsciiDoc</a></p>
+<p><a href="translation.html">Translating AsciiDoc</a></p>
 </li>
 <li>
-<p><a href="demo.adoc">Demonstration Script and Information</a></p>
+<p><a href="demo.html">Demonstration Script and Information</a></p>
 </li>
 <li>
-<p><a href="nextsteps.adoc">Next Steps</a></p>
+<p><a href="nextsteps.html">Next Steps</a></p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
 <p>TL;DR: The Fedora Docs Fad selected a toolchain of AsciiDoc+Pagure+Pintail
 but it hasn&#8217;t been implemented. I think we can get to our goals
-faster if we replace pintail <sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnote_2" title="View footnote.">2</a>]</sup> with AsciiBinder.</p>
+faster if we replace pintail <sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnote_2" title="View footnote.">2</a>]</sup> with
+AsciiBinder. A full proof of concept and plan of work has been developed.</p>
 </div>
 </div>
 </div>
@@ -144,14 +154,14 @@ to make the contributions they envisioned.  It happens.</p>
 <p>Just before Flock this year, I began adding my efforts to making the
 proposed toolchain a reality.  The selected components are all great
 pieces of technology, but some of them still need non-trivial work.
-This work is ongoing, but not complete.</p>
+This work is ongoing and not complete.</p>
 </div>
 <div class="paragraph">
 <p>I am not aware of any project plan with a timeline for completion and
-current status reporting.  My assessment is that we might be finished by
-Fedora 26, but I am not confident.  This assessment also means that we
-will continue to be relying on DocBook and may not be fully converted to
-AsciiDoc until at least Fedora 27.  Again, this is my estimate/gut feel.</p>
+current status reporting.  My assessment is that we are unlikely to be
+finished by Fedora 26.  This means that we will continue to be relying
+on DocBook and could not be fully converted to AsciiDoc until at least
+the release after completion of the tooling.</p>
 </div>
 </div>
 </div>
@@ -160,10 +170,10 @@ AsciiDoc until at least Fedora 27.  Again, this is my estimate/gut feel.</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Documentation toolchains are challenging for a lot of reasons.  One of
-the biggest challenges is that like many technology problems it looks
-far more simple to solve than it really is.  If you&#8217;re still reading,
-and think I am just "not getting it," consider how the mental solution
-you just mapped out would solve:</p>
+the biggest challenges is that, like many technology problems, this
+problem looks far more simple to solve than it really is.  If you&#8217;re
+still reading, and think I am just "not getting it," consider how the
+mental solution you just mapped out would solve:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -293,11 +303,12 @@ Fedora Community. You can find it at <a href="https://pagure.io">pagure.io</a></
 </li>
 <li>
 <p><strong>AsciiBinder</strong>: A documentation site builder that can build
-multiple sites and versions from a single shared documentation
-set.  <a href="http://www.asciibinder.org/">AsciiBinder</a> uses
-<a href="http://asciidoctor.org/">Asciidoctor</a> to process AsciiDoc.  It is
-used by the OpenShift and ManageIQ communities and being considered
-by Gluster.  It is heavily contributed to by Red Hat.</p>
+multiple sites and versions from a single shared
+documentation set.  <a href="http://www.asciibinder.org/">AsciiBinder</a> uses
+<a href="http://asciidoctor.org/">Asciidoctor</a> to process AsciiDoc.  It is used
+by the OpenShift and ManageIQ communities and is being considered by
+Gluster for their AsciiDoc implementation.  It is heavily contributed
+to by Red Hat.</p>
 </li>
 </ul>
 </div>
@@ -316,17 +327,18 @@ by Gluster.  It is heavily contributed to by Red Hat.</p>
 without delay.</p>
 </li>
 <li>
-<p>it has been adopted by several [open
-source](<a href="https://github.com/openshift/openshift-docs" class="bare">https://github.com/openshift/openshift-docs</a>)
-[projects](<a href="https://github.com/ManageIQ/manageiq_docs" class="bare">https://github.com/ManageIQ/manageiq_docs</a>)
+<p>it has been adopted by several
+<a href="https://github.com/openshift/openshift-docs">open source</a>
+<a href="https://github.com/ManageIQ/manageiq_docs">project</a>
 communities. Therefore, it is going to both have longevity and a lot of
 people looking for bugs and suggesting and implementing new features.
 Additionally, if it is ever deprecated multiple communities will be
 impacted so a new solution and migration path should be easily found.</p>
 </li>
 <li>
-<p>it has a [healthy number of
-contributors](<a href="https://github.com/redhataccess/ascii_binder/graphs/contributors" class="bare">https://github.com/redhataccess/ascii_binder/graphs/contributors</a>).</p>
+<p>it has a
+<a href="https://github.com/redhataccess/ascii_binder/graphs/contributors">healthy
+number of contributors</a>.</p>
 </li>
 <li>
 <p>it is a pure AsciiDoc toolchain with no conversions or other processing
@@ -379,8 +391,133 @@ website.</p>
 <p>This process is focused on reducing the amount of pre-processing,
 massaging, modifications, and special cases to zero with the goal of
 getting as close to a pure AsciiBinder implementation as possible.
-Therefore the builder, for example, does not modify content in any way
-other than applying translations and doesn&#8217;t change the file structure.</p>
+Therefore the builder, for example, does not modify content in
+any way other than is required for site building or applying
+translations. Specifically, it does note change the file structure.</p>
+</div>
+<div class="paragraph">
+<p>A sample of the proposed output
+<a href="http://www.winglemeyer.org/fedora_docs_proposal/sample/">is available</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="risks"><a class="anchor" href="#risks"></a>Risks</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>It isn&#8217;t all rainbows and unicorns though, there are a few challenges:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>`po4a&#8217;s AsciiDoc support is not perfect and needs some code updates to
+handle all components of the current AsciiDoc standard.</p>
+</li>
+<li>
+<p>AsciiBinder has some opinions that differ from how Fedora works.</p>
+</li>
+<li>
+<p>So far, the upstream of AsciiBinder has been open to conversation,
+but they are unashamedly opinionated.  AsciiBinder came out of OpenShift
+to solve their documentation tooling problems, specifically the need
+to produce three different websites for three related, but slightly
+different versions of OpenShift from a single shared content repository.</p>
+</li>
+<li>
+<p>Specific Challenges Are:</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Single Repository Mindset in AsciiBinder</p>
+<div class="paragraph">
+<p>AsciiBinder is written from a multi-site multi-version
+but single repository mindset. There is an open
+<a href="https://github.com/redhataccess/ascii_binder/issues/54">issue</a> discussing
+what to do with multi-repository documentation sets.  In the interim,
+I have developed a script for building out an AsciiBinder formatted
+repository from multiple repositories.</p>
+</div>
+</li>
+<li>
+<p>Language Translation Support in AsciiBinder</p>
+<div class="paragraph">
+<p>AsciiBinder has not considered the language translation question at
+all, as far as I can tell. In the interim, the script mentioned above
+implements a solution.</p>
+</div>
+</li>
+<li>
+<p>AsciiDoc only support</p>
+<div class="paragraph">
+<p>Because AsciiBinder only supports AsciiDoc, we need to quickly convert
+DocBook content.</p>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="future-proofing-concerns"><a class="anchor" href="#future-proofing-concerns"></a>Future Proofing Concerns</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="asciidoc"><a class="anchor" href="#asciidoc"></a>AsciiDoc</h3>
+<div class="paragraph">
+<p>While AsciiDoc enjoys a high level of adoption future mark up changes
+could occur.  A method of protecting ourselves without violating
+YAGNI <sup class="footnote">[<a id="_footnoteref_5" class="footnote" href="#_footnote_5" title="View footnote.">5</a>]</sup>  is to refrain from violating the standards of
+AsciiDoc in any way <sup class="footnote">[<a id="_footnoteref_6" class="footnote" href="#_footnote_6" title="View footnote.">6</a>]</sup>.  This way
+we should have a clean migration path via tools that would arise in the
+case of a mass abandonment of AsciiDoc.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="pagure"><a class="anchor" href="#pagure"></a>Pagure</h3>
+<div class="paragraph">
+<p>Pagure is a standard git forge, as far as I know.  Therefore replacing
+it with another git forge should not be a problem in the future.  As the
+current migration away from <code>fedorahosted</code> shows, relying on Pagure for
+issues should not cause us problems.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="asciibinder"><a class="anchor" href="#asciibinder"></a>AsciiBinder</h3>
+<div class="paragraph">
+<p>AsciiBinder is a site builder that leverages the power of git and
+Asciidoctor to produce a full site.  It is based on standardized ruby
+templating and uses CSS and JavaScript to produce the final static site.</p>
+</div>
+<div class="paragraph">
+<p>Because AsciiBinder has been adopted by several major upstream projects
+which are backed by Red Hat, I believe a wholesale abandonment of the
+tooling is unlikely.  While we have relied on Red Hat maintained tooling
+before and had challenges, <code>publican</code> was not widely adopted.  The level
+of adoption leads me to believe that a path forward will always exist.</p>
+</div>
+<div class="paragraph">
+<p>That said, because AsciiBinder is just a site builder, as long as we
+maintain compatibility with AsciiDoc, we shouldn&#8217;t have a problem moving
+to a new toolchain.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="po4a"><a class="anchor" href="#po4a"></a>po4a</h3>
+<div class="paragraph">
+<p>The <code>.pot/.po</code> tool, <code>po4a</code>, has a long history as an open source project.
+Its community has varied in size and activity over the 14+ years it has
+been around, but it has never been abandoned.  Fedora also has a packager
+maintaining it.</p>
+</div>
+<div class="paragraph">
+<p>There is no commonly accepted and standardized way of translating AsciiDoc
+with a tool like Zanata.  I believe this problem will only continue to
+become more and more acute until it is solved.  While this creates risk
+for the future and there is no path forward that seems obvious, it also
+creates opportunity for Fedora to lead the way in solving a problem.</p>
+</div>
 </div>
 </div>
 </div>
@@ -416,7 +553,7 @@ knowledge.  They refer to other topics for pre-requisite information.</p>
 <strong>documentation set</strong>
 </td>
 <td class="hdlist2">
-<p>The set it books and documentation collections
+<p>The set of books and documentation collections
 that comprise all of the documentation for a Project.</p>
 </td>
 </tr>
@@ -430,13 +567,19 @@ that comprise all of the documentation for a Project.</p>
 <a href="#_footnoteref_1">1</a>. <a href="https://github.com/bexelbie/fedora_docs_proposal" class="bare">https://github.com/bexelbie/fedora_docs_proposal</a>
 </div>
 <div class="footnote" id="_footnote_2">
-<a href="#_footnoteref_2">2</a>. If you&#8217;re not familiar with <a href="https://github.com/projectmallard/pintail/">pintail</a>, it is a mallard site generator that can also do conversions from <a href="https://github.com/projectmallard/pintail-asciidoc">AsciiDoc</a> and DocBook to XML for processing.  It uses CSS and XSL to build sites.  It is being considered for adoption by the Gnome Community.
+<a href="#_footnoteref_2">2</a>. If you&#8217;re not familiar with <a href="https://github.com/projectmallard/pintail/">pintail</a>, it is a mallard site generator that can also do conversions from <a href="https://github.com/projectmallard/pintail-asciidoc">AsciiDoc</a> and DocBook to XML for processing.  It uses CSS and XSL to build sites. It is being considered for adoption by the Gnome Community.
 </div>
 <div class="footnote" id="_footnote_3">
 <a href="#_footnoteref_3">3</a>. If you&#8217;ve not read <a href="https://en.wikipedia.org/wiki/A_Modest_Proposal">A Modest Proposal for Preventing the Children of Poor People From Being a Burthen to Their Parents or Country, and for Making Them Beneficial to the Publick</a> do so.
 </div>
 <div class="footnote" id="_footnote_4">
-<a href="#_footnoteref_4">4</a>. Pintail converts AsciiDoc, and I believe DocBook, to an intermediate XML form of Mallard before processing documentation into a site.
+<a href="#_footnoteref_4">4</a>. Pintail converts AsciiDoc, and I believe DocBook, to an intermediate XML form of Mallard before processing documentation into a site.  I feel very strongly that tools should do as little automated conversion as possible.  While most of the time nothing bad happens, when it does go sideways debugging is painful when multiple layers of conversions and intermediate formats are involved.
+</div>
+<div class="footnote" id="_footnote_5">
+<a href="#_footnoteref_5">5</a>. You Ain&#8217;t Gonna Need It.  A principal that says don&#8217;t solve problems that might happen, stick to solving problems that are happening.
+</div>
+<div class="footnote" id="_footnote_6">
+<a href="#_footnoteref_6">6</a>. I&#8217;ve written a bit about this in the <a href="references/downstream-notes.html">downstream notes</a>.
 </div>
 </div>
       </div>

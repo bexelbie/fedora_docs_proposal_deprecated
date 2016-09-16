@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Fedora Docs Toolchain Proposal Latest | Proposal | References | Downstream Integration Notes</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <link href="../../../latest/_stylesheets/asciibinder.css" rel="stylesheet" />
+
+   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+   <!--[if lt IE 9]>
+     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+   <![endif]-->
+
+   <!-- <link href="../../../latest/_images/favicon32x32.png" rel="shortcut icon" type="text/css"> -->
+  <!--[if IE]><link rel="shortcut icon" href="../../../latest/_images/favicon.ico"><![endif]-->
+  <meta content="AsciiBinder" name="application-name">
+</head>
+<body>
+  <div class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="http://www.winglemeyer.org/"><img alt="winglemeyer.org" src="../../../latest/_images/winglemeyer.org-logo.png"></a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <p class="toggle-nav visible-xs pull-left">
+      <button class="btn btn-default btn-sm" type="button" data-toggle="offcanvas">Toggle nav</button>
+    </p>
+    <ol class="breadcrumb">
+      <li class="sitename">
+        <a href="../../../index.html">even the horse knew</a>
+      </li>
+      <li class="hidden-xs active">
+        <a href="../../proposal/overview.html">Fedora Docs Toolchain Proposal Latest</a>
+      </li>
+      <li class="hidden-xs active">
+        <a href="../../proposal/overview.html">Proposal</a>
+      </li>
+      <li class="hidden-xs active"><a href="../../proposal/references/pintail-notes.html">References</a></li>
+      <li class="hidden-xs active">
+        Downstream Integration Notes
+      </li>
+    </ol>
+    <div class="row row-offcanvas row-offcanvas-left">
+      <div class="col-xs-8 col-sm-3 col-md-3 sidebar sidebar-offcanvas">
+        <ul class="nav nav-sidebar">
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup0">
+        <span id="tgSpan0" class="fa fa-angle-down"></span>Proposal
+      </a>
+      <ul id="topicGroup0" class="collapse in list-unstyled">
+            <li><a class="" href="../../proposal/overview.html">Overview</a></li>
+            <li><a class="" href="../../proposal/rationale.html">Why these Components?</a></li>
+            <li><a class="" href="../../proposal/converting.html">Converting DocBook</a></li>
+            <li><a class="" href="../../proposal/asciibinder.html">Converting a Repository</a></li>
+            <li><a class="" href="../../proposal/translation.html">Translating AsciiDoc</a></li>
+            <li class="nav-header">
+              <a class="" href="#" data-toggle="collapse" data-target="#topicSubGroup-0-5">
+                <span id="sgSpan-0-5" class="fa fa-caret-right"></span>&nbsp;Proof of Concept (POC)
+              </a>
+              <ul id="topicSubGroup-0-5" class="nav-tertiary list-unstyled collapse">
+                  <li><a class="" href="../../proposal/poc/install.html">Pre-Requisites</a></li>
+                  <li><a class="" href="../../proposal/poc/single-repo.html">Build one Book or Documentation Collection</a></li>
+                  <li><a class="" href="../../proposal/poc/multi-repo.html">Build the Entire Site</a></li>
+              </ul>
+            </li>
+            <li><a class="" href="../../proposal/nextsteps.html">Next Steps</a></li>
+            <li class="nav-header">
+              <a class="" href="#" data-toggle="collapse" data-target="#topicSubGroup-0-7">
+                <span id="sgSpan-0-7" class="fa fa-caret-down"></span>&nbsp;References
+              </a>
+              <ul id="topicSubGroup-0-7" class="nav-tertiary list-unstyled collapse in">
+                  <li><a class="" href="../../proposal/references/pintail-notes.html">Pintail Notes</a></li>
+                  <li><a class=" active" href="../../proposal/references/downstream-notes.html">Downstream Integration Notes</a></li>
+              </ul>
+            </li>
+      </ul>
+    </li>
+</ul>
+      </div>
+      <div class="col-xs-12 col-sm-9 col-md-9 main">
+        <div class="page-header">
+          <h2>Downstream Notes</h2>
+        </div>
+        <div class="sect1">
+<h2 id="consuming-asciibinder-repositories"><a class="anchor" href="#consuming-asciibinder-repositories"></a>Consuming AsciiBinder Repositories</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When downstream contributors wish to consume the documentation for
+publishing or private patches/publishing there are several considerations
+that should be paid.</p>
+</div>
+<div class="paragraph">
+<p>Note: I have written this document while thinking about a specific
+downstream contributors tooling.  This may not work in all situations.</p>
+</div>
+<div class="sect2">
+<h3 id="includes"><a class="anchor" href="#includes"></a>includes</h3>
+<div class="paragraph">
+<p>When one AsciiDoc file is included inside of another using an
+<code>include::file.adoc[]</code> style directive, file resolution can be a problem
+with other tools.</p>
+</div>
+<div class="paragraph">
+<p>This happens because AsciiBinder&#8217;s opinionation causes it to believe
+that all included files should be referenced with full paths relative
+to the root directory of the repository.</p>
+</div>
+<div class="paragraph">
+<p>For comparison, consider this file tree and a desire to include <code>b.adoc</code>
+inside of <code>a.adoc</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>.
+└── title1
+    ├── a.adoc
+    └── b.adoc</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When processing the file <code>a.adoc</code> with most AsciiDoc tools, for example,
+<code>asciidoctor</code>, the include statement in <code>a.adoc</code> would be written
+as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>include::b.adoc[]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>However, because of AsciiBinder&#8217;s opinionation, when using AsciiBinder, the include directive would be written as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>include::title1/b.adoc[]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This second form will break many other AsciiDoc processors.</p>
+</div>
+<div class="paragraph">
+<p>Two, untested, remediation solutions are:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Develop a pre-processor script which will correct these issues.
+A possible solution would be:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>TITLES="title1
+title2
+...
+titleN"
+
+for title in $TITLES; do
+    cd $title
+    sed -ie 's/include::$title\//include::/g`
+    cd ..
+done</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>In the particular case of this consumer, they process the AsciiDoc
+into a single file for further consumption by their toolchain.
+In order to do this, they have a file, <code>master.adoc</code> which includes
+all of the content.</p>
+<div class="paragraph">
+<p>They should be able to place the content from the AsciiBinder Repository
+in a subdirectory of the <code>master.adoc</code> and still have it complete
+correctly.  For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>.
+├── master.adoc
+└── title1
+    ├── a.adoc
+    └── b.adoc</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>I believe that most AsciiDoc tools follow a three step file resolution
+ruleset:</p>
+</div>
+</li>
+<li>
+<p>If the include is a full path, use the path.</p>
+</li>
+<li>
+<p>Look in the current directory</p>
+</li>
+<li>
+<p>Look in the directory from which the tool was run</p>
+<div class="paragraph">
+<p>This third rule should allow for proper file inclusion.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="images"><a class="anchor" href="#images"></a>images</h3>
+<div class="paragraph">
+<p>AsciiBinder&#8217;s opinionation about images is two fold:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Images must be in a directory called <code>images</code> located in the same
+directory as the including file.</p>
+</li>
+<li>
+<p>Images are referred to without any reference to the <code>images</code> directory
+in their path.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>This tree represents what an AsciiBinder repository looks like if the
+files <code>foo.png</code> and <code>bar.png</code> are used in the files <code>a.adoc</code> and <code>b.adoc</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>.
+└── title1
+    ├── a.adoc
+    ├── b.adoc
+    └── images
+        ├── bar.png
+        └── foo.png</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The image macro would be written as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>image::foo.png[alt text]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This will break many other AsciiDoc processors for similar reasons as
+with includes, above.</p>
+</div>
+<div class="paragraph">
+<p>Two, untested, solutions are:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Rewrite the image macros</p>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>sed -ie 's/image::/image::images\//g'</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Put images into the same directory as the AsciiDoc files like this:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>.
+└── title1
+    ├── a.adoc
+    ├── b.adoc
+    ├── bar.png
+    └── foo.png</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ifdef-globbing"><a class="anchor" href="#ifdef-globbing"></a>ifdef globbing</h3>
+<div class="paragraph">
+<p>This is the area I have studied the least.</p>
+</div>
+<div class="paragraph">
+<p>It has been reported to me that AsciiBinder allows <code>ifdef</code> evaluations
+to use globbing for attribute evaluation.</p>
+</div>
+<div class="paragraph">
+<p>For example, if you wish to conditionally include some text if either
+<code>attribute1</code> or <code>attribute2</code> is true, you would normally write this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>ifdef::attribute1,attribute2[conditionally included text]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Apparently, AsciiBinder supports, but does not require the use of
+this syntax:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>ifdef::attribute*[conditionally included text]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>One solution would be to work with upstreams to discourage the use of
+this syntax.</p>
+</div>
+<div class="paragraph">
+<p>Alternately, it should be possible to develop a script that will process
+these back into proper AsciiDoc, however, I do not have a code sample.
+Algorithmically it seems you would need to:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Scan the AsciiDoc files for attribute declarations and store all of
+the attribute names.</p>
+</li>
+<li>
+<p>Scan the AsciiDoc files for <code>ifdef[^[]<strong>\</strong></code> and then expand the the
+glob with your attribute list.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>This looks very fragile because you could accidentally expand the globbing
+for conditions it should never have checked for.  This, however, is the
+exact reason why this use of globbing is a bad idea and should be avoided.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="what-else"><a class="anchor" href="#what-else"></a>What else?</h3>
+<div class="paragraph">
+<p>I don&#8217;t know.</p>
+</div>
+</div>
+</div>
+</div>
+      </div>
+    </div>
+  </div>
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+   <!-- Latest compiled and minified JavaScript -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+   <script type="text/javascript">
+    /*<![CDATA[*/
+    $(document).ready(function() {
+      $("[id^='topicGroup']").on('show.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicGroup']").on('hide.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicSubGroup']").on('show.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+      $("[id^='topicSubGroup']").on('hide.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+    });
+    /*]]>*/
+  </script>
+</body>
+</html>

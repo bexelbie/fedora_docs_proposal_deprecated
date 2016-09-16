@@ -60,8 +60,8 @@
       <ul id="topicGroup0" class="collapse in list-unstyled">
             <li><a class="" href="../../proposal/overview.html">Overview</a></li>
             <li><a class="" href="../../proposal/rationale.html">Why these Components?</a></li>
-            <li><a class="" href="../../proposal/converting.html">Converting DocBook to AsciiDoc</a></li>
-            <li><a class="" href="../../proposal/asciibinder.html">Converting Documentation Collections to AsciiBinder</a></li>
+            <li><a class="" href="../../proposal/converting.html">Converting DocBook</a></li>
+            <li><a class="" href="../../proposal/asciibinder.html">Converting a Repository</a></li>
             <li><a class="" href="../../proposal/translation.html">Translating AsciiDoc</a></li>
             <li class="nav-header">
               <a class="" href="#" data-toggle="collapse" data-target="#topicSubGroup-0-5">
@@ -74,6 +74,15 @@
               </ul>
             </li>
             <li><a class="" href="../../proposal/nextsteps.html">Next Steps</a></li>
+            <li class="nav-header">
+              <a class="" href="#" data-toggle="collapse" data-target="#topicSubGroup-0-7">
+                <span id="sgSpan-0-7" class="fa fa-caret-right"></span>&nbsp;References
+              </a>
+              <ul id="topicSubGroup-0-7" class="nav-tertiary list-unstyled collapse">
+                  <li><a class="" href="../../proposal/references/pintail-notes.html">Pintail Notes</a></li>
+                  <li><a class="" href="../../proposal/references/downstream-notes.html">Downstream Integration Notes</a></li>
+              </ul>
+            </li>
       </ul>
     </li>
 </ul>
@@ -237,17 +246,17 @@ Fedora 24, and Fedora 23.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">master-adoc-fr</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Japanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Japanese</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">23</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">f23-adoc-ja</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Japanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Japanese</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">24</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">f24-adoc-ja</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Japanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Japanese</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Rawhide</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">master-adoc-ja</p></td>
 </tr>
@@ -268,66 +277,68 @@ version of the common content.</p>
 <p>Build the en-US branches first</p>
 </li>
 <li>
-<p>Create an en-US branch named "&lt;version&gt;-en-US" (44)</p>
+<p>Create a base version branches (38-42)</p>
 </li>
 <li>
-<p>Add each book into the <code>_git</code> directory (46-50)</p>
+<p>Create an en-US branch named "&lt;version&gt;-en-US" (50)</p>
+</li>
+<li>
+<p>Add each book into the <code>_git</code> directory (53-56)</p>
 </li>
 <li>
 <p>Create the content directories for AsciiBinder by linking in the
-<code>en-US</code> dir from each book. (55-56)</p>
+<code>en-US</code> dir from each book. (59-62)</p>
 </li>
 <li>
-<p>Extend the <code>_topic_map.yml</code> with the topics from each book. (58-62)</p>
+<p>Extend the <code>_topic_map.yml</code> with the topics from each book. (64-68)</p>
 </li>
 <li>
-<p>Clean up includes (really needed later for other languages) (65)</p>
+<p>Clean up includes (really needed later for other languages) (71)</p>
 </li>
 <li>
-<p>Commit this to the language branch (68-69)</p>
+<p>Commit this to the language branch (74-75)</p>
 </li>
 <li>
 <p>Build out the languages</p>
 </li>
 <li>
-<p>Create a language branch (77-82)</p>
+<p>Create a language branch (81-88)</p>
 </li>
 <li>
-<p>Add each book for that language into the <code>_git</code> directory (85-88)</p>
+<p>Add each book for that language into the <code>_git</code> directory (90-94)</p>
 </li>
 <li>
 <p>Link in the content, but change the name of the link to match the
-language. (94)</p>
+language. (100)</p>
 </li>
 <li>
 <p>Extend the <code>_topic_map.yml</code> with the topics from each book, updating
-the directory name. (96-100)</p>
+the directory name. (102-106)</p>
 </li>
 <li>
-<p>Update include links with the new direction name. (103)</p>
+<p>Update include links with the new direction name. (109)</p>
 </li>
 <li>
-<p>Pull the <code>.po</code> files from Zanata. <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</sup> Store
-them in the <code>pot</code> directory. (106)</p>
+<p>Pull the <code>.po</code> files from Zanata. <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</sup> Store them in the <code>pot</code> directory. (106)</p>
 </li>
 <li>
 <p>Apply the translations and update the source files using <code>po4a</code>
-(108-115)</p>
+(114-121)</p>
 </li>
 <li>
-<p>Commit this to the language branch (117-120)</p>
+<p>Commit this to the language branch (123-126)</p>
 </li>
 <li>
-<p>Build out the <code>_distro_map.yml</code> (127-137)</p>
+<p>Build out the <code>_distro_map.yml</code> (133-146)</p>
 <div class="paragraph">
 <p>This allows AsciiBinder to know about all of the "version-language" branches.</p>
 </div>
 </li>
 <li>
-<p>Make a final commit (141-142)</p>
+<p>Make a final commit (1448-150</p>
 </li>
 <li>
-<p>Build the site (145)</p>
+<p>Build the site (152-153)</p>
 </li>
 </ol>
 </div>
@@ -368,119 +379,127 @@ them in the <code>pot</code> directory. (106)</p>
  30
  31	DATE=`date`
  32
- 33	# Set up Common Content
+ 33	# Set up base version branches
  34	for branch in $BRANCHES; do
- 35	    git subtree add --prefix _Common_Content https://pagure.io/docs-common-content.git master-adoc --squash
+ 35	    git checkout -b $branch
  36	done
  37
- 38	# First build out en-US
- 39	for lang in "en-US"; do
- 40	    for branch in $BRANCHES; do
- 41	        langbranch=$branch-$lang
- 42
- 43	        git checkout $branch
- 44	        git checkout -b $langbranch
- 45
- 46	        # Get books
- 47	        for book in $BOOKS; do
- 48	            # Book Source into _git
- 49	            git subtree add --prefix _git/$book https://pagure.io/$book.git $branch --squash
- 50	        done
+ 38	# Set up Common Content
+ 39	for branch in $BRANCHES; do
+ 40	    git checkout $branch
+ 41	    git subtree add --prefix _Common_Content https://pagure.io/docs-common-content.git master-adoc --squash
+ 42	done
+ 43
+ 44	# First build out en-US
+ 45	for lang in "en-US"; do
+ 46	    for branch in $BRANCHES; do
+ 47	        langbranch=$branch-$lang
+ 48
+ 49	        git checkout $branch
+ 50	        git checkout -b $langbranch
  51
- 52	        # Preprocess the books (this ordering prevents having to have a commit in every pass)
+ 52	        # Get books
  53	        for book in $BOOKS; do
- 54	            # Link in the baselang to the root directory
- 55	            dir=`echo $book | sed -e 's/bex-//'` # Temporary because using my repos
- 56	            ln -s _git/$book/en-US $dir
+ 54	            # Book Source into _git
+ 55	            git subtree add --prefix _git/$book https://pagure.io/$book.git $branch --squash
+ 56	        done
  57
- 58	            # Update the _topic_map.yml
- 59	            cp _git/$book/_topic_map.yml temp_topic_map.yml
- 60	            sed -i -e "s/^Dir: en-US/Dir: $dir/" temp_topic_map.yml
- 61	            cat temp_topic_map.yml &gt;&gt; _topic_map.yml
- 62	            rm temp_topic_map.yml
+ 58	        # Preprocess the books (this ordering prevents having to have a commit in every pass)
+ 59	        for book in $BOOKS; do
+ 60	            # Link in the baselang to the root directory
+ 61	            dir=`echo $book | sed -e 's/bex-//'` # Temporary because using my repos
+ 62	            ln -s _git/$book/en-US $dir
  63
- 64	            # Update include links in the books (find -L follows symlinks)
- 65	            find -L $dir -iname *.adoc  | xargs -I FILE sed -i -e "s/include::en-US/include::$dir/  " FILE
- 66
- 67	            # Commit it all baby
- 68	            git add .
- 69	            git commit -m "Build on $DATE"
- 70	        done
- 71	    done
- 72	done
- 73
- 74	# Now try the languages
- 75	for lang in $LANGS; do
- 76	    for branch in $BRANCHES; do
- 77	        langbranch=$branch-$lang
- 78	        langbooksvar=$lang\_BOOKS
- 79	        langbooks=${!langbooksvar}
- 80
- 81	        git checkout $branch
- 82	        git checkout -b $langbranch
- 83
- 84	        # Get books
- 85	        for book in $langbooks; do
- 86	            # Book Source into _git
- 87	            git subtree add --prefix _git/$book https://pagure.io/$book.git $branch --squash
- 88	        done
+ 64	            # Update the _topic_map.yml
+ 65	            cp _git/$book/_topic_map.yml temp_topic_map.yml
+ 66	            sed -i -e "s/^Dir: en-US/Dir: $dir/" temp_topic_map.yml
+ 67	            cat temp_topic_map.yml &gt;&gt; _topic_map.yml
+ 68	            rm temp_topic_map.yml
+ 69
+ 70	            # Update include links in the books (find -L follows symlinks)
+ 71	            find -L $dir -iname *.adoc  | xargs -I FILE sed -i -e "s/include::en-US/include::$dir/  " FILE
+ 72
+ 73	            # Commit it all baby
+ 74	            git add .
+ 75	            git commit -m "Build on $DATE"
+ 76	        done
+ 77	    done
+ 78	done
+ 79
+ 80	# Now try the languages
+ 81	for lang in $LANGS; do
+ 82	    for branch in $BRANCHES; do
+ 83	        langbranch=$branch-$lang
+ 84	        langbooksvar=$lang\_BOOKS
+ 85	        langbooks=${!langbooksvar}
+ 86
+ 87	        git checkout $branch
+ 88	        git checkout -b $langbranch
  89
- 90	        # Preprocess the books (this ordering prevents having to have a commit in every pass)
+ 90	        # Get books
  91	        for book in $langbooks; do
- 92	            # Link in the baselang to the root directory
- 93	            dir=`echo $book | sed -e 's/bex-//'` # Temporary because using my repos
- 94	            ln -s _git/$book/en-US $dir
+ 92	            # Book Source into _git
+ 93	            git subtree add --prefix _git/$book https://pagure.io/$book.git $branch --squash
+ 94	        done
  95
- 96	            # Update the _topic_map.yml
- 97	            cp _git/$book/_topic_map.yml temp_topic_map.yml
- 98	            sed -i -e "s/^Dir: en-US/Dir: $dir/" temp_topic_map.yml
- 99	            cat temp_topic_map.yml &gt;&gt; _topic_map.yml
-100	            rm temp_topic_map.yml
+ 96	        # Preprocess the books (this ordering prevents having to have a commit in every pass)
+ 97	        for book in $langbooks; do
+ 98	            # Link in the baselang to the root directory
+ 99	            dir=`echo $book | sed -e 's/bex-//'` # Temporary because using my repos
+100	            ln -s _git/$book/en-US $dir
 101
-102	            # Update include links in the books (find -L follows symlinks)
-103	            find -L $dir -iname *.adoc  | xargs -I FILE sed -i -e "s/include::en-US/include::$dir/  " FILE
-104
-105	            # Pull the .pot files
-106	            zanata pull --url $zanataurl --project-id $zanataproject --project-version $dir --lang $lang --transdir pot/ --project-type podir
+102	            # Update the _topic_map.yml
+103	            cp _git/$book/_topic_map.yml temp_topic_map.yml
+104	            sed -i -e "s/^Dir: en-US/Dir: $dir/" temp_topic_map.yml
+105	            cat temp_topic_map.yml &gt;&gt; _topic_map.yml
+106	            rm temp_topic_map.yml
 107
-108	            # Apply the translations
-109	            # Right now this accepts all percentages of translation
-110	            # -L makes find follow symlinks
-111
-112	            for file in $( find -L $dir -name "*.adoc" ); do
-113	                basename=`basename -s .adoc $file`
-114	                po4a-translate -f asciidoc -m $file -l $file -p pot/$lang/$basename.po -M UTF-8 -k 0
-115	            done
-116
-117	            # Commit it all baby
-118	            date=`date`
-119	            git add .
-120	            git commit -m "Build on $date"
-121	        done
-122	    done
-123	done
-124
-125	git checkout master-adoc
-126
-127	# Build out _distro_map.yml
-128	for lang in $LANGS; do
-129	    # Entries in _distro_map.yml
-130	    cp _distro_map.yml temp_distro_map.yml
-131	    sed -i -e "s/en-US/$lang/g" temp_distro_map.yml
-132	    sed -i -e "s/^--*$//" temp_distro_map.yml
-133	    cat temp_distro_map.yml &gt;&gt; _distro_map.yml
-134	    rm temp_distro_map.yml
-135
-136	    # index page
-137	    cp index-en-US.html index-$lang.html
-138	done
-139
-140	# Build commit
-141	git add .
-142	git commit -m "Build on $DATE"
-143
-144	asciibinder package
-145	cp index-master.html _package/index.html</code></pre>
+108	            # Update include links in the books (find -L follows symlinks)
+109	            find -L $dir -iname *.adoc  | xargs -I FILE sed -i -e "s/include::en-US/include::$dir/  " FILE
+110
+111	            # Pull the .pot files
+112	            zanata pull --url $zanataurl --project-id $zanataproject --project-version $dir --lang $lang --transdir pot/ --project-type podir
+113
+114	            # Apply the translations
+115	            # Right now this accepts all percentages of translation
+116	            # -L makes find follow symlinks
+117
+118	            for file in $( find -L $dir -name "*.adoc" ); do
+119	                basename=`basename -s .adoc $file`
+120	                po4a-translate -f asciidoc -m $file -l $file -p pot/$lang/$basename.po -M UTF-8 -k 0
+121	            done
+122
+123	            # Commit it all baby
+124	            date=`date`
+125	            git add .
+126	            git commit -m "Build on $date"
+127	        done
+128	    done
+129	done
+130
+131	git checkout master-adoc
+132
+133	# Build out _distro_map.yml
+134	cp _distro_map.yml model_distro_map.yml
+135	for lang in $LANGS; do
+136	    # Entries in _distro_map.yml
+137	    cp model_distro_map.yml temp_distro_map.yml
+138	    sed -i -e "s/en-US/$lang/g" temp_distro_map.yml
+139	    sed -i -e "s/^--*$//" temp_distro_map.yml
+140	    cat temp_distro_map.yml &gt;&gt; _distro_map.yml
+141	    rm temp_distro_map.yml
+142
+143	    # index page
+144	    cp index-en-US.html index-$lang.html
+145	done
+146	rm model_distro_map.yml
+147
+148	# Build commit
+149	git add .
+150	git commit -m "Build on $DATE"
+151
+152	asciibinder package
+153	cp index-master.html _package/index.html</code></pre>
 </div>
 </div>
 </div>
@@ -531,12 +550,16 @@ the difference.</p>
 <p>The translations are incomplete, but you can see them in action on
 many pages.</p>
 </div>
+<div class="paragraph">
+<p>A sample build can be found here:
+<a href="http://www.winglemeyer.org/fedora_docs_proposal/sample/" class="bare">http://www.winglemeyer.org/fedora_docs_proposal/sample/</a></p>
+</div>
 </div>
 </div>
 <div id="footnotes">
 <hr>
 <div class="footnote" id="_footnote_1">
-<a href="#_footnoteref_1">1</a>. This is slow.
+<a href="#_footnoteref_1">1</a>. Warning, this is slow.
 </div>
 </div>
       </div>
