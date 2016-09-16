@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Fedora Rawhide | Installation Guide | Automating the Installation with Kickstart</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <link href="../../rawhide/_stylesheets/asciibinder.css" rel="stylesheet" />
+
+   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+   <!--[if lt IE 9]>
+     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+   <![endif]-->
+
+  <link href="../../rawhide/_images/favicon32x32.png" rel="shortcut icon" type="text/css">
+  <!--[if IE]><link rel="shortcut icon" href="../../rawhide/_images/favicon.ico"><![endif]-->
+  <meta content="AsciiBinder" name="application-name">
+</head>
+<body>
+  <div class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="https://docs.fedoraproject.org/"><img alt="Fedora Documentation" src="../../rawhide/_images/fedora.svg"></a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <p class="toggle-nav visible-xs pull-left">
+      <button class="btn btn-default btn-sm" type="button" data-toggle="offcanvas">Toggle nav</button>
+    </p>
+    <ol class="breadcrumb">
+      <li class="sitename">
+        <a href="../../index.html">Fedora Documentation</a>
+      </li>
+      <li class="hidden-xs active">
+        <a href="../install-guide/Preface.html">Fedora Rawhide</a>
+      </li>
+      <li class="hidden-xs active">
+        <a href="../install-guide/Preface.html">Installation Guide</a>
+      </li>
+      
+      <li class="hidden-xs active">
+        Automating the Installation with Kickstart
+      </li>
+    </ol>
+    <div class="row row-offcanvas row-offcanvas-left">
+      <div class="col-xs-8 col-sm-3 col-md-3 sidebar sidebar-offcanvas">
+        <ul class="nav nav-sidebar">
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup0">
+        <span id="tgSpan0" class="fa fa-angle-down"></span>Installation Guide
+      </a>
+      <ul id="topicGroup0" class="collapse in list-unstyled">
+            <li><a class="" href="../install-guide/Preface.html">Preface</a></li>
+            <li><a class="" href="../install-guide/Introduction.html">Introduction</a></li>
+            <li><a class="" href="../install-guide/Downloading_Fedora.html">Downloading Fedora</a></li>
+            <li><a class="" href="../install-guide/Preparing_for_Installation.html">Preparing for Installation</a></li>
+            <li><a class="" href="../install-guide/Booting_the_Installation.html">Booting the Installation</a></li>
+            <li class="nav-header">
+              <a class="" href="#" data-toggle="collapse" data-target="#topicSubGroup-0-5">
+                <span id="sgSpan-0-5" class="fa fa-caret-right"></span>&nbsp;Installing Using Anaconda
+              </a>
+              <ul id="topicSubGroup-0-5" class="nav-tertiary list-unstyled collapse">
+                  <li><a class="" href="../install-guide/installing_using_anaconda/Installing_Using_Anaconda.html">Installing Using Anaconda</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/WelcomeSpoke.html">Welcome Screen and Language Selection</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/SummaryHub.html">Installation Summary</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/DateTimeSpoke.html">Date & Time</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/KeyboardSpoke.html">Keyboard Layout</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/LangSupportSpoke.html">Language Support</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/SourceSpoke.html">Installation Source</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/SoftwareSpoke.html">Software Selection</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/StorageSpoke.html">Installation Destination</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/StorageSpoke_BootLoader.html">Boot Loader Installation</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/FilterSpoke.html">Installation Destination - Specialized & Network Disks</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/FilterSpoke_AddiSCSI.html">Add iSCSI Target</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/FilterSpoke_AddFCoE.html">Add FCoE SAN</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke.html">Manual Partitioning</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_AddPhysical.html">Creating Standard Partitions</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_SoftwareRAID.html">Creating Software RAID</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_AddLVM.html">Creating a Logical Volume Managament (LVM) Layout</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_AddBtrfs.html">Creating a Btrfs Layout</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_FileSystems.html">Device, File System and RAID Types</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_RecommendedScheme.html">Recommended Partitioning Scheme</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_PartitioningAdvice.html">Advice on Partitions</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/KdumpSpoke.html">Kdump</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/NetworkSpoke.html">Network & Hostname</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/NetworkSpoke_VirtualInterfaces.html">Adding a Virtual Network Interface</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/NetworkSpoke_EditConnection.html">Editing Network Interface Configuration</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/ProgressHub.html">Configuration and Installation Progress</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/PasswordSpoke.html">Root Password</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/UserSpoke.html">Create User</a></li>
+              </ul>
+            </li>
+            <li class="nav-header">
+              <a class="" href="#" data-toggle="collapse" data-target="#topicSubGroup-0-6">
+                <span id="sgSpan-0-6" class="fa fa-caret-right"></span>&nbsp;After the Installation
+              </a>
+              <ul id="topicSubGroup-0-6" class="nav-tertiary list-unstyled collapse">
+                  <li><a class="" href="../install-guide/after_installation/After_Installation.html">After the Installation</a></li>
+                  <li><a class="" href="../install-guide/after_installation/InitialSetupHub.html">Initial Setup</a></li>
+              </ul>
+            </li>
+            <li><a class="" href="../install-guide/Troubleshooting.html">Troubleshooting</a></li>
+            <li><a class="" href="../install-guide/Boot_Options.html">Boot Options</a></li>
+            <li><a class=" active" href="../install-guide/Kickstart_Installations.html">Automating the Installation with Kickstart</a></li>
+            <li><a class="" href="../install-guide/Network_based_Installations.html">Setting Up an Installation Server</a></li>
+            <li><a class="" href="../install-guide/VNC_Installations.html">Installing Using VNC</a></li>
+            <li><a class="" href="../install-guide/Upgrading_Your_Current_System.html">Upgrading Your Current System</a></li>
+            <li><a class="" href="../install-guide/Kickstart_Syntax_Reference.html">Kickstart Syntax Reference</a></li>
+            <li><a class="" href="../install-guide/Disk_Partitions.html">An Introduction to Disk Partitions</a></li>
+            <li><a class="" href="../install-guide/Understanding_LVM.html">Understanding LVM</a></li>
+            <li><a class="" href="../install-guide/Revision_History.html">Revision History</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup1">
+        <span id="tgSpan1" class="fa fa-angle-right"></span>Virtualization Getting Started Guide
+      </a>
+      <ul id="topicGroup1" class="collapse  list-unstyled">
+            <li><a class="" href="../virt-getting-started-guide/Preface.html">Preface</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Introduction.html">Introduction</a></li>
+            <li><a class="" href="../virt-getting-started-guide/What_Is_It.html">What is Virtualization?</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Advantages.html">Advantages and misconceptions of virtualization</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Products.html">Introduction to Fedora virtualization products</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Boxes.html">Introduction to Boxes</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Guest_Installation_Virt_Manager.html">Creating and Managing Guests with Virt-Manager</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Advanced_Virtualization.html">Advanced Virtualization Concepts</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Revision_History.html">Revision History</a></li>
+      </ul>
+    </li>
+</ul>
+      </div>
+      <div class="col-xs-12 col-sm-9 col-md-9 main">
+        <div class="page-header">
+          <h2>キックスタートでインストールを自動化する</h2>
+        </div>
+        <div class="sect1">
+<h2 id="chap-kickstart-installations"><a class="anchor" href="#chap-kickstart-installations"></a>キックスタートでインストールを自動化する</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Kickstart installations offer a means to automate the installation process,
+either partially or fully. Kickstart files contain answers to all questions
+normally asked by the installation program, such as what time zone do you
+want the system to use, how should the drives be partitioned or which
+packages should be installed. Providing a prepared Kickstart file when the
+installation begins therefore allows the you to perform the installation
+automatically, without need for any intervention from the user. This is
+especially useful when deploying Fedora on a large number of systems at
+once.</p>
+</div>
+<div class="paragraph">
+<p>All Kickstart scripts and the log files of their execution are stored in the
+<code>/tmp</code> directory to assist with debugging installation issues.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-kickstart-howto"><a class="anchor" href="#sect-kickstart-howto"></a>キックスタートを使ったインストールの実行方法</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>キックスタートを使ったインストールは、ローカルの DVD またはローカルのハードドライブを使用するか、NFS、FTP、HTTP、HTTPS
+などを介することによって実行可能です。</p>
+</div>
+<div class="paragraph">
+<p>キックスタートを使用する場合、次の手順を行う必要があります。</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>キックスタートファイルを作成する
+Create boot media or configure a network boot (PXE) server which will be
+used to begin the installation.
+リムーバブルメディア、ハードドライブ、ネットワークの場所のいずれかの場所でキックスタートファイルを利用可能にする
+Start the Kickstart installation by booting the installer and using a boot
+option to tell the installer where to find the Kickstart file.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>本章では、これらの手順について詳しく見ていきます。</p>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-file-create"><a class="anchor" href="#sect-kickstart-file-create"></a>キックスタートファイルを作成する</h3>
+<div class="paragraph">
+<p>The Kickstart file itself is a plain text file, containing keywords listed
+in <a href="#appe-kickstart-syntax-reference">???</a>, which serve as directions for
+the installation. Any text editor able to save files as ASCII text (such as
+Gedit or vim on Linux systems or Notepad on Windows systems) can be used to
+create and edit Kickstart files.</p>
+</div>
+<div class="paragraph">
+<p>The recommended approach to creating Kickstart files is to perform a manual
+installation on one system first. After the installation completes, all
+choices made during the installation are saved into a file named
+<code>anaconda-ks.cfg</code>, located in the <code>/root/</code> directory on the installed
+system. You can then copy this file, make any changes you need, and use the
+resulting configuration file in further installations.</p>
+</div>
+<div class="paragraph">
+<p>キックスタートファイルを作成する際は次の点に注意してください。</p>
+</div>
+<div class="paragraph">
+<p>Lines starting with a pound sign (<code>#</code>) are treated as comments and are
+ignored.
+Sections must be specified <em>in order</em>. Items within the sections do not
+have to be in a specific order unless otherwise specified. The correct
+section order is: <strong> The command section which contains actual Kickstart
+commands and options as listed in
+<a href="#appe-kickstart-syntax-reference">???</a>. Note that some commands, such as
+<code>install</code>, are mandatory, but most commands are optional.  </strong> The
+<code>%packages</code> section which contains a list of packages and package groups to
+be installed. See <a href="#sect-kickstart-packages">???</a> for details.  ** The
+<code>%pre</code> and <code>%post</code> sections, containing a pre-installation and
+post-installation scripts. These two sections can be in any order and are
+not mandatory. See <a href="#sect-kickstart-preinstall">???</a> and
+<a href="#sect-kickstart-postinstall">???</a> for details.</p>
+</div>
+<div class="paragraph">
+<p>+</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Important</strong></p>
+</div>
+<div class="paragraph">
+<p>The <code>%packages</code>, <code>%pre</code> and <code>%post</code> sections must end with <code>%end</code>, otherwise
+the installation program will refuse the Kickstart file. The main command
+section has no special ending statement.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Omitting any required item results in the installation program prompting the
+user for an answer to the related item, just as the user would be prompted
+during a typical installation. Once the answer is given, the installation
+will continue. Note that if the system you are installing has no display,
+you will not be able to see the prompt, and the installation will appear to
+have failed.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-verify"><a class="anchor" href="#sect-kickstart-verify"></a>キックスタートファイルの確認</h3>
+<div class="paragraph">
+<p>When creating or customizing your kickstart file, it is useful to verify
+that it is valid before attempting to use it in an installation. Fedora
+includes the ksvalidator command line utility which can be used to do
+this. This tool is a part of the pykickstart package. To install this
+package, execute the following command:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre># dnf install pykickstart</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>パッケージをインストールしたら、以下のコマンドを使用してキックスタートファイルを検証できます。</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ ksvalidator /path/to/kickstart.ks</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Replace /path/to/kickstart.ks with the path to the Kickstart file you want
+to verify.</p>
+</div>
+<div class="paragraph">
+<p>For more information about this tool, see the ksvalidator(1) man page.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Important</strong></p>
+</div>
+<div class="paragraph">
+<p>Keep in mind that the validation tool has its limitations. The Kickstart
+file can be very complicated; ksvalidator can make sure the syntax is
+correct and that the file does not include removed options, but it cannot
+guarantee the installation will be successful. It also does not attempt to
+validate the <code>%pre</code>, <code>%post</code> and <code>%packages</code> sections of the Kickstart file.</p>
+</div>
+</blockquote>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-making-available"><a class="anchor" href="#sect-kickstart-making-available"></a>キックスタートファイルを準備する</h3>
+<div class="paragraph">
+<p>Once you create a Kickstart file, you can place it in one of the following
+locations:</p>
+</div>
+<div class="paragraph">
+<p>On <em>removable media</em>, such as a DVD or USB flash drive connected to the
+installation system
+* On a <em>hard drive</em> connected to the installation system
+* On a <em>network share</em> reachable from the installation system</p>
+</div>
+<div class="paragraph">
+<p>通常、キックスタートファイルはリムバーブルメディアやハードドライブにコピーするか、ネットワーク上で利用できるようにしておきます。ファイルをネットワーク上の場所に置くことで、キックスタートインストールへの通常のアプローチが補完されます。通常のアプローチもネットワークベースです。PXE
+サーバーを使ってシステムが起動され、キックスタートファイルがネットワーク共有からダウンロードされます。そして、ファイルで指定されているソフトウェアパッケージがリモートのリポジトリからダウンロードされます。</p>
+</div>
+<div class="paragraph">
+<p><a href="#chap-pxe-server-setup">???</a> offers some additional information about
+preparing for a network-based installation.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-installation-starting"><a class="anchor" href="#sect-kickstart-installation-starting"></a>キックスタートを使ったインストールを開始する</h3>
+<div class="paragraph">
+<p>Once you have everything ready - you have created a valid Kickstart file and
+you have either local boot media or a PXE server available, you can start
+the Kickstart installation. You need to use the <code>inst.ks=</code> boot option
+either in the boot menu (when booting from local media), or add this option
+to your PXE server configuration. For information about boot options used in
+Kickstart installations, see <a href="#sect-boot-options-kickstart">???</a>.</p>
+</div>
+</div>
+</div>
+</div>
+      </div>
+    </div>
+  </div>
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+   <!-- Latest compiled and minified JavaScript -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+   <script type="text/javascript">
+    /*<![CDATA[*/
+    $(document).ready(function() {
+      $("[id^='topicGroup']").on('show.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicGroup']").on('hide.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicSubGroup']").on('show.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+      $("[id^='topicSubGroup']").on('hide.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+    });
+    /*]]>*/
+  </script>
+</body>
+</html>

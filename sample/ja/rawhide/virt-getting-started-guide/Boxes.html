@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Fedora Rawhide | Virtualization Getting Started Guide | Introduction to Boxes</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <link href="../../rawhide/_stylesheets/asciibinder.css" rel="stylesheet" />
+
+   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+   <!--[if lt IE 9]>
+     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+   <![endif]-->
+
+  <link href="../../rawhide/_images/favicon32x32.png" rel="shortcut icon" type="text/css">
+  <!--[if IE]><link rel="shortcut icon" href="../../rawhide/_images/favicon.ico"><![endif]-->
+  <meta content="AsciiBinder" name="application-name">
+</head>
+<body>
+  <div class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="https://docs.fedoraproject.org/"><img alt="Fedora Documentation" src="../../rawhide/_images/fedora.svg"></a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <p class="toggle-nav visible-xs pull-left">
+      <button class="btn btn-default btn-sm" type="button" data-toggle="offcanvas">Toggle nav</button>
+    </p>
+    <ol class="breadcrumb">
+      <li class="sitename">
+        <a href="../../index.html">Fedora Documentation</a>
+      </li>
+      <li class="hidden-xs active">
+        <a href="../install-guide/Preface.html">Fedora Rawhide</a>
+      </li>
+      <li class="hidden-xs active">
+        <a href="../virt-getting-started-guide/Preface.html">Virtualization Getting Started Guide</a>
+      </li>
+      
+      <li class="hidden-xs active">
+        Introduction to Boxes
+      </li>
+    </ol>
+    <div class="row row-offcanvas row-offcanvas-left">
+      <div class="col-xs-8 col-sm-3 col-md-3 sidebar sidebar-offcanvas">
+        <ul class="nav nav-sidebar">
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup0">
+        <span id="tgSpan0" class="fa fa-angle-right"></span>Installation Guide
+      </a>
+      <ul id="topicGroup0" class="collapse  list-unstyled">
+            <li><a class="" href="../install-guide/Preface.html">Preface</a></li>
+            <li><a class="" href="../install-guide/Introduction.html">Introduction</a></li>
+            <li><a class="" href="../install-guide/Downloading_Fedora.html">Downloading Fedora</a></li>
+            <li><a class="" href="../install-guide/Preparing_for_Installation.html">Preparing for Installation</a></li>
+            <li><a class="" href="../install-guide/Booting_the_Installation.html">Booting the Installation</a></li>
+            <li class="nav-header">
+              <a class="" href="#" data-toggle="collapse" data-target="#topicSubGroup-0-5">
+                <span id="sgSpan-0-5" class="fa fa-caret-right"></span>&nbsp;Installing Using Anaconda
+              </a>
+              <ul id="topicSubGroup-0-5" class="nav-tertiary list-unstyled collapse">
+                  <li><a class="" href="../install-guide/installing_using_anaconda/Installing_Using_Anaconda.html">Installing Using Anaconda</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/WelcomeSpoke.html">Welcome Screen and Language Selection</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/SummaryHub.html">Installation Summary</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/DateTimeSpoke.html">Date & Time</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/KeyboardSpoke.html">Keyboard Layout</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/LangSupportSpoke.html">Language Support</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/SourceSpoke.html">Installation Source</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/SoftwareSpoke.html">Software Selection</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/StorageSpoke.html">Installation Destination</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/StorageSpoke_BootLoader.html">Boot Loader Installation</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/FilterSpoke.html">Installation Destination - Specialized & Network Disks</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/FilterSpoke_AddiSCSI.html">Add iSCSI Target</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/FilterSpoke_AddFCoE.html">Add FCoE SAN</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke.html">Manual Partitioning</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_AddPhysical.html">Creating Standard Partitions</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_SoftwareRAID.html">Creating Software RAID</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_AddLVM.html">Creating a Logical Volume Managament (LVM) Layout</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_AddBtrfs.html">Creating a Btrfs Layout</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_FileSystems.html">Device, File System and RAID Types</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_RecommendedScheme.html">Recommended Partitioning Scheme</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_PartitioningAdvice.html">Advice on Partitions</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/KdumpSpoke.html">Kdump</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/NetworkSpoke.html">Network & Hostname</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/NetworkSpoke_VirtualInterfaces.html">Adding a Virtual Network Interface</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/NetworkSpoke_EditConnection.html">Editing Network Interface Configuration</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/ProgressHub.html">Configuration and Installation Progress</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/PasswordSpoke.html">Root Password</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/UserSpoke.html">Create User</a></li>
+              </ul>
+            </li>
+            <li class="nav-header">
+              <a class="" href="#" data-toggle="collapse" data-target="#topicSubGroup-0-6">
+                <span id="sgSpan-0-6" class="fa fa-caret-right"></span>&nbsp;After the Installation
+              </a>
+              <ul id="topicSubGroup-0-6" class="nav-tertiary list-unstyled collapse">
+                  <li><a class="" href="../install-guide/after_installation/After_Installation.html">After the Installation</a></li>
+                  <li><a class="" href="../install-guide/after_installation/InitialSetupHub.html">Initial Setup</a></li>
+              </ul>
+            </li>
+            <li><a class="" href="../install-guide/Troubleshooting.html">Troubleshooting</a></li>
+            <li><a class="" href="../install-guide/Boot_Options.html">Boot Options</a></li>
+            <li><a class="" href="../install-guide/Kickstart_Installations.html">Automating the Installation with Kickstart</a></li>
+            <li><a class="" href="../install-guide/Network_based_Installations.html">Setting Up an Installation Server</a></li>
+            <li><a class="" href="../install-guide/VNC_Installations.html">Installing Using VNC</a></li>
+            <li><a class="" href="../install-guide/Upgrading_Your_Current_System.html">Upgrading Your Current System</a></li>
+            <li><a class="" href="../install-guide/Kickstart_Syntax_Reference.html">Kickstart Syntax Reference</a></li>
+            <li><a class="" href="../install-guide/Disk_Partitions.html">An Introduction to Disk Partitions</a></li>
+            <li><a class="" href="../install-guide/Understanding_LVM.html">Understanding LVM</a></li>
+            <li><a class="" href="../install-guide/Revision_History.html">Revision History</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup1">
+        <span id="tgSpan1" class="fa fa-angle-down"></span>Virtualization Getting Started Guide
+      </a>
+      <ul id="topicGroup1" class="collapse in list-unstyled">
+            <li><a class="" href="../virt-getting-started-guide/Preface.html">Preface</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Introduction.html">Introduction</a></li>
+            <li><a class="" href="../virt-getting-started-guide/What_Is_It.html">What is Virtualization?</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Advantages.html">Advantages and misconceptions of virtualization</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Products.html">Introduction to Fedora virtualization products</a></li>
+            <li><a class=" active" href="../virt-getting-started-guide/Boxes.html">Introduction to Boxes</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Guest_Installation_Virt_Manager.html">Creating and Managing Guests with Virt-Manager</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Advanced_Virtualization.html">Advanced Virtualization Concepts</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Revision_History.html">Revision History</a></li>
+      </ul>
+    </li>
+</ul>
+      </div>
+      <div class="col-xs-12 col-sm-9 col-md-9 main">
+        <div class="page-header">
+          <h2>Introduction to Boxes</h2>
+        </div>
+        <div class="sect1">
+<h2 id="Intro_Boxes"><a class="anchor" href="#Intro_Boxes"></a>Introduction to Boxes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Boxes is a simple graphical interface for managing and using virtual
+machines. Boxes can also connect to computers via VNC, SPICE, and Quemu.</p>
+</div>
+<div class="paragraph">
+<p>Boxes uses qemu-kvm, libvirt-glib, and spice-gtk to allow users to easily
+manage virtual machines and connect to remote machines.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sec-boxes-Features"><a class="anchor" href="#sec-boxes-Features"></a>Features of Boxes</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Create, access, and manage, local virtual machines.
+Connect to remote machines (called connections) via SPICE, Quemu, or VNC
+protocols.</p>
+</li>
+<li>
+<p>Select and create favorite virtual machines or connections.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sec-create-vm-in-boxes"><a class="anchor" href="#sec-create-vm-in-boxes"></a>How do I create a virtual machine in Boxes?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Download an ISO image of an operating system that will be used in the
+virtual machine.</p>
+</div>
+<div class="paragraph">
+<p>Launch Boxes from the application launcher, super key, or terminal.  Boxes
+icon</p>
+</div>
+<div class="paragraph">
+<p>Click the New Button. New button location within the GUI in Gnome Shell</p>
+</div>
+<div class="paragraph">
+<p>Read the introduction and click continue in the upper right hand corner.</p>
+</div>
+<div class="paragraph">
+<p>Select the ISO Image file that was previously downloaded to the Downloads
+folder, otherwise click select a file to find an ISO image file located
+somewhere else.<em>Boxes will try to auto-detect ISO files in your Downloads
+folder, but it may not always be successful.</em> ISO Image Selection within
+Gnome Shell</p>
+</div>
+<div class="paragraph">
+<p>Boxes will then auto create settings, they can be edited by clicking the
+customize button. Customize button location within Gnome Shell</p>
+</div>
+<div class="paragraph">
+<p>Memory and Disk allocation can be changed via the customize menu.  Customize
+Memory and Hard drive Space within Gnome Shell</p>
+</div>
+<div class="paragraph">
+<p>After you are done allocating memory and hard drive space to the virtual
+machine click on the back button Customize back button within Gnome Shell</p>
+</div>
+<div class="paragraph">
+<p>Click Create. Create button within Gnome Shell</p>
+</div>
+<div class="paragraph">
+<p>The new virtual machine will now boot.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sec-connect-to-remote-machine"><a class="anchor" href="#sec-connect-to-remote-machine"></a>How do I connect to other computers in Boxes?</h2>
+<div class="sectionbody">
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Note</strong></p>
+</div>
+<div class="paragraph">
+<p>Boxes Supports three protocols: SPICE, Qemu, and VNC.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Open Boxes.</p>
+</div>
+<div class="paragraph">
+<p>ClickNew. New button location within the GUI in Gnome Shell</p>
+</div>
+<div class="paragraph">
+<p>Click Enter URL. Enter URL location within the GUI in Gnome Shell</p>
+</div>
+<div class="paragraph">
+<p>Enter the IP address or hostname of the remote machine you want to connect
+to. Remember to specify the protocol in the field. For example to connect to
+a computer via VNC at IP Address 192.168.1.115, you would type in
+<em>vnc://192.168.1.115</em>. Enter URL to the computer you want to connect to in
+Gnome Shell</p>
+</div>
+<div class="paragraph">
+<p>Click Continue. Continue button location connect to a different computer in
+Gnome Shell</p>
+</div>
+<div class="paragraph">
+<p>The Review screen will now show you the type (protocol) and host (either
+hostname or IP address) of the remote connection. Review Screen example in
+Gnome Shell</p>
+</div>
+<div class="paragraph">
+<p>Click Create. Create button location in Gnome Shell</p>
+</div>
+<div class="paragraph">
+<p>The Remote connection is now available in the selection screen. example
+selection screen in Gnome Shell after vnc connection is created</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sec-change-settings"><a class="anchor" href="#sec-change-settings"></a>How do I change the settings of a machine in boxes?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>On the listing of machines, right click on the machine and then choose
+Properties. Right Click menu in Boxes in Gnome Shell
+If the machine is running, click on the menu button, the button with three
+lines, also known as the hamburger button Menu button location on a running
+VM on Gnome Shell</p>
+</div>
+<div class="paragraph">
+<p>Once you have accessed the settings menu you can change various items of the
+virtual machine:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Sharing the clipboard</p>
+</li>
+<li>
+<p>Resize Guest</p>
+</li>
+<li>
+<p>Redirect New USB Devices to the Virtual Machine</p>
+</li>
+<li>
+<p>Redirect currently plugged in USB devices to the Virtual machine</p>
+</li>
+<li>
+<p>Create Snapshots of the Virtual Machine from the snapshot heading
+Restart, If the Virtual machine is running, you can use the Restart button,
+to restart it. The Restart button is to the immediate left of the red Force
+Shutdown button on the system tab.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To exit the settings menu, <em>press the X button X it is located in the upper
+right hand corner of the menu bar</em>. This will close the settings screen and
+return you to your previous screen. Close button location for VM settings in
+Gnome Shell</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="delete-box"><a class="anchor" href="#delete-box"></a>How do I delete a box?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Deleting a box is simple and it can be done two ways:</p>
+</div>
+<div class="paragraph">
+<p>Open Boxes.</p>
+</div>
+<div class="paragraph">
+<p>Right Click the Box or Boxes you wish to delete. Close button location for
+VM settings in Gnome Shell</p>
+</div>
+<div class="paragraph">
+<p>click the Delete button. Close button location for VM settings in Gnome
+Shell</p>
+</div>
+<div class="paragraph">
+<p>Click the X on the confirmation notification if you are sure you have
+deleted the correct boxes. Or click UNDO if you made a mistake.</p>
+</div>
+<div class="paragraph">
+<p>Open Boxes.</p>
+</div>
+<div class="paragraph">
+<p>Click the checkmark button on the top right hand of the menu bar. Check mark
+button location in Gnome Shell</p>
+</div>
+<div class="paragraph">
+<p>Select the boxes you wish to delete Multiple device selection checkmarks in
+Gnome Shell</p>
+</div>
+<div class="paragraph">
+<p>After the Boxes have a check mark on them that you wish to delete, click the
+Delete button on the bottom bar. Multiple device deletion button in Gnome
+Shell</p>
+</div>
+<div class="paragraph">
+<p>Click the X on the confirmation notification if you are sure you have
+deleted the correct boxes. Or click UNDO if you made a mistake.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sec-tips-tricks"><a class="anchor" href="#sec-tips-tricks"></a>Boxes Tips and Tricks</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Boxes uses libvirtd and many libvirtd commands can be used for Boxes virtual
+machines.
+Boxes keeps the virtual machine disks or images
+in:`/home/$USER/.local/share/gnome-boxes/images`</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sec-advanced-items"><a class="anchor" href="#sec-advanced-items"></a>Advanced Commands in Boxes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can start and stop virtual machines from the command line as well as
+using the boxes interface .</p>
+</div>
+<div class="paragraph">
+<p><code>virsh shutdown</code> or` virsh reboot` will use ACPI to shutdown or reboot the
+virtual machine.
+<code>virsh destroy</code> will mimic if you pulled the power from a running virtual
+machine.
+* <code>virsh start</code> will power on or start the virtual machine.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Warning</strong></p>
+</div>
+<div class="paragraph">
+<p>Do not use the <code>virsh destory</code> often or corruption and data loss will occur!</p>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+      </div>
+    </div>
+  </div>
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+   <!-- Latest compiled and minified JavaScript -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+   <script type="text/javascript">
+    /*<![CDATA[*/
+    $(document).ready(function() {
+      $("[id^='topicGroup']").on('show.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicGroup']").on('hide.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicSubGroup']").on('show.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+      $("[id^='topicSubGroup']").on('hide.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+    });
+    /*]]>*/
+  </script>
+</body>
+</html>

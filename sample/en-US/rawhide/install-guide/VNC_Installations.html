@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Fedora Rawhide | Installation Guide | Installing Using VNC</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <link href="../../rawhide/_stylesheets/asciibinder.css" rel="stylesheet" />
+
+   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+   <!--[if lt IE 9]>
+     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+   <![endif]-->
+
+  <link href="../../rawhide/_images/favicon32x32.png" rel="shortcut icon" type="text/css">
+  <!--[if IE]><link rel="shortcut icon" href="../../rawhide/_images/favicon.ico"><![endif]-->
+  <meta content="AsciiBinder" name="application-name">
+</head>
+<body>
+  <div class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="https://docs.fedoraproject.org/"><img alt="Fedora Documentation" src="../../rawhide/_images/fedora.svg"></a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <p class="toggle-nav visible-xs pull-left">
+      <button class="btn btn-default btn-sm" type="button" data-toggle="offcanvas">Toggle nav</button>
+    </p>
+    <ol class="breadcrumb">
+      <li class="sitename">
+        <a href="../../index.html">Fedora Documentation</a>
+      </li>
+      <li class="hidden-xs active">
+        <a href="../install-guide/Preface.html">Fedora Rawhide</a>
+      </li>
+      <li class="hidden-xs active">
+        <a href="../install-guide/Preface.html">Installation Guide</a>
+      </li>
+      
+      <li class="hidden-xs active">
+        Installing Using VNC
+      </li>
+    </ol>
+    <div class="row row-offcanvas row-offcanvas-left">
+      <div class="col-xs-8 col-sm-3 col-md-3 sidebar sidebar-offcanvas">
+        <ul class="nav nav-sidebar">
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup0">
+        <span id="tgSpan0" class="fa fa-angle-down"></span>Installation Guide
+      </a>
+      <ul id="topicGroup0" class="collapse in list-unstyled">
+            <li><a class="" href="../install-guide/Preface.html">Preface</a></li>
+            <li><a class="" href="../install-guide/Introduction.html">Introduction</a></li>
+            <li><a class="" href="../install-guide/Downloading_Fedora.html">Downloading Fedora</a></li>
+            <li><a class="" href="../install-guide/Preparing_for_Installation.html">Preparing for Installation</a></li>
+            <li><a class="" href="../install-guide/Booting_the_Installation.html">Booting the Installation</a></li>
+            <li class="nav-header">
+              <a class="" href="#" data-toggle="collapse" data-target="#topicSubGroup-0-5">
+                <span id="sgSpan-0-5" class="fa fa-caret-right"></span>&nbsp;Installing Using Anaconda
+              </a>
+              <ul id="topicSubGroup-0-5" class="nav-tertiary list-unstyled collapse">
+                  <li><a class="" href="../install-guide/installing_using_anaconda/Installing_Using_Anaconda.html">Installing Using Anaconda</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/WelcomeSpoke.html">Welcome Screen and Language Selection</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/SummaryHub.html">Installation Summary</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/DateTimeSpoke.html">Date & Time</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/KeyboardSpoke.html">Keyboard Layout</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/LangSupportSpoke.html">Language Support</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/SourceSpoke.html">Installation Source</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/SoftwareSpoke.html">Software Selection</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/StorageSpoke.html">Installation Destination</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/StorageSpoke_BootLoader.html">Boot Loader Installation</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/FilterSpoke.html">Installation Destination - Specialized & Network Disks</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/FilterSpoke_AddiSCSI.html">Add iSCSI Target</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/FilterSpoke_AddFCoE.html">Add FCoE SAN</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke.html">Manual Partitioning</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_AddPhysical.html">Creating Standard Partitions</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_SoftwareRAID.html">Creating Software RAID</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_AddLVM.html">Creating a Logical Volume Managament (LVM) Layout</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_AddBtrfs.html">Creating a Btrfs Layout</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_FileSystems.html">Device, File System and RAID Types</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_RecommendedScheme.html">Recommended Partitioning Scheme</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_PartitioningAdvice.html">Advice on Partitions</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/KdumpSpoke.html">Kdump</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/NetworkSpoke.html">Network & Hostname</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/NetworkSpoke_VirtualInterfaces.html">Adding a Virtual Network Interface</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/NetworkSpoke_EditConnection.html">Editing Network Interface Configuration</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/ProgressHub.html">Configuration and Installation Progress</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/PasswordSpoke.html">Root Password</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/UserSpoke.html">Create User</a></li>
+              </ul>
+            </li>
+            <li class="nav-header">
+              <a class="" href="#" data-toggle="collapse" data-target="#topicSubGroup-0-6">
+                <span id="sgSpan-0-6" class="fa fa-caret-right"></span>&nbsp;After the Installation
+              </a>
+              <ul id="topicSubGroup-0-6" class="nav-tertiary list-unstyled collapse">
+                  <li><a class="" href="../install-guide/after_installation/After_Installation.html">After the Installation</a></li>
+                  <li><a class="" href="../install-guide/after_installation/InitialSetupHub.html">Initial Setup</a></li>
+              </ul>
+            </li>
+            <li><a class="" href="../install-guide/Troubleshooting.html">Troubleshooting</a></li>
+            <li><a class="" href="../install-guide/Boot_Options.html">Boot Options</a></li>
+            <li><a class="" href="../install-guide/Kickstart_Installations.html">Automating the Installation with Kickstart</a></li>
+            <li><a class="" href="../install-guide/Network_based_Installations.html">Setting Up an Installation Server</a></li>
+            <li><a class=" active" href="../install-guide/VNC_Installations.html">Installing Using VNC</a></li>
+            <li><a class="" href="../install-guide/Upgrading_Your_Current_System.html">Upgrading Your Current System</a></li>
+            <li><a class="" href="../install-guide/Kickstart_Syntax_Reference.html">Kickstart Syntax Reference</a></li>
+            <li><a class="" href="../install-guide/Disk_Partitions.html">An Introduction to Disk Partitions</a></li>
+            <li><a class="" href="../install-guide/Understanding_LVM.html">Understanding LVM</a></li>
+            <li><a class="" href="../install-guide/Revision_History.html">Revision History</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup1">
+        <span id="tgSpan1" class="fa fa-angle-right"></span>Virtualization Getting Started Guide
+      </a>
+      <ul id="topicGroup1" class="collapse  list-unstyled">
+            <li><a class="" href="../virt-getting-started-guide/Preface.html">Preface</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Introduction.html">Introduction</a></li>
+            <li><a class="" href="../virt-getting-started-guide/What_Is_It.html">What is Virtualization?</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Advantages.html">Advantages and misconceptions of virtualization</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Products.html">Introduction to Fedora virtualization products</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Boxes.html">Introduction to Boxes</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Guest_Installation_Virt_Manager.html">Creating and Managing Guests with Virt-Manager</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Advanced_Virtualization.html">Advanced Virtualization Concepts</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Revision_History.html">Revision History</a></li>
+      </ul>
+    </li>
+</ul>
+      </div>
+      <div class="col-xs-12 col-sm-9 col-md-9 main">
+        <div class="page-header">
+          <h2>Installing Using VNC</h2>
+        </div>
+        <div class="sect1">
+<h2 id="chap-vnc-installations"><a class="anchor" href="#chap-vnc-installations"></a>Installing Using VNC</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The graphical installation interface is the recommended method of
+installing Fedora. However, in some cases, accessing the graphical
+interface directly is difficult or impossible. Some systems lack the
+capability to connect a display and a keyboard, making VNC a necessity
+for manual (non-Kickstart) installations.</p>
+</div>
+<div class="paragraph">
+<p>To allow manual installations on headless systems (systems without a
+directly connected display, keyboard and mouse), the Anaconda
+installation program includes a Virtual Network Computing (VNC) mode
+which allows the graphical mode of the installation program to run
+locally, but display on another system connected to the network. The VNC
+installation provides you with the full range of installation options.</p>
+</div>
+<div class="paragraph">
+<p>This chapter provides instructions on activating VNC mode on the
+installation system and connecting to it using a VNC viewer.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-vnc-installations-viewer"><a class="anchor" href="#sect-vnc-installations-viewer"></a>Installing a VNC Viewer</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Performing a VNC installation requires a VNC viewer running on your
+workstation or another terminal computer. VNC viewers are available in
+the repositories of most Linux distributions; free VNC viewers are also
+available for other operating systems such as Windows. On Linux systems,
+use your package manager to search for a viewer for your distribution.</p>
+</div>
+<div class="paragraph">
+<p>The following VNC viewers are available in Fedora:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>TigerVNC - A basic viewer independent of your desktop environment.
+Installed as the tigervnc package.</p>
+</li>
+<li>
+<p>Vinagre - A viewer for the GNOME desktop environment. Installed as the
+vinagre package.</p>
+</li>
+<li>
+<p>KRDC - A viewer integrated with the KDE desktop environment. Installed
+as the kdenetwork-krdc package.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To install any of the viewers listed above, execute the following
+command as root:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre># dnf install package</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Replace package with the package name of the viewer you want to use (for
+example, tigervnc).</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Note</strong></p>
+</div>
+<div class="paragraph">
+<p>Procedures in this chapter assume you are using TigerVNC as your VNC
+viewer. Specific instructions for other viewers may differ, but the
+general principles still apply.</p>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-vnc-installations-anaconda-modes"><a class="anchor" href="#sect-vnc-installations-anaconda-modes"></a>Performing a VNC Installation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Anaconda installation program offers two modes for VNC installation:
+Direct mode and Connect mode. The modes differ in the way the connection
+between the server and viewer is established. After you successfully
+connect, the installation will progress the same way regardless of the
+mode you used.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Direct Mode</dt>
+<dd>
+<p>In this mode, Anaconda is configured to start the installation and
+wait for an incoming connection from VNC viewer before proceeding.
+While waiting for an incoming connection, the system&#8217;s IP address and
+the port on which the installer expects the connection is displayed on
+the display or console if available; this implies that you need at
+least a serial console to connect using this mode, but you can work
+around this limitation if you know the default VNC port and the
+system&#8217;s IP address.</p>
+</dd>
+<dt class="hdlist1">Connect Mode</dt>
+<dd>
+<p>In this mode, the VNC viewer is started on the remote system in
+listening mode. The VNC viewer waits for an incoming connection on a
+specified port. Then, Anaconda is started and the host name/IP address
+and port number of the viewer are provided using a boot option or a
+Kickstart command. When the installation begins, the installation
+program establishes a connection with the listening VNC viewer using
+the specified host name/IP address and port number. Connect mode is
+therefore easier to use on systems with no local display or console,
+but it also may require additional preparation, because the viewer
+system must be able to accept incoming connections on the specified
+port, which usually requires changing firewall settings.</p>
+</dd>
+</dl>
+</div>
+<div class="sect2">
+<h3 id="sect-vnc-installations-choosing-mode"><a class="anchor" href="#sect-vnc-installations-choosing-mode"></a>Choosing a VNC Installation Mode</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Visual and Interactive access to the system</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If visual and interactive access to the system being installed is not
+available, then you should use Connect Mode.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Network Connection Rules and Firewalls</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If the system being installed is not allowed inbound connections by a
+firewall, then you must use Connect Mode or disable the firewall.
+Disabling a firewall may have security implications.</p>
+</li>
+<li>
+<p>If the remote system running the VNC viewer is not allowed incoming
+connections by a firewall, then you must use Direct Mode, or disable the
+firewall. Disabling a firewall may have security implications.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-vnc-installations-direct-mode"><a class="anchor" href="#sect-vnc-installations-direct-mode"></a>Installing in VNC Direct Mode</h3>
+<div class="paragraph">
+<p>VNC Direct Mode is when the VNC viewer initiates a connection to the
+system being installed. Anaconda will tell you when to initiate this
+connection.</p>
+</div>
+<div class="paragraph">
+<p>Open the VNC viewer (for example, TigerVNC) on the workstation you will
+be using to connect to the system being installed. A window similar to
+<a href="#figu-vnc-installations-connection-details">figure_title</a> will be
+displayed with an input field allowing you to specify an IP address.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="data:image/png;base64,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IYqIiABFmBCfeeYZJk6cmOe8YcOGMX36dAAef/xxAgIC2L17t80y/fv3JzIy0mbakSNHeOaZZ2jVqhWNGzemR48eREREcOHChaJqtoiICFCECXHo0KF8+eWXXL582WZ6fHw8sbGxDB061DrN09OT2bNnYzab8y1v165dDB06lNq1axMdHc2BAwdYuHAhFoslVzJ1hMzMTKcoU0REikaRPXbRpUsXqlSpwueff86jjz5qnR4dHU2zZs2oX7++ddqAAQPYvHkzq1atYvDgwbnKslgsvPrqqwwYMICpU6dap/v7+zNp0iQsFkuebViyZAmffPIJly5dws3NjX79+jFlyhQA0tLSmDt3Ll999RVXr16lRYsWTJ8+HR8fHwBCQ0Pp3Lkzhw8f5vz581StWpUrV66wfv16a/kJCQl069aN7du34+vre8tlvvDCC1SqVInDhw8zZsyYv7C2RUSkqBXZGaLRaGTw4MEsX77cOi0zM5M1a9bYnB0ClC1blokTJzJv3jzS0tJylRUXF0dCQgIDBgzIs6687sA8deoUc+bM4aOPPuLQoUPs3LmTPn36WOdPmjSJ06dPs3r1avbv30/9+vUZPXq0zVnql19+ybvvvsuWLVv45z//SVxcHMeOHbPOX716NW3btsXX1/e2yuzVqxfff/89q1atKmx1iohIMSvSm2oGDx7MyZMnOXLkCAAxMTFkZWXZJKYcoaGh1KxZkw8//DDXvNTUVACqV69ud92urq5YLBaOHj3KlStXcHd3p1mzZgAkJSWxZcsWZs6cSbVq1XB1dWX8+PHEx8dz4sQJm/Z7e3sDUKlSJYKCgqzJy2KxsGbNGgYOHHjbZQKMGjWK7du3290vEREpHkWaEL29venWrRvR0dFA9nBpv379KFeuXK5lDQYDkydP5qOPPuLcuXM286pUqQKQa3pBfH19ee+991i1ahUdOnRg4MCB7NixA4AzZ85gMBgYMWIEISEhhISE0KtXL9zd3UlJSbGWUaNGDZsyBw4cyLp168jKymL//v1cvnyZHj16/KUyRUSkdCryr24LDw/nueeeY/jw4XzzzTe88sor+S7bunVrunTpwty5c22m+/v74+vry9q1a2nevHmu91ksljyHTYODgwkODiYjI4PVq1czZswYDhw4YL2mFx0dbU22ebm5zI4dO+Lm5sa2bduIiYnhwQcftCb32y1TRERKpyJ/DrFz585UqVKFMWPG0KJFC+rVq1fg8i+99BIbNmwgISHBOs1gMDBz5kxWrlzJrFmziIuL49q1a8TFxfH222/b3OiS49SpU+zZs4f09HTc3NyoUqUKBoMBo9FIrVq1CAoKYvLkySQmJgJw6dIlNm3ahMlkyrdtLi4uhIWFsWTJEmJiYqzDpcBtl/nNN9+waNGiAteJiIgUvyJPiEajkSFDhpCQkEB4eHihy9epU4dhw4Zx8eJFm+ldunQhKiqK+Ph4hgwZQqtWrRg9ejSQnXRvlp6ezrx582jXrh33338/CxYsYMGCBbi7uwMQERFB3bp1efjhh2natCl9+/a1DqkWZODAgcTGxuLr62u9Jpnjdso8fPgwK1asKLReEREpXoZly5ZZ2rRpU9LtuOvd+PNPHh4eAPk+XiIicjebPn16kf/8U2xsrL66TUREBPRdpiIiIoB+ILhU0lCpiEjx0xmiiIgISogiIiKAEmKpMXz48Dy/xk5ERP7HEXeY5tA1xFJk+PDhub61R0RE/sdRyRCUEEsdRwZbRETypyFTERERlBBFREQAJUQRERFACVFERARQQhQREQGUEEVERAAlRBEREUAJUUREBFBCFBERAZQQRUREACVEERERQAlRREQEUEIUEREBlBBFREQAJUQRERFACVFERARQQhQREQGUEEVERAAlRBEREQDKOLLw+fPnO7J4ycPzzz9/W+9TrIqfYuU8bjdW4lwclhDnz5/PtGnTHFW85GPGjBm3/OFVrEqGYuU8bidW4nwMy5Yts7Rp06ZIC8350JpMpiItVwp38uRJoqOj7f7wKlYlR7FyHrcaK3E+sbGxjh0yTU9Pd2TxUoQUK+ehWIk4hkMTYlZWliOLlyKkWDkPxUrEMRyaEDW04zwUK+ehWIk4hh67EBERQQlRREQEuIsT4oABA1ixYkVJN0McKCUlhYCAAC5cuFDSTRERJ1DqE+LBgwd57LHHaNasGY0bN6Zfv358/vnnt1RG//79Wb16tc20p59+mpYtWxZlU8UOjz/+OK+//npJN+OuFRcXx6hRo2jdujWNGzemW7duTJ48uaSbxcKFCwkICGDNmjUl3RS5i5XqhLhz506GDx9O8+bN2bRpE3v37mXEiBFMnz6d999//y+V3bNnTwICAoqopSKln8Vi4cknn6RSpUps2LCB7777jg8//JB69eqVaLvMZjPLly+nYcOGREdHl2hb5O5WahOixWJh+vTpDBo0iBdeeAEfHx88PT156KGHmDZtGh988AG//fYbAKGhocyaNYtHH32Uhx56iLCwMA4ePAjA66+/zokTJ5gzZw7dunXjueeeA3IPmZ4/f57x48fTrl072rdvz0svvcTFixet80NDQ4mIiGDEiBH06tWL3r178+2331rnL1myhAceeIAWLVrQtm1bZs2aVRyr6Y5SWAyWLFlCjx49aNq0KZ06dWL27Nk2jyAkJydbz/yDgoL4+uuvS6Ibpdb58+dJSEhgxIgRVK9enbJlyxIQEMDjjz9uXaagdfzpp58SGhpqU2ZCQgL16tUjISEBgLS0NF577TW6du1Kq1atePrpp62f0/zs3r2b1NRU3nnnHQ4dOsSJEyds5uuzJcWl1CbEuLg4EhISCAsLyzWvb9++GI1G9u7da50WExPDu+++y5o1a5gwYQJPPfUUFy5cYOrUqdSrV4+XXnqJ7du388EHH+RZ39ixY7l+/ToxMTFs3ryZlJQUJk6caLPM1q1bmTdvHps3b+app55iwoQJAJw6dYo5c+bw0UcfcejQIXbu3EmfPn2KcG3cHQqLgZeXF4sXL+bIkSMsWbKErVu38umnn1rnjxs3jooVK7J3716WL1+ea5j8ble1alUCAwOZOXMmmzZt4tdff821TEHrODQ0lLi4OI4dO2ZdfvXq1bRt2xZfX18AJk2axOnTp1m9ejX79++nfv36jB49GrPZnG+7oqOjCQkJITAwkFatWhEVFWWdp8+WFKdSmxBTU1MBqFGjRq55Li4ueHl5cf78eeu0QYMGUaVKFQA6depEnTp12LJli111nTlzhtjYWF555RU8PDzw9PRkypQp7Ny5k+TkZOty4eHh1jq6d+/O2bNn+f3333F1dcVisXD06FGuXLmCu7s7zZo1u+2+343siUHv3r3x8/PDYDDg7+/PI488wr59+wA4ffo03377LVOmTMHd3Z2qVataRwMkm8FgICoqinbt2rF48WJ69epFp06dbA4qClrHlSpVIigoiFWrVgHZozhr1qxh4MCBACQlJbFlyxZmzpxJtWrVcHV1Zfz48cTHx+c668uRnJzM9u3brQe+YWFhfPHFF1y/fh1Any0pVqU2IeYknnPnzuWaZzKZSElJsS4D4O3tbbOMt7c3SUlJdtWVmJiIi4sLtWrVsk7z8/Ozzru5TQDlypUD4OrVq/j6+vLee++xatUqOnTowMCBA9mxY4dddUs2e2KwY8cOhg0bRpcuXejSpQsLFiywHjglJSVRvnx5qlWrZn1/nTp1irEHzsHT05MXXniBtWvXcujQIcaNG8fMmTOtw8sFrWOAgQMHsm7dOrKysti/fz+XL1+mR48eQPZBjcFgYMSIEYSEhBASEkKvXr1wd3cnJSUlz/asWLGCqlWr0r59ewB69epFeno6GzduBNBnS4qVQ7+p5q/w9/fHx8eHtWvX5joi3LBhA2azmY4dO1qn3Tz88+uvv9KtWzcAjMaC837NmjUxmUwkJSVZz0jPnDljnWeP4OBggoODycjIYPXq1YwZM4YDBw5wzz332PX+u11hMUhNTWXUqFEsWrSIrl27YjQa+eSTT9iwYQOQPZJw7do10tLSKF++PAC///57yXTGSZQtW5ZBgwaxYMECfvrpJ+67774C1zFAx44dcXNzY9u2bcTExPDggw9aDw59fHyA7CHQGw8e82M2m1m5ciUXLlyw+SxnZWURFRXFgAEDAH22pPiU2jNEg8HAtGnTWL58OfPnzycxMZGLFy/y+eefM336dMaMGWO9bgGwatUqfvzxR0wmE0uXLiUpKYmQkBAg+7rIqVOn8q2rdu3atG7dmjfeeIMrV65w8eJF3nzzTbp27ZrrzDMvp06dYs+ePaSnp+Pm5kaVKlUwGAzWRLx582abu+cK+/9OZzKZSE9Pt3n5+voWGIO0tDQsFguNGjXCaDRy8eJFm5ui/Pz8aNmyJYsWLbLWERkZaVPv3R6H1NRUZs2axY8//sjVq1e5cuUKy5Yt4+zZs7Rs2bLQdQzZlyvCwsJYsmQJMTEx1uFSgFq1ahEUFMTkyZOtZ/WXLl1i06ZNeX7d3K5du0hMTGTlypWsX7/e+oqMjOTw4cMcP35cny0pVqU2IQJ069aNf//73xw8eJAePXrQoUMHPv74Y6ZOncq4ceNsln344Yd57bXXaNmyJStWrCAyMtJ6lDpy5Ei2bt1Ky5YtGTFiRJ51zZ8/HxcXF4KCgujZsyeVK1cmIiLCrnamp6czb9482rVrx/3338+CBQtYsGAB7u7uQPYHf9OmTdblC/v/Trd06VIaN25s8/r5558LjIGvry+TJk1i2LBhDB48mBdffJFOnTrZlDt//nyOHj1KaGgo4eHhNG/e3Gb+3R6HcuXKce3aNV588UXatm1L586dWbVqFREREdYbYwpbx5A9bBobG4uvr2+u0ZuIiAjq1q3Lww8/TNOmTenbt2++Q5xRUVEEBwfTpEkTvLy8rK/OnTvTokULoqKi9NmSYuXQ30Msrm8ICQ0N5amnnqJfv37FUl9plpycfFu/sadvcyl+ipXzuNVYifOJjY0t3WeIIiIixUUJUUREhFJ8l+mtWL9+fUk3vBC66gAACe9JREFUQUREnJzOEEVERHDwGWJGRoYji5cipFg5D8VKxDEcmhAzMzMdWbwUIcXKeShWIo7hkMcuIPsW8fDw8CIvVwp2O7eGK1YlQ7FyHnrk4s4XGxvruIQI2R9eKV63+6FVrIqfYuU8lAzvfA5PiCIiIs5AD+aLiIj8SQlRREQEJUQRERFACVFERARQQhQREQGUEEVERAAlRBEREUAJUUREBFBCFBERAf78cu/o6OiSboeIiEiJGDt2LHDDr13kTBAREbkblQEIDw8nJSWlpNsiIiJSYnQNUUREBCVEERERQAlRREQEUEIUEREBlBBFREQAJUQRERFACVFERAS44cF8R5g/f74ji5c8PP/88yXdhLuOtvPid7vbuWLl/By5j3NYQpw/fz7Tpk1zVPGSjxkzZigpFiNt5yXjdrZzxerO4Mh9nGHZsmWWNm3aFGmhORueyWQq0nKlcCdPniQ6OlpJsRhoOy85t7qdK1Z3Dkft42JjYx07ZJqenu7I4kVKBW3nzkOxkoI4NCFmZWU5sniRUkHbufNQrKQgDk2IGp6Qu4G2c+ehWElBHJoQRUREAgICOHnyZJ7z1q9fn+/7QkNDHdWkPCkhioiIwwQEBJCRkcHp06fzXSavxOfn51fgexzhjn0wPzQ0lC+++KKkmyFyVxgwYAArVqwo6WZIKVPQmWFp5NQJceHChQQEBLBmzZpir7t///6sXr262OuVu9eRI0d45plnaNWqFY0bN6ZHjx5ERERw4cKFkm7aXcuZY+LofZizJUNw4oRoNptZvnw5DRs2JDo6uqSbI+JQu3btYujQodSuXZvo6GgOHDjAwoULsVgs7N69u6Sbd1dSTPKXVzJcv359nq/SxGmvIe7evZvU1FQiIyPp3bs3J06coF69ejbL/PrrrwwZMoT//ve/1KlTh2nTpnH//fcDcP78eV5//XX279+PwWCgc+fOTJkyBU9PTwA6duzInDlz6NixIwBJSUl06tSJ7777jvnz53PixAnmzJnDggULaNSoER988EHxrgC5a1gsFl599VUGDBjA1KlTrdP9/f2ZNGkSFosFgCVLlrBs2TISExPx8PDgwQcfZOLEiZQpk/0xDw0NpWvXrvzwww8kJydjMBiYMWMGrVu3BuCPP/5g3rx5bNu2jdTUVHx8fJg9ezbNmjUjLS2NuXPn8tVXX3H16lVatGjB9OnT8fHxKf4VUgrYG5PC9jOFxaSw+YXFJb+Yrl+/3mH7sLyS4enTp4v9Bpnb4bQJMTo6mpCQEAIDA2nVqhVRUVG5vpYpKiqKyMhIGjRoQHR0NE8++SQ7duygcuXKjB07lkqVKhETE4PZbGb8+PFMnDiRyMjIQuueOnUqBw4cYPjw4QwYMMBRXRQBIC4ujoSEhHy3NYPBAICXlxeLFy+mdu3a/PLLL4wcOZIaNWrw2GOPWZfdunUrUVFRVKlShTVr1jBhwgR27doFwIQJE0hLS+Ozzz6jVq1axMfHW5PppEmTyMjIYPXq1VSqVIn33nuP0aNH8/nnn2M0Ou1A022zNyb27GcKiklh8wuLS34xddQ+zBmHSW/klFtycnIy27dvJywsDICwsDC++OILrl+/brPcoEGDaNy4MS4uLgwbNoyaNWuyZcsWzpw5Q2xsLK+88goeHh54enoyZcoUdu7cSXJyckl0SSRfqampAFSvXr3A5Xr37o2fnx8GgwF/f38eeeQR9u3bZ7NMeHg4VapUAaB79+6cPXuW33//nbNnz7Jt2zbeeOMNfHx8MBgM1K1bl9q1a5OUlMSWLVuYOXMm1apVw9XVlfHjxxMfH8+JEycc0+lSzp6Y2LufyS8mhc0vLC4FxdQRnD0ZgpOeIa5YsYKqVavSvn17AHr16sWMGTPYuHGjzdHOzYH39fUlKSmJxMREXFxcqFWrlnWen58fAImJiXh7exdDL0Tsk7MzPHfuHDVr1sx3uR07dhAZGcmZM2eA7OG0e++9N8+yAMqVKwfA1atXSU5OxsXFxfo5uNGZM2cwGAyMGDHCZrq7uzspKSk0aNDgtvrlzOyJib37mfxiUq1atQLn5wyh5heXK1eu5BtTRzh58mSJPCpRlJwuIZrNZlauXMmFCxes1/cg+yuZoqKibBJiQkKCzXsTEhLo3r07NWvWxGQykZSURI0aNQCsO5GcjbtChQo233t4811jd+MwkZQMf39/fH19Wbt2Lc2bN88132KxcOHCBUaNGsWiRYvo2rUrRqORTz75hA0bNthVh4+PDyaTiTNnzuQ6kMy5HhUdHW2zc76b2RMTe/Yzf0VhcTl79my+MQXH7MNOnz7t1EnR6fbqu3btIjExkZUrV9rcqRQZGcnhw4c5fvy4ddmVK1dy7NgxTCYTUVFRnD17lpCQEGrXrk3r1q154403uHLlChcvXuTNN9+ka9eu1qO2Jk2asH37diD7655uvrbo5eXFqVOnbKZt3rzZ5o7Xwv4XsYfBYGDmzJmsXLmSWbNmERcXx7Vr14iLi+Ptt99m/fr1pKWlYbFYaNSoEUajkYsXL97Sc4G1atWiW7duTJ06lcTERCwWC6dOneLMmTPUqlWLoKAgJk+eTGJiIgCXLl1i06ZNd+1XodkTE3v2M39FYXEpKKaQ9z6sKOQkxRv5+fnd8qskOF1CjIqKIjg4mCZNmuDl5WV9de7cmRYtWhAVFWVdNjw8nOnTp9OyZUuWLVtGZGSk9Uhq/vz5uLi4EBQURM+ePalcuTIRERHW906YMIFTp07Rs2dPhgwZwn333WfTjpEjR7J161ZatmxpHbLYtWsXmzZtsi5T2P8i9urSpQtRUVHEx8czZMgQWrVqxejRowHo3Lkzvr6+TJo0iWHDhjF48GBefPFFOnXqdEt1zJ07l3vvvZfBgwfTrFkznn32Weu1soiICOrWrcvDDz9M06ZN6du3Lzt27CjyfjqTwmIChe9n/qrC4lJQTPPahxWVvJLi6dOnb/lV3Bz6e4jO8HDqnSY5OVm/h1hMtJ2XnFvdzhWrkpEzfFqUw6iO2sfFxsY63xmiiIg4h7zOFEszJUQREXEYZ7rBRglRREQcylmSohKiiIgIDn4OMSMjw5HFi5QK2s6dh2IlBXFoQszMzHRk8SKlgrZz56FYSUEc8tgFZN/mHB4eXuTlSsH0yEXx0nZeMm5nO1es7gyO2sfFxsY6LiFC9gYoxUvJsPhpOy9+t7udK1bOz1H7OIcnRBEREWegB/NFRET+pIQoIiKCEqKIiAighCgiIgIoIYqIiABKiCIiIoASooiICKCEKCIiAighioiIAEqIIiIigBKiiIgIoIQoIiICKCGKiIgASogiIiKAEqKIiAighCgiIgIoIYqIiABKiCIiIoASooiICKCEKCIiAkAZgNjY2JJuh4iISIn6/5u6MLyKT2utAAAAAElFTkSuQmCC" alt="TigerVNC Connection Details"></span></p>
+</div>
+<div class="paragraph">
+<p>Boot the installation system and wait for the boot menu to appear. In
+the menu, edit boot options (see <a href="#sect-boot-menu">???</a>) and append
+the <code>inst.vnc</code> option to the end of the command line.</p>
+</div>
+<div class="paragraph">
+<p>Optionally, if you want to restrict VNC access to the installation
+system, add the <code>inst.vncpassword=PASSWORD</code> boot option as well. Replace
+PASSWORD with the password you want to use for the installation. The VNC
+password must be between 6 and 8 characters long.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Important</strong></p>
+</div>
+<div class="paragraph">
+<p>Use a temporary password for the <code>inst.vncpassword=</code> option. It should
+not be a real or root password you use on any system.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAoAAAAHgCAIAAAC6s0uzAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAABDrAAAQ6wFQlOh8AAAAB3RJTUUH3gwIDTkbaJ3FFAAAERpJREFUeNrt3T2S4zYaBmCOaw4xofpGzp10lbO5gyOHm3c2VZ049xV8EqVzjA20y6JJAvwAgn/S80QzaooEQRKvgEYLX263WwcA7OsXVQAAAhgABDAAIIABQAADAAIYAAQwACCAAUAAAwACGAAEMAAIYABAAAOAAAYABDAACGAAQAADgAAGAAQwAAhgABDAAIAABgABDAAIYAAQwACAAAYAAQwACGAAEMAAIIABAAEMAAIYABDAACCAAQABDAACGAAQwAAggAFAAAMAAhgABDAAIIABQAADAAIYAAQwACCAAUAAA4AABgAEMAAIYABAAAOAAAYABDAACGAAQAADgAAGAAEMAAhgABDAAIAABgABDAAIYAAQwACAAAYAAQwAAhgAEMAAIIABAAEMAAIYABDAACCAAQABDAACGAAEMAAggAFAAAMAAhgABDAAIIABQAADAAIYAAQwAAhgAEAAA4AABgAEMAAIYABAAAOAAAYABDAACGAAQAADgAAGAAEMAAhgABDAAIAABgABDAAIYAAQwACAAAYAAQwAAhgAEMAAIIABAAEMAAIYABDAACCAAQABDAACGAAEMAAggAFAAAMAAhgABDAAIIABQAADAAIYAAQwAAhgAEAAA4AABgAEMAAIYABAAAOAAAYABDAACGAAEMAAgAAGAAEMAAhgABDAAIAABgABDAAIYAAQwAAggAEAAQwAAhgAEMAAIIABAAEMAAIYABDAACCAAUAAAwACGAAEMAAggAFAAAMA5b6qAq7otz//nr741x+/xt8Y2XiLou523LblfPx0sfDT6xI839/+/Pu0NQN6wDDTrP/1x69FDffOrXyfW305Zz86nCR9U+WMl3l6XSLvPWedgACG08XqU1Zgqg6lI2zEEDSX9xi97PMjM5Q6myWz2/c9wumQ9XD7xeB/7KEfX80UJn/c6QjwdMtg+eO94ekO13eyZ8s5e9yieoYr+nK73dQCF83daQM924jPZtJssE1/NH1LKjAiRY2Xc3TcVABndrtY/kj6rjnZzAeI/H+rDw16wLCfaRdwtrtW3Yinoijy4rQTOZpqlOlW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" alt="Adding VNC Boot Options"></span></p>
+</div>
+<div class="paragraph">
+<p>Start the installation using the edited options. The system will
+initialize the installation program and start the necessary services.
+When the system is ready, you will see a message on the screen similar
+to the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>13:14:47 Please manually connect your VNC viewer to 192.168.100.131:5901 to begin the install.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note the IP address and port number (in the above example,
+<code>192.168.100.131:5901</code>).</p>
+</div>
+<div class="paragraph">
+<p>On the system running the VNC Viewer, enter the IP address and port
+number obtained in the previous step into the Connection Details dialog
+in the same format as it was displayed on the screen by the installer.
+Then, click Connect. The VNC viewer will now connect to the installation
+system. If you set up a VNC password, enter it when prompted and press
+OK.</p>
+</div>
+<div class="paragraph">
+<p>When the connection is successfully established, a new window will open
+on the system running the VNC viewer, displaying the installation menu.
+This window will provide full remote access to the installer until the
+installation finishes and the system reboots for the first time.</p>
+</div>
+<div class="paragraph">
+<p>You can then proceed with <a href="#chap-installing-using-anaconda">???</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-vnc-installations-connect-mode"><a class="anchor" href="#sect-vnc-installations-connect-mode"></a>Installing in VNC Connect Mode</h3>
+<div class="paragraph">
+<p>VNC connect mode is when the system being installed initiates a
+connection to the VNC viewer running on a remote system. Before you
+start, make sure the remote system is configured to accept incoming
+connection on the port you want to use for VNC. The exact way to make
+sure the connection will not be blocked depends on your network and on
+your workstation&#8217;s configuration. Information about configuring the
+firewall in Fedora is available in the PRODUCT Security Guide,
+available at <a href="http://docs.fedoraproject.org/" class="bare">http://docs.fedoraproject.org/</a>.</p>
+</div>
+<div class="paragraph">
+<p>Start the VNC viewer on the client system in listening mode. For
+example, on Fedora using TigerVNC, execute the following command:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ vncviewer -listen PORT</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Replace PORT with the port number you want to use for the connection.</p>
+</div>
+<div class="paragraph">
+<p>The terminal will display a message similar to the following example:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>TigerVNC Viewer 64-bit v1.3.0 (20130924)
+Built on Sep 24 2013 at 16:32:56
+Copyright (C) 1999-2011 TigerVNC Team and many others (see README.txt)
+See http://www.tigervnc.org for information on TigerVNC.
+
+Thu Feb 20 15:23:54 2014
+main:        Listening on port 5901</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When this message is displayed, the VNC viewer is ready and waiting for
+an incoming connection from the installation system.</p>
+</div>
+<div class="paragraph">
+<p>Boot the installation system and wait for the boot menu to appear. In
+the menu, edit boot options (see <a href="#sect-boot-menu">???</a>) and append
+the following options to the end of the command line:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>inst.vnc inst.vncconnect=HOST:PORT</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Replace HOST with the IP address of the system running the listening VNC
+viewer, and PORT with the port number that the VNC viewer is listening
+on.</p>
+</div>
+<div class="paragraph">
+<p>Start the installation. The system will initialize the installation
+program and start the necessary services. Once the initialization is
+finished, Anaconda will attempt to connect to the IP address and port
+you provided in the previous step.</p>
+</div>
+<div class="paragraph">
+<p>When the connection is successfully established, a new window will open
+on the system running the VNC viewer, displaying the installation menu.
+This window will provide full remote access to the installer until the
+installation finishes and the system reboots for the first time.</p>
+</div>
+<div class="paragraph">
+<p>You can then proceed with <a href="#chap-installing-using-anaconda">???</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-vnc-kickstart-considerations"><a class="anchor" href="#sect-vnc-kickstart-considerations"></a>Kickstart Considerations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Commands for using a VNC installation are also available in Kickstart
+installations. Using just the <code>vnc</code> command will set up an installation
+using Direct Mode. Options are available to set up an installation using
+Connect Mode. For more information about the <code>vnc</code> command and options
+used in Kickstart files, see <a href="#appe-kickstart-syntax-reference">???</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-vnc-headless-considerations"><a class="anchor" href="#sect-vnc-headless-considerations"></a>Considerations for Headless Systems</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When installing headless systems, the only choices are an automated
+Kickstart installation or an interactive VNC installation using connect
+mode. For more information about automated Kickstart installation, see
+<a href="#appe-kickstart-syntax-reference">???</a>. The general process for an
+interactive VNC installation is described below.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Set up a PXE server that will be used to start the installation.
+Information about installing and performing basic configurating of a PXE
+server can be found in <a href="#chap-pxe-server-setup">???</a>.</p>
+</li>
+<li>
+<p>Configure the PXE server to use the boot options for a connect mode
+VNC installation. For information on these boot options, see
+<a href="#sect-vnc-installations-connect-mode">section_title</a>.</p>
+</li>
+<li>
+<p>Follow the procedure for a VNC Installation using connect mode as
+described in the
+<a href="#proc-vnc-installations-connect-mode">procedure_title</a>. However,
+when directed to boot the system, boot it from the PXE server.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+      </div>
+    </div>
+  </div>
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+   <!-- Latest compiled and minified JavaScript -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+   <script type="text/javascript">
+    /*<![CDATA[*/
+    $(document).ready(function() {
+      $("[id^='topicGroup']").on('show.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicGroup']").on('hide.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicSubGroup']").on('show.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+      $("[id^='topicSubGroup']").on('hide.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+    });
+    /*]]>*/
+  </script>
+</body>
+</html>

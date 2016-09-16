@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Fedora 23 | Installation Guide | Upgrading Your Current System</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <link href="../../f23/_stylesheets/asciibinder.css" rel="stylesheet" />
+
+   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+   <!--[if lt IE 9]>
+     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+   <![endif]-->
+
+  <link href="../../f23/_images/favicon32x32.png" rel="shortcut icon" type="text/css">
+  <!--[if IE]><link rel="shortcut icon" href="../../f23/_images/favicon.ico"><![endif]-->
+  <meta content="AsciiBinder" name="application-name">
+</head>
+<body>
+  <div class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="https://docs.fedoraproject.org/"><img alt="Fedora Documentation" src="../../f23/_images/fedora.svg"></a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <p class="toggle-nav visible-xs pull-left">
+      <button class="btn btn-default btn-sm" type="button" data-toggle="offcanvas">Toggle nav</button>
+    </p>
+    <ol class="breadcrumb">
+      <li class="sitename">
+        <a href="../../index.html">Fedora Documentation</a>
+      </li>
+      <li class="hidden-xs active">
+        <a href="../install-guide/Preface.html">Fedora 23</a>
+      </li>
+      <li class="hidden-xs active">
+        <a href="../install-guide/Preface.html">Installation Guide</a>
+      </li>
+      
+      <li class="hidden-xs active">
+        Upgrading Your Current System
+      </li>
+    </ol>
+    <div class="row row-offcanvas row-offcanvas-left">
+      <div class="col-xs-8 col-sm-3 col-md-3 sidebar sidebar-offcanvas">
+        <ul class="nav nav-sidebar">
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup0">
+        <span id="tgSpan0" class="fa fa-angle-down"></span>Installation Guide
+      </a>
+      <ul id="topicGroup0" class="collapse in list-unstyled">
+            <li><a class="" href="../install-guide/Preface.html">Preface</a></li>
+            <li><a class="" href="../install-guide/Introduction.html">Introduction</a></li>
+            <li><a class="" href="../install-guide/Downloading_Fedora.html">Downloading Fedora</a></li>
+            <li><a class="" href="../install-guide/Preparing_for_Installation.html">Preparing for Installation</a></li>
+            <li><a class="" href="../install-guide/Booting_the_Installation.html">Booting the Installation</a></li>
+            <li class="nav-header">
+              <a class="" href="#" data-toggle="collapse" data-target="#topicSubGroup-0-5">
+                <span id="sgSpan-0-5" class="fa fa-caret-right"></span>&nbsp;Installing Using Anaconda
+              </a>
+              <ul id="topicSubGroup-0-5" class="nav-tertiary list-unstyled collapse">
+                  <li><a class="" href="../install-guide/installing_using_anaconda/Installing_Using_Anaconda.html">Installing Using Anaconda</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/WelcomeSpoke.html">Welcome Screen and Language Selection</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/SummaryHub.html">Installation Summary</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/DateTimeSpoke.html">Date & Time</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/KeyboardSpoke.html">Keyboard Layout</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/LangSupportSpoke.html">Language Support</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/SourceSpoke.html">Installation Source</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/SoftwareSpoke.html">Software Selection</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/StorageSpoke.html">Installation Destination</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/StorageSpoke_BootLoader.html">Boot Loader Installation</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/FilterSpoke.html">Installation Destination - Specialized & Network Disks</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/FilterSpoke_AddiSCSI.html">Add iSCSI Target</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/FilterSpoke_AddFCoE.html">Add FCoE SAN</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke.html">Manual Partitioning</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_AddPhysical.html">Creating Standard Partitions</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_SoftwareRAID.html">Creating Software RAID</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_AddLVM.html">Creating a Logical Volume Managament (LVM) Layout</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_AddBtrfs.html">Creating a Btrfs Layout</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_FileSystems.html">Device, File System and RAID Types</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_RecommendedScheme.html">Recommended Partitioning Scheme</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_PartitioningAdvice.html">Advice on Partitions</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/KdumpSpoke.html">Kdump</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/NetworkSpoke.html">Network & Hostname</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/NetworkSpoke_VirtualInterfaces.html">Adding a Virtual Network Interface</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/NetworkSpoke_EditConnection.html">Editing Network Interface Configuration</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/ProgressHub.html">Configuration and Installation Progress</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/PasswordSpoke.html">Root Password</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/UserSpoke.html">Create User</a></li>
+              </ul>
+            </li>
+            <li class="nav-header">
+              <a class="" href="#" data-toggle="collapse" data-target="#topicSubGroup-0-6">
+                <span id="sgSpan-0-6" class="fa fa-caret-right"></span>&nbsp;After the Installation
+              </a>
+              <ul id="topicSubGroup-0-6" class="nav-tertiary list-unstyled collapse">
+                  <li><a class="" href="../install-guide/after_installation/After_Installation.html">After the Installation</a></li>
+                  <li><a class="" href="../install-guide/after_installation/InitialSetupHub.html">Initial Setup</a></li>
+              </ul>
+            </li>
+            <li><a class="" href="../install-guide/Troubleshooting.html">Troubleshooting</a></li>
+            <li><a class="" href="../install-guide/Boot_Options.html">Boot Options</a></li>
+            <li><a class="" href="../install-guide/Kickstart_Installations.html">Automating the Installation with Kickstart</a></li>
+            <li><a class="" href="../install-guide/Network_based_Installations.html">Setting Up an Installation Server</a></li>
+            <li><a class="" href="../install-guide/VNC_Installations.html">Installing Using VNC</a></li>
+            <li><a class=" active" href="../install-guide/Upgrading_Your_Current_System.html">Upgrading Your Current System</a></li>
+            <li><a class="" href="../install-guide/Kickstart_Syntax_Reference.html">Kickstart Syntax Reference</a></li>
+            <li><a class="" href="../install-guide/Disk_Partitions.html">An Introduction to Disk Partitions</a></li>
+            <li><a class="" href="../install-guide/Understanding_LVM.html">Understanding LVM</a></li>
+            <li><a class="" href="../install-guide/Revision_History.html">Revision History</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup1">
+        <span id="tgSpan1" class="fa fa-angle-right"></span>Virtualization Getting Started Guide
+      </a>
+      <ul id="topicGroup1" class="collapse  list-unstyled">
+            <li><a class="" href="../virt-getting-started-guide/Preface.html">Preface</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Introduction.html">Introduction</a></li>
+            <li><a class="" href="../virt-getting-started-guide/What_Is_It.html">What is Virtualization?</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Advantages.html">Advantages and misconceptions of virtualization</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Products.html">Introduction to Fedora virtualization products</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Boxes.html">Introduction to Boxes</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Guest_Installation_Virt_Manager.html">Creating and Managing Guests with Virt-Manager</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Advanced_Virtualization.html">Advanced Virtualization Concepts</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Revision_History.html">Revision History</a></li>
+      </ul>
+    </li>
+</ul>
+      </div>
+      <div class="col-xs-12 col-sm-9 col-md-9 main">
+        <div class="page-header">
+          <h2>システムの更新</h2>
+        </div>
+        <div class="sect1">
+<h2 id="chap-upgrading"><a class="anchor" href="#chap-upgrading"></a>システムの更新</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This chapter explains how to upgrade your existing Fedora installation to
+the current release. There are two basic ways to do so:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Automatic upgrade using dnf system upgrade</dt>
+<dd>
+<p>The preferred way to upgrade your system is an automatic upgrade using the
+dnf system upgrade utility. For information on performing an automatic
+upgrade, see <a href="https://fedoraproject.org/wiki/DNF_system_upgrade">Fedora Wiki
+DNF system upgrade</a>.</p>
+</dd>
+<dt class="hdlist1">手動での再インストール</dt>
+<dd>
+<p>You can upgrade to the latest version of Fedora manually instead of relying
+on dnf system upgrade. This involves booting the installer as if you were
+performing a clean installation, letting it detect your existing Fedora
+system, and overwriting the root partition while preserving data on other
+partitions and volumes. The same process can also be used to reinstall the
+system, if you need to. For detailed information, see
+<a href="#sect-upgrading-fedora-manual-reinstall">section_title</a>.</p>
+</dd>
+</dl>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Warning</strong></p>
+</div>
+<div class="paragraph">
+<p>必ず先にバックアップしてから、その後にアップグレードまたは再インストールを実行してください。どの方法を選んだには関係なく。</p>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-upgrading-fedora-manual-reinstall"><a class="anchor" href="#sect-upgrading-fedora-manual-reinstall"></a>手動でのシステムアップグレードまたは再インストール</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Unfortunately, we have not written this chapter yet, and there is no
+dedicated documentation about a manual reinstall on the Wiki, either. In the
+meantime before we fix this, you can try to start the installation normally
+(from a boot CD/DVD/USB), select manual partitioning in your installer, and
+reuse existing partitions instead of destroying them and creating new
+ones. The instructions at
+<a href="#sect-installation-gui-manual-partitioning">???</a> should in most cases be
+easy to adapt for this.</p>
+</div>
+</div>
+</div>
+      </div>
+    </div>
+  </div>
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+   <!-- Latest compiled and minified JavaScript -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+   <script type="text/javascript">
+    /*<![CDATA[*/
+    $(document).ready(function() {
+      $("[id^='topicGroup']").on('show.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicGroup']").on('hide.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicSubGroup']").on('show.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+      $("[id^='topicSubGroup']").on('hide.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+    });
+    /*]]>*/
+  </script>
+</body>
+</html>

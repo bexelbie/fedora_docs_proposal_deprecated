@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Fedora 24 | Virtualization Getting Started Guide | What is Virtualization?</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <link href="../../f24/_stylesheets/asciibinder.css" rel="stylesheet" />
+
+   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+   <!--[if lt IE 9]>
+     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+   <![endif]-->
+
+  <link href="../../f24/_images/favicon32x32.png" rel="shortcut icon" type="text/css">
+  <!--[if IE]><link rel="shortcut icon" href="../../f24/_images/favicon.ico"><![endif]-->
+  <meta content="AsciiBinder" name="application-name">
+</head>
+<body>
+  <div class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="https://docs.fedoraproject.org/"><img alt="Fedora Documentation" src="../../f24/_images/fedora.svg"></a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <p class="toggle-nav visible-xs pull-left">
+      <button class="btn btn-default btn-sm" type="button" data-toggle="offcanvas">Toggle nav</button>
+    </p>
+    <ol class="breadcrumb">
+      <li class="sitename">
+        <a href="../../index.html">Fedora Documentation</a>
+      </li>
+      <li class="hidden-xs active">
+        <a href="../install-guide/Preface.html">Fedora 24</a>
+      </li>
+      <li class="hidden-xs active">
+        <a href="../virt-getting-started-guide/Preface.html">Virtualization Getting Started Guide</a>
+      </li>
+      
+      <li class="hidden-xs active">
+        What is Virtualization?
+      </li>
+    </ol>
+    <div class="row row-offcanvas row-offcanvas-left">
+      <div class="col-xs-8 col-sm-3 col-md-3 sidebar sidebar-offcanvas">
+        <ul class="nav nav-sidebar">
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup0">
+        <span id="tgSpan0" class="fa fa-angle-right"></span>Installation Guide
+      </a>
+      <ul id="topicGroup0" class="collapse  list-unstyled">
+            <li><a class="" href="../install-guide/Preface.html">Preface</a></li>
+            <li><a class="" href="../install-guide/Introduction.html">Introduction</a></li>
+            <li><a class="" href="../install-guide/Downloading_Fedora.html">Downloading Fedora</a></li>
+            <li><a class="" href="../install-guide/Preparing_for_Installation.html">Preparing for Installation</a></li>
+            <li><a class="" href="../install-guide/Booting_the_Installation.html">Booting the Installation</a></li>
+            <li class="nav-header">
+              <a class="" href="#" data-toggle="collapse" data-target="#topicSubGroup-0-5">
+                <span id="sgSpan-0-5" class="fa fa-caret-right"></span>&nbsp;Installing Using Anaconda
+              </a>
+              <ul id="topicSubGroup-0-5" class="nav-tertiary list-unstyled collapse">
+                  <li><a class="" href="../install-guide/installing_using_anaconda/Installing_Using_Anaconda.html">Installing Using Anaconda</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/WelcomeSpoke.html">Welcome Screen and Language Selection</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/SummaryHub.html">Installation Summary</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/DateTimeSpoke.html">Date & Time</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/KeyboardSpoke.html">Keyboard Layout</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/LangSupportSpoke.html">Language Support</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/SourceSpoke.html">Installation Source</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/SoftwareSpoke.html">Software Selection</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/StorageSpoke.html">Installation Destination</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/StorageSpoke_BootLoader.html">Boot Loader Installation</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/FilterSpoke.html">Installation Destination - Specialized & Network Disks</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/FilterSpoke_AddiSCSI.html">Add iSCSI Target</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/FilterSpoke_AddFCoE.html">Add FCoE SAN</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke.html">Manual Partitioning</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_AddPhysical.html">Creating Standard Partitions</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_SoftwareRAID.html">Creating Software RAID</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_AddLVM.html">Creating a Logical Volume Managament (LVM) Layout</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_AddBtrfs.html">Creating a Btrfs Layout</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_FileSystems.html">Device, File System and RAID Types</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_RecommendedScheme.html">Recommended Partitioning Scheme</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_PartitioningAdvice.html">Advice on Partitions</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/KdumpSpoke.html">Kdump</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/NetworkSpoke.html">Network & Hostname</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/NetworkSpoke_VirtualInterfaces.html">Adding a Virtual Network Interface</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/NetworkSpoke_EditConnection.html">Editing Network Interface Configuration</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/ProgressHub.html">Configuration and Installation Progress</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/PasswordSpoke.html">Root Password</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/UserSpoke.html">Create User</a></li>
+              </ul>
+            </li>
+            <li class="nav-header">
+              <a class="" href="#" data-toggle="collapse" data-target="#topicSubGroup-0-6">
+                <span id="sgSpan-0-6" class="fa fa-caret-right"></span>&nbsp;After the Installation
+              </a>
+              <ul id="topicSubGroup-0-6" class="nav-tertiary list-unstyled collapse">
+                  <li><a class="" href="../install-guide/after_installation/After_Installation.html">After the Installation</a></li>
+                  <li><a class="" href="../install-guide/after_installation/InitialSetupHub.html">Initial Setup</a></li>
+              </ul>
+            </li>
+            <li><a class="" href="../install-guide/Troubleshooting.html">Troubleshooting</a></li>
+            <li><a class="" href="../install-guide/Boot_Options.html">Boot Options</a></li>
+            <li><a class="" href="../install-guide/Kickstart_Installations.html">Automating the Installation with Kickstart</a></li>
+            <li><a class="" href="../install-guide/Network_based_Installations.html">Setting Up an Installation Server</a></li>
+            <li><a class="" href="../install-guide/VNC_Installations.html">Installing Using VNC</a></li>
+            <li><a class="" href="../install-guide/Upgrading_Your_Current_System.html">Upgrading Your Current System</a></li>
+            <li><a class="" href="../install-guide/Kickstart_Syntax_Reference.html">Kickstart Syntax Reference</a></li>
+            <li><a class="" href="../install-guide/Disk_Partitions.html">An Introduction to Disk Partitions</a></li>
+            <li><a class="" href="../install-guide/Understanding_LVM.html">Understanding LVM</a></li>
+            <li><a class="" href="../install-guide/Revision_History.html">Revision History</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup1">
+        <span id="tgSpan1" class="fa fa-angle-down"></span>Virtualization Getting Started Guide
+      </a>
+      <ul id="topicGroup1" class="collapse in list-unstyled">
+            <li><a class="" href="../virt-getting-started-guide/Preface.html">Preface</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Introduction.html">Introduction</a></li>
+            <li><a class=" active" href="../virt-getting-started-guide/What_Is_It.html">What is Virtualization?</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Advantages.html">Advantages and misconceptions of virtualization</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Products.html">Introduction to Fedora virtualization products</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Boxes.html">Introduction to Boxes</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Guest_Installation_Virt_Manager.html">Creating and Managing Guests with Virt-Manager</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Advanced_Virtualization.html">Advanced Virtualization Concepts</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Revision_History.html">Revision History</a></li>
+      </ul>
+    </li>
+</ul>
+      </div>
+      <div class="col-xs-12 col-sm-9 col-md-9 main">
+        <div class="page-header">
+          <h2>仮想化とは</h2>
+        </div>
+        <div class="sect1">
+<h2 id="chap-Virtualization_Getting_Started-What_Is_It"><a class="anchor" href="#chap-Virtualization_Getting_Started-What_Is_It"></a>仮想化とは</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Virtualization is a broad term used to describe running multiple guest
+operating systems with a software to manage them.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sec-how-does-it-work"><a class="anchor" href="#sec-how-does-it-work"></a>How Does Virtualization work?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>仮想化は、1 台のシステムにおいて他のプログラムから並列かつ独立して、ソフトウェア（通常は複数の
+OS）を実行するために使用される、幅広いコンピューティング用語です。既存の仮想化の実装の多くは、ハードウェアを制御して、下にあるハードウェアへのアクセスとともにゲストオペレーティングシステムを提供するソフトウェア層のサブシステムである&lt;firstterm&gt;ハイパーバイザー&lt;/firstterm&gt;を使用します。ハイパーバイザーは、仮想的なハードウェアを&lt;firstterm&gt;ゲストオペレーティングシステム&lt;/firstterm&gt;に提供することにより、複数のオペレーティングシステム（&lt;firstterm&gt;ゲスト&lt;/firstterm&gt;とも呼ばれます）が同じ物理システムにおいて実行できるようにします。オペレーティングシステムを仮想化する方法はいろいろとあります:</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sec-virt-methods"><a class="anchor" href="#sec-virt-methods"></a>仮想化</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>Full virtualization</em></p>
+</div>
+<div class="paragraph">
+<p>Full virtualization uses the hardware features of the processor to provide
+guests with total abstraction of the underlying physical system.  This
+creates a new virtual system, called a virtual machine, that allows guest
+operating systems to run without modifications. The guest operating system
+and any applications on the guest virtual machine are unaware of their
+virtualized environment and run normally.  Hardware-assisted virtualization
+is the technique used for full virtualization with KVM (Kernel-based Virtual
+Machine) in Fedora.</p>
+</div>
+<div class="paragraph">
+<p><em>Para-virtualization</em></p>
+</div>
+<div class="paragraph">
+<p>Para-virtualization employs a collection of software and data structures
+that are presented to the virtualized guest, requiring software
+modifications in the guest to use the para-virtualized environment.
+Para-virtualization can encompass the entire kernel, as is the case for Xen
+para-virtualized guests, or drivers that virtualize I/O devices.</p>
+</div>
+<div class="paragraph">
+<p><em>Software virtualization</em>]</p>
+</div>
+<div class="paragraph">
+<p>Software virtualization uses slower binary translation and other emulation
+techniques to run unmodified operating systems.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Note</strong></p>
+</div>
+<div class="paragraph">
+<p>For more information and detailed instructions on guest installation, refer
+to the Fedora Virtualization Deployment and Administration Guide</p>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sec-virt-consider"><a class="anchor" href="#sec-virt-consider"></a>Virtualization Considerations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>一般的な誤解に、仮想化は変更を正当化するには費用がかかりすぎるというものがあります。仮想化は初期費用が高価になる可能性がありますが、長期的には費用を節約できます。自身の環境においてもっとも選択すべき道を決めるために、Return
+on Investment (ROI) 分析を実行することが重要です。以下の利点を考慮してください:</p>
+</div>
+<div class="paragraph">
+<p>仮想化を用いることにより、複数の物理プラットフォームに対する必要性を無くすことができます。このことは、マシンの運転や冷却のために使用される電力がより少なくなり、結果としてエネルギーコストの削減になることを意味します。複数の物理プラットフォーム、マシンの電力消費と冷却設備の組み合わせに関する初期費用は、仮想化を用いることにより劇的に削減できます。
+物理システムを仮想システムに移行する前に実行される適切な計画が提供されれば、それらをメンテナンスするのにかかる時間を減らすことができます。このことは、パートや労働者に支払われる費用を減らすことを意味します。
+古いバージョンのソフトウェアは、直接新しいベアメタルのマシンにおいて実行できないかもしれません。しかしながら、より大規模で高速なシステムにおいて古いソフトウェアを仮想的に実行することにより、新しいシステムからパフォーマンスの利便性を得ながら、ソフトウェアの寿命を延ばせます。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sec-virt-performance"><a class="anchor" href="#sec-virt-performance"></a>パフォーマンス</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Modern servers have multiple core CPUs. This has significantly changed the
+possibilities with virtual machines. Depending on what you would like to use
+your virtual machine for, and how many CPUs are available, you can now set
+up a virtual machines with multiple CPUs.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sec-virt-flexibility"><a class="anchor" href="#sec-virt-flexibility"></a>Flexibility</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>&lt;package&gt;policycoreutils-gui&lt;/package&gt;: SELinux を管理するためにグラフィカルツール
+&lt;command&gt;system-config-selinux&lt;/command&gt; を提供します。</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>仮想化により、システム管理がより非常に柔軟になります。仮想マシンは、ソフトウェアの更新のテストおよび設定変更の検証をするために、他のシステムに影響を与えることなく、コピーまたは移動できます。また、仮想システムは完全にお互いから分離されているので、あるものの停止時間が他のものに影響を与えることはありません。</p>
+</div>
+<div class="paragraph">
+<p>/home - ユーザーデータ (/home) が独立したパーティションの代わりに /
+に保存されているとき、オペレーティングシステムが不安定になる原因となる、パーティションが一杯になる可能性があります。また、システムを 次のバージョンの
+&PRODUCT; へアップグレードするとき、/home
+パーティションにあるデータをそのままにしたい場合、インストール中に上書きされないようすることが非常に簡単になります。root パーティション (/)
+が壊れると、データは永久に失われる可能性があります。このパーティションを頻繁なバックアップの対象にすることもできます。</p>
+</div>
+<div class="paragraph">
+<p>このホストで実行するよう設定されている仮想ゲストの一覧になります。以下のボタンを使ってこれらゲスト上で各種の動作を実行することができます。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sec-virt-disaster"><a class="anchor" href="#sec-virt-disaster"></a>災害復旧</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Disaster Recovery is generally easier</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Disaster recovery is a major component in information technology
+planning. Virtualization provides a flexible and reliable environment for
+production systems. This flexibility also gives a large benefit of flexible
+and easy disaster recovery. Virtual machines have features that they can be
+moved, backed up, and restored, in many different ways that are not
+available with a typical server.</p>
+</div>
+<div class="paragraph">
+<p>Even when the production environment is still on normal server hardware,
+disaster recovery is quicker and easier when the systems are virtualized. If
+something catastrophic happens on a typical physical server a complete or
+complicated re-install of the system is usually required; resulting in hours
+of recovery time. However, when a clone or snapshot of a virtual machine is
+stored as a backup, this can be used as a fast recovery method of the
+virtual machine. A virtual machine does not depended on specific hardware,
+this makes any server suitable to recover a virtual machine on.</p>
+</div>
+</div>
+</div>
+      </div>
+    </div>
+  </div>
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+   <!-- Latest compiled and minified JavaScript -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+   <script type="text/javascript">
+    /*<![CDATA[*/
+    $(document).ready(function() {
+      $("[id^='topicGroup']").on('show.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicGroup']").on('hide.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicSubGroup']").on('show.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+      $("[id^='topicSubGroup']").on('hide.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+    });
+    /*]]>*/
+  </script>
+</body>
+</html>

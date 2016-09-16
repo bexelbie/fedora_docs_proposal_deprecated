@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Fedora 24 | Installation Guide | Troubleshooting</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <link href="../../f24/_stylesheets/asciibinder.css" rel="stylesheet" />
+
+   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+   <!--[if lt IE 9]>
+     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+   <![endif]-->
+
+  <link href="../../f24/_images/favicon32x32.png" rel="shortcut icon" type="text/css">
+  <!--[if IE]><link rel="shortcut icon" href="../../f24/_images/favicon.ico"><![endif]-->
+  <meta content="AsciiBinder" name="application-name">
+</head>
+<body>
+  <div class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="https://docs.fedoraproject.org/"><img alt="Fedora Documentation" src="../../f24/_images/fedora.svg"></a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <p class="toggle-nav visible-xs pull-left">
+      <button class="btn btn-default btn-sm" type="button" data-toggle="offcanvas">Toggle nav</button>
+    </p>
+    <ol class="breadcrumb">
+      <li class="sitename">
+        <a href="../../index.html">Fedora Documentation</a>
+      </li>
+      <li class="hidden-xs active">
+        <a href="../install-guide/Preface.html">Fedora 24</a>
+      </li>
+      <li class="hidden-xs active">
+        <a href="../install-guide/Preface.html">Installation Guide</a>
+      </li>
+      
+      <li class="hidden-xs active">
+        Troubleshooting
+      </li>
+    </ol>
+    <div class="row row-offcanvas row-offcanvas-left">
+      <div class="col-xs-8 col-sm-3 col-md-3 sidebar sidebar-offcanvas">
+        <ul class="nav nav-sidebar">
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup0">
+        <span id="tgSpan0" class="fa fa-angle-down"></span>Installation Guide
+      </a>
+      <ul id="topicGroup0" class="collapse in list-unstyled">
+            <li><a class="" href="../install-guide/Preface.html">Preface</a></li>
+            <li><a class="" href="../install-guide/Introduction.html">Introduction</a></li>
+            <li><a class="" href="../install-guide/Downloading_Fedora.html">Downloading Fedora</a></li>
+            <li><a class="" href="../install-guide/Preparing_for_Installation.html">Preparing for Installation</a></li>
+            <li><a class="" href="../install-guide/Booting_the_Installation.html">Booting the Installation</a></li>
+            <li class="nav-header">
+              <a class="" href="#" data-toggle="collapse" data-target="#topicSubGroup-0-5">
+                <span id="sgSpan-0-5" class="fa fa-caret-right"></span>&nbsp;Installing Using Anaconda
+              </a>
+              <ul id="topicSubGroup-0-5" class="nav-tertiary list-unstyled collapse">
+                  <li><a class="" href="../install-guide/installing_using_anaconda/Installing_Using_Anaconda.html">Installing Using Anaconda</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/WelcomeSpoke.html">Welcome Screen and Language Selection</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/SummaryHub.html">Installation Summary</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/DateTimeSpoke.html">Date & Time</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/KeyboardSpoke.html">Keyboard Layout</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/LangSupportSpoke.html">Language Support</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/SourceSpoke.html">Installation Source</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/SoftwareSpoke.html">Software Selection</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/StorageSpoke.html">Installation Destination</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/StorageSpoke_BootLoader.html">Boot Loader Installation</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/FilterSpoke.html">Installation Destination - Specialized & Network Disks</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/FilterSpoke_AddiSCSI.html">Add iSCSI Target</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/FilterSpoke_AddFCoE.html">Add FCoE SAN</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke.html">Manual Partitioning</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_AddPhysical.html">Creating Standard Partitions</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_SoftwareRAID.html">Creating Software RAID</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_AddLVM.html">Creating a Logical Volume Managament (LVM) Layout</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_AddBtrfs.html">Creating a Btrfs Layout</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_FileSystems.html">Device, File System and RAID Types</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_RecommendedScheme.html">Recommended Partitioning Scheme</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_PartitioningAdvice.html">Advice on Partitions</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/KdumpSpoke.html">Kdump</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/NetworkSpoke.html">Network & Hostname</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/NetworkSpoke_VirtualInterfaces.html">Adding a Virtual Network Interface</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/NetworkSpoke_EditConnection.html">Editing Network Interface Configuration</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/ProgressHub.html">Configuration and Installation Progress</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/PasswordSpoke.html">Root Password</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/UserSpoke.html">Create User</a></li>
+              </ul>
+            </li>
+            <li class="nav-header">
+              <a class="" href="#" data-toggle="collapse" data-target="#topicSubGroup-0-6">
+                <span id="sgSpan-0-6" class="fa fa-caret-right"></span>&nbsp;After the Installation
+              </a>
+              <ul id="topicSubGroup-0-6" class="nav-tertiary list-unstyled collapse">
+                  <li><a class="" href="../install-guide/after_installation/After_Installation.html">After the Installation</a></li>
+                  <li><a class="" href="../install-guide/after_installation/InitialSetupHub.html">Initial Setup</a></li>
+              </ul>
+            </li>
+            <li><a class=" active" href="../install-guide/Troubleshooting.html">Troubleshooting</a></li>
+            <li><a class="" href="../install-guide/Boot_Options.html">Boot Options</a></li>
+            <li><a class="" href="../install-guide/Kickstart_Installations.html">Automating the Installation with Kickstart</a></li>
+            <li><a class="" href="../install-guide/Network_based_Installations.html">Setting Up an Installation Server</a></li>
+            <li><a class="" href="../install-guide/VNC_Installations.html">Installing Using VNC</a></li>
+            <li><a class="" href="../install-guide/Upgrading_Your_Current_System.html">Upgrading Your Current System</a></li>
+            <li><a class="" href="../install-guide/Kickstart_Syntax_Reference.html">Kickstart Syntax Reference</a></li>
+            <li><a class="" href="../install-guide/Disk_Partitions.html">An Introduction to Disk Partitions</a></li>
+            <li><a class="" href="../install-guide/Understanding_LVM.html">Understanding LVM</a></li>
+            <li><a class="" href="../install-guide/Revision_History.html">Revision History</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup1">
+        <span id="tgSpan1" class="fa fa-angle-right"></span>Virtualization Getting Started Guide
+      </a>
+      <ul id="topicGroup1" class="collapse  list-unstyled">
+            <li><a class="" href="../virt-getting-started-guide/Preface.html">Preface</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Introduction.html">Introduction</a></li>
+            <li><a class="" href="../virt-getting-started-guide/What_Is_It.html">What is Virtualization?</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Advantages.html">Advantages and misconceptions of virtualization</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Products.html">Introduction to Fedora virtualization products</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Boxes.html">Introduction to Boxes</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Guest_Installation_Virt_Manager.html">Creating and Managing Guests with Virt-Manager</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Advanced_Virtualization.html">Advanced Virtualization Concepts</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Revision_History.html">Revision History</a></li>
+      </ul>
+    </li>
+</ul>
+      </div>
+      <div class="col-xs-12 col-sm-9 col-md-9 main">
+        <div class="page-header">
+          <h2>Troubleshooting</h2>
+        </div>
+        <div class="sect1">
+<h2 id="chap-troubleshooting"><a class="anchor" href="#chap-troubleshooting"></a>Troubleshooting</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This chapter offers some pointers on how to get help when something goes
+wrong. It also discusses some common installation problems and their
+solutions.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-troubleshooting-getting-help"><a class="anchor" href="#sect-troubleshooting-getting-help"></a>Getting Help</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are many places on the internet which can help you when you
+encounter a problem not described in this chapter: discussion boards,
+blogs, IRC, and more. Some of the more popular places where you can find
+help include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://ask.fedoraproject.org/en/questions/">Ask Fedora</a> - Fedora&#8217;s
+knowledge base, available in multiple languages</p>
+</li>
+<li>
+<p>The #fedora IRC channel on <a href="http://freenode.net/">FreeNode</a> - one of the
+main IRC channels used by Fedora users, English only</p>
+</li>
+<li>
+<p><a href="https://fedoraproject.org/wiki/">Fedora Project Wiki</a> - the official
+wiki for Fedora Project</p>
+</li>
+<li>
+<p><a href="http://unix.stackexchange.com/">Stack Exchange</a> - an English language
+Q&amp;A board, not specific to Fedora</p>
+</li>
+</ul>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Note</strong></p>
+</div>
+<div class="paragraph">
+<p>The above list is by no means complete - you can find help in many other
+places as well. Additional information about available resources such as
+IRC channels and mailing lists is available at
+<a href="https://fedoraproject.org/wiki/Communicating_and_getting_help" class="bare">https://fedoraproject.org/wiki/Communicating_and_getting_help</a>.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Before you open a new discussion or ask anyone for help on IRC, you
+should always do some research on your own. If you are encountering an
+issue, there is usually a good chance that someone else ran into the
+same problem before you and published a solution somewhere. Opening a
+discussion about something already explained elsewhere, or asking a
+common question which has been answered many times before, is not likely
+to result in a friendly, constructive response.</p>
+</div>
+<div class="paragraph">
+<p>When you ask for help troubleshooting problems related to the
+installation, you may be asked to provide log files generated by the
+installer. The sections below explain which files are generated, what
+their contents are, and how to transfer them from the installation
+system.</p>
+</div>
+<div class="sect2">
+<h3 id="sect-troubleshooting-log-files"><a class="anchor" href="#sect-troubleshooting-log-files"></a>Log Files Generated During the Installation</h3>
+<div class="paragraph">
+<p>For debugging purposes, Anaconda logs installation actions into files in
+the <code>/tmp</code> directory. These files are listed in the following table.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. Log Files and Their Contents</caption>
+<colgroup>
+<col style="width: 34%;">
+<col style="width: 66%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Log file</th>
+<th class="tableblock halign-left valign-top">Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/tmp/anaconda.log</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">general Anaconda messages</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/tmp/program.log</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">all external programs run during the installation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/tmp/storage.log</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">extensive storage module information</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/tmp/packaging.log</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dnf and rpm package installation messages</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/tmp/syslog</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hardware-related system messages</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>If the installation fails, the messages from these files are
+consolidated into <code>/tmp/anaconda-tb-identifier</code>, where identifier is a
+random string.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-troubleshooting-transferring-logs"><a class="anchor" href="#sect-troubleshooting-transferring-logs"></a>Transferring Log Files from the Installation System</h3>
+<div class="paragraph">
+<p>All of the files described in
+<a href="#sect-troubleshooting-log-files">section_title</a> reside in the
+installation program&#8217;s RAM disk, which means they are not saved
+permamently and will be lost once the system is powered down. To store
+them permanently, copy those files to another system on the network
+using <code>scp</code> on the system running the installation program, or copy them
+to a mounted storage device (such as an USB flash drive). Details on how
+to transfer the log files are below. Note that if you use an USB flash
+drive or other removable media, you should make sure to back up any data
+on it before starting the procedure.</p>
+</div>
+<div class="sect3">
+<h4 id="sect-troubleshooting-transferring-logs-usb"><a class="anchor" href="#sect-troubleshooting-transferring-logs-usb"></a>Transferring Log Files Onto a USB Drive</h4>
+<div class="paragraph">
+<p>On the system you are installing, press Ctrl+Alt+F2 to access a shell
+prompt. You will be logged into a root account and you will have access
+to the installation program&#8217;s temporary file system.</p>
+</div>
+<div class="paragraph">
+<p>Connect a USB flash drive to the system and execute the <code>dmesg</code> command.
+A log detailing all recent events will be displayed. At the bottom of
+this log, you will see a set of messages caused by the USB flash drive
+you just connected. It will look like a set of lines similar to the
+following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>[  170.171135] sd 5:0:0:0: [sdb] Attached SCSI removable disk</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note the name of the connected device - in the above example, it is
+<code>sdb</code>.</p>
+</div>
+<div class="paragraph">
+<p>Go to the <code>/mnt</code> directory and once there, create new directory which
+will serve as the mount target for the USB drive. The name of the
+directory does not matter; this example uses the name <code>usb</code>.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre># mkdir usb</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Mount the USB flash drive onto the newly created directory. Note that in
+most cases, you do not want to mount the whole drive, but a partition on
+it. Therefore, do not use the name <code>sdb</code> - use the name of the partition
+you want to write the log files to. In this example, the name <code>sdb1</code> is
+used.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre># mount /dev/sdb1 /mnt/usb</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can now verify that you mounted the correct device and partition by
+accessing it and listing its contents - the list should match what you
+expect to be on the drive.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre># cd /mnt/usb</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre># ls</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Copy the log files to the mounted device.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre># cp /tmp/*log /mnt/usb</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Unmount the USB flash drive. If you get an error message saying that the
+target is busy, change your working directory to outside the mount (for
+example, <code>/</code>).</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre># umount /mnt/usb</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The log files from the installation are now saved on the USB flash
+drive.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="sect-troubleshooting-transferring-logs-network"><a class="anchor" href="#sect-troubleshooting-transferring-logs-network"></a>Transferring Log Files Over the Network</h4>
+<div class="paragraph">
+<p>On the system you are installing, press Ctrl+Alt+F2 to access a shell
+prompt. You will be logged into a root account and you will have access
+to the installation program&#8217;s temporary file system.</p>
+</div>
+<div class="paragraph">
+<p>Switch to the <code>/tmp</code> directory where the log files are located:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre># cd /tmp</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Copy the log files onto another system on the network using the <code>scp</code>
+command:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre># scp *log user@address:path</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Replace user with a valid user name on the target system, address with
+the target system&#8217;s address or host name, and path with the path to the
+directory you wish to save the log files into. For example, if you want
+to log in as john to a system with an IP address of 192.168.0.122 and
+place the log files into the <code>/home/john/logs/</code> directory on that
+system, the command will have the following form:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre># scp *log john@192.168.0.122:/home/john/logs/</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When connecting to the target system for the first time, you may
+encounter a message similar to the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>The authenticity of host '192.168.0.122 (192.168.0.122)' can't be established.
+ECDSA key fingerprint is a4:60:76:eb:b2:d0:aa:23:af:3d:59:5c:de:bb:c4:42.
+Are you sure you want to continue connecting (yes/no)?</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Type <code>yes</code> and press Enter to continue. Then, provide a valid password
+when prompted. The files will start transferring to the specified
+directory on the target system.</p>
+</div>
+<div class="paragraph">
+<p>The log files from the installation are now permanently saved on the
+target system and available for review.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-troubleshooting-problems-beginning-installation"><a class="anchor" href="#sect-troubleshooting-problems-beginning-installation"></a>Trouble Beginning the Installation</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="problems-with-booting-into-the-graphical-installation"><a class="anchor" href="#problems-with-booting-into-the-graphical-installation"></a>Problems with Booting into the Graphical Installation</h3>
+<div class="paragraph">
+<p>Systems with some video cards have trouble booting into the graphical
+installation program. If the installation program does not run using its
+default settings, it attempts to run in a lower resolution mode. If that
+still fails, the installation program attempts to run in text mode.</p>
+</div>
+<div class="paragraph">
+<p>There are several possible solutions to display issues, most of which
+involve specifying custom boot options. For more information, see
+<a href="#sect-boot-options-installer">???</a>.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Use the basic graphics mode</dt>
+<dd>
+<p>You can attempt to perform the installation using the basic graphics
+driver. To do this, edit the installation program&#8217;s boot options and
+append <code>inst.xdriver=vesa</code> at the end of the command line.</p>
+</dd>
+<dt class="hdlist1">Specify the display resolution manually</dt>
+<dd>
+<p>If the installation program fails to detect your screen resolution,
+you can override the automatic detection and specify it manually. To
+do this, append the <code>inst.resolution=x</code> option at the boot menu, where
+x is your display&#8217;s resolution (for example, <code>1024x768</code>).</p>
+</dd>
+<dt class="hdlist1">Use an alternate video driver</dt>
+<dd>
+<p>You can also attempt to specify a custom video driver, overriding the
+installation program&#8217;s automatic detection. To specify a driver, use
+the <code>inst.xdriver=x</code> option, where x is the device driver you want to
+use (for example, <code>nouveau</code>).
++
+<em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em>_
+<strong>Note</strong></p>
+<div class="literalblock">
+<div class="content">
+<pre>If specifying a custom video driver solves your problem, you should
+report it as a bug at https://bugzilla.redhat.com[] under the
+`anaconda` component. Anaconda should be able to detect your hardware
+automatically and use the appropriate driver without your
+intervention.
+_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Perform the installation using VNC</dt>
+<dd>
+<p>If the above options fail, you can use a separate system to access the
+graphical installation over the network, using the Virtual Network
+Computing (VNC) protocol. For details on installing using VNC, see
+<a href="#chap-vnc-installations">???</a>.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="serial-console-not-detected"><a class="anchor" href="#serial-console-not-detected"></a>Serial Console Not Detected</h3>
+<div class="paragraph">
+<p>In some cases, attempting to install in text mode using a serial console
+will result in no output on the console. This happens on systems which
+have a graphics card, but no monitor connected. If Anaconda detects a
+graphics card, it will attempt to use it for a display, even if no
+display is connected.</p>
+</div>
+<div class="paragraph">
+<p>If you want to perform a text-based installation on a serial console,
+use the <code>inst.text</code> and <code>console=</code> boot options. See
+<a href="#chap-anaconda-boot-options">???</a> for more details.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-troubleshooting-problems-during-installation"><a class="anchor" href="#sect-troubleshooting-problems-during-installation"></a>Trouble During the Installation</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="sect-trouble-during-no-target"><a class="anchor" href="#sect-trouble-during-no-target"></a>No Disks Detected</h3>
+<div class="paragraph">
+<p>In the Installation Destination screen, the following error message may
+appear at the bottom: No disks detected. Please shut down the computer,
+connect at least one disk, and restart to complete installation.</p>
+</div>
+<div class="paragraph">
+<p>The message indicates that Anaconda did not find any writable storage
+devices to install to. In that case, first make sure that your system
+does have at least one storage device attached.</p>
+</div>
+<div class="paragraph">
+<p>If your system uses a hardware RAID controller, verify that the
+controller is properly configured and working. See your controller&#8217;s
+documentation for instructions.</p>
+</div>
+<div class="paragraph">
+<p>If you are installing into one or more iSCSI devices and there is no
+local storage present on the system, make sure that all required LUNs
+(Logical Unit Numbers) are being presented to the appropriate HBA (Host
+Bus Adapter).</p>
+</div>
+<div class="paragraph">
+<p>If you made sure you have a connected and properly configured storage
+device and the message still appears after you reboot the system and
+start the installation again, it means that the installation program
+failed to detect the storage. In most cases this message appears when
+you attempt to install on an SCSI device which has not been recognized
+by the installation program.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-troubleshooting-problems-after-installation"><a class="anchor" href="#sect-troubleshooting-problems-after-installation"></a>Problems After Installation</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="sect-trouble-after-reset-root-password"><a class="anchor" href="#sect-trouble-after-reset-root-password"></a>Resetting the Root Password</h3>
+<div class="paragraph">
+<p>If you lost the root password to the system and you have access to the
+boot loader, you can reset the password by editing the GRUB2
+configuration.</p>
+</div>
+<div class="paragraph">
+<p>Boot your system and wait until the GRUB2 menu appears.</p>
+</div>
+<div class="paragraph">
+<p>In the boot loader menu, highlight any entry and press e to edit it.</p>
+</div>
+<div class="paragraph">
+<p>Find the line beginning with <code>linux</code>. At the end of this line, append
+the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>init=/bin/sh</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Press F10 or Ctrl+X to boot the system using the options you just
+edited.</p>
+</div>
+<div class="paragraph">
+<p>Once the system boots, you will be presented with a shell prompt without
+having to enter any user name or password:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>sh-4.2#</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Load the installed SELinux policy:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>sh-4.2# /usr/sbin/load_policy -i</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Execute the following command to remount your root partition:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>sh4.2# mount -o remount,rw /</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Reset the root password:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>sh4.2# passwd root</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When prompted to, enter your new root password and confirm by pressing
+the Enter key. Enter the password for the second time to make sure you
+typed it correctly and confirm with Enter again. If both passwords
+match, a message informing you of a successful root password change will
+appear.</p>
+</div>
+<div class="paragraph">
+<p>Remount the root partition again, this time as read-only:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>sh4.2# mount -o remount,ro /</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Reboot the system. From now on, you will be able to log in as the root
+user using the new password set up during this procedure.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-trouble-after-raid"><a class="anchor" href="#sect-trouble-after-raid"></a>Are You Unable to Boot With Your RAID Card?</h3>
+<div class="paragraph">
+<p>If you have performed an installation and cannot boot your system
+properly, you may need to reinstall and partition your system&#8217;s storage
+differently.</p>
+</div>
+<div class="paragraph">
+<p>Some BIOS types do not support booting from RAID cards. After you finish
+the installation and reboot the system for the first time, a text-based
+screen showing the boot loader prompt (for example, <code>grub&gt;</code>) and a
+flashing cursor may be all that appears. If this is the case, you must
+repartition your system and move your <code>/boot</code> partition and the boot
+loader outside the RAID array. The <code>/boot</code> partition and the boot loader
+must be on the same drive.</p>
+</div>
+<div class="paragraph">
+<p>Once these changes have been made, you should be able to finish your
+installation and boot the system properly. For more information about
+partitioning, see <a href="#sect-installation-gui-storage-partitioning">???</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-trouble-after-graphical-boot"><a class="anchor" href="#sect-trouble-after-graphical-boot"></a>Trouble With the Graphical Boot Sequence</h3>
+<div class="paragraph">
+<p>After you finish the installation and reboot your system for the first
+time, it is possible that the system stops responding during the
+graphical boot sequence, requiring a reset. In this case, the boot
+loader is displayed successfully, but selecting any entry and attempting
+to boot the system results in a halt. This usually means a problem with
+the graphical boot sequence; to solve this issue, you must disable
+graphical boot. To do this, temporarily alter the setting at boot time
+before changing it permanently.</p>
+</div>
+<div class="paragraph">
+<p>Start your computer and wait until the boot loader menu appears. If you
+set your boot loader timeout period to 0, hold down the Esc key to
+access it.</p>
+</div>
+<div class="paragraph">
+<p>When the boot loader menu appears, use your cursor keys to highlight the
+entry you want to boot and press the e key to edit this entry&#8217;s options.</p>
+</div>
+<div class="paragraph">
+<p>In the list of options, find the kernel line - that is, the line
+beginning with the keyword <code>linux</code> (or, in some cases, <code>linux16</code> or
+<code>linuxefi</code>). On this line, locate the <code>rhgb</code> option and delete it. The
+option may not be immediately visible; use the cursor keys to scroll up
+and down.</p>
+</div>
+<div class="paragraph">
+<p>Press F10 or Ctrl+X to boot your system with the edited options.</p>
+</div>
+<div class="paragraph">
+<p>If the system started successfully, you can log in normally. Then you
+will need to disable the graphical boot permanently - otherwise you will
+have to perform the previous procedure every time the system boots. To
+permanently change boot options, do the following.</p>
+</div>
+<div class="paragraph">
+<p>Log in to the root account using the <code>su -</code> command:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ su -</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Open the <code>/etc/default/grub</code> configuration file using a plain text
+editor such as vim.</p>
+</div>
+<div class="paragraph">
+<p>Within the <code>grub</code> file, locate the line beginning with
+<code>GRUB_CMDLINE_LINUX</code>. The line should look similar to the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>GRUB_CMDLINE_LINUX="rd.lvm.lv=rhel/root rd.md=0 rd.dm=0 vconsole.keymap=us $([ -x /usr/sbin/rhcrashkernel-param ] &amp;&amp; /usr/sbin/rhcrashkernel-param || :) rd.luks=0 vconsole.font=latarcyrheb-sun16 rd.lvm.lv=vg_rhel/swap rhgb quiet"</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>On this line, delete the <code>rhgb</code> option.</p>
+</div>
+<div class="paragraph">
+<p>Save the edited configuration file.</p>
+</div>
+<div class="paragraph">
+<p>Refresh the boot loader configuration by executing the following
+command:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre># grub2-mkconfig --output=/boot/grub2/grub.cfg</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>After you finish this procedure, you can reboot your computer. Fedora
+will not use the graphical boot sequence any more. If you wish to enable
+graphical boot, follow the same procedure, add the <code>rhgb</code> option to the
+<code>GRUB_CMDLINE_LINUX</code> line in the <code>/etc/default/grub</code> file and refresh
+the boot loader configuration again using the <code>grub2-mkconfig</code> command.</p>
+</div>
+<div class="paragraph">
+<p>See the Fedora System Administrator&#8217;s Guide, available at
+<a href="http://docs.fedoraproject.org/" class="bare">http://docs.fedoraproject.org/</a>, for more information about working
+with the GRUB2 boot loader.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-trouble-after-graphical-login"><a class="anchor" href="#sect-trouble-after-graphical-login"></a>Booting into a Graphical Environment</h3>
+<div class="paragraph">
+<p>If you have installed the X Window System and a desktop environment such
+as GNOME, but are not seeing a graphical desktop environment once you
+log into your system, you can start it manually using the <code>startx</code>
+command. Note, however, that this is just a one-time fix and does not
+change the log in process for future log ins.</p>
+</div>
+<div class="paragraph">
+<p>To set up your system so that you can log in at a graphical login
+screen, you must change the default systemd target to
+<code>graphical.target</code>. When you are finished, reboot the computer. You will
+presented with a graphical login prompt after the system restarts.</p>
+</div>
+<div class="paragraph">
+<p>Open a shell prompt. If you are in your user account, become root by
+typing the <code>su -</code> command.</p>
+</div>
+<div class="paragraph">
+<p>Change the default target to graphical.target. To do this, execute the
+following command:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre># systemctl set-default graphical.target</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Graphical login is now enabled by default - you will be presented with a
+graphical login prompt after the next reboot. If you want to reverse
+this change and keep using the text-based login prompt, execute the
+following command as root:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre># systemctl set-default multi-user.target</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For more information about targets in systemd, see the Fedora System
+Administrator&#8217;s Guide, available at <a href="http://docs.fedoraproject.org/" class="bare">http://docs.fedoraproject.org/</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-trouble-after-no-gui"><a class="anchor" href="#sect-trouble-after-no-gui"></a>No Graphical User Interface Present</h3>
+<div class="paragraph">
+<p>If you are having trouble getting X (the X Window System) to start, it
+is possible that it has not been installed. Some of the pre-set base
+environments you can select during the installation, such as Minimal
+install or Web Server, do not include a graphical interface - it has to
+be installed manually.</p>
+</div>
+<div class="paragraph">
+<p>If you want X, you can install the necessary packages after the
+installation using the DNF package manager. For example, to install
+GNOME, use <code>dnf install gnome-shell</code> as root.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="x-server-crashing-after-user-logs-in"><a class="anchor" href="#x-server-crashing-after-user-logs-in"></a>X Server Crashing After User Logs In</h3>
+<div class="paragraph">
+<p>If you are having trouble with the X server crashing when a user logs
+in, one or more of your file systems may be full (or nearly full). To
+verify that this is the problem you are experiencing, execute the
+following command:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ df -h</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The output will help you diagnose which partition is full - in most
+cases, the problem will be on the <code>/home</code> partition. A sample output of
+the <code>df</code> command may look similar to the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Filesystem                                  Size  Used Avail Use% Mounted on
+/dev/mapper/vg_rhel-root                     20G  6.0G   13G  32% /
+devtmpfs                                    1.8G     0  1.8G   0% /dev
+tmpfs                                       1.8G  2.7M  1.8G   1% /dev/shm
+tmpfs                                       1.8G 1012K  1.8G   1% /run
+tmpfs                                       1.8G     0  1.8G   0% /sys/fs/cgroup
+tmpfs                                       1.8G  2.6M  1.8G   1% /tmp
+/dev/sda1                                   976M  150M  760M  17% /boot
+/dev/dm-4                                    90G   90G     0 100% /home</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the above example, you can see that the <code>/home</code> partition is full,
+which causes the crash. You can make some room on the partition by
+removing unneeded files. After you free up some disk space, start X
+using the <code>startx</code> command.</p>
+</div>
+<div class="paragraph">
+<p>For additional information about <code>df</code> and an explanation of the options
+available (such as the <code>-h</code> option used in this example), see the df(1)
+man page.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-trouble-after-missing-ram"><a class="anchor" href="#sect-trouble-after-missing-ram"></a>Is Your RAM Not Being Recognized?</h3>
+<div class="paragraph">
+<p>In some cases the kernel does not recognize all of your memory (RAM),
+which causes the system to use less memory than is installed. You can
+find out how much RAM is being utilized using the <code>free -m</code> command. If
+the displayed total amount of memory does not match your expectations,
+it is likely that at least one of your memory modules is faulty. On
+BIOS-based systems, you can use the Memtest86+ utility to test your
+system&#8217;s memory - see <a href="#sect-boot-options-memtest">???</a> for details.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Note</strong></p>
+</div>
+<div class="paragraph">
+<p>If you have 4GB or more memory installed, but Fedora only shows around
+3.5GB or 3.7GB, you have probably installed a 32-bit version of Fedora
+on a 64bit kernel. For modern systems, use the 64-bit (x86_64) version.</p>
+</div>
+<div class="paragraph">
+<p>Some hardware configurations have a part of the system&#8217;s RAM reserved
+and unavailable to the main system. Notably, laptop computers with
+integrated graphics cards will reserve some memory for the GPU. For
+example, a laptop with 4 GB of RAM and an integrated Intel graphics card
+will show only roughly 3.7 GB of available memory, even with a 64-bit
+system.</p>
+</div>
+<div class="paragraph">
+<p>Additionally, the kdump crash kernel dumping mechanism reserves some
+memory for the secondary kernel used in case of the primary kernel
+crashing. This reserved memory will also not be displayed as available
+when using the <code>free</code> command. For details about kdump and its memory
+requirements, see the Fedora System Administrator&#8217;s Guide, available at
+<a href="http://docs.fedoraproject.org/" class="bare">http://docs.fedoraproject.org/</a>.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>If you made sure that your memory does not have any issues, you can try
+and set the amount of memory manually using the <code>mem=</code> kernel option.</p>
+</div>
+<div class="paragraph">
+<p>Start your computer and wait until the boot loader menu appears. If you
+set your boot loader timeout period to 0, hold down the Esc key to
+access it.</p>
+</div>
+<div class="paragraph">
+<p>When the boot loader menu appears, use your cursor keys to highlight the
+entry you want to boot and press the e key to edit this entry&#8217;s options.</p>
+</div>
+<div class="paragraph">
+<p>In the list of options, find the kernel line - that is, the line
+beginning with the keyword <code>linux</code> (or, in some cases, <code>linux16</code>).
+Append the following option to the end of this line:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>mem=xxM</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Replace xx with the amount of RAM you have in megabytes.</p>
+</div>
+<div class="paragraph">
+<p>Press F10 or Ctrl+X to boot your system with the edited options.</p>
+</div>
+<div class="paragraph">
+<p>Wait for the system to boot and log in. Then, open a command line and
+execute the <code>free -m</code> command again. If total amount of RAM displayed by
+the command matches your expectations, append the following to the line
+beginning with <code>GRUB_CMDLINE_LINUX</code> in the <code>/etc/default/grub</code> file to
+make the change permanent:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>mem=xxM</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Replace xx with the amount of RAM you have in megabytes.</p>
+</div>
+<div class="paragraph">
+<p>After you updated the file and saved it, refresh the boot loader
+configuration so that the change will take effect. Run the following
+command with root privileges:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre># grub2-mkconfig --output=/boot/grub2/grub.cfg</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In <code>/etc/default/grub</code>, the above example would look similar to the
+following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>GRUB_TIMEOUT=5
+GRUB_DISTRIBUTOR="$(sed 's, release.*$,,g' /etc/system-release)"
+GRUB_DEFAULT=saved
+GRUB_DISABLE_SUBMENU=true
+GRUB_TERMINAL_OUTPUT="console"
+GRUB_CMDLINE_LINUX="rd.lvm.lv=rhel/root vconsole.font=latarcyrheb-sun16 rd.lvm.lv=rhel/swap $([ -x /usr/sbin/rhcrashkernel.param ] &amp;&amp; /usr/sbin/rhcrashkernel-param || :) vconsole.keymap=us rhgb quiet mem=1024M"
+GRUB_DISABLE_RECOVERY="true"</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>See the Fedora System Administrator&#8217;s Guide, available at
+<a href="http://docs.fedoraproject.org/" class="bare">http://docs.fedoraproject.org/</a>, for more information about working
+with the GRUB2 boot loader.</p>
+</div>
+</div>
+</div>
+</div>
+      </div>
+    </div>
+  </div>
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+   <!-- Latest compiled and minified JavaScript -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+   <script type="text/javascript">
+    /*<![CDATA[*/
+    $(document).ready(function() {
+      $("[id^='topicGroup']").on('show.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicGroup']").on('hide.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicSubGroup']").on('show.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+      $("[id^='topicSubGroup']").on('hide.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+    });
+    /*]]>*/
+  </script>
+</body>
+</html>

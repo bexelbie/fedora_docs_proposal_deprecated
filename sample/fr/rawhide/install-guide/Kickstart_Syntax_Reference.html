@@ -1,0 +1,4718 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Fedora Rawhide | Installation Guide | Kickstart Syntax Reference</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <link href="../../rawhide/_stylesheets/asciibinder.css" rel="stylesheet" />
+
+   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+   <!--[if lt IE 9]>
+     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+   <![endif]-->
+
+  <link href="../../rawhide/_images/favicon32x32.png" rel="shortcut icon" type="text/css">
+  <!--[if IE]><link rel="shortcut icon" href="../../rawhide/_images/favicon.ico"><![endif]-->
+  <meta content="AsciiBinder" name="application-name">
+</head>
+<body>
+  <div class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="https://docs.fedoraproject.org/"><img alt="Fedora Documentation" src="../../rawhide/_images/fedora.svg"></a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <p class="toggle-nav visible-xs pull-left">
+      <button class="btn btn-default btn-sm" type="button" data-toggle="offcanvas">Toggle nav</button>
+    </p>
+    <ol class="breadcrumb">
+      <li class="sitename">
+        <a href="../../index.html">Fedora Documentation</a>
+      </li>
+      <li class="hidden-xs active">
+        <a href="../install-guide/Preface.html">Fedora Rawhide</a>
+      </li>
+      <li class="hidden-xs active">
+        <a href="../install-guide/Preface.html">Installation Guide</a>
+      </li>
+      
+      <li class="hidden-xs active">
+        Kickstart Syntax Reference
+      </li>
+    </ol>
+    <div class="row row-offcanvas row-offcanvas-left">
+      <div class="col-xs-8 col-sm-3 col-md-3 sidebar sidebar-offcanvas">
+        <ul class="nav nav-sidebar">
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup0">
+        <span id="tgSpan0" class="fa fa-angle-down"></span>Installation Guide
+      </a>
+      <ul id="topicGroup0" class="collapse in list-unstyled">
+            <li><a class="" href="../install-guide/Preface.html">Preface</a></li>
+            <li><a class="" href="../install-guide/Introduction.html">Introduction</a></li>
+            <li><a class="" href="../install-guide/Downloading_Fedora.html">Downloading Fedora</a></li>
+            <li><a class="" href="../install-guide/Preparing_for_Installation.html">Preparing for Installation</a></li>
+            <li><a class="" href="../install-guide/Booting_the_Installation.html">Booting the Installation</a></li>
+            <li class="nav-header">
+              <a class="" href="#" data-toggle="collapse" data-target="#topicSubGroup-0-5">
+                <span id="sgSpan-0-5" class="fa fa-caret-right"></span>&nbsp;Installing Using Anaconda
+              </a>
+              <ul id="topicSubGroup-0-5" class="nav-tertiary list-unstyled collapse">
+                  <li><a class="" href="../install-guide/installing_using_anaconda/Installing_Using_Anaconda.html">Installing Using Anaconda</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/WelcomeSpoke.html">Welcome Screen and Language Selection</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/SummaryHub.html">Installation Summary</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/DateTimeSpoke.html">Date & Time</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/KeyboardSpoke.html">Keyboard Layout</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/LangSupportSpoke.html">Language Support</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/SourceSpoke.html">Installation Source</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/SoftwareSpoke.html">Software Selection</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/StorageSpoke.html">Installation Destination</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/StorageSpoke_BootLoader.html">Boot Loader Installation</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/FilterSpoke.html">Installation Destination - Specialized & Network Disks</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/FilterSpoke_AddiSCSI.html">Add iSCSI Target</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/FilterSpoke_AddFCoE.html">Add FCoE SAN</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke.html">Manual Partitioning</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_AddPhysical.html">Creating Standard Partitions</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_SoftwareRAID.html">Creating Software RAID</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_AddLVM.html">Creating a Logical Volume Managament (LVM) Layout</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_AddBtrfs.html">Creating a Btrfs Layout</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_FileSystems.html">Device, File System and RAID Types</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_RecommendedScheme.html">Recommended Partitioning Scheme</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_PartitioningAdvice.html">Advice on Partitions</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/KdumpSpoke.html">Kdump</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/NetworkSpoke.html">Network & Hostname</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/NetworkSpoke_VirtualInterfaces.html">Adding a Virtual Network Interface</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/NetworkSpoke_EditConnection.html">Editing Network Interface Configuration</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/ProgressHub.html">Configuration and Installation Progress</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/PasswordSpoke.html">Root Password</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/UserSpoke.html">Create User</a></li>
+              </ul>
+            </li>
+            <li class="nav-header">
+              <a class="" href="#" data-toggle="collapse" data-target="#topicSubGroup-0-6">
+                <span id="sgSpan-0-6" class="fa fa-caret-right"></span>&nbsp;After the Installation
+              </a>
+              <ul id="topicSubGroup-0-6" class="nav-tertiary list-unstyled collapse">
+                  <li><a class="" href="../install-guide/after_installation/After_Installation.html">After the Installation</a></li>
+                  <li><a class="" href="../install-guide/after_installation/InitialSetupHub.html">Initial Setup</a></li>
+              </ul>
+            </li>
+            <li><a class="" href="../install-guide/Troubleshooting.html">Troubleshooting</a></li>
+            <li><a class="" href="../install-guide/Boot_Options.html">Boot Options</a></li>
+            <li><a class="" href="../install-guide/Kickstart_Installations.html">Automating the Installation with Kickstart</a></li>
+            <li><a class="" href="../install-guide/Network_based_Installations.html">Setting Up an Installation Server</a></li>
+            <li><a class="" href="../install-guide/VNC_Installations.html">Installing Using VNC</a></li>
+            <li><a class="" href="../install-guide/Upgrading_Your_Current_System.html">Upgrading Your Current System</a></li>
+            <li><a class=" active" href="../install-guide/Kickstart_Syntax_Reference.html">Kickstart Syntax Reference</a></li>
+            <li><a class="" href="../install-guide/Disk_Partitions.html">An Introduction to Disk Partitions</a></li>
+            <li><a class="" href="../install-guide/Understanding_LVM.html">Understanding LVM</a></li>
+            <li><a class="" href="../install-guide/Revision_History.html">Revision History</a></li>
+      </ul>
+    </li>
+</ul>
+      </div>
+      <div class="col-xs-12 col-sm-9 col-md-9 main">
+        <div class="page-header">
+          <h2>Kickstart Syntax Reference</h2>
+        </div>
+        <div class="sect1">
+<h2 id="appe-kickstart-syntax-reference"><a class="anchor" href="#appe-kickstart-syntax-reference"></a>Kickstart Syntax Reference</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This appendix describes commands and options available in Kickstart
+installations. For general information about Kickstart, see
+<a href="#chap-kickstart-installations">???</a>.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Important</strong></p>
+</div>
+<div class="paragraph">
+<p>Device names are not guaranteed to be consistent across reboots, which
+can complicate usage in Kickstart scripts. When a Kickstart option calls
+for a device node name (such as <code>sda</code>), you can instead use any item
+from <code>/dev/disk</code>. For example, instead of:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>part / --fstype=xfs --onpart=sda1</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You could use an entry similar to one of the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>part / --fstype=xfs --onpart=/dev/disk/by-path/pci-0000:00:05.0-scsi-0:0:0:0-part1
+part / --fstype=xfs --onpart=/dev/disk/by-id/ata-ST3160815AS_6RA0C882-part1</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This provides a consistent way to refer to disks that is more meaningful
+than just <code>sda</code>. This is especially useful in large storage
+environments.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>While the general principles of Kickstart installations tend to stay the
+same, the commands and options can change between major releases. You
+can use the <code>ksverdiff</code> command to display the differences between two
+versions of the Kickstart syntax. This is useful when updating an
+existing Kickstart file to be used with a new release. To display a list
+of changes in syntax between Fedora 24 and Rawhide, use the
+following command:</p>
+</div>
+<div class="paragraph">
+<p><code>$ ksverdiff -f F24 -t FRawhide</code></p>
+</div>
+<div class="paragraph">
+<p>The <code>-f</code> option specifies the release to start the comparison with, and
+the <code>-t</code> option to specify the release to end with. For additional
+information, see the ksverdiff(1) man page. Also note that you can not
+use this to display changes in a release that is newer than your system
+- the version of pykickstart on Fedora 24 can not display changes
+in Fedora Rawhide.</p>
+</div>
+<div class="paragraph">
+<p>Additionally, you can review the Fedora Rawhide Release Notes, available
+at <a href="http://docs.fedoraproject.org/" class="bare">http://docs.fedoraproject.org/</a>, for a list of changes.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Note</strong></p>
+</div>
+<div class="paragraph">
+<p>In the following sections, if an option is followed by an equals mark
+(<code>=</code>), a value must be specified after it. In the example commands,
+options in square brackets (<code>[ ]</code>) are optional arguments for the
+command.</p>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-kickstart-commands-installation"><a class="anchor" href="#sect-kickstart-commands-installation"></a>Installation Methods and Sources</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following commands control the way Fedora will be installed.</p>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-device"><a class="anchor" href="#sect-kickstart-commands-device"></a>device (optional) - Install Extra Device Drivers</h3>
+<div class="paragraph">
+<p>On most PCI systems, the installation program will automatically detect
+Ethernet and SCSI cards. However, on older systems and some PCI systems,
+Kickstart requires a hint to find the proper devices. The <code>device</code>
+command, which tells the installation program to install extra modules,
+uses the following format:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>device moduleName [--opts=]</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Replace moduleName with the name of the kernel module which should be
+installed.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--opts=</code></dt>
+<dd>
+<p>Options to pass to the installed kernel module. For example:
++</p>
+</dd>
+</dl>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>device i2c_piix4 --opts="aic152x=0x340 io=11"</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-driverdisk"><a class="anchor" href="#sect-kickstart-commands-driverdisk"></a>driverdisk (optional) - Use a Driver Disk</h3>
+<div class="paragraph">
+<p>Driver disks can be used during Kickstart installations to provide
+additional drivers not included by default. You must copy the driver
+disks&#8217;s contents to the root directory of a partition on the system&#8217;s
+hard drive. Then, you must use the <code>driverdisk</code> command to specify that
+the installation program should look for a driver disk and its location.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>driverdisk partition | --source= | --biospart=</pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">partition</dt>
+<dd>
+<p>Search for the driver disk image on a local partition. Replace
+partition with the name of the partition containing the driver disk.
+Note that the partition must be specified as a full path. For example:
++</p>
+</dd>
+</dl>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>driverdisk /dev/sdb1</pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--source=</code></dt>
+<dd>
+<p>Search for the driver disk in a network location instead of a local
+partition. For example:
++</p>
+</dd>
+</dl>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>driverdisk --source=ftp://path/to/dd.img</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>+</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>driverdisk --source=http://path/to/dd.img</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>+</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>driverdisk --source=nfs:hostname:/path/to/dd.img</pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--biospart=</code></dt>
+<dd>
+<p>BIOS partition containing the driver disk (for example, <code>82p2</code>).</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-install"><a class="anchor" href="#sect-kickstart-commands-install"></a>install (required) - Configure Installation Method</h3>
+<div class="paragraph">
+<p>The default installation mode. You must specify the type of installation
+from <code>cdrom</code>, <code>harddrive</code>, <code>nfs</code>, <code>liveimg</code>, or <code>url</code>. The <code>install</code>
+command and the installation method command must be on separate lines.
+For example:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>install
+liveimg --url=file:///images/install/squashfs.img --noverifyssl</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The installation method commands are:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>cdrom</code></dt>
+<dd>
+<p>Install from the first optical (DVD) drive on the system.</p>
+</dd>
+<dt class="hdlist1"><code>harddrive</code></dt>
+<dd>
+<p>Install from a tree or full installation ISO image on a local hard
+drive. The tree or ISO image must be on a file system which is
+mountable in the installation environment. Supported file systems are
+ext2, ext3, ext4, vfat, or xfs.
++</p>
+</dd>
+</dl>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>install
+harddrive --partition= | --biospart= [--dir=]</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>  +
+  `--partition=`;;
+    Partition to install from (such as `sdb2`).
+  `--biospart=`;;
+    BIOS partition to install from (such as `82p2`).
+  `--dir=`;;
+    Directory containing the installation tree or ISO image.
+`liveimg`::
+  Install from a disk image instead of packages. The image can be the
+  `squashfs.img` file from a live ISO image, or any file system that the
+  installation media can mount. Supported file systems are ext2, ext3,
+  ext4, vfat, and xfs.
+  +
+  This command also supports installation from tar archives of the root
+  file system. In that case, the file name must end with `.tar`, `.tbz`,
+  `.tgz`, `.txz`, `.tar.bz2`, `tar.gz`, or `tar.xz`.
+  +</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>install
+liveimg --url=  [--proxy= | --checksum= | --noverifyssl=]</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>  +
+  `--url=`;;
+    The location to install from. Supported protocols are HTTP, HTTPS,
+    FTP, and file.
+  `--proxy=`;;
+    Specify an HTTP, HTTPS or FTP proxy to use while performing the
+    installation.
+  `--checksum=`;;
+    An optional argument with the SHA256 checksum of the image file,
+    used for integrity verification. If you are using a live image
+    provided by Fedora Project, you can find a list of checksums at
+    https://fedoraproject.org/en/verify[].
+  `--noverifyssl`;;
+    Disable SSL verification when connecting to an HTTPS server.
+`nfs`::
+  Install from an NFS server specified. The NFS server must be exporting
+  the full installation ISO image (such as the {PRODUCT} Server DVD) or
+  its extracted contents.
+  +</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>install
+nfs --server=  [--dir=] [--opts= ]</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>  +
+  `--server=`;;
+    Host name of the server.
+  `--dir=`;;
+    Directory containing the installation tree or ISO image.
+  `--opts=`;;
+    Mount options to use for mounting the NFS export.
+`url`::
+  Install from a tree on a remote server via HTTP, HTTPS, or FTP.
+  +</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>install
+url --url= | --mirrorlist= [--proxy= | --noverifyssl]</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>+
+`--url=`;;
+  The location to install from. Supported protocols are `http`,
+  `https`, `ftp`, and `file`.
+`--mirrorlist=`;;
+  The mirror URL to install from.
+`--proxy=`;;
+  Specify an HTTP, HTTPS or FTP proxy to use while performing the
+  installation.
+`--noverifyssl`;;
+  Disable SSL verification when connecting to an HTTPS server.</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-mediacheck"><a class="anchor" href="#sect-kickstart-commands-mediacheck"></a>mediacheck (optional) - Verify Installation Media Integrity</h3>
+<div class="paragraph">
+<p>This command will force the installation program to perform a media
+check before starting the installation, similarly to the <code>rd.live.check</code>
+boot option (see <a href="#sect-boot-options-mediacheck">???</a>. This command
+requires that installations be attended, so it is disabled by default.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-ostreesetup"><a class="anchor" href="#sect-kickstart-commands-ostreesetup"></a>ostreesetup (optional) - Install from an OSTree</h3>
+<div class="paragraph">
+<p>Used for OSTree installations. See
+<a href="https://wiki.gnome.org/action/show/Projects/OSTree" class="bare">https://wiki.gnome.org/action/show/Projects/OSTree</a> for more
+information about OSTree. Available options are:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--osname=</code></dt>
+<dd>
+<p>Management root for OS installation (required).</p>
+</dd>
+<dt class="hdlist1"><code>--remote=</code></dt>
+<dd>
+<p>Management root for OS installation (optional).</p>
+</dd>
+<dt class="hdlist1"><code>--url=</code></dt>
+<dd>
+<p>Repository URL (required).</p>
+</dd>
+<dt class="hdlist1"><code>--ref=</code></dt>
+<dd>
+<p>Name of branch inside the repository (required).</p>
+</dd>
+<dt class="hdlist1"><code>--nogpg</code></dt>
+<dd>
+<p>Disable GPG key verification (optional).</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-repo"><a class="anchor" href="#sect-kickstart-commands-repo"></a>repo (optional) - Configure Additional Repositories</h3>
+<div class="paragraph">
+<p>Configures additional DNF repositories that may be used as sources for
+package installation. This command can be used multiple times in a
+single Kickstart file.</p>
+</div>
+<div class="paragraph">
+<p>See the Fedora System Administrator&#8217;s Guide, available at
+<a href="http://docs.fedoraproject.org/" class="bare">http://docs.fedoraproject.org/</a>, for information about the DNF package
+manager.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Important</strong></p>
+</div>
+<div class="paragraph">
+<p>Repositories used for installation must be stable. The installation may
+fail if a repository is modified before the installation concludes.</p>
+</div>
+</blockquote>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--name=</code></dt>
+<dd>
+<p>The repository ID. This option is required. If a repository has a name
+which conflicts with another previously added repository, it will be
+ignored. Because the installation program uses a list of
+pre-configured repositories, this means that you cannot add
+repositories with the same names as the preconfigured ones.</p>
+</dd>
+<dt class="hdlist1"><code>--baseurl=</code></dt>
+<dd>
+<p>The repository URL. The variables that may be used in DNF repo
+configuration files are <em>not</em> supported. You may use one of either
+this option or <code>--mirrorlist</code>, not both.</p>
+</dd>
+<dt class="hdlist1"><code>--mirrorlist=</code></dt>
+<dd>
+<p>The URL pointing at a list of mirrors for the repository. The
+variables that may normally be used in dnf repository configuration
+files are not supported here. You may use one of either this option or
+--baseurl, not both.</p>
+</dd>
+<dt class="hdlist1"><code>--install</code></dt>
+<dd>
+<p>Make the repository configured in the Kickstart file available on the
+system after the installation as well. Creates a configuration file
+for the repository in <code>/etc/yum.repos.d/</code> on the installed system.</p>
+</dd>
+<dt class="hdlist1"><code>--cost=</code></dt>
+<dd>
+<p>An integer value to assign a cost to this repository. If multiple
+repositories provide the same packages, this number will be used to
+prioritize which repository will be used before another. Repositories
+with a lower cost take priority over repositories with higher cost.</p>
+</dd>
+<dt class="hdlist1"><code>--excludepkgs=</code></dt>
+<dd>
+<p>A comma-separated list of package names that must <em>not</em> be pulled from
+this repository. This is useful if multiple repositories provide the
+same package and you want to make sure it comes from a particular
+repository. Both full package names (such as <code>publican</code>) and globs
+(such as <code>gnome-*</code>) are accepted.</p>
+</dd>
+<dt class="hdlist1"><code>--includepkgs=</code></dt>
+<dd>
+<p>A comma-separated list of package names and globs that must be pulled
+from this repository. This is useful if multiple repositories provide
+the same package and you want to make sure it comes from this
+repository.</p>
+</dd>
+<dt class="hdlist1"><code>--proxy=</code></dt>
+<dd>
+<p>Specify an HTTP, HTTPS or FTP proxy server to use when accessing this
+repository. This setting does not affect any other repositories or
+installation sources.</p>
+</dd>
+<dt class="hdlist1"><code>--ignoregroups=true</code></dt>
+<dd>
+<p>This option is used when composing installation trees and has no
+effect on the installation process itself. It tells the compose tools
+to not look at the package group information when mirroring trees so
+as to avoid mirroring large amounts of unnecessary data.</p>
+</dd>
+<dt class="hdlist1"><code>--noverifyssl</code></dt>
+<dd>
+<p>Disable SSL verification when connecting to an HTTPS server.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-kickstart-commands-storage"><a class="anchor" href="#sect-kickstart-commands-storage"></a>Storage and Partitioning</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Commands in this section are used to determine your system&#8217;s storage
+options and partitioning.</p>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-autopart"><a class="anchor" href="#sect-kickstart-commands-autopart"></a>autopart (optional) - Automatic Partitioning</h3>
+<div class="paragraph">
+<p>Automatically creates partitions: a root (<code>/</code>) partition (1 GB or
+larger), a <code>swap</code> partition, and an appropriate <code>/boot</code> partition for
+the architecture. On large enough drives (50 GB and larger), this also
+creates a <code>/home</code> partition.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Important</strong></p>
+</div>
+<div class="paragraph">
+<p>The <code>autopart</code> option cannot be used together with the <code>part/partition</code>,
+<code>raid</code>, <code>logvol</code>, or <code>volgroup</code> options in the same Kickstart file.</p>
+</div>
+</blockquote>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--type=</code></dt>
+<dd>
+<p>Selects one of the predefined automatic partitioning schemes you want
+to use. Accepts the following values:
++</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>lvm</code>: The LVM partitioning scheme.</p>
+</li>
+<li>
+<p><code>btrfs</code>: The Btrfs partitioning scheme.</p>
+</li>
+<li>
+<p><code>plain</code>: Regular partitions with no LVM or Btrfs.</p>
+</li>
+<li>
+<p><code>thinp</code>: The LVM Thin Provisioning partitioning scheme.
++
+The created partitioning scheme will follow the recommended scheme
+described at
+<a href="#sect-installation-gui-manual-partitioning-recommended">???</a>.</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1"><code>--fstype=</code></dt>
+<dd>
+<p>Specify a supported file system (such as <code>ext4</code> or <code>xfs</code>) to replace
+the default when doing automatic partitioning.</p>
+</dd>
+<dt class="hdlist1"><code>--nolvm</code></dt>
+<dd>
+<p>Do not use LVM or Btrfs for automatic partitioning. This option is
+equal to <code>--type=plain</code>.</p>
+</dd>
+<dt class="hdlist1"><code>--encrypted</code></dt>
+<dd>
+<p>Encrypts all partitions. This is equivalent to checking the Encrypt
+partitions check box on the initial partitioning screen during a
+manual graphical installation.</p>
+</dd>
+<dt class="hdlist1"><code>--passphrase=</code></dt>
+<dd>
+<p>Provides a default system-wide passphrase for all encrypted devices.</p>
+</dd>
+<dt class="hdlist1"><code>--escrowcert=URL_of_X.509_certificate</code></dt>
+<dd>
+<p>Stores data encryption keys of all encrypted volumes as files in
+<code>/root</code>, encrypted using the X.509 certificate from the URL specified
+with URL_of_X.509_certificate. The keys are stored as a separate file
+for each encrypted volume. This option is only meaningful if
+<code>--encrypted</code> is specified.</p>
+</dd>
+<dt class="hdlist1"><code>--backuppassphrase</code></dt>
+<dd>
+<p>Adds a randomly-generated passphrase to each encrypted volume. Store
+these passphrases in separate files in <code>/root</code>, encrypted using the
+X.509 certificate specified with <code>--escrowcert</code>. This option is only
+meaningful if <code>--escrowcert</code> is specified.</p>
+</dd>
+<dt class="hdlist1"><code>--cipher=</code></dt>
+<dd>
+<p>Specifies which type of encryption will be used if the Anaconda
+default aes-xts-plain64 is not satisfactory. You must use this option
+together with the <code>--encrypted</code> option; by itself it has no effect.
+Available types of encryption are listed in the Fedora Security Guide,
+available at <a href="http://docs.fedoraproject.org/" class="bare">http://docs.fedoraproject.org/</a>. Using either
+aes-xts-plain64 or aes-cbc-essiv:sha256 is strongly recommended.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-bootloader"><a class="anchor" href="#sect-kickstart-commands-bootloader"></a>bootloader (required) - Configure Boot Loader</h3>
+<div class="paragraph">
+<p>Specifies how the boot loader should be installed.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Important</strong></p>
+</div>
+<div class="paragraph">
+<p>You should always use a password to protect your boot loader. An
+unprotected boot loader can allow a potential attacker to modify the
+system&#8217;s boot options and gain unauthorized access to the system.</p>
+</div>
+</blockquote>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Important</strong></p>
+</div>
+<div class="paragraph">
+<p>Some systems require a special partition for installing the boot loader.
+The type and size of this partition depends on whether the disk you are
+installing the boot loader to uses the Master Boot Record (MBR) or a
+GUID Partition Table (GPT) schema. For more information, see
+<a href="#sect-installation-gui-storage-partitioning-bootloader">???</a>.</p>
+</div>
+</blockquote>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--append=</code></dt>
+<dd>
+<p>Specifies additional kernel parameters. To specify multiple
+parameters, separate them with spaces. For example:
++</p>
+</dd>
+</dl>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>bootloader --location=mbr --append="hdd=ide-scsi ide=nodma"</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>  +
+  The `rhgb` and `quiet` parameters are always used, even if you do not
+  specify them here or do not use the `--append=` command at all.
+`--boot-drive=`::
+  Specifies which drive the boot loader should be written to, and
+  therefore which drive the computer will boot from. If you use a
+  multipath device as the boot drive, specify only one member of the
+  device.
+  +
+  ___________________________________________________________________________________________________________________________________________________________________________________________________
+  *Important*</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>  The `--boot-drive=` option is currently being ignored in {PRODUCT}
+  installations on IBM System z systems using the zipl boot loader. When
+  zipl is installed, it determines the boot drive on its own.
+  ___________________________________________________________________________________________________________________________________________________________________________________________________
+`--leavebootorder`::
+  Prevents the installation program from making changes to the existing
+  list of bootable images on UEFI or ISeries/PSeries systems.
+`--driveorder=`::
+  Specifies which drive is first in the BIOS boot order. For example:
+  +</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>bootloader --driveorder=sda,hda</pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--location=</code></dt>
+<dd>
+<p>Specifies where the boot record is written. Valid values are the
+following:
++</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>mbr</code> - The default option. Depends on whether the drive uses the
+Master Boot Record (MBR) or GUID Partition Table (GPT) scheme:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>On a GPT-formatted disk, this option will install stage 1.5 of the
+boot loader into the BIOS boot partition.</p>
+</li>
+<li>
+<p>On an MBR-formatted disk, stage 1.5 will be installed into the
+empty space between the MBR and the first partition.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>partition</code> - Install the boot loader on the first sector of the
+partition containing the kernel.</p>
+</li>
+<li>
+<p><code>none</code> - Do not install the boot loader.
++
+In most cases, this option does not need to be specified.</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1"><code>--password=</code></dt>
+<dd>
+<p>If using GRUB2 as the boot loader, sets the boot loader password to
+the one specified with this option. This should be used to restrict
+access to the GRUB2 shell, where arbitrary kernel options can be
+passed.
++
+If a password is specified, GRUB2 will also ask for a user name. The
+user name is always <code>root</code>.</p>
+</dd>
+<dt class="hdlist1"><code>--iscrypted</code></dt>
+<dd>
+<p>Normally, when you specify a boot loader password using the
+<code>--password=</code> option, it will be stored in the Kickstart file in plain
+text. If you want to encrypt the password, use this option and an
+encrypted password.
++
+To generate an encrypted password, use the <code>grub2-mkpasswd-pbkdf2</code>
+command, enter the password you want to use, and copy the command&#8217;s
+output (the hash starting with <code>grub.pbkdf2</code>) into the Kickstart file.
+An example <code>bootloader</code> Kickstart entry with an encrypted password
+will look similar to the following:
++</p>
+</dd>
+</dl>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>bootloader --iscrypted --password=grub.pbkdf2.sha512.10000.5520C6C9832F3AC3D149AC0B24BE69E2D4FB0DBEEDBD29CA1D30A044DE2645C4C7A291E585D4DC43F8A4D82479F8B95CA4BA4381F8550510B75E8E0BB2938990.C688B6F0EF935701FF9BD1A8EC7FE5BD2333799C98F28420C5CC8F1A2A233DE22C83705BB614EA17F3FDFDF4AC2161CEA3384E56EB38A2E39102F5334C47405E</pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--timeout=</code></dt>
+<dd>
+<p>Specifies the amount of time the boot loader will wait before booting
+the default option (in seconds).</p>
+</dd>
+<dt class="hdlist1"><code>--default=</code></dt>
+<dd>
+<p>Sets the default boot image in the boot loader configuration.</p>
+</dd>
+<dt class="hdlist1"><code>--extlinux</code></dt>
+<dd>
+<p>Use the extlinux boot loader instead of GRUB2. This option only works
+on systems supported by extlinux.</p>
+</dd>
+<dt class="hdlist1"><code>--disabled</code></dt>
+<dd>
+<p>Do not attempt to install a boot loader. This option overrides all
+other boot loader configuration; all other boot loader options will be
+ignored and no boot loader packages will be installed.</p>
+</dd>
+<dt class="hdlist1"><code>--nombr</code></dt>
+<dd>
+<p>Install the boot loader configuration and support files, but do not
+modify the MBR.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-btrfs"><a class="anchor" href="#sect-kickstart-commands-btrfs"></a>btrfs (optional) - Create Btrfs Volume or Subvolume</h3>
+<div class="paragraph">
+<p>Create a Btrfs volume or subvolume. For a volume, the syntax is:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>btrfs mntpoint --data=level --metadata=level [--label=] partitions</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>One or more partitions can be specified in partitions. When specifying
+more than one partitions, the entries must be separated by a single
+space. See <a href="#exam-kickstart-create-btrfs">example_title</a> for a
+demonstration.</p>
+</div>
+<div class="paragraph">
+<p>For a subvolume, the syntax is:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>btrfs mntpoint --subvol --name=name parent</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>parent should be the identifier of the subvolume&#8217;s parent volume, name
+with a name for the subvolume, and mntpoint is the location where the
+file system is mounted.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--data=</code></dt>
+<dd>
+<p>RAID level to use for file system <em>data</em> (such as <code>0</code>, <code>1</code>, or <code>10</code>).
+This parameter is optional, has no meaning for subvolumes, and
+requires more than one physical disk.</p>
+</dd>
+<dt class="hdlist1"><code>--metadata=</code></dt>
+<dd>
+<p>RAID level to use for file system/volume <em>metadata</em> (such as <code>0</code>, <code>1</code>,
+or <code>10</code>). This parameter is optional, has no meaning for subvolumes,
+and requires more than one physical disk.</p>
+</dd>
+<dt class="hdlist1"><code>--label=</code></dt>
+<dd>
+<p>Specify a label for the Btrfs file system. If the given label is
+already in use by another file system, a new label will be created.
+This option has no meaning for subvolumes.</p>
+</dd>
+<dt class="hdlist1"><code>--subvol</code></dt>
+<dd>
+<p>Create a Btrfs subvolume instead of a volume.</p>
+</dd>
+<dt class="hdlist1"><code>--name=</code></dt>
+<dd>
+<p>Set a name for a Btrfs subvolume.</p>
+</dd>
+<dt class="hdlist1"><code>--noformat</code> or <code>--useexisting</code></dt>
+<dd>
+<p>Use an existing Btrfs volume (or subvolume) and do not reformat the
+file system.</p>
+</dd>
+<dt class="hdlist1"><code>--mkfsoptions=</code></dt>
+<dd>
+<p>Specifies additional parameters to be passed to the program that makes
+a filesystem on this volume or subvolume. No processing is done on the
+list of arguments, so they must be supplied in a format that can be
+passed directly to the mkfs program. This means multiple options
+should be comma-separated or surrounded by double quotes, depending on
+the filesystem.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>The following example shows how to create a Btrfs volume from member
+partitions on three disks with subvolumes for <code>/</code> and <code>/home</code>. The main
+volume is not mounted or used directly in this example.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>part btrfs.01 --size=6000 --ondisk=sda
+part btrfs.02 --size=6000 --ondisk=sdb
+part btrfs.03 --size=6000 --ondisk=sdc
+
+btrfs none --data=0 --metadata=1 --label=f{PRODVER} btrfs.01 btrfs.02 btrfs.03
+btrfs / --subvol --name=root LABEL=f{PRODVER}
+btrfs /home --subvol --name=home f{PRODVER}</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-clearpart"><a class="anchor" href="#sect-kickstart-commands-clearpart"></a>clearpart (optional) - Remove All Existing Partitions</h3>
+<div class="paragraph">
+<p>Removes partitions from the system, prior to creation of new partitions.
+By default, no partitions are removed.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Note</strong></p>
+</div>
+<div class="paragraph">
+<p>If the <code>clearpart</code> command is used, then the <code>part --onpart</code> command
+cannot be used on a logical partition.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>For a detailed example of partitioning including the <code>clearpart</code>
+command, see
+<a href="#sect-kickstart-example-advanced-partitioning">section_title</a>.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--all</code></dt>
+<dd>
+<p>Erases all partitions from the system.
++
+<em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em>_
+<strong>Warning</strong></p>
+<div class="literalblock">
+<div class="content">
+<pre>This option will erase all disks which can be reached by the
+installer, including any attached network storage. Use this option
+with caution.
+_____________________________________________________________________________________________________________________________________________</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1"><code>--drives=</code></dt>
+<dd>
+<p>Specifies which drives to clear partitions from. For example, the
+following clears all the partitions on the first two drives on the
+primary IDE controller:
++</p>
+</dd>
+</dl>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>clearpart --drives=hda,hdb --all</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>+
+To clear a multipath device, use the format `disk/by-id/scsi-WWID`,
+where WWID is the world-wide identifier for the device. For example,
+to clear a disk with WWID `58095BEC5510947BE8C0360F604351918`, use:
++</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>clearpart --drives=disk/by-id/scsi-58095BEC5510947BE8C0360F604351918</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>+
+This format is preferable for all multipath devices, but if errors
+arise, multipath devices that do not use logical volume management
+(LVM) can also be cleared using the format
+`disk/by-id/dm-uuid-mpath-WWID`, where WWID is the world-wide
+identifier for the device. For example, to clear a disk with WWID
+`2416CD96995134CA5D787F00A5AA11017`, use:
++</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>clearpart --drives=disk/by-id/dm-uuid-mpath-2416CD96995134CA5D787F00A5AA11017</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>+
+_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+*Warning*</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>  Never specify multipath devices by device names like `mpatha`. Device
+  names such as this are not specific to a particular disk. The disk
+  named `/dev/mpatha` during installation might not be the one that you
+  expect it to be. Therefore, the `clearpart` command could target the
+  wrong disk.
+  _______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+`--list=`::
+  Specifies which partitions to clear. This option overrides the `--all`
+  and `--linux` options if used. Can be used across different drives.
+  For example:
+  +</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>clearpart --list=sda2,sda3,sdb1</pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--disklabel=</code></dt>
+<dd>
+<p>Create a set disk label when relabeling a disk.</p>
+</dd>
+<dt class="hdlist1"><code>--linux</code></dt>
+<dd>
+<p>Erases all Linux partitions.</p>
+</dd>
+<dt class="hdlist1"><code>--none</code></dt>
+<dd>
+<p>Do not remove any partitions. This is the default behavior - using
+this option is the same as not using the <code>clearpart</code> command at all.</p>
+</dd>
+</dl>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Note</strong></p>
+</div>
+<div class="paragraph">
+<p>Using the <code>clearpart --all</code> command in a Kickstart file to remove all
+existing partitions during the installation will cause Anaconda to pause
+and prompt you for a confirmation. If you need to perform the
+installation automatically with no interaction, add the <code>zerombr</code>
+command to your Kickstart file.</p>
+</div>
+</blockquote>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-fcoe"><a class="anchor" href="#sect-kickstart-commands-fcoe"></a>fcoe (optional) - Configure Fibre Channel Over Ethernet Devices</h3>
+<div class="paragraph">
+<p>Specify which FCoE devices should be activated automatically in addition
+to those discovered by Enhanced Disk Drive Services (EDD).</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>fcoe --nic=name [--dcp= | --autovlan]</pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--nic=</code> (required)</dt>
+<dd>
+<p>Name of the device to be activated.</p>
+</dd>
+<dt class="hdlist1"><code>--dcb=</code></dt>
+<dd>
+<p>Establish Data Center Bridging (DCB) settings.</p>
+</dd>
+<dt class="hdlist1"><code>--autovlan</code></dt>
+<dd>
+<p>Discover VLANs automatically.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-ignoredisk"><a class="anchor" href="#sect-kickstart-commands-ignoredisk"></a>ignoredisk (optional) - Ignore Specified Disks</h3>
+<div class="paragraph">
+<p>Causes the installation program to ignore the specified disks. This is
+useful if you use autopartition and want to be sure that some disks are
+ignored. For example, without <code>ignoredisk</code>, attempting to deploy on a
+SAN cluster the Kickstart would fail, as the installation program
+detects passive paths to the SAN that return no partition table.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>ignoredisk --drives= | --only-use= [--interactive]</pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--drives=</code></dt>
+<dd>
+<p>Specify one or more drives to ignore. Multiple drives can be specified
+as a comma-separated list. For example:
++</p>
+</dd>
+</dl>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>ignoredisk --drives=sda,sdc</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>+
+To ignore a multipath device that does not use logical volume
+management (LVM), use the format `disk/by-id/dm-uuid-mpath-WWID`,
+where WWID is the world-wide identifier for the device. For example,
+to ignore a disk with WWID `2416CD96995134CA5D787F00A5AA11017`, use:
++</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>ignoredisk --drives=disk/by-id/dm-uuid-mpath-2416CD96995134CA5D787F00A5AA11017</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>+
+Multipath devices that use LVM are not assembled until after Anaconda
+has parsed the Kickstart file. Therefore, you cannot specify these
+devices in the format `dm-uuid-mpath`. Instead, to ignore a multipath
+device that uses LVM, use the format `disk/by-id/scsi-WWID`, where
+WWID is the world-wide identifier for the device. For example, to
+ignore a disk with WWID `58095BEC5510947BE8C0360F604351918`, use:
++</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>ignoredisk --drives=disk/by-id/scsi-58095BEC5510947BE8C0360F604351918</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>+
+_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+*Warning*</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>  Never specify multipath devices by device names like `mpatha`. Device
+  names such as this are not specific to a particular disk. The disk
+  named `/dev/mpatha` during installation might not be the one that you
+  expect it to be. Therefore, the `clearpart` command could target the
+  wrong disk.
+  _______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+`--only-use=`::
+  Specifies a list of disks for the installation program to use. All
+  other disks are ignored. For example, to use disk `sda` during
+  installation and ignore all other disks:
+  +</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>ignoredisk --only-use=sda</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>+
+To include a multipath device that does not use LVM:
++</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>ignoredisk --only-use=disk/by-id/dm-uuid-mpath-2416CD96995134CA5D787F00A5AA11017</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>+
+To include a multipath device that uses LVM:
++</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>ignoredisk --only-use=disk/by-id/scsi-58095BEC5510947BE8C0360F604351918</pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--interactive</code></dt>
+<dd>
+<p>Allows you to manually navigate the advanced storage screen.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-iscsi"><a class="anchor" href="#sect-kickstart-commands-iscsi"></a>iscsi (optional) - Configure iSCSI Devices</h3>
+<div class="paragraph">
+<p>Specifies additional iSCSI storage to be attached during installation.
+If you use the <code>iscsi</code> command, you must also assign a name to the iSCSI
+node, using the <code>iscsiname</code> command (see
+<a href="#sect-kickstart-commands-iscsiname">section_title</a>. The <code>iscsiname</code>
+command must appear before the <code>iscsi</code> command in the Kickstart file.</p>
+</div>
+<div class="paragraph">
+<p>You should configure iSCSI storage in the system BIOS or firmware (iBFT
+for Intel systems) rather than use the <code>iscsi</code> command if possible. If
+you do so, Anaconda automatically detects and uses disks configured in
+BIOS or firmware and no special configuration is necessary in the
+Kickstart file.</p>
+</div>
+<div class="paragraph">
+<p>If you must use the <code>iscsi</code> command, make sure that networking is
+activated at the beginning of the installation, and that the <code>iscsi</code>
+command appears in the Kickstart file <em>before</em> you refer to iSCSI disks
+with commands such as <code>clearpart</code> or <code>ignoredisk</code>.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>iscsi --ipaddr=  --port=  [--target= | --iface= | --user= | --password= | --reverse-user= | --reverse-password=]</pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--ipaddr=</code></dt>
+<dd>
+<p>The IP address of the target to connect to.</p>
+</dd>
+<dt class="hdlist1"><code>--port=</code></dt>
+<dd>
+<p>The port number (typically <code>3260</code>).</p>
+</dd>
+<dt class="hdlist1"><code>--target=</code></dt>
+<dd>
+<p>Target IQN (iSCSI Qualified Name).</p>
+</dd>
+<dt class="hdlist1"><code>--iface=</code></dt>
+<dd>
+<p>Bind the connection to a specific network interface instead of using
+the default one determined by the network layer. Once used, it must be
+specified in all instances of the <code>iscsi</code> command in the entire
+Kickstart file.</p>
+</dd>
+<dt class="hdlist1"><code>--user=</code></dt>
+<dd>
+<p>User name required to authenticate with the target.</p>
+</dd>
+<dt class="hdlist1"><code>--password=</code></dt>
+<dd>
+<p>Password that corresponds with the user name specified for the target.</p>
+</dd>
+<dt class="hdlist1"><code>--reverse-user=</code></dt>
+<dd>
+<p>User name required to authenticate with the initiator from a target
+using reverse CHAP authentication.</p>
+</dd>
+<dt class="hdlist1"><code>--reverse-password=</code></dt>
+<dd>
+<p>Password that corresponds with the user name specified for the
+initiator.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-iscsiname"><a class="anchor" href="#sect-kickstart-commands-iscsiname"></a>iscsiname (optional) - Assign Name to iSCSI Device</h3>
+<div class="paragraph">
+<p>Assigns a name to an iSCSI node specified by the <code>iscsi</code> command
+(<a href="#sect-kickstart-commands-iscsi">section_title</a>). This command is
+mandatory if you use the <code>iscsi</code> command, and it must be specified
+<em>before</em> you use <code>iscsi</code>.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>iscsiname iqn</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-logvol"><a class="anchor" href="#sect-kickstart-commands-logvol"></a>logvol (optional) - Create LVM Logical Volume</h3>
+<div class="paragraph">
+<p>Create a logical volume for Logical Volume Management (LVM) with the
+syntax:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>logvol mntpoint --vgname=  --name= [options]</pre>
+</div>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Note</strong></p>
+</div>
+<div class="paragraph">
+<p>Do not use the dash (<code>-</code>) character in logical volume and volume group
+names when installing Fedora using Kickstart. If this character is
+used, the installation will finish normally, but the <code>/dev/mapper/</code>
+directory will list these volumes and volume groups with every dash
+doubled. For example, a volume group named <code>volgrp-01</code> containing a
+logical volume named <code>logvol-01</code> will be listed as
+<code>/dev/mapper/volgrp&#8212;&#8203;01-logvol&#8212;&#8203;01</code>.</p>
+</div>
+<div class="paragraph">
+<p>This limitation only applies to newly created logical volume and volume
+group names. If you are reusing existing ones using the <code>--noformat</code> or
+<code>--useexisting</code> option, their names will not be changed.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>For a detailed example of <code>logvol</code> in action, see
+<a href="#sect-kickstart-example-advanced-partitioning">section_title</a>.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">mntpoint</dt>
+<dd>
+<p>Replace with the volume&#8217;s mount point. This name can take the
+following forms:
++</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>/path</code></dt>
+<dd>
+<p>A path to the mount point - for example, <code>/</code> or <code>/home</code></p>
+</dd>
+<dt class="hdlist1"><code>swap</code></dt>
+<dd>
+<p>The partition is used as swap space.
++
+To determine the size of the swap partition automatically, use the
+<code>--recommended</code> option:
++</p>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>swap --recommended</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>+
+To determine the size of the swap partition automatically but also
+allow extra space for your system to hibernate, use the
+`--hibernation` option:
++</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>swap --hibernation</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>    +
+    The size assigned will be equivalent to the swap space assigned by
+    `--recommended` plus the amount of RAM on your system.
+    +
+    For the swap sizes assigned by these commands, see the section
+    describing swap in
+    link:#sect-installation-gui-manual-partitioning-recommended[???].
+  `none`;;
+    Used only when creating a thin pool volume.
+`--noformat`::
+  Use an existing logical volume and do not format it.
+`--useexisting`::
+  Use an existing logical volume and format it.
+`--fstype=`::
+  Sets the file system type for the logical volume. Valid values are
+  `xfs`, `ext2`, `ext3`, `ext4`, `swap`, and `vfat`. See
+  link:#sect-installation-gui-manual-partitioning-filesystems[???] for
+  information about available file systems.
+`--fsoptions=`::
+  Specifies a free form string of options to be used when mounting the
+  filesystem. This string will be copied into the `/etc/fstab` file of
+  the installed system and should be enclosed in quotes. For example:
+  +</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>--fsoptions="ro, x-systemd.device-timeout=0"</pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--mkfsoptions=</code></dt>
+<dd>
+<p>Specifies additional parameters to be passed to the program that makes
+a filesystem on this logical volume. No processing is done on the list
+of arguments, so they must be supplied in a format that can be passed
+directly to the mkfs program. This means multiple options should be
+comma-separated or surrounded by double quotes, depending on the
+filesystem.</p>
+</dd>
+<dt class="hdlist1"><code>--label=</code></dt>
+<dd>
+<p>Sets a label for the logical volume.</p>
+</dd>
+<dt class="hdlist1"><code>--grow</code></dt>
+<dd>
+<p>Grow the volume to fill available space (if any), or up to the limit
+set by the <code>--maxsize=</code> option.</p>
+</dd>
+<dt class="hdlist1"><code>--size=</code></dt>
+<dd>
+<p>The size of the logical volume in megabytes. This option can not be
+used together with the <code>--percent=</code> option.</p>
+</dd>
+<dt class="hdlist1"><code>--percent=</code></dt>
+<dd>
+<p>Specify the amount by which to grow the logical volume, as a
+percentage of the free space in the volume group after any
+statically-sized logical volumes are taken into account. This option
+can not be used together with the <code>--size=</code> and <code>--grow</code> options.
++
+<em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em>_</em>
+<strong>Important</strong></p>
+<div class="literalblock">
+<div class="content">
+<pre>When creating a new logical volume, you must either specify its size
+statically using the `--size=` option, or as a percentage of remaining
+free space using the `--percent=` option. You can not use both of
+these options on the same logical volume.
+_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1"><code>--maxsize=</code></dt>
+<dd>
+<p>The maximum size in megabytes when the logical volume is set to grow.
+Specify an integer value here such as <code>500</code> (do not include the unit).</p>
+</dd>
+<dt class="hdlist1"><code>--recommended</code></dt>
+<dd>
+<p>Use this option when creating a swap logical volume to determine the
+size of this volume automatically, based on your system&#8217;s hardware.
+For details about the recommended scheme, see
+<a href="#sect-installation-gui-manual-partitioning-recommended">???</a>.
++
+<em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em>
+<strong>Important</strong></p>
+<div class="literalblock">
+<div class="content">
+<pre>This option can only be used for partitions which result in a file
+system such as the `/boot` partition and swap space. It can not be
+used to create partitionsm, LVM physical or logical volumes or RAID
+members.
+__________________________________________________________________________________________________________________________________________________________________________________________________________________</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1"><code>--resize</code></dt>
+<dd>
+<p>Resize an existing logical volume. If you use this option, you must
+also specify <code>--useexisting</code> and <code>--size</code>.</p>
+</dd>
+<dt class="hdlist1"><code>--encrypted</code></dt>
+<dd>
+<p>Specifies that this logical volume should be encrypted, using the
+passphrase provided in the <code>--passphrase=</code> option. If you do not
+specify a passphrase, the installation program will use the default,
+system-wide passphrase set with the <code>autopart --passphrase</code> command,
+or stop the installation and prompt you to provide a passphrase if no
+default is set.</p>
+</dd>
+<dt class="hdlist1"><code>--passphrase=</code></dt>
+<dd>
+<p>Specifies the passphrase to use when encrypting this logical volume.
+You must use this option together with the <code>--encrypted</code> option. This
+option has no effect by itself.</p>
+</dd>
+<dt class="hdlist1"><code>--cipher=</code></dt>
+<dd>
+<p>Specifies which type of encryption will be used if the Anaconda
+default aes-xts-plain64 is not satisfactory. You must use this option
+together with the <code>--encrypted</code> option; by itself it has no effect.
+Available types of encryption are listed in the Fedora Security Guide,
+available at <a href="http://docs.fedoraproject.org/" class="bare">http://docs.fedoraproject.org/</a>. Using either
+aes-xts-plain64 or aes-cbc-essiv:sha256 is strongly recommended.</p>
+</dd>
+<dt class="hdlist1"><code>--escrowcert=URL_of_X.509_certificate</code></dt>
+<dd>
+<p>Store data encryption keys of all encrypted volumes as files in
+<code>/root</code>, encrypted using the X.509 certificate from the URL specified
+with URL_of_X.509_certificate. The keys are stored as a separate file
+for each encrypted volume. This option is only meaningful if
+<code>--encrypted</code> is specified.</p>
+</dd>
+<dt class="hdlist1"><code>--backuppassphrase</code></dt>
+<dd>
+<p>Add a randomly-generated passphrase to each encrypted volume. Store
+these passphrases in separate files in <code>/root</code>, encrypted using the
+X.509 certificate specified with <code>--escrowcert</code>. This option is only
+meaningful if <code>--escrowcert</code> is specified.</p>
+</dd>
+<dt class="hdlist1"><code>--thinpool</code></dt>
+<dd>
+<p>Creates a thin pool logical volume. (Use a mount point of <code>none</code>)</p>
+</dd>
+<dt class="hdlist1"><code>--metadatasize=</code></dt>
+<dd>
+<p>Metadata area size (in MiB) for a new thin pool device.</p>
+</dd>
+<dt class="hdlist1"><code>--chunksize=</code></dt>
+<dd>
+<p>Chunk size (in KiB) for a new thin pool device.</p>
+</dd>
+<dt class="hdlist1"><code>--thin</code></dt>
+<dd>
+<p>Create a thin logical volume. (Requires use of <code>--poolname</code>)</p>
+</dd>
+<dt class="hdlist1"><code>--poolname=</code></dt>
+<dd>
+<p>Specify the name of the thin pool in which to create a thin logical
+volume. Requires the <code>--thin</code> option.</p>
+</dd>
+<dt class="hdlist1"><code>--profile=</code></dt>
+<dd>
+<p>Specify the configuration profile name to use with thin logical
+volumes. If used, the name will also be included in the metadata for
+the given logical volume. By default, the available profiles are
+<code>default</code> and <code>thin-performance</code> and are defined in the
+<code>/etc/lvm/profile</code> directory. See the lvm(8) man page for additional
+information.</p>
+</dd>
+<dt class="hdlist1"><code>--cachepvs=</code></dt>
+<dd>
+<p>A comma-separated list of (fast) physical volumes which should be used
+for LVM cache.</p>
+</dd>
+<dt class="hdlist1"><code>--cachesize=</code></dt>
+<dd>
+<p>Requested size of cache attached to the logical volume, in MiB.
+(Requires the <code>--cachepvs=</code> option.)</p>
+</dd>
+<dt class="hdlist1"><code>--cachemode=</code></dt>
+<dd>
+<p>Mode to be used for LVM cache (either <code>writeback</code> or <code>writethrough</code>).</p>
+</dd>
+</dl>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Note</strong></p>
+</div>
+<div class="paragraph">
+<p>The <code>--cachepvs=</code>, <code>--cachesize=</code>, and <code>--cachemode=</code> options listed
+above are used to configure LVM caching. For more information, see the
+lvmcache(7) man page.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Create one or more partitions first using
+<a href="#sect-kickstart-commands-part">section_title</a>, create the logical
+volume group (<a href="#sect-kickstart-commands-volgroup">section_title</a>),
+and then create logical volumes. For example:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>part pv.01 --size 3000
+volgroup myvg pv.01
+logvol / --vgname=myvg --size=2000 --name=rootvol</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-part"><a class="anchor" href="#sect-kickstart-commands-part"></a>part (required) - Create Physical Partition</h3>
+<div class="paragraph">
+<p>Creates a partition on the system.</p>
+</div>
+<div class="paragraph">
+<p>For a detailed example of <code>part</code> in action, see
+<a href="#sect-kickstart-example-advanced-partitioning">section_title</a>.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>part|partition mntpoint --name=name --device=device --rule=rule [options]</pre>
+</div>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Warning</strong></p>
+</div>
+<div class="paragraph">
+<p>All partitions created are formatted as part of the installation process
+unless <code>--noformat</code> and <code>--onpart=</code> are used.</p>
+</div>
+</blockquote>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Note</strong></p>
+</div>
+<div class="paragraph">
+<p>If partitioning fails for any reason, diagnostic messages appear on
+virtual console 3.</p>
+</div>
+</blockquote>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">mntpoint</dt>
+<dd>
+<p>Where the partition is mounted. The value must be of one of the
+following:
++</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>/path</code></dt>
+<dd>
+<p>A path to the mount point - for example, <code>/</code> or <code>/home</code></p>
+</dd>
+<dt class="hdlist1"><code>swap</code></dt>
+<dd>
+<p>The partition is used as swap space.
++
+To determine the size of the swap partition automatically, use the
+<code>--recommended</code> option:
++</p>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>swap --recommended</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>+
+The size assigned will be effective but not precisely calibrated for
+your system.
++
+To determine the size of the swap partition automatically but also
+allow extra space for your system to hibernate, use the
+`--hibernation` option:
++</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>swap--hibernation</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>    +
+    The size assigned will be equivalent to the swap space assigned by
+    `--recommended` plus the amount of RAM on your system.
+    +
+    For the swap sizes assigned by these commands, see the section
+    describing swap in
+    link:#sect-installation-gui-manual-partitioning-recommended[???].
+  `raid.id`;;
+    The partition is used for software RAID (see `raid`).
+  `pv.id`;;
+    The partition is used for LVM (see
+    link:#sect-kickstart-commands-part[section_title]).
+  `biosboot`;;
+    The partition will be used for a BIOS Boot partition. A 1 MB BIOS
+    boot partition is necessary on BIOS-based systems using a GUID
+    Partition Table (GPT); the boot loader will be installed into it. It
+    is not necessary on UEFI systems. Also see
+    link:#sect-kickstart-commands-part[section_title].
+  `/boot/efi`;;
+    An EFI System Partition. An EFI partition at least 50 MB in size is
+    necessary on UEFI-based systems; the recommended size is 200 MB. It
+    is not necessary on BIOS systems. Also see
+    link:#sect-kickstart-commands-part[section_title].
+`--size=`::
+  The minimum partition size in megabytes. Specify an integer value here
+  such as `500` (do not include the unit).
+  +
+  __________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+  *Important*</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>  If the `--size` value is too small, the installation will fail. Set
+  the `--size` value as the minimum amount of space you require. For
+  size recommendations, see
+  link:#sect-installation-gui-manual-partitioning-recommended[???].
+  __________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+`--maxsize=`::
+  The maximum partition size in megabytes when the partition is set to
+  grow. Specify an integer value here such as `500` (do not include the
+  unit).
+`--resize`::
+  Resize an existing partition. When using this option, specify the new
+  size (in megabytes) using the `--size=` option and the target
+  partition using the `--onpart=` option.
+`--grow`::
+  Tells the partition to grow to fill available space (if any), or up to
+  the maximum size setting.
+  +
+  __________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+  *Note*</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>  If you use `--grow=` without setting `--maxsize=` on a swap partition,
+  Anaconda will limit the maximum size of the swap partition. For
+  systems that have less than 2 GB of physical memory, the imposed limit
+  is twice the amount of physical memory. For systems with more than
+  2 GB, the imposed limit is the size of physical memory plus 2 GB.
+  __________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+`--noformat`::
+  Specifies that the partition should not be formatted, for use with the
+  `--onpart` command.
+`--onpart=` or `--usepart=`::
+  Specifies the device on which to place the partition. For example:
+  +</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>partition /home --onpart=hda1</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>+
+The above puts `/home` on `/dev/hda1`.
++
+These options can also add a partition to a logical volume. For
+example:
++</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>partition pv.1 --onpart=hda2</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>  +
+  The device must already exist on the system; the `--onpart` option
+  will not create it.
+`--ondisk=` or `--ondrive=`::
+  Forces the partition to be created on a particular disk. For example,
+  `--ondisk=sdb` puts the partition on the second SCSI disk on the
+  system.
+  +
+  To specify a multipath device that does not use logical volume
+  management (LVM), use the format `disk/by-id/dm-uuid-mpath-WWID`,
+  where WWID is the world-wide identifier for the device. For example,
+  to specify a disk with WWID `2416CD96995134CA5D787F00A5AA11017`, use:
+  +</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>part / --fstype=xfs --grow --asprimary --size=8192 --ondisk=disk/by-id/dm-uuid-mpath-2416CD96995134CA5D787F00A5AA11017</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>+
+Multipath devices that use LVM are not assembled until after Anaconda
+has parsed the Kickstart file. Therefore, you cannot specify these
+devices in the format `dm-uuid-mpath`. Instead, to specify a multipath
+device that uses LVM, use the format `disk/by-id/scsi-WWID`, where
+WWID is the world-wide identifier for the device. For example, to
+specify a disk with WWID `58095BEC5510947BE8C0360F604351918`, use:
++</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>part / --fstype=xfs --grow --asprimary --size=8192 --ondisk=disk/by-id/scsi-58095BEC5510947BE8C0360F604351918</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>+
+_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+*Warning*</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>  Never specify multipath devices by device names like `mpatha`. Device
+  names such as this are not specific to a particular disk. The disk
+  named `/dev/mpatha` during installation might not be the one that you
+  expect it to be. Therefore, the `clearpart` command could target the
+  wrong disk.
+  _______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+`--asprimary`::
+  Forces the partition to be allocated as a _primary_ partition. If the
+  partition cannot be allocated as primary (usually due to too many
+  primary partitions being already allocated), the partitioning process
+  will fail. This option only makes sense when the disk uses a Master
+  Boot Record (MBR); for GUID Partition Table (GPT)-labeled disks this
+  option has no meaning. For information about primary (and extended)
+  partitions, see
+  link:#sect-installation-gui-manual-partitioning-recommended[???].
+`--fsprofile=`::
+  Specifies a usage type to be passed to the program that makes a
+  filesystem on this partition. A usage type defines a variety of tuning
+  parameters to be used when making a filesystem. For this option to
+  work, the filesystem must support the concept of usage types and there
+  must be a configuration file that lists valid types. For `ext2`,
+  `ext3`, `ext4`, this configuration file is `/etc/mke2fs.conf`.
+`--fstype=`::
+  Sets the file system type for the partition. Valid values are `xfs`,
+  `ext2`, `ext3`, `ext4`, `swap`, `vfat`, `efi` and `biosboot`. For
+  information about supported file systems, see
+  link:#sect-installation-gui-manual-partitioning-filesystems[???].
+`--fsoptions=`::
+  Specifies a free form string of options to be used when mounting the
+  filesystem. This string will be copied into the `/etc/fstab` file of
+  the installed system and should be enclosed in quotes. For example:
+  +</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>--fsoptions="ro, x-systemd.device-timeout=0"</pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--mkfsoptions=</code></dt>
+<dd>
+<p>Specifies additional parameters to be passed to the program that makes
+a filesystem on this partition. No processing is done on the list of
+arguments, so they must be supplied in a format that can be passed
+directly to the mkfs program. This means multiple options should be
+comma-separated or surrounded by double quotes, depending on the
+filesystem.</p>
+</dd>
+<dt class="hdlist1"><code>--label=</code></dt>
+<dd>
+<p>Assign a label to an individual partition.</p>
+</dd>
+<dt class="hdlist1"><code>--recommended</code></dt>
+<dd>
+<p>Determine the size of the partition automatically. For details about
+the recommended scheme, see
+<a href="#sect-installation-gui-manual-partitioning-recommended">???</a>.
++
+<em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em>
+<strong>Important</strong></p>
+<div class="literalblock">
+<div class="content">
+<pre>This option can only be used for partitions which result in a file
+system such as the `/boot` partition and swap space. It can not be
+used to create partitionsm, LVM physical or logical volumes or RAID
+members.
+__________________________________________________________________________________________________________________________________________________________________________________________________________________</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1"><code>--onbiosdisk</code></dt>
+<dd>
+<p>Forces the partition to be created on a particular disk as discovered
+by the BIOS.</p>
+</dd>
+<dt class="hdlist1"><code>--encrypted</code></dt>
+<dd>
+<p>Specifies that this partition should be encrypted, using the
+passphrase provided in the <code>--passphrase</code> option. If you do not
+specify a passphrase, Anaconda uses the default, system-wide
+passphrase set with the <code>autopart --passphrase</code> command, or stops the
+installation and prompts you to provide a passphrase if no default is
+set.</p>
+</dd>
+<dt class="hdlist1"><code>--passphrase=</code></dt>
+<dd>
+<p>Specifies the passphrase to use when encrypting this partition. You
+must use this option together with the <code>--encrypted</code> option; by itself
+it has no effect.</p>
+</dd>
+<dt class="hdlist1"><code>--cipher=</code></dt>
+<dd>
+<p>Specifies which type of encryption will be used if the Anaconda
+default aes-xts-plain64 is not satisfactory. You must use this option
+together with the <code>--encrypted</code> option; by itself it has no effect.
+Available types of encryption are listed in the Fedora Security Guide,
+available at <a href="http://docs.fedoraproject.org/" class="bare">http://docs.fedoraproject.org/</a>. Using either
+aes-xts-plain64 or aes-cbc-essiv:sha256 is strongly recommended.</p>
+</dd>
+<dt class="hdlist1"><code>--escrowcert=URL_of_X.509_certificate</code></dt>
+<dd>
+<p>Stores data encryption keys of all encrypted volumes as files in
+<code>/root</code>, encrypted using the X.509 certificate from the URL specified
+with URL_of_X.509_certificate. The keys are stored as a separate file
+for each encrypted volume. This option is only meaningful if
+<code>--encrypted</code> is specified.</p>
+</dd>
+<dt class="hdlist1"><code>--backuppassphrase</code></dt>
+<dd>
+<p>Add a randomly-generated passphrase to each encrypted partition. Store
+these passphrases in separate files in <code>/root</code>, encrypted using the
+X.509 certificate specified with <code>--escrowcert</code>. This option is only
+meaningful if <code>--escrowcert</code> is specified.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-raid"><a class="anchor" href="#sect-kickstart-commands-raid"></a>raid (optional) - Create Software RAID</h3>
+<div class="paragraph">
+<p>Assembles a software RAID device. This command is of the form:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>raid mntpoint --level=level --device=mddevice partitions*</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For a detailed example of <code>raid</code> in action, see
+<a href="#sect-kickstart-example-advanced-partitioning">section_title</a>.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">mntpoint</dt>
+<dd>
+<p>Location where the RAID file system is mounted. If it is <code>/</code>, the RAID
+level must be 1 unless a boot partition (<code>/boot</code>) is present. If a
+boot partition is present, the <code>/boot</code> partition must be level 1 and
+the root (<code>/</code>) partition can be any of the available types. The
+partitions* (which denotes that multiple partitions can be listed)
+lists the RAID identifiers to add to the RAID array.</p>
+</dd>
+<dt class="hdlist1"><code>--level=</code></dt>
+<dd>
+<p>RAID level to use (<code>0</code>, <code>1</code>, <code>4</code>, <code>5</code>, <code>6</code>, or <code>10</code>). See
+<a href="#sect-installation-gui-manual-partitioning-filesystems">???</a> for
+information about various RAID types and their requirements.</p>
+</dd>
+<dt class="hdlist1"><code>--device=</code></dt>
+<dd>
+<p>Name of the RAID device to use. As of Fedora Rawhide, RAID devices
+are no longer referred to by names like <code>md0</code>. If you have an old
+(v0.90 metadata) array that you cannot assign a name to, you can
+specify the array by a filesystem label or UUID (for example,
+<code>--device=rhel7-root --label=rhel7-root</code>).</p>
+</dd>
+<dt class="hdlist1"><code>--spares=</code></dt>
+<dd>
+<p>Specifies the number of spare drives allocated for the RAID array.
+Spare drives are used to rebuild the array in case of drive failure.</p>
+</dd>
+<dt class="hdlist1"><code>--fsprofile=</code></dt>
+<dd>
+<p>Specifies a usage type to be passed to the program that makes a
+filesystem on this partition. A usage type defines a variety of tuning
+parameters to be used when making a filesystem. For this option to
+work, the filesystem must support the concept of usage types and there
+must be a configuration file that lists valid types. For <code>ext2</code>,
+<code>ext3</code>, <code>ext4</code>, this configuration file is <code>/etc/mke2fs.conf</code>.</p>
+</dd>
+<dt class="hdlist1"><code>--fstype=</code></dt>
+<dd>
+<p>Sets the file system type for the partition. Valid values are <code>xfs</code>,
+<code>ext2</code>, <code>ext3</code>, <code>ext4</code>, <code>swap</code>, <code>vfat</code>, <code>efi</code> and <code>biosboot</code>. For
+information about supported file systems, see
+<a href="#sect-installation-gui-manual-partitioning-filesystems">???</a>.</p>
+</dd>
+<dt class="hdlist1"><code>--fsoptions=</code></dt>
+<dd>
+<p>Specifies a free form string of options to be used when mounting the
+filesystem. This string will be copied into the <code>/etc/fstab</code> file of
+the installed system and should be enclosed in quotes. For example:
++</p>
+</dd>
+</dl>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>--fsoptions="ro, x-systemd.device-timeout=0"</pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--mkfsoptions=</code></dt>
+<dd>
+<p>Specifies additional parameters to be passed to the program that makes
+a filesystem on this partition. No processing is done on the list of
+arguments, so they must be supplied in a format that can be passed
+directly to the mkfs program. This means multiple options should be
+comma-separated or surrounded by double quotes, depending on the
+filesystem.</p>
+</dd>
+<dt class="hdlist1"><code>--label=</code></dt>
+<dd>
+<p>Specify the label to give to the filesystem to be made. If the given
+label is already in use by another filesystem, a new label will be
+created.</p>
+</dd>
+<dt class="hdlist1"><code>--noformat</code></dt>
+<dd>
+<p>Use an existing RAID device and do not format it.</p>
+</dd>
+<dt class="hdlist1"><code>--useexisting</code></dt>
+<dd>
+<p>Use an existing RAID device and reformat it.</p>
+</dd>
+<dt class="hdlist1"><code>--encrypted</code></dt>
+<dd>
+<p>Specifies that this array should be encrypted, using the passphrase
+provided in the <code>--passphrase</code> option. If you do not specify a
+passphrase, Anaconda uses the default, system-wide passphrase set with
+the <code>autopart --passphrase</code> command, or stops the installation and
+prompts you to provide a passphrase if no default is set.</p>
+</dd>
+<dt class="hdlist1"><code>--passphrase=</code></dt>
+<dd>
+<p>Specifies the passphrase to use when encrypting this partition. You
+must use this option together with the <code>--encrypted</code> option; by itself
+it has no effect.</p>
+</dd>
+<dt class="hdlist1"><code>--cipher=</code></dt>
+<dd>
+<p>Specifies which type of encryption will be used if the Anaconda
+default aes-xts-plain64 is not satisfactory. You must use this option
+together with the <code>--encrypted</code> option; by itself it has no effect.
+Available types of encryption are listed in the Fedora Security Guide,
+available at <a href="http://docs.fedoraproject.org/" class="bare">http://docs.fedoraproject.org/</a>. Using either
+aes-xts-plain64 or aes-cbc-essiv:sha256 is strongly recommended.</p>
+</dd>
+<dt class="hdlist1"><code>--escrowcert=URL_of_X.509_certificate</code></dt>
+<dd>
+<p>Stores data encryption keys of all encrypted volumes as files in
+<code>/root</code>, encrypted using the X.509 certificate from the URL specified
+with URL_of_X.509_certificate. The keys are stored as a separate file
+for each encrypted volume. This option is only meaningful if
+<code>--encrypted</code> is specified.</p>
+</dd>
+<dt class="hdlist1"><code>--backuppassphrase</code></dt>
+<dd>
+<p>Add a randomly-generated passphrase to each encrypted partition. Store
+these passphrases in separate files in <code>/root</code>, encrypted using the
+X.509 certificate specified with <code>--escrowcert</code>. This option is only
+meaningful if <code>--escrowcert</code> is specified.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>The following example shows how to create a RAID level 1 partition for
+<code>/</code>, and a RAID level 5 for <code>/home</code>, assuming there are three SCSI disks
+on the system. It also creates three swap partitions, one on each drive.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>part raid.01 --size=6000 --ondisk=sda
+part raid.02 --size=6000 --ondisk=sdb
+part raid.03 --size=6000 --ondisk=sdc
+
+part swap --size=512 --ondisk=sda
+part swap --size=512 --ondisk=sdb
+part swap --size=512 --ondisk=sdc
+
+part raid.11 --size=1 --grow --ondisk=sda
+part raid.12 --size=1 --grow --ondisk=sdb
+part raid.13 --size=1 --grow --ondisk=sdc
+
+raid / --level=1 --device=f{PRODVER}-root --label=fPRODVER-root raid.01 raid.02 raid.03
+raid /home --level=5 --device=f{PRODVER}-home --label=fPRODVER-home raid.11 raid.12 raid.13</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-reqpart"><a class="anchor" href="#sect-kickstart-commands-reqpart"></a>reqpart (optional) - Create Required Partitions</h3>
+<div class="paragraph">
+<p>Automatically create partitions required by your hardware platform.
+These include a <code>/boot/efi</code> for x86_64 and Aarch64 systems with UEFI
+firmware, biosboot for x86_64 systems with BIOS firmware and GPT (GUID
+Partition Table), and PRePBoot for IBM Power Systems.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Note</strong></p>
+</div>
+<div class="paragraph">
+<p>This command can not be used together with <code>autopart</code>, because
+<code>autopart</code> does the same and creates other partitions or logical volumes
+such as <code>/</code> and swap on top. In contrast with <code>autopart</code>, this command
+only creates platform-specific partitions and leaves the rest of the
+drive empty, allowing you to create a custom layout.</p>
+</div>
+</blockquote>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>reqpart [--add-boot]</pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--add-boot</code></dt>
+<dd>
+<p>Create a separate <code>/boot</code> partition in addition to the
+platform-specific partition created by the base command.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-volgroup"><a class="anchor" href="#sect-kickstart-commands-volgroup"></a>volgroup (optional) - Create LVM Volume Group</h3>
+<div class="paragraph">
+<p>Creates a Logical Volume Management (LVM) volume group.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>volgroup name partition [options]</pre>
+</div>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Important</strong></p>
+</div>
+<div class="paragraph">
+<p>Do not use the dash (<code>-</code>) character in logical volume and volume group
+names when installing Fedora using Kickstart. If this character is
+used, the installation will finish normally, but the <code>/dev/mapper/</code>
+directory will list these volumes and volume groups with every dash
+doubled. For example, a volume group named <code>volgrp-01</code> containing a
+logical volume named <code>logvol-01</code> will be listed as
+<code>/dev/mapper/volgrp&#8212;&#8203;01-logvol&#8212;&#8203;01</code>.</p>
+</div>
+<div class="paragraph">
+<p>This limitation only applies to newly created logical volume and volume
+group names. If you are reusing existing ones using the <code>--noformat</code> or
+<code>--noformat</code> option, their names will not be changed.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>For a detailed partitioning example including <code>volgroup</code>, see
+<a href="#sect-kickstart-example-advanced-partitioning">section_title</a>.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--noformat</code></dt>
+<dd>
+<p>Use an existing volume group and do not format it.</p>
+</dd>
+<dt class="hdlist1"><code>--useexisting</code></dt>
+<dd>
+<p>Use an existing volume group and reformat it.</p>
+</dd>
+<dt class="hdlist1"><code>--pesize=</code></dt>
+<dd>
+<p>Set the size of the physical extents. The default size for Kickstart
+installations is 4 MiB.</p>
+</dd>
+<dt class="hdlist1"><code>--reserved-space=</code></dt>
+<dd>
+<p>Specify an amount of space to leave unused in a volume group in
+megabytes. Applicable only to newly created volume groups.</p>
+</dd>
+<dt class="hdlist1"><code>--reserved-percent=</code></dt>
+<dd>
+<p>Specify a percentage of total volume group space to leave unused.
+Applicable only to newly created volume groups.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Create one or more partitions first using
+<a href="#sect-kickstart-commands-part">section_title</a>, create the logical
+volume group (<a href="#sect-kickstart-commands-volgroup">section_title</a>),
+and then create logical volumes. For example:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>part pv.01 --size 3000
+volgroup myvg pv.01
+logvol / --vgname=myvg --size=2000 --name=rootvol</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-zerombr"><a class="anchor" href="#sect-kickstart-commands-zerombr"></a>zerombr (optional) - Reinitialize Partition Tables</h3>
+<div class="paragraph">
+<p>If <code>zerombr</code> is specified, any invalid partition tables found on disks
+are initialized. This destroys all of the contents of disks with invalid
+partition tables. This command is required when performing an unattended
+installation on a system with previously initialized disks.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Warning</strong></p>
+</div>
+<div class="paragraph">
+<p>On IBM System z, if <code>zerombr</code> is specified, any Direct Access Storage
+Device (DASD) visible to the installation program which is not already
+low-level formatted is automatically low-level formatted with dasdfmt.
+The command also prevents user choice during interactive installations.</p>
+</div>
+<div class="paragraph">
+<p>If <code>zerombr</code> is not specified and there is at least one unformatted DASD
+visible to the installation program, a non-interactive Kickstart
+installation will exit unsuccessfully.</p>
+</div>
+<div class="paragraph">
+<p>If <code>zerombr</code> is not specified and there is at least one unformatted DASD
+visible to the installation program, an interactive installation exits
+if the user does not agree to format all visible and unformatted DASDs.
+To circumvent this, only activate those DASDs that you will use during
+installation. You can always add more DASDs after installation is
+complete.</p>
+</div>
+</blockquote>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-zfcp"><a class="anchor" href="#sect-kickstart-commands-zfcp"></a>zfcp (optional) - Configure Fibre Channel Device</h3>
+<div class="paragraph">
+<p>Define a Fibre channel device. This option only applies on IBM System z.
+All of the options described below must be specified.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>zfcp --devnum=devnum --wwpn=wwpn --fcplun=lun</pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--devnum</code></dt>
+<dd>
+<p>The device number (zFCP adaptor device bus ID).</p>
+</dd>
+<dt class="hdlist1"><code>--wwpn</code></dt>
+<dd>
+<p>The device&#8217;s World Wide Port Name (WWPN). Takes the form of a 16-digit
+number, preceded by <code>0x</code>.</p>
+</dd>
+<dt class="hdlist1"><code>--fcplun</code></dt>
+<dd>
+<p>The device&#8217;s Logical Unit Number (LUN). Takes the form of a 16-digit
+number, preceded by <code>0x</code>.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>zfcp --devnum=0.0.4000 --wwpn=0x5005076300C213e9 --fcplun=0x5022000000000000</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-kickstart-commands-network-configuration"><a class="anchor" href="#sect-kickstart-commands-network-configuration"></a>Network Configuration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Commands in this chapter are used for network configuration.</p>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-firewall"><a class="anchor" href="#sect-kickstart-commands-firewall"></a>firewall (optional) - Configure Firewall</h3>
+<div class="paragraph">
+<p>Specify the firewall configuration for the installed system.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>firewall --enabled | --disabled device [--trust= | --ssh | --smtp | --http | --ftp | --port= | --service=]</pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--enabled</code> or <code>--enable</code></dt>
+<dd>
+<p>Reject incoming connections that are not in response to outbound
+requests, such as DNS replies or DHCP requests. If access to services
+running on this machine is needed, you can choose to allow specific
+services through the firewall.</p>
+</dd>
+<dt class="hdlist1"><code>--disabled</code> or <code>--disable</code></dt>
+<dd>
+<p>Disable the firewall.</p>
+</dd>
+<dt class="hdlist1"><code>--trust=</code></dt>
+<dd>
+<p>Listing a device here, such as <code>em1</code>, allows all traffic coming to and
+from that device to go through the firewall. To list more than one
+device, use this option again - for example:
++</p>
+</dd>
+</dl>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>firewall --enable --trust=em1 --trust=em2</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>  +
+  Do not use a comma-separated format such as `--trust em1, em2`.
+incoming::
+  Replace with one or more of the following to allow the specified
+  services through the firewall:
+  +
+  * `--ssh`
+  * `--smtp`
+  * `--http`
+  * `--ftp`
+`--port=`::
+  You can specify that ports be allowed through the firewall using the
+  port:protocol format. For example, to allow IMAP access through your
+  firewall, specify `imap:tcp`. Numeric ports can also be specified
+  explicitly; for example, to allow UDP packets on port 1234 through,
+  specify `1234:udp`. To specify multiple ports, separate them by
+  commas.
+`--service=`::
+  This option provides a higher-level way to allow services through the
+  firewall. Some services (like cups, avahi, etc.) require multiple
+  ports to be open or other special configuration in order for the
+  service to work. You can specify each individual port with the
+  `--port` option, or specify `--service=` and open them all at once.
+  +
+  Valid options are anything recognized by the firewall-offline-cmd
+  program in the firewalld package. If firewalld is running,
+  `firewall-cmd --get-services` will provide a list of known service
+  names.</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-network"><a class="anchor" href="#sect-kickstart-commands-network"></a>network (optional) - Configure Network Interfaces</h3>
+<div class="paragraph">
+<p>Configures network information for the target system and activates
+network devices in the installation environment. The device specified in
+the first <code>network</code> command is activated automatically. Activation of
+the device can be also explicitly required by the <code>--activate</code> option.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--activate</code></dt>
+<dd>
+<p>If you use the <code>--activate</code> option on a device that has already been
+activated (for example, an interface you configured with boot options
+so that the system could retrieve the Kickstart file) the device is
+reactivated to use the details specified in the Kickstart file.
++
+Use the <code>--nodefroute</code> option to prevent the device from using the
+default route.</p>
+</dd>
+<dt class="hdlist1"><code>--bootproto=</code></dt>
+<dd>
+<p>One of <code>dhcp</code>, <code>bootp</code>, <code>ibft</code>, or <code>static</code>. The default option is
+<code>dhcp</code>; the <code>dhcp</code> and <code>bootp</code> options are treated the same.
++
+The DHCP method uses a DHCP server system to obtain its networking
+configuration. The BOOTP method is similar, requiring a BOOTP server
+to supply the networking configuration. To direct a system to use
+DHCP:
++</p>
+</dd>
+</dl>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>network --bootproto=dhcp</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>+
+To direct a machine to use BOOTP to obtain its networking
+configuration, use the following line in the Kickstart file:
++</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>network --bootproto=bootp</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>+
+To direct a machine to use the configuration specified in iBFT, use:
++</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>network --bootproto=ibft</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>+
+The `static` method requires that you specify the IP address, netmask,
+gateway, and nameserver in the Kickstart file. This information is
+static and is used during and after the installation.
++
+All static networking configuration information must be specified on
+_one_ line; you cannot wrap lines using a backslash (`\`) as you can
+on a command line.
++</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>network --bootproto=static --ip=10.0.2.15 --netmask=255.255.255.0 --gateway=10.0.2.254 --nameserver=10.0.2.1</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>+
+You can also configure multiple nameservers at the same time. To do
+so, use the `--nameserver=` options once for each name server you want
+to configure:
++</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>network --bootproto=static --ip=10.0.2.15 --netmask=255.255.255.0 --gateway=10.0.2.254 --nameserver=192.168.2.1 --nameserver=192.168.3.1</pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--device=</code></dt>
+<dd>
+<p>Specifies the device to be configured (and eventually activated in
+Anaconda) with the <code>network</code> command.
++
+If the <code>--device=</code> option is missing on the <em>first</em> use of the
+<code>network</code> command, the value of the <code>ksdevice=</code> Anaconda boot option
+is used, if available. Note that this is considered deprecated
+behavior; in most cases, you should always specify a <code>--device=</code> for
+every <code>network</code> command.
++
+The behavior of any subsequent <code>network</code> command in the same Kickstart
+file is unspecified if its <code>--device=</code> option is missing. Make sure
+you specify this option for any <code>network</code> command beyond the first.
++
+You can specify a device to be activated in any of the following ways:
++</p>
+<div class="ulist">
+<ul>
+<li>
+<p>the device name of the interface, for example, em1</p>
+</li>
+<li>
+<p>the MAC address of the interface, for example, 01:23:45:67:89:ab</p>
+</li>
+<li>
+<p>the keyword <code>link</code>, which specifies the first interface with its
+link in the <code>up</code> state</p>
+</li>
+<li>
+<p>the keyword <code>bootif</code>, which uses the MAC address that pxelinux set
+in the <code>BOOTIF</code> variable. Set <code>IPAPPEND 2</code> in your <code>pxelinux.cfg</code> file
+to have pxelinux set the <code>BOOTIF</code> variable.
++
+For example:
++</p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>network --bootproto=dhcp --device=em1</pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--ip=</code></dt>
+<dd>
+<p>IP address of the device.</p>
+</dd>
+<dt class="hdlist1"><code>--ipv6=</code></dt>
+<dd>
+<p>IPv6 address of the device, in the form of address[/prefix length] -
+for example, <code>3ffe:ffff:0:1::1/128 `. If prefix is omitted, `64</code> will
+be used. You can also use <code>auto</code> for automatic configuration, or
+<code>dhcp</code> for DHCPv6-only configuration (no router advertisements).</p>
+</dd>
+<dt class="hdlist1"><code>--gateway=</code></dt>
+<dd>
+<p>Default gateway as a single IPv4 address.</p>
+</dd>
+<dt class="hdlist1"><code>--ipv6gateway=</code></dt>
+<dd>
+<p>Default gateway as a single IPv6 address.</p>
+</dd>
+<dt class="hdlist1"><code>--nodefroute</code></dt>
+<dd>
+<p>Prevents the interface being set as the default route. Use this option
+when you activate additional devices with the <code>--activate=</code> option,
+for example, a NIC on a separate subnet for an iSCSI target.</p>
+</dd>
+<dt class="hdlist1"><code>--nameserver=</code></dt>
+<dd>
+<p>DNS name server, as an IP address. To specify more than one name
+server, use this parameter multiple times. For example:
++</p>
+</dd>
+</dl>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>network --bootproto=static --ip=10.0.2.15 --netmask=255.255.255.0 --gateway=10.0.2.254 --nameserver=192.168.2.1 --nameserver=192.168.3.1</pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--nodns</code></dt>
+<dd>
+<p>Do not configure any DNS server.</p>
+</dd>
+<dt class="hdlist1"><code>--netmask=</code></dt>
+<dd>
+<p>Network mask for the installed system.</p>
+</dd>
+<dt class="hdlist1"><code>--hostname=</code></dt>
+<dd>
+<p>Host name for the installed system. The host name can be either a
+fully-qualified domain name (FQDN) in the format hostname.domainname,
+or a short host name with no domain name. Many networks have a Dynamic
+Host Configuration Protocol (DHCP) service that automatically supplies
+connected systems with a domain name; to allow the DHCP service to
+assign the domain name to this machine, only specify the short host
+name.</p>
+</dd>
+<dt class="hdlist1"><code>--ethtool=</code></dt>
+<dd>
+<p>Specifies additional low-level settings for the network device which
+will be passed to the ethtool program.</p>
+</dd>
+<dt class="hdlist1"><code>--essid=</code></dt>
+<dd>
+<p>The network ID for wireless networks.</p>
+</dd>
+<dt class="hdlist1"><code>--wepkey=</code></dt>
+<dd>
+<p>The WEP encryption key for wireless networks.</p>
+</dd>
+<dt class="hdlist1"><code>--wpakey=</code></dt>
+<dd>
+<p>The WPA encryption key for wireless networks.</p>
+</dd>
+<dt class="hdlist1"><code>--onboot=</code></dt>
+<dd>
+<p>Whether or not to enable the device at boot time.</p>
+</dd>
+<dt class="hdlist1"><code>--dhcpclass=</code></dt>
+<dd>
+<p>The DHCP class.</p>
+</dd>
+<dt class="hdlist1"><code>--mtu=</code></dt>
+<dd>
+<p>The MTU of the device.</p>
+</dd>
+<dt class="hdlist1"><code>--noipv4</code></dt>
+<dd>
+<p>Disable IPv4 on this device.</p>
+</dd>
+<dt class="hdlist1"><code>--noipv6</code></dt>
+<dd>
+<p>Disable IPv6 on this device.</p>
+</dd>
+<dt class="hdlist1"><code>--bondslaves=</code></dt>
+<dd>
+<p>When this option is used, the network device specified in the
+<code>--device=</code> option will be created using slaves defined in the
+<code>--bondslaves=</code> option. For example:
++</p>
+</dd>
+</dl>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>network --device=mynetwork --bondslaves=em1,em2</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>  +
+  The above command will create a bond device named `mynetwork` using
+  the `em1` and `em2` interfaces as its slaves.
+`--bondopts=`::
+  A list of optional parameters for a bonded interface, which is
+  specified using the `--bondslaves=` and `--device=` options. Options
+  in this list must be separated by commas ("`,`") or semicolons
+  ("`;`"). If an option itself contains a comma, use a semicolon to
+  separate the options. For example:
+  +</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>network --bondopts=mode=active-backup,balance-rr;primary=eth1</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>+
+Available optional parameters are listed in the Working with Kernel
+Modules chapter of the Fedora System Administrator's Guide, available
+at http://docs.fedoraproject.org/[].
++
+___________________________________________________________________________________________________________________________________________________________
+*Important*</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>  The `--bondopts=mode=` parameter only supports full mode names such as
+  `balance-rr` or `broadcast`, not their numerical representations such
+  as `0` or `3`.
+  ___________________________________________________________________________________________________________________________________________________________
+`--vlanid=`::
+  Specifies virtual LAN (VLAN) ID number (802.1q tag) for the device
+  created using the device specified in `--device=` as a parent. For
+  example, `network --device=em1 --vlanid=171` will create a virtual LAN
+  device `em1.171`.
+`--interfacename=`::
+  Specify a custom interface name for a virtual LAN device. This option
+  should be used when the default name generated by the `--vlanid=`
+  option is not desirable. This option must be used along with
+  `--vlanid=`. For example:
+  +</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>network --device=em1 --vlanid=171 --interfacename=vlan171</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>  +
+  The above command will create a virtual LAN interface named `vlan171`
+  on the `em1` device with an ID of `171`.
+  +
+  The interface name can be arbitrary (for example, `my-vlan`), but in
+  specific cases, the following conventions must be followed:
+  +
+  * If the name contains a dot (`.`), it must take the form of
+  `NAME.ID`. The NAME is arbitrary, but the ID must be the VLAN ID. For
+  example: `em1.171` or `my-vlan.171`.
+  * Names starting with `vlan` must take the form of `vlanID` - for
+  example, `vlan171`.
+`--teamslaves=`::
+  Team device specified by the `--device=` option will be created using
+  slaves specified in this option. Slaves are separated by commas. A
+  slave can be followed by its configuration, which is a single-quoted
+  JSON string with double quotes escaped by the `\` character. For
+  example:
+  +</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>network --teamslaves="p3p1'{\"prio\": -10, \"sticky\": true}',p3p2'{\"prio\": 100}'"</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>  +
+  See also the `--teamconfig=` option.
+`--teamconfig=`::
+  Double-quoted team device configuration which is a single-quoted JSON
+  string with double quotes escaped by the `\` character. The device
+  name is specified by `--device=` option and its slaves and their
+  configuration by `--teamslaves=` option. For example:
+  +</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>network --device team0 --activate --bootproto static --ip=10.34.102.222 --netmask=255.255.255.0 --gateway=10.34.102.254 --nameserver=10.34.39.2 --teamslaves="p3p1'{\"prio\": -10, \"sticky\": true}',p3p2'{\"prio\": 100}'" --teamconfig="{\"runner\": {\"name\": \"activebackup\"}}"</pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--bridgeslaves=</code></dt>
+<dd>
+<p>When this option is used, the network bridge with device name
+specified using the <code>--device=</code> option will be created and devices
+defined in the <code>--bridgeslaves=</code> option will be added to the bridge.
+For example:
++</p>
+</dd>
+</dl>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>network --device=bridge0 --bridgeslaves=em1</pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--bridgeopts=</code></dt>
+<dd>
+<p>An optional comma-separated list of parameters for the bridged
+interface. Available values are <code>stp</code>, <code>priority</code>, <code>forward-delay</code>,
+<code>hello-time</code>, <code>max-age</code>, and <code>ageing-time</code>. For information about
+these parameters, see the bridge setting table in the nm-settings(5)
+man page or at
+<a href="https://developer.gnome.org/NetworkManager/0.9/ref-settings.html" class="bare">https://developer.gnome.org/NetworkManager/0.9/ref-settings.html</a>.
+Also see the Fedora Networking Guide, available at
+<a href="http://docs.fedoraproject.org/" class="bare">http://docs.fedoraproject.org/</a>, for general information about
+network bridging.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-kickstart-commands-environment"><a class="anchor" href="#sect-kickstart-commands-environment"></a>Console and Environment</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following commands control the environment of the system after the
+installation finishes - language, keyboard layouts, or the graphical
+interface.</p>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-keyboard"><a class="anchor" href="#sect-kickstart-commands-keyboard"></a>keyboard (optional) - Configure Keyboard Layouts</h3>
+<div class="paragraph">
+<p>Sets one or more available keyboard layouts for the system.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>keyboard --vckeymap= | --xlayouts= [--switch=]</pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--vckeymap=</code></dt>
+<dd>
+<p>Specify a VConsole keymap which should be used. Valid names correspond
+to the list of files in the <code>/usr/lib/kbd/keymaps/*</code> directory,
+without the <code>.map.gz</code> extension.</p>
+</dd>
+<dt class="hdlist1"><code>--xlayouts=</code></dt>
+<dd>
+<p>Specify a list of X layouts that should be used as a comma-separated
+list without spaces. Accepts values in the same format as
+setxkbmap(1), either in the <code>layout</code> format (such as <code>cz</code>), or in the
+<code>layout (variant)</code> format (such as <code>cz (qwerty)</code>).
++
+All available layouts can be viewed on the xkeyboard-config(7) man
+page under <code>Layouts</code>.</p>
+</dd>
+<dt class="hdlist1"><code>--switch=</code></dt>
+<dd>
+<p>Specify a list of layout-switching options (shortcuts for switching
+between multiple keyboard layouts). Multiple options must be separated
+by commas without spaces. Accepts values in the same format as
+setxkbmap(1).
++
+Available switching options can be viewed on the xkeyboard-config(7)
+man page under <code>Options</code>.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>The following example sets up two keyboard layouts (<code>English (US)</code> and
+<code>Czech (qwerty)</code>) using the <code>--xlayouts=</code> option, and allows to switch
+between them using Alt+Shift:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>keyboard --xlayouts=us,'cz (qwerty)' --switch=grp:alt_shift_toggle</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-lang"><a class="anchor" href="#sect-kickstart-commands-lang"></a>lang (optional) - Configure Language During Installation</h3>
+<div class="paragraph">
+<p>Sets the language to use during installation and the default language to
+use on the installed system.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>lang language [--addsupport=]</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The file <code>/usr/share/system-config-language/locale-list</code> provides a list
+of the valid language codes in the first column of each line and is part
+of the system-config-language package.</p>
+</div>
+<div class="paragraph">
+<p>Certain languages (for example, Chinese, Japanese, Korean, and Indic
+languages) are not supported during text-mode installation. If you
+specify one of these languages with the <code>lang</code> command and use text
+mode, the installation process will continue in English, but the
+installed system will use your selection as its default language.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--addsupport=</code></dt>
+<dd>
+<p>Add support for additional languages. Takes the form of
+comma-separated list without spaces. For example:
++</p>
+</dd>
+</dl>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>lang en_US --addsupport=cs_CZ,de_DE,en_UK</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-services"><a class="anchor" href="#sect-kickstart-commands-services"></a>services (optional) - Configure Services</h3>
+<div class="paragraph">
+<p>Modifies the default set of services that will run under the default
+systemd target. The list of disabled services is processed before the
+list of enabled services - therefore, if a service appears on both
+lists, it will be enabled.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>services [--disabled=list] [--enabled=list]</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Do not include spaces in the list of services. If you do, Kickstart will
+enable or disable only the services up to the first space. For example:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>services --disabled=auditd, cups,smartd, nfslock</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The above will disable only the auditd service. To disable all four
+services, the entry should include no spaces:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>services --disabled=auditd,cups,smartd,nfslock</pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--disabled=</code></dt>
+<dd>
+<p>Disable the services given in the comma separated list.</p>
+</dd>
+<dt class="hdlist1"><code>--enabled=</code></dt>
+<dd>
+<p>Enable the services given in the comma separated list.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-skipx"><a class="anchor" href="#sect-kickstart-commands-skipx"></a>skipx (optional) - Do Not Configure X Window System</h3>
+<div class="paragraph">
+<p>If present, X will not be configured on the installed system.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Important</strong></p>
+</div>
+<div class="paragraph">
+<p>If you install a display manager among your package selection options,
+this package will create an X configuration, and the installed system
+will default to graphical.target. The effect of the <code>skipx</code> option will
+be overridden.</p>
+</div>
+</blockquote>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-timezone"><a class="anchor" href="#sect-kickstart-commands-timezone"></a>timezone (optional) - Configure Time Zone</h3>
+<div class="paragraph">
+<p>Sets the system time zone to timezone. To view a list of available time
+zones, use the <code>timedatectl list-timezones</code> command.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>timezone timezone [options]</pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--utc</code></dt>
+<dd>
+<p>If present, the system assumes the hardware clock is set to UTC
+(Greenwich Mean) time.</p>
+</dd>
+<dt class="hdlist1"><code>--nontp</code></dt>
+<dd>
+<p>Disable the NTP service automatic starting.</p>
+</dd>
+<dt class="hdlist1"><code>--ntpservers=</code></dt>
+<dd>
+<p>Specify a list of NTP servers to be used as a comma-separated list
+without spaces.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-xconfig"><a class="anchor" href="#sect-kickstart-commands-xconfig"></a>xconfig (optional) - Configure X Window System</h3>
+<div class="paragraph">
+<p>Configures the X Window System. If you install the X Window System with
+a Kickstart file that does not include the <code>xconfig</code> command, you must
+provide the X configuration manually during installation.</p>
+</div>
+<div class="paragraph">
+<p>Do not use this command in a Kickstart file that does not install the X
+Window System.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--defaultdesktop=</code></dt>
+<dd>
+<p>Specify either <code>GNOME</code> or <code>KDE</code> to set the default desktop (assumes
+that GNOME Desktop Environment and/or KDE Desktop Environment has been
+installed in the <code>%packages</code> section).</p>
+</dd>
+<dt class="hdlist1"><code>--startxonboot</code></dt>
+<dd>
+<p>Use a graphical login on the installed system.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-kickstart-commands-users-groups"><a class="anchor" href="#sect-kickstart-commands-users-groups"></a>Users, Groups and Authentication</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The commands below are used to control user accounts, groups, and
+related areas.</p>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-auth"><a class="anchor" href="#sect-kickstart-commands-auth"></a>auth or authconfig (optional) - Configure Authentication</h3>
+<div class="paragraph">
+<p>Sets up the authentication options for the system using the <code>authconfig</code>
+command, which can also be run on a command line after the installation
+finishes. See the authconfig(8) manual page and the <code>authconfig --help</code>
+command for more details. Passwords are shadowed by default.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>auth [--enablenis | --nisdomain= | --nisserver= | --enableshadow | --enableldap | --enableldapauth | --ldapserver= | --ldapbasedn= | --enableldaptls | --disableldaptls | --enablekrb5 | --krb5realm= | --krb5kdc= | --krb5adminserver= | --enablehesiod | --hesiodlhs= | --hesiodrhs= | --enablesmbauth | --smbservers= | --smbworkgroup= | --enablecache | --passalgo=]</pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--enablenis</code></dt>
+<dd>
+<p>Turns on NIS support. By default, <code>--enablenis</code> uses whatever domain
+it finds on the network. A domain should almost always be set by hand
+with the <code>--nisdomain=</code> option.</p>
+</dd>
+<dt class="hdlist1"><code>--nisdomain=</code></dt>
+<dd>
+<p>NIS domain name to use for NIS services.</p>
+</dd>
+<dt class="hdlist1"><code>--nisserver=</code></dt>
+<dd>
+<p>Server to use for NIS services (broadcasts by default).</p>
+</dd>
+<dt class="hdlist1"><code>--useshadow`or `--enableshadow</code></dt>
+<dd>
+<p>Use shadow passwords. Active by default.</p>
+</dd>
+<dt class="hdlist1"><code>--enableldap</code></dt>
+<dd>
+<p>Turns on LDAP support in <code>/etc/nsswitch.conf</code>, allowing your system to
+retrieve information about users (for example, their UIDs, home
+directories, and shells) from an LDAP directory. To use this option,
+you must install the nss-pam-ldapd package. You must also specify a
+server and a base DN (distinguished name) with <code>--ldapserver=</code> and
+<code>--ldapbasedn=</code>.</p>
+</dd>
+<dt class="hdlist1"><code>--enableldapauth</code></dt>
+<dd>
+<p>Use LDAP as an authentication method. This enables the pam_ldap module
+for authentication and changing passwords, using an LDAP directory. To
+use this option, you must have the nss-pam-ldapd package installed.
+You must also specify a server and a base DN with <code>--ldapserver=</code> and
+<code>--ldapbasedn=</code>. If your environment does not use TLS (Transport Layer
+Security), use the <code>--disableldaptls</code> switch to ensure that the
+resulting configuration file works.</p>
+</dd>
+<dt class="hdlist1"><code>--ldapserver=</code></dt>
+<dd>
+<p>If you specified either <code>--enableldap</code> or <code>--enableldapauth</code>, use this
+option to specify the name of the LDAP server to use. This option is
+set in the <code>/etc/ldap.conf</code> file.</p>
+</dd>
+<dt class="hdlist1"><code>--ldapbasedn=</code></dt>
+<dd>
+<p>If you specified either <code>--enableldap</code> or <code>--enableldapauth</code>, use this
+option to specify the DN in your LDAP directory tree under which user
+information is stored. This option is set in the <code>/etc/ldap.conf</code>
+file.</p>
+</dd>
+<dt class="hdlist1"><code>--enableldaptls</code></dt>
+<dd>
+<p>Use TLS (Transport Layer Security) lookups. This option allows LDAP to
+send encrypted usernames and passwords to an LDAP server before
+authentication.</p>
+</dd>
+<dt class="hdlist1"><code>--disableldaptls</code></dt>
+<dd>
+<p>Do not use TLS (Transport Layer Security) lookups in an environment
+that uses LDAP for authentication.</p>
+</dd>
+<dt class="hdlist1"><code>--enablekrb5</code></dt>
+<dd>
+<p>Use Kerberos 5 for authenticating users. Kerberos itself does not know
+about home directories, UIDs, or shells. If you enable Kerberos, you
+must make users' accounts known to this workstation by enabling LDAP,
+NIS, or Hesiod or by using the <code>useradd</code> command. If you use this
+option, you must have the pam_krb5 package installed.</p>
+</dd>
+<dt class="hdlist1"><code>--krb5realm=</code></dt>
+<dd>
+<p>The Kerberos 5 realm to which your workstation belongs.</p>
+</dd>
+<dt class="hdlist1"><code>--krb5kdc=</code></dt>
+<dd>
+<p>The KDC (or KDCs) that serve requests for the realm. If you have
+multiple KDCs in your realm, use a comma-separated list without
+spaces.</p>
+</dd>
+<dt class="hdlist1"><code>--krb5adminserver=</code></dt>
+<dd>
+<p>The KDC in your realm that is also running kadmind. This server
+handles password changing and other administrative requests. This
+server must be run on the master KDC if you have more than one KDC.</p>
+</dd>
+<dt class="hdlist1"><code>--enablehesiod</code></dt>
+<dd>
+<p>Enables Hesiod support for looking up user home directories, UIDs, and
+shells. More information on setting up and using Hesiod on your
+network is in <code>/usr/share/doc/glibc-2.x.x/README.hesiod</code>, which is
+included in the glibc package. Hesiod is an extension of DNS that uses
+DNS records to store information about users, groups, and various
+other items.</p>
+</dd>
+<dt class="hdlist1"><code>--hesiodlhs=</code> and <code>--hesiodrhs=</code></dt>
+<dd>
+<p>The Hesiod LHS (left-hand side) and RHS (right-hand side) values, set
+in <code>/etc/hesiod.conf</code>. The Hesiod library uses these values to search
+DNS for a name, similar to the way that LDAP uses a base DN.
++
+To look up user information for the username jim, the Hesiod library
+looks up <code>jim.passwdLHSRHS</code>, which should resolve to a TXT record that
+contains a string identical to an entry for that user in the <code>passwd</code>
+file: <code>jim:*:501:501:Jungle Jim:/home/jim:/bin/bash</code>. To look up
+groups, the Hesiod library looks up <code>jim.groupLHSRHS</code> instead.
++
+To look up users and groups by number, make <code>501.uid</code> a CNAME for
+<code>jim.passwd</code>, and <code>501.gid</code> a CNAME for <code>jim.group</code>. Note that the
+library does not place a period (<code>.</code>) in front of the LHS and RHS
+values when performing a search. Therefore, if the LHS and RHS values
+need to have a period placed in front of them, you must include the
+period in the values you set for <code>--hesiodlhs=</code> and <code>--hesiodrhs=</code>.</p>
+</dd>
+<dt class="hdlist1"><code>--enablesmbauth</code></dt>
+<dd>
+<p>Enables authentication of users against an SMB server (typically a
+Samba or Windows server). SMB authentication support does not know
+about home directories, UIDs, or shells. If you enable SMB, you must
+make users' accounts known to the workstation by enabling LDAP, NIS,
+or Hesiod or by using the <code>useradd</code> command.</p>
+</dd>
+<dt class="hdlist1"><code>--smbservers=</code></dt>
+<dd>
+<p>The name of the servers to use for SMB authentication. To specify more
+than one server, separate the names with commas (<code>,</code>).</p>
+</dd>
+<dt class="hdlist1"><code>--smbworkgroup=</code></dt>
+<dd>
+<p>The name of the workgroup for the SMB servers.</p>
+</dd>
+<dt class="hdlist1"><code>--enablecache</code></dt>
+<dd>
+<p>Enables the nscd service. The nscd service caches information about
+users, groups, and various other types of information. Caching is
+especially helpful if you choose to distribute information about users
+and groups over your network using NIS, LDAP, or Hesiod.</p>
+</dd>
+<dt class="hdlist1"><code>--passalgo=</code></dt>
+<dd>
+<p>Specify <code>sha256</code> to set up the SHA-256 hashing algorithm or <code>sha512</code>
+to set up the SHA-512 hashing algorithm.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-group"><a class="anchor" href="#sect-kickstart-commands-group"></a>group (optional) - Create User Group</h3>
+<div class="paragraph">
+<p>Creates a new user group on the system. If a group with the given name
+or GID already exists, this command will fail. In addition, the <code>user</code>
+command can be used to create a new group for the newly created user.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>group --name=name [--gid=gid]</pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--name=</code></dt>
+<dd>
+<p>Provides the name of the group.</p>
+</dd>
+<dt class="hdlist1"><code>--gid=</code></dt>
+<dd>
+<p>The group ID (GID). If not provided, defaults to the next available
+non-system GID.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-pwpolicy"><a class="anchor" href="#sect-kickstart-commands-pwpolicy"></a>pwpolicy (optional) - Change the Default Password Policy</h3>
+<div class="paragraph">
+<p>This command can be used to set custom requirements (policy) such as
+length and strength for passwords set during the installation - the root
+password, user passwords and LUKS (disk encryption) password.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>pwpolicy name [--minlen=length] [--minquality=quality] [--strict|nostrict] [--emptyok|noempty] [--changesok|nochanges]</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The libpwquality library is used to check minimum password requirements
+(length and quality). You can use the <code>pwscore</code> and <code>pwmake</code> commands
+provided by the libpwquality package to check the quality score of your
+chosen password, or to create a random password with a given score. See
+the pwscore(1) and pwmake(1) man pages for details about these commands.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Important</strong></p>
+</div>
+<div class="paragraph">
+<p>This command must be used inside the <code>%anaconda</code> section. See
+<a href="#sect-kickstart-commands-anaconda">section_title</a> for details.</p>
+</div>
+</blockquote>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">name</dt>
+<dd>
+<p>Name of the password entry. Supported values are <code>root</code>, <code>user</code> and
+<code>luks</code> for root password, user passwords and LUKS password,
+respectively.</p>
+</dd>
+<dt class="hdlist1"><code>--minlen=</code></dt>
+<dd>
+<p>Sets the minimum allowed password length. The default minimum length
+is <code>8</code>.</p>
+</dd>
+<dt class="hdlist1"><code>--minquality=</code></dt>
+<dd>
+<p>Sets the minimum allowed password quality as defined by the
+libpwquality library. The default value is <code>50</code>.</p>
+</dd>
+<dt class="hdlist1"><code>--strict</code></dt>
+<dd>
+<p>Strict password enforcement. Passwords not meeting the quality
+requirements specified in <code>--minquality=</code> will not be allowed. Enabled
+by default.</p>
+</dd>
+<dt class="hdlist1"><code>--notstrict</code></dt>
+<dd>
+<p>Passwords <em>not</em> meeting the minimum quality requirements specified in
+<code>--minquality=</code> will be allowed after Done is clicked twice.</p>
+</dd>
+<dt class="hdlist1"><code>--emptyok</code></dt>
+<dd>
+<p>Allow empty passwords. Enabled by default.</p>
+</dd>
+<dt class="hdlist1"><code>--notempty</code></dt>
+<dd>
+<p>Do not allow empty passwords.</p>
+</dd>
+<dt class="hdlist1"><code>--changesok</code></dt>
+<dd>
+<p>Allow changing the password in the user interface, even if the
+Kickstart file already specifies a password.</p>
+</dd>
+<dt class="hdlist1"><code>--nochanges</code></dt>
+<dd>
+<p>Do not allow changing passwords which are already set in the Kickstart
+file. Enabled by default.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>An example use of the <code>pwpolicy</code> command is below:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>%anaconda
+pwpolicy root --minlen=10 --minquality=60 --strict --notempty --nochanges
+%end</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-realm"><a class="anchor" href="#sect-kickstart-commands-realm"></a>realm (optional) - Join an Active Directory or IPA Domain</h3>
+<div class="paragraph">
+<p>Join an Active Directory or IPA domain. For more information about this
+command, see the <code>join</code> section of the realm(8) man page.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>realm join domain [options]</pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--computer-ou=OU=</code></dt>
+<dd>
+<p>Provide the distinguished name of an organizational unit in order to
+create the computer account. The exact format of the distinguished
+name depends on the client software and membership software. The root
+DSE portion of the distinguished name can usually be left out.</p>
+</dd>
+<dt class="hdlist1"><code>--no-password</code></dt>
+<dd>
+<p>Join automatically without a password.</p>
+</dd>
+<dt class="hdlist1"><code>--one-time-password=</code></dt>
+<dd>
+<p>Join using a one-time password. This is not possible with all types of
+realm.</p>
+</dd>
+<dt class="hdlist1"><code>--client-software=</code></dt>
+<dd>
+<p>Only join realms which can run this client software. Valid values
+include <code>sssd</code> and <code>winbind</code>. Not all realms support all values. By
+default, the client software is chosen automatically.</p>
+</dd>
+<dt class="hdlist1"><code>--server-software=</code></dt>
+<dd>
+<p>Only join realms which can run this server software. Possible values
+include <code>active-directory</code> or <code>freeipa</code>.</p>
+</dd>
+<dt class="hdlist1"><code>--membership-software=</code></dt>
+<dd>
+<p>Use this software when joining the realm. Valid values include <code>samba</code>
+and <code>adcli</code>. Not all realms support all values. By default, the
+membership software is chosen automatically.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-rootpw"><a class="anchor" href="#sect-kickstart-commands-rootpw"></a>rootpw (required) - Set Root Password</h3>
+<div class="paragraph">
+<p>Sets the system&#8217;s root password to the password argument.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>rootpw [--iscrypted|--plaintext] [--lock] password</pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--iscrypted</code></dt>
+<dd>
+<p>If this option is present, the password argument is assumed to already
+be encrypted. This option is mutually exclusive with <code>--plaintext</code>. To
+create an encrypted password, you can use Python:
++</p>
+</dd>
+</dl>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ python -c 'import crypt; print(crypt.crypt("My Password", "$6$My Salt"))'</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>  +
+  This will generate a SHA512 crypt of your password using your provided
+  salt.
+`--plaintext`::
+  If this option is present, the password argument is assumed to be in
+  plain text. This option is mutually exclusive with `--iscrypted`.
+`--lock`::
+  If this option is present, the root account is locked by default. This
+  means that the root user will not be able to log in from the console.</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-selinux"><a class="anchor" href="#sect-kickstart-commands-selinux"></a>selinux (optional) - Configure SELinux</h3>
+<div class="paragraph">
+<p>Sets the state of SELinux on the installed system. The default policy is
+enforcing. For more information regarding SELinux in Fedora, see the
+Fedora SELinux User&#8217;s and Administrator&#8217;s Guide, available at
+<a href="http://docs.fedoraproject.org/" class="bare">http://docs.fedoraproject.org/</a>.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>selinux [--disabled|--enforcing|--permissive]</pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--enforcing</code></dt>
+<dd>
+<p>Enables SELinux with the default targeted policy being enforcing.</p>
+</dd>
+<dt class="hdlist1"><code>--permissive</code></dt>
+<dd>
+<p>Enables SELinux with the default targeted policy being permissive.
+This policy outputs warnings based on the SELinux policy, but does not
+actually enforce the policy.</p>
+</dd>
+<dt class="hdlist1"><code>--disabled</code></dt>
+<dd>
+<p>Disables SELinux completely.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-sshkey"><a class="anchor" href="#sect-kickstart-commands-sshkey"></a>sshkey (optional) - Add an Authorized SSH Key</h3>
+<div class="paragraph">
+<p>Use this command to add a specified SSH key to an user&#8217;s
+<code>authorized_keys</code> file. The specified user must either be root, or it
+must be created in the Kickstart file - either automatically by an
+installed package, or using
+<a href="#sect-kickstart-commands-user">section_title</a>.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>sshkey --username=user "ssh_key"</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The ssh_key must be a full SSH key fingerprint, and it must be enclosed
+in quotes (<code>""</code>) because the key may contain spaces.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--username=</code></dt>
+<dd>
+<p>The name of the user account to which you want to install the SSH key.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-user"><a class="anchor" href="#sect-kickstart-commands-user"></a>user (optional) - Create User Account</h3>
+<div class="paragraph">
+<p>Creates a new user on the system.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>user --name=username [options]</pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--name=</code></dt>
+<dd>
+<p>Provides the name of the user. This option is required.</p>
+</dd>
+<dt class="hdlist1"><code>--gecos=</code></dt>
+<dd>
+<p>Provides the GECOS information for the user. This is a string of
+various system-specific fields separated by a comma. It is frequently
+used to specify the user&#8217;s full name, office number, etc. See the
+passwd(5) man page for more details.</p>
+</dd>
+<dt class="hdlist1"><code>--groups=</code></dt>
+<dd>
+<p>In addition to the default group, a comma separated list of group
+names the user should belong to. The groups must exist before the user
+account is created. See
+<a href="#sect-kickstart-commands-group">section_title</a>.</p>
+</dd>
+<dt class="hdlist1"><code>--homedir=</code></dt>
+<dd>
+<p>The home directory for the user. If not provided, this defaults to
+<code>/home/username</code>.</p>
+</dd>
+<dt class="hdlist1"><code>--lock</code></dt>
+<dd>
+<p>If this option is present, this account is locked by default. This
+means that the user will not be able to log in from the console.</p>
+</dd>
+<dt class="hdlist1"><code>--password=</code></dt>
+<dd>
+<p>The new user&#8217;s password. If no password is provided, the account will
+be locked.</p>
+</dd>
+<dt class="hdlist1"><code>--iscrypted</code></dt>
+<dd>
+<p>If this option is present, the password argument is assumed to already
+be encrypted. This option is mutually exclusive with <code>--plaintext</code>. To
+create an encrypted password, you can use Python:
++</p>
+</dd>
+</dl>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ python -c 'import crypt; print(crypt.crypt("My Password", "$6$My Salt"))'</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>  +
+  This will generate a SHA512 crypt of your password using your provided
+  salt.
+`--plaintext`::
+  If this option is present, the password argument is assumed to be in
+  plain text. This option is mutually exclusive with `--iscrypted`.
+`--shell=`::
+  The user's login shell. If not provided, the system default will be
+  used.
+`--uid=`::
+  The UID (User ID). If not provided, this defaults to the next
+  available non-system UID.
+`--gid=`::
+  The GID (Group ID) to be used for the user's default group. If not
+  provided, this defaults to the next available non-system group ID.</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-kickstart-commands-installation-environment"><a class="anchor" href="#sect-kickstart-commands-installation-environment"></a>Installation Environment</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following commands control how the system will behave during the
+installation.</p>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-autostep"><a class="anchor" href="#sect-kickstart-commands-autostep"></a>autostep (optional) - Go Through Every Screen</h3>
+<div class="paragraph">
+<p>Normally, Kickstart installations skip unnecessary screens. This option
+makes the installation program step through every screen, displaying
+each briefly. This option should not be used when deploying a system
+because it may disrupt package installation.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>autostep [--autoscreenshot]</pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--autoscreenshot</code></dt>
+<dd>
+<p>Take a screenshot at every step during installation. These screenshots
+are stored in <code>/tmp/anaconda-screenshots</code> during the installation, and
+after the installation finishes you can find them in
+<code>/root/anaconda-screenshots</code>.
++
+Each screen is only captured right before the installer switches to
+the next one. This is important, because if you do not use all
+required Kickstart options and the installation therefore does not
+begin automatically, you can go to the screens which were not
+automatically configured, perform any configuration you want. Then,
+when you press Done to continue, the screen will be captured including
+the configuration you just provided.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-cmdline"><a class="anchor" href="#sect-kickstart-commands-cmdline"></a>cmdline (optional) - Perform Installation in Command Line Mode</h3>
+<div class="paragraph">
+<p>Perform the installation in a completely non-interactive command line
+mode. Any prompts for interaction halts the install. This mode is useful
+on IBM System z systems with the x3270 terminal.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Important</strong></p>
+</div>
+<div class="paragraph">
+<p>For a fully automatic installation, you must either specify one of the
+available modes (<code>graphical</code>, <code>text</code>, or <code>cmdline</code>) in the Kickstart
+file, or you must use the <code>console=</code> boot option as described in
+<a href="#sect-boot-options-display">???</a>. Otherwise the system will halt and
+ask you to choose a mode.</p>
+</div>
+</blockquote>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-graphical"><a class="anchor" href="#sect-kickstart-commands-graphical"></a>graphical (optional) - Perform Installation in Graphical Mode</h3>
+<div class="paragraph">
+<p>Perform the installation in graphical mode. This is the default. This
+command takes no options.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Important</strong></p>
+</div>
+<div class="paragraph">
+<p>For a fully automatic installation, you must either specify one of the
+available modes (<code>graphical</code>, <code>text</code>, or <code>cmdline</code>) in the Kickstart
+file, or you must use the <code>console=</code> boot option as described in
+<a href="#sect-boot-options-display">???</a>. Otherwise the system will halt and
+ask you to choose a mode.</p>
+</div>
+</blockquote>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-logging"><a class="anchor" href="#sect-kickstart-commands-logging"></a>logging (optional) - Configure Error Logging During Installation</h3>
+<div class="paragraph">
+<p>Controls the error logging of Anaconda during installation. It has no
+effect on the installed system.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>logging [--host= | --port= | --level=]</pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--host=</code></dt>
+<dd>
+<p>Send logging information to the given remote host, which must be
+running a syslogd process configured to accept remote logging.</p>
+</dd>
+<dt class="hdlist1"><code>--port=</code></dt>
+<dd>
+<p>If the remote syslogd process uses a port other than the default, it
+may be specified with this option.</p>
+</dd>
+<dt class="hdlist1"><code>--level=</code></dt>
+<dd>
+<p>Specify the minimum level of messages that appear on virtual console 3
+(tty3). This only affects messages printed to the console; log files
+will contain messages of all levels. Possible values are <code>debug</code>,
+<code>info</code>, <code>warning</code>, <code>error</code>, or <code>critical</code>.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-rescue"><a class="anchor" href="#sect-kickstart-commands-rescue"></a>rescue (optional) - Rescue Mode</h3>
+<div class="paragraph">
+<p>Automatically enters the installation program&#8217;s rescue mode. This gives
+you a chance to repair the system in case of any problems.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>rescue [--nomount|--romount]</pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--nomount</code> or <code>--romount</code></dt>
+<dd>
+<p>Controls how the installed system is mounted in the rescue
+environment. By default, the installation program will find your
+system and mount it in read-write mode, telling you where it has
+performed this mount. You may optionally choose to not mount anything
+(the <code>--nomount</code> option) or mount in read-only mode (the <code>--romount</code>
+option). Only one of these two options may be used.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-sshpw"><a class="anchor" href="#sect-kickstart-commands-sshpw"></a>sshpw (optional) - Restrict ssh Access During Installation</h3>
+<div class="paragraph">
+<p>During the installation, you can interact with the installation program
+and monitor its progress over an SSH connection. Use the <code>sshpw</code> command
+to create temporary accounts through which to log on. Each instance of
+the command creates a separate account that exists only in the
+installation environment. These accounts are not transferred to the
+installed system.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>sshpw --username=name password [--iscrypted|--plaintext] [--lock]</pre>
+</div>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Important</strong></p>
+</div>
+<div class="paragraph">
+<p>By default, the ssh server is not started during the installation. To
+make ssh available during the installation, boot the system with the
+kernel boot option <code>inst.sshd</code>. See <a href="#sect-boot-options-display">???</a>
+for details.</p>
+</div>
+</blockquote>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Note</strong></p>
+</div>
+<div class="paragraph">
+<p>If you want to disable root ssh access to your hardware during
+installation, use the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>sshpw --username=root --lock</pre>
+</div>
+</div>
+</blockquote>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--username</code></dt>
+<dd>
+<p>Provides the name of the user. This option is required.</p>
+</dd>
+<dt class="hdlist1"><code>--iscrypted</code></dt>
+<dd>
+<p>If this option is present, the password argument is assumed to already
+be encrypted. This option is mutually exclusive with <code>--plaintext</code>. To
+create an encrypted password, you can use Python:
++</p>
+</dd>
+</dl>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ python -c 'import crypt; print(crypt.crypt("My Password", "$6$My Salt"))'</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>  +
+  This will generate a SHA512 crypt of your password using your provided
+  salt.
+`--plaintext`::
+  If this option is present, the password argument is assumed to be in
+  plain text. This option is mutually exclusive with `--iscrypted`
+`--lock`::
+  If this option is present, this account is locked by default. This
+  means that the user will not be able to log in from the console.</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-text"><a class="anchor" href="#sect-kickstart-commands-text"></a>text (optional) - Perform Installation in Text Mode</h3>
+<div class="paragraph">
+<p>Perform the Kickstart installation in text mode. Kickstart installations
+are performed in graphical mode by default.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Important</strong></p>
+</div>
+<div class="paragraph">
+<p>For a fully automatic installation, you must either specify one of the
+available modes (<code>graphical</code>, <code>text</code>, or <code>cmdline</code>) in the Kickstart
+file, or you must use the <code>console=</code> boot option as described in
+<a href="#sect-boot-options-display">???</a>. Otherwise the system will halt and
+ask you to choose a mode.</p>
+</div>
+</blockquote>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-unsupported_hardware"><a class="anchor" href="#sect-kickstart-commands-unsupported_hardware"></a>unsupported_hardware (optional) - Suppress Unsupported Hardware Alerts</h3>
+<div class="paragraph">
+<p>Suppress the Unsupported Hardware Detected alert. If this command is not
+included and unsupported hardware is detected, the installation will
+stall at this alert.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-vnc"><a class="anchor" href="#sect-kickstart-commands-vnc"></a>vnc (optional) - Configure VNC Access</h3>
+<div class="paragraph">
+<p>Allows the graphical installation to be viewed remotely via VNC. This
+method is usually preferred over text mode, as there are some size and
+language limitations in text installations. With no additional options,
+this command will start a VNC server on the installation system with no
+password and will display the details required to connect to it.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>vnc [--host=hostname] [--port=port] [--password=password]</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For more information about VNC installations, including instructions on
+how to connect to the installation system, see
+<a href="#chap-vnc-installations">???</a>.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--host=</code></dt>
+<dd>
+<p>Connect to a VNC viewer listening on the given hostname.</p>
+</dd>
+<dt class="hdlist1"><code>--port=</code></dt>
+<dd>
+<p>Provide a port that the remote VNC viewer process is listening on. If
+not provided, the VNC default (<code>5900</code>) will be used.</p>
+</dd>
+<dt class="hdlist1"><code>--password=</code></dt>
+<dd>
+<p>Set a password which must be provided to connect to the VNC session.
+This is optional, but recommended.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-kickstart-commands-after"><a class="anchor" href="#sect-kickstart-commands-after"></a>After the Installation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section contains commands which control the system&#8217;s behavior
+immediately after the installation finishes.</p>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-kdump"><a class="anchor" href="#sect-kickstart-commands-kdump"></a>%addon com_redhat_kdump (optional) - Configure kdump</h3>
+<div class="paragraph">
+<p>This command configures the kdump kernel crash dumping mechanism.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Note</strong></p>
+</div>
+<div class="paragraph">
+<p>The syntax for this command is unusual because it is an add-on rather
+than a built-in Kickstart command. For more information about add-ons,
+see <a href="#sect-kickstart-commands-addon">section_title</a>.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Kdump is a kernel crash dumping mechanism that allows you to save the
+contents of the system&#8217;s memory for later analysis. It relies on kexec,
+which can be used to start a Linux kernel from the context of another
+kernel without rebooting the system and preserve the contents of the
+first kernel memory that would otherwise be lost.</p>
+</div>
+<div class="paragraph">
+<p>In case of a system crash, kexec starts a second kernel (a capture
+kernel). This capture kernel resides in a reserved part of the system
+memory that is inaccessible to the main kernel. Kdump then captures the
+contents of the crashed kernel&#8217;s memory (a crash dump) and saves it to a
+specified location. This location can not be configured using Kickstart;
+it must be specified after the installation by editing the
+<code>/etc/kdump.conf</code> configuration file.</p>
+</div>
+<div class="paragraph">
+<p>Available options are:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--enable</code></dt>
+<dd>
+<p>Enable Kdump on the installed system.</p>
+</dd>
+<dt class="hdlist1"><code>--disable</code></dt>
+<dd>
+<p>Do not enable Kdump on the installed system.</p>
+</dd>
+<dt class="hdlist1"><code>--reserve-mb=</code></dt>
+<dd>
+<p>The amount of memory you want to reserve for Kdump in megabytes. For
+example:
++</p>
+</dd>
+</dl>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>%addon com_redhat_kdump --enable --reserve-mb=128
+%end</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>  +
+  You can also specify `auto` instead of a numeric value. In that case
+  the installer will determine the amount of RAM to reserve for kdump
+  automatically, based on your system architecture and the total amount
+  of memory on the system.
+  +
+  If you enable Kdump and do not specify the `--reserve-mb=` option, the
+  `auto` value will be used.
+`--enablefadump`::
+  Enable firmware-assisted dumping on systems which allow it (notably
+  IBM Power Systems servers).</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-firstboot"><a class="anchor" href="#sect-kickstart-commands-firstboot"></a>firstboot (optional) - Enable or Disable Initial Setup</h3>
+<div class="paragraph">
+<p>Determine whether the Initial Setup application starts the first time
+the system is booted. If enabled, the initial-setup package must be
+installed. If not specified, this option is disabled by default. For
+more information about Initial Setup, see <a href="#sect-initial-setup">???</a>.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>firstboot --enable|--disable [--reconfig]</pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--enable</code> or <code>--enabled</code></dt>
+<dd>
+<p>Initial Setup will be started the first time the installed system
+boots.</p>
+</dd>
+<dt class="hdlist1"><code>--disable</code> or <code>--disabled</code></dt>
+<dd>
+<p>Initial Setup will be disabled.</p>
+</dd>
+<dt class="hdlist1"><code>--reconfig</code></dt>
+<dd>
+<p>Initial Setup will start after the reboot in reconfiguration mode.
+This mode enables the language, mouse, keyboard, root password,
+security level, time zone and networking configuration options in
+addition to the default ones.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-halt"><a class="anchor" href="#sect-kickstart-commands-halt"></a>halt (optional) - Halt System After Installation</h3>
+<div class="paragraph">
+<p>Halt the system after the installation has successfully completed. This
+is similar to a manual installation, where after the installation
+finishes, the installer displays a message and waits for the user to
+press a key before rebooting. During a Kickstart installation, if no
+completion method is specified, this option is used as the default.</p>
+</div>
+<div class="paragraph">
+<p>For other completion methods, see the <code>poweroff</code>, <code>reboot</code>, and
+<code>shutdown</code> commands.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-poweroff"><a class="anchor" href="#sect-kickstart-commands-poweroff"></a>poweroff (optional) - Power Off After Installation</h3>
+<div class="paragraph">
+<p>Shut down and power off the system after the installation has
+successfully completed.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Note</strong></p>
+</div>
+<div class="paragraph">
+<p>The <code>poweroff</code> command is highly dependent on the system hardware in
+use. Specifically, certain hardware components such as the BIOS, APM
+(advanced power management), and ACPI (advanced configuration and power
+interface) must be able to interact with the system kernel. Consult your
+hardware documentation for more information on you system&#8217;s APM/ACPI
+abilities.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>For other completion methods, see the <code>halt</code>, <code>reboot</code>, and <code>shutdown</code>
+Kickstart commands.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-reboot"><a class="anchor" href="#sect-kickstart-commands-reboot"></a>reboot (optional) - Reboot After Installation</h3>
+<div class="paragraph">
+<p>Reboot after the installation is successfully completed. If you are
+installing Fedora on IBM System z in command line mode (using
+<a href="#sect-kickstart-commands-cmdline">section_title</a>), this command is
+necessary for a fully automated installation.</p>
+</div>
+<div class="paragraph">
+<p>For other completion methods, see the <code>halt</code>, <code>poweroff</code>, and <code>shutdown</code>
+Kickstart options.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Important</strong></p>
+</div>
+<div class="paragraph">
+<p>Use of the <code>reboot</code> command <em>may</em> result in an endless installation
+loop, depending on the installation media and method.</p>
+</div>
+</blockquote>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--eject</code></dt>
+<dd>
+<p>Attempt to eject the installation media (if installing from a DVD)
+before rebooting.</p>
+</dd>
+<dt class="hdlist1"><code>--kexec</code></dt>
+<dd>
+<p>Use this option to reboot into the new system using the kexec kernel
+switching mechanism instead of a full reboot, bypassing the
+BIOS/Firmware and boot loader.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-commands-shutdown"><a class="anchor" href="#sect-kickstart-commands-shutdown"></a>shutdown (optional) - Shut Down After Installation</h3>
+<div class="paragraph">
+<p>Shut down the system after the installation has successfully completed.</p>
+</div>
+<div class="paragraph">
+<p>For other completion methods, see the <code>halt</code>, <code>poweroff</code>, and <code>reboot</code>
+Kickstart options.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-kickstart-commands-addon"><a class="anchor" href="#sect-kickstart-commands-addon"></a>%addon (optional) - Include an Anaconda Add-on</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can expand the basic Anaconda and Kickstart functionality by using
+custom add-ons specified using the <code>%addon</code> section.</p>
+</div>
+<div class="paragraph">
+<p>To use an add-on in your Kickstart file, add the
+<code>%addon addon_name options</code> command. The section must be closed with an
+<code>%end</code> statement. For example, to use the Kdump add-on, which is
+included by default on some installations, use the following block:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>%addon com_redhat_kdump --enable --reserve-mb=128%end</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>%addon</code> section does not have any options of its own; all options
+depend on the add-on being used.</p>
+</div>
+<div class="paragraph">
+<p>For more information about Anaconda add-ons, see the
+<a href="https://vpodzime.fedorapeople.org/anaconda-addon-development-guide/">Fedora
+Anaconda Addon Development Guide</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-kickstart-commands-anaconda"><a class="anchor" href="#sect-kickstart-commands-anaconda"></a>%anaconda (optional) - Additional Anaconda Configuration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section, introduced in Fedora 22, is used to specify additional
+configuration options for the installer. Commands inside this section
+only control the behavior during installation, not on the installed
+system. The only command currently available inside this section is
+<a href="#sect-kickstart-commands-pwpolicy">section_title</a>. The <code>%anaconda</code>
+section must end with <code>%end</code>.</p>
+</div>
+<div class="paragraph">
+<p>In interactive installations (using the graphical or text interface),
+the <code>/usr/share/anaconda/interactive-defaults.ks</code> file contains the
+default <code>%anaconda</code> section. To change the defaults, you must create a
+<code>product.img</code> file with a Kickstart file replacing the default one, and
+pass this file to Anaconda using a boot option.</p>
+</div>
+<div class="paragraph">
+<p>When using a Kickstart file, you can override the default <code>%anaconda</code>
+section by using the section again in your custom Kickstart.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-kickstart-commands-include"><a class="anchor" href="#sect-kickstart-commands-include"></a>%include (optional) - Include Contents of Another File</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the <code>%include /path/to/file</code> command to include the contents of
+another file in the Kickstart file as though the contents were at the
+location of the <code>%include</code> command in the Kickstart file.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-kickstart-commands-ksappend"><a class="anchor" href="#sect-kickstart-commands-ksappend"></a>%ksappend (optional) - Append Contents of Another File</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>%ksappend url</code> directive is very similar to
+<a href="#sect-kickstart-commands-include">section_title</a> in that it is used
+to include the contents of additional files as though they were at the
+location of the <code>%ksappend</code> command. The difference is in when the two
+directives are processed.</p>
+</div>
+<div class="paragraph">
+<p><code>%ksappend</code> is processed in an initial pass, before any other part of
+the Kickstart file. Then, this expanded Kickstart file is passed to the
+rest of Anaconda where all <code>%pre</code> scripts are handled, and then finally
+the rest of the Kickstart file is processed in order, which includes
+<code>%include</code> directives.</p>
+</div>
+<div class="paragraph">
+<p>Therefore, <code>%ksappend</code> provides a way to include a file containing
+<code>%pre</code> scripts, while <code>%include</code> does not.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-kickstart-packages"><a class="anchor" href="#sect-kickstart-packages"></a>%packages (required) - Package Selection</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the <code>%packages</code> command to begin a Kickstart section which describes
+the software packages to be installed. This section must end with an
+<code>%end</code> statement.</p>
+</div>
+<div class="paragraph">
+<p>You can specify packages by environment, group, or by their package
+names. Several environments and groups that contain related packages are
+defined. See the <code>repodata/comps.xml</code> file in your installation source
+for environment and group definitions.</p>
+</div>
+<div class="paragraph">
+<p>The <code>comps.xml</code> file contains a structure describing available
+environments (marked by the <code>&lt;environment&gt;</code> tag) and groups (the
+<code>&lt;group&gt;</code> tag). Each entry has an ID, user visibility value, name,
+description, and package list. If the group is selected for
+installation, the packages marked <code>mandatory</code> in the package list are
+always installed, the packages marked <code>default</code> are installed if they
+are not specifically excluded, and the packages marked <code>optional</code> must
+be specifically included even when the group is selected.</p>
+</div>
+<div class="paragraph">
+<p>You can specify a package group or environment using either its ID (the
+<code>&lt;id&gt;</code> tag) or name (the <code>&lt;name&gt;</code> tag).</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Important</strong></p>
+</div>
+<div class="paragraph">
+<p>To install a 32-bit package on a 64-bit system, you will need to append
+the package name with the 32-bit architecture for which the package was
+built - for example, glibc.i686. The <code>--multilib</code> option also must be
+specified in the Kickstart file; see the available options below.</p>
+</div>
+</blockquote>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Important</strong></p>
+</div>
+<div class="paragraph">
+<p>Initial Setup does not run after a system is installed from a Kickstart
+file unless a desktop environment and the X Window System were included
+in the installation and graphical login was enabled. This means that by
+default, no users except for root will be created. You can either create
+a user with the <code>user</code> option in the Kickstart file before installing
+additional systems from it (see
+<a href="#sect-kickstart-commands-user">section_title</a> for details) or log
+into the installed system with a virtual console as root and add users
+with the <code>useradd</code> command.</p>
+</div>
+</blockquote>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Specifying an Environment</dt>
+<dd>
+<p>In addition to groups, you specify an entire environment to be
+installed:
++</p>
+</dd>
+</dl>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>%packages
+@^Infrastructure Server
+%end</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>  +
+  This command will install all packages which are part of the
+  Infrastracture Server environment. All available environments are
+  described in the `comps.xml` file.
+Specifying Groups::
+  Specify groups, one entry to a line, starting with an `@` symbol, and
+  then the full group name or group id as given in the `comps.xml` file.
+  For example:
+  +</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>%packages
+@X Window System
+@Desktop
+@Sound and Video
+%end</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>  +
+  The `Core` and `Base` groups are always selected - it is not necessary
+  to specify them in the `%packages` section.
+  +
+  The `comps.xml` file also defines groups called `Conflicts (variant)`
+  for each variant of {PRODUCT}. This group contains all packages which
+  are known to cause file conflicts, and is intended to be excluded.
+Specifying Individual Packages::
+  Specify individual packages by name, one entry to a line. You can use
+  the asterisk character (`*`) as a wildcard in package names. For
+  example:
+  +</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>%packages
+sqlite
+curl
+aspell
+docbook*
+%end</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>  +
+  The `docbook*` entry includes the packages docbook-dtds,
+  docbook-simple, docbook-slides and others that match the pattern
+  represented with the wildcard.
+Excluding Environments, Groups, or Packages::
+  Use a leading dash (`-`) to specify packages or groups to exclude from
+  the installation. For example:
+  +</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>%packages
+-@Graphical Internet
+-autofs
+-ipa*fonts
+%end</pre>
+</div>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Important</strong></p>
+</div>
+<div class="paragraph">
+<p>Installing all available packages using only <code>*</code> in a Kickstart file is
+not supported, even if you exclude the <code>@Conflicts (variant)</code> group.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>You can change the default behavior of the <code>%packages</code> section by using
+several options. Some options work for the entire package selection,
+others are used with only specific groups.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--nocore</code></dt>
+<dd>
+<p>Do not install the <code>@Core</code> group.</p>
+</dd>
+<dt class="hdlist1"><code>--ignoremissing</code></dt>
+<dd>
+<p>Ignore any packages, groups and environments missing in the
+installation source, instead of halting the installation to ask if the
+installation should be aborted or continued.</p>
+</dd>
+<dt class="hdlist1"><code>--excludedocs</code></dt>
+<dd>
+<p>Do not install any documentation contained within packages. In most
+cases, this will exclude any files normally installed in the
+<code>/usr/share/doc*</code> directory, but the specific files to be excluded
+depend on individual packages.</p>
+</dd>
+<dt class="hdlist1"><code>--multilib</code></dt>
+<dd>
+<p>Configure the installed system for multilib packages (that is, to
+allow installing 32-bit packages on a 64-bit system) and install
+packages specified in this section as such.
++
+Normally, on a 64-bit system, only packages for this architecture
+(marked as <code>x86_64</code>) and packages for all architectures (marked as
+<code>noarch</code>) would be installed. When you use this option, packages for
+32-bit systems (marked as <code>i686</code>) will be automatically installed as
+well, if available.
++
+This only applies to packages explicitly specified in the <code>%packages</code>
+section. Packages which are only being installed as dependencies
+without being specified in the Kickstart file will only be installed
+in architecture versions in which they are needed, even if they are
+available for more architectures.</p>
+</dd>
+<dt class="hdlist1"><code>--nodefaults</code></dt>
+<dd>
+<p>Only install the group&#8217;s mandatory packages, not the default
+selections.</p>
+</dd>
+<dt class="hdlist1"><code>--optional</code></dt>
+<dd>
+<p>Install packages marked as optional in the group definition in the
+<code>comps.xml</code> file, in addition to installing the default selections.
++
+Note that some package groups, such as <code>Scientific Support</code>, do not
+have any mandatory or default packages specified - only optional
+packages. In this case the <code>--optional</code> option must always be used,
+otherwise no packages from this group will be installed.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-kickstart-preinstall"><a class="anchor" href="#sect-kickstart-preinstall"></a>%pre (optional) - Pre-installation Script</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can add commands to run on the system immediately after the
+Kickstart file has been parsed, but before the installation begins. This
+section must be placed towards the end of the Kickstart file, after the
+actual Kickstart commands, and must start with <code>%pre</code> and end with
+<code>%end</code>. If your Kickstart file also includes a <code>%post</code> section, the
+order in which the <code>%pre</code> and <code>%post</code> sections are included does not
+matter.</p>
+</div>
+<div class="paragraph">
+<p>You can access the network in the <code>%pre</code> section. However, the name
+service has not been configured at this point, so only IP addresses
+work, not URLs.</p>
+</div>
+<div class="paragraph">
+<p>The pre-installation script section of Kickstart <em>cannot</em> manage
+multiple install trees or source media. This information must be
+included for each created Kickstart file, as the pre-installation script
+occurs during the second stage of the installation process.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Note</strong></p>
+</div>
+<div class="paragraph">
+<p>Unlike the post-installation script, the pre-installation script is not
+run in the chroot environment.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>The following options can be used to change the behavior of
+pre-installation scripts. To use an option, append it to the <code>%pre</code> line
+at the beginning of the script. For example:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>%pre --interpreter=/usr/bin/python
+--- Python script omitted --
+%end</pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--interpreter=</code></dt>
+<dd>
+<p>Allows you to specify a different scripting language, such as Python.
+Any scripting language available on the system can be used; in most
+cases, these will be /usr/bin/sh, /usr/bin/bash, and /usr/bin/python.</p>
+</dd>
+<dt class="hdlist1"><code>--erroronfail</code></dt>
+<dd>
+<p>Display an error and halt the installation if the script fails. The
+error message will direct you to where the cause of the failure is
+logged.</p>
+</dd>
+<dt class="hdlist1"><code>--log=</code></dt>
+<dd>
+<p>Logs the script&#8217;s output into the specified log file. For example:
++</p>
+</dd>
+</dl>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>%pre --log=/mnt/sysimage/root/ks-pre.log</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For an example of a pre-installation script, see
+<a href="#sect-kickstart-example-pre-script">section_title</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-kickstart-postinstall"><a class="anchor" href="#sect-kickstart-postinstall"></a>%post (optional) - Post-installation Script</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You have the option of adding commands to run on the system once the
+installation is complete, but before the system is rebooted for the
+first time. This section must be placed towards the end of the Kickstart
+file, after the actual Kickstart commands, and must start with <code>%post</code>
+and end with <code>%end</code>. If your Kickstart file also includes a <code>%pre</code>
+section, the order of the <code>%pre</code> and <code>%post</code> sections does not matter.</p>
+</div>
+<div class="paragraph">
+<p>This section is useful for functions such as installing additional
+software or configuring an additional name server. The post-install
+script is run in a chroot environment, therefore, performing tasks such
+as copying scripts or RPM packages from the installation media do not
+work by default. You can change this behavior using the <code>--nochroot</code>
+option as described below.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Important</strong></p>
+</div>
+<div class="paragraph">
+<p>If you configured the network with static IP information, including a
+name server, you can access the network and resolve IP addresses in the
+<code>%post</code> section. If you configured the network for DHCP, the
+<code>/etc/resolv.conf</code> file has not been completed when the installation
+executes the <code>%post</code> section. You can access the network, but you cannot
+resolve IP addresses. Thus, if you are using DHCP, you must specify IP
+addresses in the <code>%post</code> section.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>The following options can be used to change the behavior of
+post-installation scripts. To use an option, append it to the <code>%post</code>
+line at the beginning of the script. For example:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>%post --interpreter=/usr/bin/python
+--- Python script omitted --
+%end</pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--interpreter=</code></dt>
+<dd>
+<p>Allows you to specify a different scripting language, such as Python.
+For example:
++</p>
+</dd>
+</dl>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>%post --interpreter=/usr/bin/python</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>  +
+  Any scripting language available on the system can be used; in most
+  cases, these will be /usr/bin/sh, /usr/bin/bash, and /usr/bin/python.
+`--nochroot`::
+  Allows you to specify commands that you would like to run outside of
+  the chroot environment.
+  +
+  The following example copies the file `/etc/resolv.conf` to the file
+  system that was just installed.
+  +</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>%post --nochroot
+cp /etc/resolv.conf /mnt/sysimage/etc/resolv.conf
+%end</pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--erroronfail</code></dt>
+<dd>
+<p>Display an error and halt the installation if the script fails. The
+error message will direct you to where the cause of the failure is
+logged.</p>
+</dd>
+<dt class="hdlist1"><code>--log=</code></dt>
+<dd>
+<p>Logs the script&#8217;s output into the specified log file. Note that the
+path of the log file must take into account whether or not you use the
+<code>--nochroot</code> option. For example, without <code>--nochroot</code>:
++</p>
+</dd>
+</dl>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>%post --log=/root/ks-post.log</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>+
+with `--nochroot`:
++</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>%post --nochroot --log=/mnt/sysimage/root/ks-post.log</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For an example of a post-installation script, see
+<a href="#sect-kickstart-example-post-script">section_title</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-kickstart-examples"><a class="anchor" href="#sect-kickstart-examples"></a>Example Kickstart Configurations</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="sect-kickstart-example-advanced-partitioning"><a class="anchor" href="#sect-kickstart-example-advanced-partitioning"></a>Advanced Partitioning Example</h3>
+<div class="paragraph">
+<p>The following is an integrated example showing the <code>clearpart</code>,
+<code>zerombr</code>, <code>part</code>, <code>raid</code>, <code>volgroup</code>, and <code>logvol</code> Kickstart options in
+action:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>clearpart  --drives=hda,hdc
+zerombr
+# Raid 1 IDE config
+part raid.11 --size 1000  --asprimary --ondrive=hda
+part raid.12 --size 1000  --asprimary --ondrive=hda
+part raid.13 --size 2000  --asprimary --ondrive=hda
+part raid.14 --size 8000              --ondrive=hda
+part raid.15 --size 16384 --grow      --ondrive=hda
+part raid.21 --size 1000  --asprimary --ondrive=hdc
+part raid.22 --size 1000  --asprimary --ondrive=hdc
+part raid.23 --size 2000  --asprimary --ondrive=hdc
+part raid.24 --size 8000              --ondrive=hdc
+part raid.25 --size 16384 --grow      --ondrive=hdc
+
+# You can add --spares=x
+raid /     --fstype xfs  --device root  --level=RAID1 raid.11 raid.21
+raid /safe --fstype xfs  --device safe  --level=RAID1 raid.12 raid.22
+raid swap  --fstype swap --device swap  --level=RAID1 raid.13 raid.23
+raid /usr  --fstype xfs  --device usr   --level=RAID1 raid.14 raid.24
+raid pv.01 --fstype xfs  --device pv.01 --level=RAID1 raid.15 raid.25
+
+# LVM configuration so that we can resize /var and /usr/local later
+volgroup sysvg pv.01
+logvol /var           --vgname=sysvg --size=8000     --name=var
+logvol /var/freespace --vgname=sysvg --size=8000     --name=freespacetouse
+logvol /usr/local     --vgname=sysvg --size=1 --grow --name=usrlocal</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This advanced example implements LVM over RAID, as well as the ability
+to resize various directories for future growth.</p>
+</div>
+<div class="paragraph">
+<p>First, the <code>clearpart</code> command is used on drives hda and hdc to wipe
+them. The <code>zerombr</code> command initializes unused partition tables.</p>
+</div>
+<div class="paragraph">
+<p>Then, the two drives are partitioned to prepare them for RAID
+configuration. Each drive is divided into five partitions, and each
+drive is partitioned into an identical layout.</p>
+</div>
+<div class="paragraph">
+<p>The next part uses these pairs of physical partitions to create a
+software RAID device with RAID1 level (mirroring). The first four RAID
+devices are used for <code>/</code> (root), <code>/safe</code>, swap and <code>/usr</code>. The fifth,
+largest pair of partitions is named <code>pv.01</code> and will be used in the
+following part as a physical volume for LVM.</p>
+</div>
+<div class="paragraph">
+<p>Finally, the last set of commands first creates a volume group named
+<code>sysvg</code> on the <code>pv.01</code> physical volume. Then, three logical volumes
+(<code>/var</code>, <code>/var/freespace</code> and <code>/usr/local</code>) are created and added to the
+<code>sysvg</code> volume group. The <code>/var</code> and <code>/var/freespace</code> volumes have a set
+size of 8 GB, and the <code>/usr/local</code> volume uses the <code>--grow</code> option to
+fill all remaining available space.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Important</strong></p>
+</div>
+<div class="paragraph">
+<p>The above example uses identifiers hda and hdc to identify disk drives.
+You should use unique identifiers, such as a disk labels or an UUIDs, to
+identify disk drives. See the note in introduction to this appendix.</p>
+</div>
+</blockquote>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-example-pre-script"><a class="anchor" href="#sect-kickstart-example-pre-script"></a>Example Pre-installation Script</h3>
+<div class="paragraph">
+<p>The following is an example <code>%pre</code> section:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>%pre
+#!/bin/sh
+hds=""
+mymedia=""
+for file in /proc/ide/h* do
+mymedia=`cat $file/media`
+if [ $mymedia == "disk" ] ; then
+hds="$hds `basename $file`"
+fi
+done
+set $hds
+numhd=`echo $#`
+drive1=`echo $hds | cut -d' ' -f1`
+drive2=`echo $hds | cut -d' ' -f2`
+
+#Write out partition scheme based on whether there are 1 or 2 hard drives
+if [ $numhd == "2" ] ; then
+#2 drives
+echo "#partitioning scheme generated in %pre for 2 drives" &gt; /tmp/part-include
+echo "clearpart --all" &gt;&gt; /tmp/part-include
+echo "part /boot --fstype xfs --size 75 --ondisk hda" &gt;&gt; /tmp/part-include
+echo "part / --fstype xfs --size 1 --grow --ondisk hda" &gt;&gt; /tmp/part-include
+echo "part swap --recommended --ondisk $drive1" &gt;&gt; /tmp/part-include
+echo "part /home --fstype xfs --size 1 --grow --ondisk hdb" &gt;&gt; /tmp/part-include
+else
+#1 drive
+echo "#partitioning scheme generated in %pre for 1 drive" &gt; /tmp/part-include
+echo "clearpart --all" &gt;&gt; /tmp/part-include
+echo "part /boot --fstype xfs --size 75" &gt;&gt; /tmp/part-include
+echo "part swap --recommended" &gt;&gt; /tmp/part-include
+echo "part / --fstype xfs --size 2048" &gt;&gt; /tmp/part-include
+echo "part /home --fstype xfs --size 2048 --grow" &gt;&gt; /tmp/part-include
+fi
+%end</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This script determines the number of hard drives in the system and
+writes a text file with a different partitioning scheme depending on
+whether it has one or two drives. Instead of having a set of
+partitioning commands in the Kickstart file, include the following line:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>%include /tmp/part-include</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The partitioning commands selected in the script will be used.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-kickstart-example-post-script"><a class="anchor" href="#sect-kickstart-example-post-script"></a>Example Post-installation Script</h3>
+<div class="paragraph">
+<p>The following is an example <code>%post</code> section:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre># Start of the %post section with logging into /root/ks-post.log
+%post --log=/root/ks-post.log
+
+# Mount an NFS share
+mkdir /mnt/temp
+mount -o nolock 10.10.0.2:/usr/new-machines /mnt/temp
+openvt -s -w -- /mnt/temp/runme
+umount /mnt/temp
+
+# End of the %post section
+%end</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The above example mounts an NFS share and executes a script named
+<code>runme</code> located at <code>/usr/new-machines/</code> on the share. Note that NFS file
+locking is <em>not</em> supported while in Kickstart mode, therefore the
+<code>-o nolock</code> option is required.</p>
+</div>
+</div>
+</div>
+</div>
+      </div>
+    </div>
+  </div>
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+   <!-- Latest compiled and minified JavaScript -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+   <script type="text/javascript">
+    /*<![CDATA[*/
+    $(document).ready(function() {
+      $("[id^='topicGroup']").on('show.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicGroup']").on('hide.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicSubGroup']").on('show.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+      $("[id^='topicSubGroup']").on('hide.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+    });
+    /*]]>*/
+  </script>
+</body>
+</html>

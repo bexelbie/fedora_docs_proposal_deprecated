@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Fedora Rawhide | Installation Guide | Setting Up an Installation Server</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <link href="../../rawhide/_stylesheets/asciibinder.css" rel="stylesheet" />
+
+   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+   <!--[if lt IE 9]>
+     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+   <![endif]-->
+
+  <link href="../../rawhide/_images/favicon32x32.png" rel="shortcut icon" type="text/css">
+  <!--[if IE]><link rel="shortcut icon" href="../../rawhide/_images/favicon.ico"><![endif]-->
+  <meta content="AsciiBinder" name="application-name">
+</head>
+<body>
+  <div class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="https://docs.fedoraproject.org/"><img alt="Fedora Documentation" src="../../rawhide/_images/fedora.svg"></a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <p class="toggle-nav visible-xs pull-left">
+      <button class="btn btn-default btn-sm" type="button" data-toggle="offcanvas">Toggle nav</button>
+    </p>
+    <ol class="breadcrumb">
+      <li class="sitename">
+        <a href="../../index.html">Fedora Documentation</a>
+      </li>
+      <li class="hidden-xs active">
+        <a href="../install-guide/Preface.html">Fedora Rawhide</a>
+      </li>
+      <li class="hidden-xs active">
+        <a href="../install-guide/Preface.html">Installation Guide</a>
+      </li>
+      
+      <li class="hidden-xs active">
+        Setting Up an Installation Server
+      </li>
+    </ol>
+    <div class="row row-offcanvas row-offcanvas-left">
+      <div class="col-xs-8 col-sm-3 col-md-3 sidebar sidebar-offcanvas">
+        <ul class="nav nav-sidebar">
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup0">
+        <span id="tgSpan0" class="fa fa-angle-down"></span>Installation Guide
+      </a>
+      <ul id="topicGroup0" class="collapse in list-unstyled">
+            <li><a class="" href="../install-guide/Preface.html">Preface</a></li>
+            <li><a class="" href="../install-guide/Introduction.html">Introduction</a></li>
+            <li><a class="" href="../install-guide/Downloading_Fedora.html">Downloading Fedora</a></li>
+            <li><a class="" href="../install-guide/Preparing_for_Installation.html">Preparing for Installation</a></li>
+            <li><a class="" href="../install-guide/Booting_the_Installation.html">Booting the Installation</a></li>
+            <li class="nav-header">
+              <a class="" href="#" data-toggle="collapse" data-target="#topicSubGroup-0-5">
+                <span id="sgSpan-0-5" class="fa fa-caret-right"></span>&nbsp;Installing Using Anaconda
+              </a>
+              <ul id="topicSubGroup-0-5" class="nav-tertiary list-unstyled collapse">
+                  <li><a class="" href="../install-guide/installing_using_anaconda/Installing_Using_Anaconda.html">Installing Using Anaconda</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/WelcomeSpoke.html">Welcome Screen and Language Selection</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/SummaryHub.html">Installation Summary</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/DateTimeSpoke.html">Date & Time</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/KeyboardSpoke.html">Keyboard Layout</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/LangSupportSpoke.html">Language Support</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/SourceSpoke.html">Installation Source</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/SoftwareSpoke.html">Software Selection</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/StorageSpoke.html">Installation Destination</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/StorageSpoke_BootLoader.html">Boot Loader Installation</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/FilterSpoke.html">Installation Destination - Specialized & Network Disks</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/FilterSpoke_AddiSCSI.html">Add iSCSI Target</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/FilterSpoke_AddFCoE.html">Add FCoE SAN</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke.html">Manual Partitioning</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_AddPhysical.html">Creating Standard Partitions</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_SoftwareRAID.html">Creating Software RAID</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_AddLVM.html">Creating a Logical Volume Managament (LVM) Layout</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_AddBtrfs.html">Creating a Btrfs Layout</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_FileSystems.html">Device, File System and RAID Types</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_RecommendedScheme.html">Recommended Partitioning Scheme</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_PartitioningAdvice.html">Advice on Partitions</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/KdumpSpoke.html">Kdump</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/NetworkSpoke.html">Network & Hostname</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/NetworkSpoke_VirtualInterfaces.html">Adding a Virtual Network Interface</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/NetworkSpoke_EditConnection.html">Editing Network Interface Configuration</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/ProgressHub.html">Configuration and Installation Progress</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/PasswordSpoke.html">Root Password</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/UserSpoke.html">Create User</a></li>
+              </ul>
+            </li>
+            <li class="nav-header">
+              <a class="" href="#" data-toggle="collapse" data-target="#topicSubGroup-0-6">
+                <span id="sgSpan-0-6" class="fa fa-caret-right"></span>&nbsp;After the Installation
+              </a>
+              <ul id="topicSubGroup-0-6" class="nav-tertiary list-unstyled collapse">
+                  <li><a class="" href="../install-guide/after_installation/After_Installation.html">After the Installation</a></li>
+                  <li><a class="" href="../install-guide/after_installation/InitialSetupHub.html">Initial Setup</a></li>
+              </ul>
+            </li>
+            <li><a class="" href="../install-guide/Troubleshooting.html">Troubleshooting</a></li>
+            <li><a class="" href="../install-guide/Boot_Options.html">Boot Options</a></li>
+            <li><a class="" href="../install-guide/Kickstart_Installations.html">Automating the Installation with Kickstart</a></li>
+            <li><a class=" active" href="../install-guide/Network_based_Installations.html">Setting Up an Installation Server</a></li>
+            <li><a class="" href="../install-guide/VNC_Installations.html">Installing Using VNC</a></li>
+            <li><a class="" href="../install-guide/Upgrading_Your_Current_System.html">Upgrading Your Current System</a></li>
+            <li><a class="" href="../install-guide/Kickstart_Syntax_Reference.html">Kickstart Syntax Reference</a></li>
+            <li><a class="" href="../install-guide/Disk_Partitions.html">An Introduction to Disk Partitions</a></li>
+            <li><a class="" href="../install-guide/Understanding_LVM.html">Understanding LVM</a></li>
+            <li><a class="" href="../install-guide/Revision_History.html">Revision History</a></li>
+      </ul>
+    </li>
+</ul>
+      </div>
+      <div class="col-xs-12 col-sm-9 col-md-9 main">
+        <div class="page-header">
+          <h2>Configuration d&#8217;un serveur d&#8217;installation</h2>
+        </div>
+        <div class="sect1">
+<h2 id="chap-pxe-server-setup"><a class="anchor" href="#chap-pxe-server-setup"></a>Configuration d&#8217;un serveur d&#8217;installation</h2>
+<div class="sectionbody">
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Note</strong></p>
+</div>
+<div class="paragraph">
+<p>Cette annexe est à l&#8217;intention d&#8217;utilisateurs possédant une certains
+expérience de Linux. Si vous êtes nouvel utilisateur, faites plutôt une
+installation à l&#8217;aide du média de démarrage minimal ou du DVD de la
+distribution.</p>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="pxe-overview"><a class="anchor" href="#pxe-overview"></a>Vue d&#8217;ensemble d&#8217;une installation PXE</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Preboot Execution Environment, or PXE, is a techonology that allows
+computers to boot directly from resources provided over the network.
+Installing Fedora over the network means you don&#8217;t have to create media, and
+you can install to multiple computers or virtual machine simultaneously. The
+process involves a number of components and features working together to
+provide the resources required.</p>
+</div>
+<div class="paragraph">
+<p><strong>PXE-capable computer.</strong></p>
+</div>
+<div class="paragraph">
+<p>La plupart des ordinateurs modernes ont la capacité de démarrer directement
+depuis le réseau. Typiquement, une touche de fonction pressée dans les tous
+premiers instants du démarrage provoque l&#8217;affichage d&#8217;un menu de sélection
+du média de démarrage. Dans des environnements conçus pour une
+administration à distance, les systèmes sont souvent configurés pour
+démarrer d&#8217;abord depuis le réseau, puis d&#8217;un média local, et le serveur
+d&#8217;installation est configuré pour n&#8217;offrir l&#8217;installation que sur
+demande. Le manuel de votre ordinateur fournit les informations spécifiques
+sur la manière de définir les priorités de démarrage.</p>
+</div>
+<div class="paragraph">
+<p><strong>DHCP Server.</strong></p>
+</div>
+<div class="paragraph">
+<p>Lorsqu&#8217;un système requiert une adresse IP lors du démarrage à partir du
+réseau, le serveur DHCP fournit également l&#8217;emplacement des fichiers de
+démarrage. Un réseau ne doit avoir qu&#8217;un seul serveur DHCP.</p>
+</div>
+<div class="paragraph">
+<p><strong>TFTP Server.</strong></p>
+</div>
+<div class="paragraph">
+<p>Comme l&#8217;environnement PXE est très simple, les fichiers doivent être fournis
+d&#8217;une manière très simple. Le « Trivial File Transfert Protocol » (TFTP)
+(protocole trivial de transfert de fichiers) fournit au système le chargeur
+de démarrage nécessaire à la poursuite de l&#8217;installation.</p>
+</div>
+<div class="paragraph">
+<p><strong>Bootloader.</strong></p>
+</div>
+<div class="paragraph">
+<p>Comme la tâche assignée à un système d&#8217;exploitation est trop complexe pour
+l&#8217;environnement PXE, un chargeur de démarrage est utilisé pour charger le
+noyau et les fichiers associés. Il fournit aussi des informations de
+configuration à l&#8217;installateur et peut aussi offrir un menu pour choisir
+parmi différentes configurations.</p>
+</div>
+<div class="paragraph">
+<p><strong>Kernel and Initramfs.</strong></p>
+</div>
+<div class="paragraph">
+<p>Le noyau, comme son nom l&#8217;indique, est le cœur d&#8217;un système d&#8217;exploitation
+Linux et le système de fichiers virtuel initial (initramfs) lui fournit les
+outils et les ressources nécessaires pour le démarrage. Ces fichiers sont
+aussi fournis par TFTP.</p>
+</div>
+<div class="paragraph">
+<p><strong>Package repository.</strong></p>
+</div>
+<div class="paragraph">
+<p>A Fedora repository must be available for the installation. The example in
+this section uses the public Fedora mirrors as the repository source, but
+you can also use a repo on the local network provided by NFS, FTP, or
+HTTP. Repositories can be configured using the <code>inst.repo=</code> boot option; see
+<a href="#sect-boot-options-sources">???</a> for details.</p>
+</div>
+<div class="paragraph">
+<p>A link to mirrormanager and some instructions to other guides too. All the
+elaboration on installation methods might be going to far, but we can
+ref. --Pete</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="pxe-dhcpd"><a class="anchor" href="#pxe-dhcpd"></a>Configuration du serveur DHCP</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Needs adminition about static IP, reference out to Networking Guide.
+Example assumes 192.168.1.2 for server.</p>
+</div>
+<div class="paragraph">
+<p>Installation du paquet dhcp</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre># dnf install dhcp</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Create a simple configuration for the dhcp server at <code>/etc/dhcp/dhcpd.conf</code></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>subnet 192.168.1.0 netmask 255.255.255.0 {
+authoritative;
+default-lease-time 600;
+max-lease-time 7200;
+ddns-update-style none;
+
+option domain-name-servers 192.168.1.1;
+option routers 192.168.1.1;
+
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Testez votre configuration et résolvez tout problème rencontré.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>systemctl start dhcpd
+journalctl --unit dhcpd --since -2m --follow</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Add entries to point clients to their bootloader and the server that
+provides it to your subnet configuration in <code>/etc/dhcp/dhcpd.conf</code>.  Because
+DHCP clients provide the server with identifying information along with
+their address request, BIOS clients and UEFI clients can each be directed to
+the correct bootloader.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre># refer to RFC4758 for possible arch option values
+option arch code 93 = unsigned integer 16;
+
+subnet 192.168.1.0 netmask 255.255.255.0 {
+if option arch = 00:07 {
+filename "uefi/shim.efi";
+} else {
+filename "pxelinux.0";
+}
+
+next-server 192.168.1.2;
+
+...</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Redémarrez le service dhcp pour vérifier la configuration et corrigez si
+nécessaire.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>systemctl restart dhcpd
+journalctl --unit dhcpd --since -2m --follow</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="pxe-tftpd"><a class="anchor" href="#pxe-tftpd"></a>Installation du serveur TFTP</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Installation du paquet « serveur TFTP »</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre># dnf install tftp-server</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Start and enable the tftp socket. systemd will automatically start the tftpd
+service when required.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>systemctl start tftp.socket
+systemctl enable tftp.socket</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="pxe-bootloader"><a class="anchor" href="#pxe-bootloader"></a>Fourniture et configuration des chargeurs de démarrage pour les clients PXE</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Get the syslinux bootloader for BIOS clients.</p>
+</div>
+<div class="paragraph">
+<p>Install the syslinux package.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre># dnf install syslinux</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Créez un dossier pour les fichiers du chargeur de démarrage et placez les y.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>mkdir -p /var/lib/tftpboot/pxelinux.cfg
+cp /usr/share/syslinux/{pxelinux.0,vesamenu.c32,ldlinux.c32,libcom32.c32,libutil.c32} /var/lib/tftpboot/</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Obtention des fichiers du chargeur de démarrage pour les systèmes UEFI</p>
+</div>
+<div class="paragraph">
+<p>Install the shim and grub2-efi packages. If your server is a BIOS system,
+you <em>must install the packages to a temporary install root</em>.  Installing
+them directly on a BIOS machine will attempt to configure the system for
+UEFI booting and cause problems.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre># dnf install shim grub2-efi --installroot=/tmp/fedora --releasever {PRODVER}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Créez un dossier pour les fichiers du chargeur de démarrage et placez les y.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>mkdir -p /var/lib/tftpboot/uefi
+cp /tmp/fedora/boot/efi/EFI/fedora/{shim.efi,grubx64.efi} /var/lib/tftpboot/uefi/</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Create a boot menu for BIOS clients at
+<code>/var/lib/tftpboot/pxelinux.cfg/default</code>.</p>
+</div>
+<div class="paragraph">
+<p>needs adminition about kickstarts here somewhere, and testing of pulling
+.ks out of cgit</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>default vesamenu.c32
+prompt 1
+timeout 600
+
+label linux
+menu label ^Install Fedora {PRODVER} 64-bit
+menu default
+kernel f{PRODVER}/vmlinuz
+append initrd=f{PRODVER}/initrd.img inst.stage2=http://download.fedoraproject.org/pub/fedora/linux/releases/PRODVER/Server/x86_64/os/ ip=dhcp
+
+label server
+menu label ^Install Fedora {PRODVER} ( Minimal Image )
+menu default
+kernel f{PRODVER}/vmlinuz
+append initrd=f{PRODVER}/initrd.img inst.stage2=http://download.fedoraproject.org/pub/fedora/linux/releases/PRODVER/Server/x86_64/os/ ip=dhcp ks=https://example.com/fedora/kickstarts/minimal.ks
+
+label rescue
+menu label ^Rescue installed system
+kernel f{PRODVER}/vmlinuz
+append initrd=f{PRODVER}initrd.img ip=dhcp root=live:http://download.fedoraproject.org/pub/fedora/linux/releases/PRODVER/Server/x86_64/os/LiveOS/squashfs.img rescue
+
+label local
+menu label Boot from ^local drive
+localboot 0xffff</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Create a boot menu for UEFI clients at <code>/var/lib/tftpboot/pxelinux/uefi</code>.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>function load_video {
+insmod efi_gop
+insmod efi_uga
+insmod video_bochs
+insmod video_cirrus
+insmod all_video
+}
+
+load_video
+set gfxpayload=keep
+insmod gzio
+
+menuentry 'Install {PRODUCT} 64-bit'  --class fedora --class gnu-linux --class gnu --class os {
+linuxefi f{PRODVER}/vmlinuz ip=dhcp inst.repo=http://download.fedoraproject.org/pub/fedora/linux/releases/PRODVER/Server/x86_64/os/
+initrdefi f{PRODVER}/initrd.img
+}
+
+menuentry 'Install Fedora {PRODVER} Server'  --class fedora --class gnu-linux --class gnu --class os {
+kernel f{PRODVER}/vmlinuz
+append initrd=f{PRODVER}/initrd.img inst.repo=http://download.fedoraproject.org/pub/fedora/linux/releases/PRODVER/Server/x86_64/os/ ip=dhcp ks=https://git.fedorahosted.org/cgit/spin-kickstarts.git/plain/fedora-install-server.ks?h=f21
+}
+
+menuentry 'Rescue installed system'  --class fedora --class gnu-linux --class gnu --class os {
+kernel f{PRODVER}/vmlinuz
+append f{PRODVER}/initrd=initrd.img root=live:http://download.fedoraproject.org/pub/fedora/linux/releases/PRODVER/Server/x86_64/os/LiveOS/squashfs.img rescue
+}</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="pxe-kernel"><a class="anchor" href="#pxe-kernel"></a>Obtention du noyau et du disque virtuel initial (initrd)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Créez un dossier pour les fichiers.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>mkdir -p /var/lib/tftpboot/f{PRODVER}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Téléchargez le noyau.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>wget http://download.fedoraproject.org/pub/fedora/linux/releases/{PRODVER}/Server/x86_64/os/images/pxeboot/vmlinuz -O /var/lib/tftpboot/fPRODVER/vmlinuz</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Téléchargez l&#8217;initrd.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>wget http://download.fedoraproject.org/pub/fedora/linux/releases/{PRODVER}/Server/x86_64/os/images/pxeboot/initrd.img -O /var/lib/tftpboot/fPRODVER/initrd.img</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="pxe-repositories"><a class="anchor" href="#pxe-repositories"></a>Fourniture des dépôts</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Les exemple de cette section utilisent les miroirs publics de Fedora comme
+sources des paquets. Pour des installations plus rapides, l&#8217;installation sur
+plusieurs systèmes ou des environnements plus isolés, il peut être
+intéressant de créer un dépôt local.</p>
+</div>
+<div class="paragraph">
+<p>Fedora Infrastructure maintains instructions for a configuring a local
+mirror at <a href="https://fedoraproject.org/wiki/Infrastructure/Mirroring" class="bare">https://fedoraproject.org/wiki/Infrastructure/Mirroring</a>. The
+preferred method for providing repositories is via HTTP, and you can refer
+to the Fedora System Administrator&#8217;s Guide, available at
+<a href="http://docs.fedoraproject.org/" class="bare">http://docs.fedoraproject.org/</a>, to configure httpd.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-install-server-cobbler"><a class="anchor" href="#sect-install-server-cobbler"></a>Installations réseau avancées avec Cobbler</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For more complex environments, Fedora offers the cobbler installation
+server. Tasks like managing kickstart configurtations, coordinating
+repositories, maintaining dns records, dhcp servers, and even puppet
+manifests are effectively automated by cobbler.</p>
+</div>
+<div class="paragraph">
+<p>While levaraging all of the features provided by cobbler can be relatively
+simple, the full functionality of this powerful tool is too broad to be
+documented in this guide. The cobbler community provides excellent
+documentation at <a href="http://www.cobblerd.org/manuals/2.6.0/" class="bare">http://www.cobblerd.org/manuals/2.6.0/</a> to accompany the
+packages in the Fedora repository.</p>
+</div>
+</div>
+</div>
+      </div>
+    </div>
+  </div>
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+   <!-- Latest compiled and minified JavaScript -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+   <script type="text/javascript">
+    /*<![CDATA[*/
+    $(document).ready(function() {
+      $("[id^='topicGroup']").on('show.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicGroup']").on('hide.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicSubGroup']").on('show.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+      $("[id^='topicSubGroup']").on('hide.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+    });
+    /*]]>*/
+  </script>
+</body>
+</html>

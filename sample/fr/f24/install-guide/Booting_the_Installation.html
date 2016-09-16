@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Fedora 24 | Installation Guide | Booting the Installation</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <link href="../../f24/_stylesheets/asciibinder.css" rel="stylesheet" />
+
+   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+   <!--[if lt IE 9]>
+     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+   <![endif]-->
+
+  <link href="../../f24/_images/favicon32x32.png" rel="shortcut icon" type="text/css">
+  <!--[if IE]><link rel="shortcut icon" href="../../f24/_images/favicon.ico"><![endif]-->
+  <meta content="AsciiBinder" name="application-name">
+</head>
+<body>
+  <div class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="https://docs.fedoraproject.org/"><img alt="Fedora Documentation" src="../../f24/_images/fedora.svg"></a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <p class="toggle-nav visible-xs pull-left">
+      <button class="btn btn-default btn-sm" type="button" data-toggle="offcanvas">Toggle nav</button>
+    </p>
+    <ol class="breadcrumb">
+      <li class="sitename">
+        <a href="../../index.html">Fedora Documentation</a>
+      </li>
+      <li class="hidden-xs active">
+        <a href="../install-guide/Preface.html">Fedora 24</a>
+      </li>
+      <li class="hidden-xs active">
+        <a href="../install-guide/Preface.html">Installation Guide</a>
+      </li>
+      
+      <li class="hidden-xs active">
+        Booting the Installation
+      </li>
+    </ol>
+    <div class="row row-offcanvas row-offcanvas-left">
+      <div class="col-xs-8 col-sm-3 col-md-3 sidebar sidebar-offcanvas">
+        <ul class="nav nav-sidebar">
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup0">
+        <span id="tgSpan0" class="fa fa-angle-down"></span>Installation Guide
+      </a>
+      <ul id="topicGroup0" class="collapse in list-unstyled">
+            <li><a class="" href="../install-guide/Preface.html">Preface</a></li>
+            <li><a class="" href="../install-guide/Introduction.html">Introduction</a></li>
+            <li><a class="" href="../install-guide/Downloading_Fedora.html">Downloading Fedora</a></li>
+            <li><a class="" href="../install-guide/Preparing_for_Installation.html">Preparing for Installation</a></li>
+            <li><a class=" active" href="../install-guide/Booting_the_Installation.html">Booting the Installation</a></li>
+            <li class="nav-header">
+              <a class="" href="#" data-toggle="collapse" data-target="#topicSubGroup-0-5">
+                <span id="sgSpan-0-5" class="fa fa-caret-right"></span>&nbsp;Installing Using Anaconda
+              </a>
+              <ul id="topicSubGroup-0-5" class="nav-tertiary list-unstyled collapse">
+                  <li><a class="" href="../install-guide/installing_using_anaconda/Installing_Using_Anaconda.html">Installing Using Anaconda</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/WelcomeSpoke.html">Welcome Screen and Language Selection</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/SummaryHub.html">Installation Summary</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/DateTimeSpoke.html">Date & Time</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/KeyboardSpoke.html">Keyboard Layout</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/LangSupportSpoke.html">Language Support</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/SourceSpoke.html">Installation Source</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/SoftwareSpoke.html">Software Selection</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/StorageSpoke.html">Installation Destination</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/StorageSpoke_BootLoader.html">Boot Loader Installation</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/FilterSpoke.html">Installation Destination - Specialized & Network Disks</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/FilterSpoke_AddiSCSI.html">Add iSCSI Target</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/FilterSpoke_AddFCoE.html">Add FCoE SAN</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke.html">Manual Partitioning</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_AddPhysical.html">Creating Standard Partitions</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_SoftwareRAID.html">Creating Software RAID</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_AddLVM.html">Creating a Logical Volume Managament (LVM) Layout</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_AddBtrfs.html">Creating a Btrfs Layout</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_FileSystems.html">Device, File System and RAID Types</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_RecommendedScheme.html">Recommended Partitioning Scheme</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_PartitioningAdvice.html">Advice on Partitions</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/KdumpSpoke.html">Kdump</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/NetworkSpoke.html">Network & Hostname</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/NetworkSpoke_VirtualInterfaces.html">Adding a Virtual Network Interface</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/NetworkSpoke_EditConnection.html">Editing Network Interface Configuration</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/ProgressHub.html">Configuration and Installation Progress</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/PasswordSpoke.html">Root Password</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/UserSpoke.html">Create User</a></li>
+              </ul>
+            </li>
+            <li class="nav-header">
+              <a class="" href="#" data-toggle="collapse" data-target="#topicSubGroup-0-6">
+                <span id="sgSpan-0-6" class="fa fa-caret-right"></span>&nbsp;After the Installation
+              </a>
+              <ul id="topicSubGroup-0-6" class="nav-tertiary list-unstyled collapse">
+                  <li><a class="" href="../install-guide/after_installation/After_Installation.html">After the Installation</a></li>
+                  <li><a class="" href="../install-guide/after_installation/InitialSetupHub.html">Initial Setup</a></li>
+              </ul>
+            </li>
+            <li><a class="" href="../install-guide/Troubleshooting.html">Troubleshooting</a></li>
+            <li><a class="" href="../install-guide/Boot_Options.html">Boot Options</a></li>
+            <li><a class="" href="../install-guide/Kickstart_Installations.html">Automating the Installation with Kickstart</a></li>
+            <li><a class="" href="../install-guide/Network_based_Installations.html">Setting Up an Installation Server</a></li>
+            <li><a class="" href="../install-guide/VNC_Installations.html">Installing Using VNC</a></li>
+            <li><a class="" href="../install-guide/Upgrading_Your_Current_System.html">Upgrading Your Current System</a></li>
+            <li><a class="" href="../install-guide/Kickstart_Syntax_Reference.html">Kickstart Syntax Reference</a></li>
+            <li><a class="" href="../install-guide/Disk_Partitions.html">An Introduction to Disk Partitions</a></li>
+            <li><a class="" href="../install-guide/Understanding_LVM.html">Understanding LVM</a></li>
+            <li><a class="" href="../install-guide/Revision_History.html">Revision History</a></li>
+      </ul>
+    </li>
+</ul>
+      </div>
+      <div class="col-xs-12 col-sm-9 col-md-9 main">
+        <div class="page-header">
+          <h2>Démarrer sur le média d&#8217;installation</h2>
+        </div>
+        <div class="sect1">
+<h2 id="chap-booting-the-installation"><a class="anchor" href="#chap-booting-the-installation"></a>Démarrer sur le média d&#8217;installation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ce chapitre explique comment démarrer l&#8217;installateur depuis un média local
+ou un serveur réseau ainsi que comment naviguer dans le menu de démarrage et
+utiliser les options de personnalisation.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-preparing-boot"><a class="anchor" href="#sect-preparing-boot"></a>Préparation du démarrage</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After you have made a bootable USB flash drive or a CD or DVD using the
+steps described in <a href="#sect-preparing-boot-media">???</a>, you are ready to
+boot the installation. Note that the steps described below are generic and
+the exact steps will vary somewhat depending on your system
+- particularly on your motherboard manufacturer.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Warning</strong></p>
+</div>
+<div class="paragraph">
+<p>There are no separate media provided for BIOS and UEFI systems; all of them
+can boot from the same ISO image. However, once you install Fedora, you
+can not switch between UEFI and BIOS. The system must run on the same
+firmware it was installed on; if you, for example, perform the installation
+on an UEFI system in UEFI mode, and then switch it to BIOS compatibility
+mode, Fedora will no longer boot and will require a reinstallation.</p>
+</div>
+</blockquote>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Important</strong></p>
+</div>
+<div class="paragraph">
+<p>Fedora does not support UEFI booting for 32-bit x86 systems. Only BIOS
+boot is supported on these systems.</p>
+</div>
+<div class="paragraph">
+<p>Also note that Fedora only fully supports version 2.2 of the UEFI
+specification. Hardware that supports version 2.3 or later will boot and
+work normally, but the additional functionality defined by these later
+specifications will not be available. The UEFI specifications are available
+from <a href="http://www.uefi.org/specs/agreement/" class="bare">http://www.uefi.org/specs/agreement/</a>.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>To boot the Fedora installer, follow these steps:</p>
+</div>
+<div class="paragraph">
+<p>Branchez la clé USB ou insérez le CD ou DVD de démarrage dans votre lecteur
+optique. Autrement, si vous envisagez de démarrer sur un serveur de
+démarrage réseau (PXE), assurez-vous que le câble du réseau est raccordé.</p>
+</div>
+<div class="paragraph">
+<p>Redémarrez le système. Dès qu&#8217;il commence son redémarrage, il affiche une
+invite semblable à la suivante (généralement en bas de l&#8217;écran) :</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Press F12 to select boot device, or Del to enter SETUP</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Follow the on-screen instructions to access the boot menu. If no
+instructions are displayed (some systems only display a graphical logo
+during early stages of boot), try pressing F12, F11, F10 or Del several
+times; these are most commonly used keys. Note that there is usually a very
+short time window provided to access the menu; once it passes, you need to
+restart the system and try again.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Note</strong></p>
+</div>
+<div class="paragraph">
+<p>Certains systèmes anciens ne prennent pas en charge le menu de choix de
+l&#8217;ordre de démarrage. Dans ce cas, il vous faut entrer dans le micrologiciel
+(BIOS) du système et y changer l&#8217;ordre de démarrage par défaut de manière à
+ce que votre média d&#8217;installation (CD, DVD, USB ou réseau) ait priorité sur
+les disques durs internes.</p>
+</div>
+<div class="paragraph">
+<p>On Mac hardware, hold down the Option key to enter the boot media selection
+menu.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>When your system&#8217;s boot menu opens, select an entry such as Boot from USB if
+you created a bootable USB drive, Boot from CD/DVD if you are using an
+optical disc to install Fedora, or Boot from PXE if you want to boot from
+a network location.</p>
+</div>
+<div class="paragraph">
+<p>Patientez jusqu&#8217;à ce que le menu de démarrage apparaisse. Le menu de
+démarrage est décrit plus loin dans ce chapitre.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-boot-menu"><a class="anchor" href="#sect-boot-menu"></a>Le menu de démarrage</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In most cases, when you boot the Fedora installer from your prepared boot
+media or server, the boot menu will be the first thing that appears. From
+this menu, you can either start the actual installation, or you can use the
+boot media to rescue an existing system.</p>
+</div>
+<div class="paragraph">
+<p>The way the boot menu will look and function will vary somewhat depending on
+your system&#8217;s firmware - BIOS systems use the SYSLINUX boot loader, and UEFI
+systems use GRUB2. However, both of the menus described below function very
+similarly from a user&#8217;s point of view.</p>
+</div>
+<div class="paragraph">
+<p>Use arrow keys to select an entry in the menu, and Enter to confirm your
+selection. The first two entries in the list will both proceed with the
+installation; the first one will start the installer directly, and the
+second one will verify the integrity of the boot media before starting the
+installation.</p>
+</div>
+<div class="paragraph">
+<p>The final entry in the list is Troubleshooting; this is a submenu.
+Selecting this entry and pressing Enter will display a new set of
+selections, where you can choose to install in basic graphics mode (useful
+if you want to do a manual graphical installation but your system has issues
+with the default graphical installer), rescue an existing system, or test
+your system&#8217;s memory modules for errors (on BIOS systems only). The
+troubleshooting menu also allows you to exit the boot menu and boot normally
+from your system&#8217;s hard drive via the Boot from local drive option.</p>
+</div>
+<div class="paragraph">
+<p>Every menu entry in the list is a predefined set of boot options, and these
+options can be customized to change some aspects of the installer&#8217;s
+behavior. To edit the default set of boot options, press Tab on BIOS
+systems, or e on UEFI systems. The key to use is also displayed at the
+bottom of the screen.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Note</strong></p>
+</div>
+<div class="paragraph">
+<p>Editing boot options in GRUB2 (on UEFI systems) will display the entire
+configuration for the selected entry. Actual boot options are configured on
+the line which starts with the <code>linux</code> (or <code>linux16</code> or <code>linuxefi</code>)
+keyword. Do not modify any other lines in the configuration.</p>
+</div>
+<div class="paragraph">
+<p>On systems with BIOS firmware, only the actual boot options are displayed
+when you press Tab.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>When editing the default set of options, you can change the existing ones as
+well as append additional ones. Once you finish, press Enter on BIOS or
+Ctrl+X on UEFI to boot the installer using your customized options.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="data:image/png;base64,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" alt="Editing boot options on a system with BIOS firmware"></span></p>
+</div>
+<div class="paragraph">
+<p>All available Anaconda boot options are described in
+<a href="#sect-boot-options-available">???</a>.</p>
+</div>
+</div>
+</div>
+      </div>
+    </div>
+  </div>
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+   <!-- Latest compiled and minified JavaScript -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+   <script type="text/javascript">
+    /*<![CDATA[*/
+    $(document).ready(function() {
+      $("[id^='topicGroup']").on('show.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicGroup']").on('hide.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicSubGroup']").on('show.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+      $("[id^='topicSubGroup']").on('hide.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+    });
+    /*]]>*/
+  </script>
+</body>
+</html>

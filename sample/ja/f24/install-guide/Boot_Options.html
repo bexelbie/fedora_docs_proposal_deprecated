@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Fedora 24 | Installation Guide | Boot Options</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <link href="../../f24/_stylesheets/asciibinder.css" rel="stylesheet" />
+
+   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+   <!--[if lt IE 9]>
+     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+   <![endif]-->
+
+  <link href="../../f24/_images/favicon32x32.png" rel="shortcut icon" type="text/css">
+  <!--[if IE]><link rel="shortcut icon" href="../../f24/_images/favicon.ico"><![endif]-->
+  <meta content="AsciiBinder" name="application-name">
+</head>
+<body>
+  <div class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="https://docs.fedoraproject.org/"><img alt="Fedora Documentation" src="../../f24/_images/fedora.svg"></a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <p class="toggle-nav visible-xs pull-left">
+      <button class="btn btn-default btn-sm" type="button" data-toggle="offcanvas">Toggle nav</button>
+    </p>
+    <ol class="breadcrumb">
+      <li class="sitename">
+        <a href="../../index.html">Fedora Documentation</a>
+      </li>
+      <li class="hidden-xs active">
+        <a href="../install-guide/Preface.html">Fedora 24</a>
+      </li>
+      <li class="hidden-xs active">
+        <a href="../install-guide/Preface.html">Installation Guide</a>
+      </li>
+      
+      <li class="hidden-xs active">
+        Boot Options
+      </li>
+    </ol>
+    <div class="row row-offcanvas row-offcanvas-left">
+      <div class="col-xs-8 col-sm-3 col-md-3 sidebar sidebar-offcanvas">
+        <ul class="nav nav-sidebar">
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup0">
+        <span id="tgSpan0" class="fa fa-angle-down"></span>Installation Guide
+      </a>
+      <ul id="topicGroup0" class="collapse in list-unstyled">
+            <li><a class="" href="../install-guide/Preface.html">Preface</a></li>
+            <li><a class="" href="../install-guide/Introduction.html">Introduction</a></li>
+            <li><a class="" href="../install-guide/Downloading_Fedora.html">Downloading Fedora</a></li>
+            <li><a class="" href="../install-guide/Preparing_for_Installation.html">Preparing for Installation</a></li>
+            <li><a class="" href="../install-guide/Booting_the_Installation.html">Booting the Installation</a></li>
+            <li class="nav-header">
+              <a class="" href="#" data-toggle="collapse" data-target="#topicSubGroup-0-5">
+                <span id="sgSpan-0-5" class="fa fa-caret-right"></span>&nbsp;Installing Using Anaconda
+              </a>
+              <ul id="topicSubGroup-0-5" class="nav-tertiary list-unstyled collapse">
+                  <li><a class="" href="../install-guide/installing_using_anaconda/Installing_Using_Anaconda.html">Installing Using Anaconda</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/WelcomeSpoke.html">Welcome Screen and Language Selection</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/SummaryHub.html">Installation Summary</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/DateTimeSpoke.html">Date & Time</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/KeyboardSpoke.html">Keyboard Layout</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/LangSupportSpoke.html">Language Support</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/SourceSpoke.html">Installation Source</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/SoftwareSpoke.html">Software Selection</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/StorageSpoke.html">Installation Destination</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/StorageSpoke_BootLoader.html">Boot Loader Installation</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/FilterSpoke.html">Installation Destination - Specialized & Network Disks</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/FilterSpoke_AddiSCSI.html">Add iSCSI Target</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/FilterSpoke_AddFCoE.html">Add FCoE SAN</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke.html">Manual Partitioning</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_AddPhysical.html">Creating Standard Partitions</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_SoftwareRAID.html">Creating Software RAID</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_AddLVM.html">Creating a Logical Volume Managament (LVM) Layout</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_AddBtrfs.html">Creating a Btrfs Layout</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_FileSystems.html">Device, File System and RAID Types</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_RecommendedScheme.html">Recommended Partitioning Scheme</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_PartitioningAdvice.html">Advice on Partitions</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/KdumpSpoke.html">Kdump</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/NetworkSpoke.html">Network & Hostname</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/NetworkSpoke_VirtualInterfaces.html">Adding a Virtual Network Interface</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/NetworkSpoke_EditConnection.html">Editing Network Interface Configuration</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/ProgressHub.html">Configuration and Installation Progress</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/PasswordSpoke.html">Root Password</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/UserSpoke.html">Create User</a></li>
+              </ul>
+            </li>
+            <li class="nav-header">
+              <a class="" href="#" data-toggle="collapse" data-target="#topicSubGroup-0-6">
+                <span id="sgSpan-0-6" class="fa fa-caret-right"></span>&nbsp;After the Installation
+              </a>
+              <ul id="topicSubGroup-0-6" class="nav-tertiary list-unstyled collapse">
+                  <li><a class="" href="../install-guide/after_installation/After_Installation.html">After the Installation</a></li>
+                  <li><a class="" href="../install-guide/after_installation/InitialSetupHub.html">Initial Setup</a></li>
+              </ul>
+            </li>
+            <li><a class="" href="../install-guide/Troubleshooting.html">Troubleshooting</a></li>
+            <li><a class=" active" href="../install-guide/Boot_Options.html">Boot Options</a></li>
+            <li><a class="" href="../install-guide/Kickstart_Installations.html">Automating the Installation with Kickstart</a></li>
+            <li><a class="" href="../install-guide/Network_based_Installations.html">Setting Up an Installation Server</a></li>
+            <li><a class="" href="../install-guide/VNC_Installations.html">Installing Using VNC</a></li>
+            <li><a class="" href="../install-guide/Upgrading_Your_Current_System.html">Upgrading Your Current System</a></li>
+            <li><a class="" href="../install-guide/Kickstart_Syntax_Reference.html">Kickstart Syntax Reference</a></li>
+            <li><a class="" href="../install-guide/Disk_Partitions.html">An Introduction to Disk Partitions</a></li>
+            <li><a class="" href="../install-guide/Understanding_LVM.html">Understanding LVM</a></li>
+            <li><a class="" href="../install-guide/Revision_History.html">Revision History</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup1">
+        <span id="tgSpan1" class="fa fa-angle-right"></span>Virtualization Getting Started Guide
+      </a>
+      <ul id="topicGroup1" class="collapse  list-unstyled">
+            <li><a class="" href="../virt-getting-started-guide/Preface.html">Preface</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Introduction.html">Introduction</a></li>
+            <li><a class="" href="../virt-getting-started-guide/What_Is_It.html">What is Virtualization?</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Advantages.html">Advantages and misconceptions of virtualization</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Products.html">Introduction to Fedora virtualization products</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Boxes.html">Introduction to Boxes</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Guest_Installation_Virt_Manager.html">Creating and Managing Guests with Virt-Manager</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Advanced_Virtualization.html">Advanced Virtualization Concepts</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Revision_History.html">Revision History</a></li>
+      </ul>
+    </li>
+</ul>
+      </div>
+      <div class="col-xs-12 col-sm-9 col-md-9 main">
+        <div class="page-header">
+          <h2>ブートオプション</h2>
+        </div>
+        <div class="sect1">
+<h2 id="chap-anaconda-boot-options"><a class="anchor" href="#chap-anaconda-boot-options"></a>ブートオプション</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Anaconda installer includes a range of boot options for administrators,
+which modify the default behavior of the installation program by enabling or
+disabling certain functions. To use one or more boot options, you either
+have to boot from installation media and append these options at the boot
+menu (see <a href="#sect-boot-menu">???</a>), or you must add them into your PXE
+server configuration file if you are booting from a network (see
+<a href="#chap-pxe-server-setup">???</a>).</p>
+</div>
+<div class="paragraph">
+<p>You can use multiple options at the same time; in that case, separate them
+by a single space.</p>
+</div>
+<div class="paragraph">
+<p>本章では基本的な 2 種類のオプションタイプについて説明します。</p>
+</div>
+<div class="paragraph">
+<p>Options presented as ending with an "equals" sign (<code>=</code>) require a value to
+be specified - they cannot be used on their own. For example, the
+<code>inst.vncpassword=</code> option must also contain a value (in this case, a
+password). The correct form is therefore <code>inst.vncpassword=password</code>.  On
+its own, without a password specified, the option is invalid.
+Options presented without the &#8220;=&#8221; sign do not accept any values or
+parameters. For example, the <code>rd.live.check</code> option forces Anaconda to
+verify the installation media before starting the installation; if this
+option is present, the check will be performed, and if it is not present,
+the check will be skipped.</p>
+</div>
+<div class="paragraph">
+<p>In addition to the options described in this chapter, the boot prompt also
+accepts dracut kernel options. A list of these options is available as the
+dracut.cmdline(7) man page.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Note</strong></p>
+</div>
+<div class="paragraph">
+<p>Boot options specific to the installation program always start with <code>inst.</code>
+in this guide. Currently, this prefix is optional - for example,
+<code>resolution=1024x768</code> will work exactly the same as
+<code>inst.resolution=1024x768</code>. However, it is expected that the <code>inst.</code> prefix
+will be mandatory in future releases.</p>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-boot-options-installer"><a class="anchor" href="#sect-boot-options-installer"></a>ブートメニューでインストールシステムを設定</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The exact way to specify custom boot options is differs based on your
+system&#8217;s architecture, firmware and the method you use to boot the
+installation. If you are booting from local media, you can specify options
+in the boot menu, before you begin the installation; if you are booting from
+a network using a PXE server, you must add boot options into the boot loader
+configuration file before you boot the installation system. For specific
+instructions, see <a href="#sect-boot-menu">???</a> if you are booting from local
+media, and <a href="#chap-pxe-server-setup">???</a> if you are booting from a
+server.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-boot-options-available"><a class="anchor" href="#sect-boot-options-available"></a>利用可能なブートオプション</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following options are available in Fedora:</p>
+</div>
+<div class="sect2">
+<h3 id="sect-boot-options-sources"><a class="anchor" href="#sect-boot-options-sources"></a>インストールソースを指定する</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>inst.repo=</code></dt>
+<dd>
+<p>Specifies the installation source - that is, a location where the
+installation program can find the images and packages it requires. For
+example:<br></p>
+</dd>
+</dl>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>inst.repo=cdrom</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>+
+The source must be either:
++
+* an installable tree, which is a directory structure containing the
+installation program's images, packages and repodata as well as a
+valid `.treeinfo` file
+* a DVD (a physical disk present in the system's DVD drive)
+* an ISO image of the full {PRODUCT} installation DVD, placed on a hard
+drive or a network location accessible from the installation system
++
+This option allows for the configuration of different installation
+methods using different formats. The syntax is described in the table
+below.
++
+.Installation Sources
+[width="100%",cols="25%,75%",options="header",]
+|=======================================================================
+|Installation source |Option format
+|Any CD/DVD drive |`inst.repo=cdrom`</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>|Specific CD/DVD drive |`inst.repo=cdrom:device`</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>|Hard Drive |`inst.repo=hd:device:/path`</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>|HTTP Server |`inst.repo=http://host/path`</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>|HTTPS Server |`inst.repo=https://host/path`</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>|FTP Server |`inst.repo=ftp://username:password@host/path`</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>  |NFS Server |`inst.repo=nfs:[options:]server:/path` footnote:[This option
+  uses NFS protocol version 3 by default. To use a different version, add
+  `+nfsvers=X` to options.]
+  |======================================================================= +
+  Disk device names may be specified using the following formats: +
+  * Kernel device name, for example /dev/sda1 or sdb2
+  * File system label, for example LABEL=Flash or LABEL=RHEL7
+  * File system UUID, for example
+  UUID=8176c7bf-04ff-403a-a832-9557f94e61db + Non-alphanumeric characters must
+  be represented as `\xNN`, where NN is the hexadecimal representation of the
+  character. For example, `\x20` is a white space ("` `").
+`inst.stage2=`::
+  Specifies the location of the installation program runtime image to be
+  loaded. The syntax is the same as in
+  link:#tabl-boot-options-sources[table_title]. This option expects a path to
+  a directory containing a valid `.treeinfo` file; the location of the runtime
+  image will be read from this file if found. If a `.treeinfo` file is not
+  available, Anaconda will try to load the image from `LiveOS/squashfs.img`.
+  +
+  ______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+  *Note*</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>  By default, this boot option is used on the installation media and set to a
+  specific label (for example,
+  `inst.stage2=hd:LABEL=F21\x20Server.x86_64`). If you modify the default
+  label of the file system containing the runtime image, you must also edit
+  this option to match the new label.
+  ______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+`inst.dd=`::
+  If you need to perform a driver update during the installation, use the
+  `inst.dd=` option. It can be used multiple times. The location of a driver
+  RPM package can be specified using any of the formats described in
+  link:#tabl-boot-options-sources[table_title]. With the exception of the
+  `inst.dd=cdrom` option, the device name must always be specified. For
+  example: +</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>inst.dd=hd:/dev/sdb1:/driver.rpm</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>+
+Using this option without any parameters (only as `inst.dd`) will
+prompt the installation program to ask you for a driver update disk
+with an interactive menu.
++
+_____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+*Important*</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>  You should never attempt to perform a driver update during the
+  installation unless a missing our faulty driver is preventing you from
+  completing the installation. Updating drivers which are not essential
+  during the installation should always be performed after the system is
+  installed.
+  _____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+`inst.askmethod`::
+  Prevents the installer from trying to automatically configure an
+  installation source.  + Normally, when you first enter the Installation
+  Summary screen, the installer will attempt to configure an installation
+  source based on the type of media you used to boot. The full {PRODUCT}
+  Server DVD will configure the source as local media, the netinst ISO image
+  will configure the closest network mirror, etc. This process takes time;
+  therefore, if you plan to use a different source than the default, this
+  option will allow you to enter the Installation Source screen immediately
+  without having to wait for the initial configuration to finish.  + Using
+  this option will leave the installation source configuration in an error
+  state - you must manually specify a source in the Installation Source screen
+  to proceed with the installation.  Alternatively, you can use the
+  `inst.repo=` option described above to configure a specific source directly
+  in the boot menu.</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-boot-options-kickstart"><a class="anchor" href="#sect-boot-options-kickstart"></a>キックスタート起動オプション</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>inst.ks=</code></dt>
+<dd>
+<p>Gives the location of a Kickstart file to be used to automate the
+installation. Locations can be specified using any of the formats valid for
+<code>inst.repo=</code>. See <a href="#tabl-boot-options-sources">table_title</a> for valid
+formats.  + If you only specify a device and not a path, the installation
+program will look for the Kickstart file in <code>/ks.cfg</code> on the specified
+device.  If you use this option without specifying a device, the
+installation program will use the following:<br></p>
+</dd>
+</dl>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>inst.ks=nfs:next-server:/filename</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>  +
+  In the above example, next-server is the DHCP `next-server` option or
+  the IP address of the DHCP server itself, and filename is the DHCP
+  `filename` option, or `/kickstart/`. If the given file name ends with
+  the `/` character, `ip-kickstart` is appended. For example:
+  +
+  .Default Kickstart File Location
+  [width="100%",cols="20%,20%,60%",options="header",]
+  |=======================================================================
+  |DHCP server address |Client address |Kickstart file location
+  |192.168.122.1 |192.168.122.100
+  |192.168.122.1:`/kickstart/192.168.122.100-kickstart`
+  |=======================================================================
+`inst.ks.sendmac`::
+  Adds headers to outgoing HTTP requests with the MAC addresses of all network
+  interfaces. For example: +</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>X-RHN-Provisioning-MAC-0: eth0 01:23:45:67:89:ab</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>  +
+        This can be useful when using `inst.ks=http` to provision systems.
+`inst.ks.sendsn`::
+  Adds a header to outgoing HTTP requests. This header will contain the
+  system's serial number, read from `/sys/class/dmi/id/product_serial`.  The
+  header has the following syntax: +</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>X-System-Serial-Number: R8VA23D</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-boot-options-display"><a class="anchor" href="#sect-boot-options-display"></a>コンソール、環境、ディスプレイの各オプション</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>console=</code></dt>
+<dd>
+<p>This kernel option specifies a device to be used as the primary console. For
+example, to use a console on the first serial port, use
+<code>console=ttyS0</code>. This option should be used along with the <code>inst.text</code>
+option.  + You can use this option multiple times. In that case, the boot
+message will be displayed on all specified consoles, but only the last one
+will be used by the installation program afterwards. For example, if you
+specify <code>console=ttyS0 console=ttyS1</code>, the installation program will only
+use <code>ttyS1</code>.</p>
+</dd>
+<dt class="hdlist1"><code>noshell</code></dt>
+<dd>
+<p>Disables access to the root shell during the installation. This is useful
+with automated (Kickstart) installations - if you use this option, a user
+can watch the installation progress, but they cannot interfere with it by
+accessing the root shell by pressing Ctrl+Alt+F2.</p>
+</dd>
+<dt class="hdlist1"><code>inst.lang=</code></dt>
+<dd>
+<p>Sets the language to be used during the installation. Language codes are the
+same as the ones used in the <code>lang</code> Kickstart command as described in
+<a href="#sect-kickstart-commands-lang">???</a>. On systems where the
+system-config-language package is installed, a list of valid values can also
+be find in <code>/usr/share/system-config-language/locale-list</code>.  + If you
+perform the installation interactively, the language you specified using
+this option will be selected by default, but you will still be able to
+change it at the beginning of the graphical installation.</p>
+</dd>
+<dt class="hdlist1"><code>inst.geoloc=</code></dt>
+<dd>
+<p>Configures geolocation usage in the installation program. Geolocation is
+used to pre-set the language and time zone, and uses the following syntax:
+<code>inst.geoloc=value</code> + The value parameter can be any of the following:<br>
+.Valid Values for the inst.geoloc Option [width="100%",cols="34%,66%",]
+|============================================================= |Disable
+geolocation |<code>inst.geoloc=0</code> |Use the Fedora GeoIP API
+|<code>inst.geoloc=provider_fedora_geoip</code> |Use the Hostip.info GeoIP API
+|<code>inst.geoloc=provider_hostip</code>
+|============================================================= + If this
+option is not specified, Anaconda will use <code>provider_fedora_geoip</code>.</p>
+</dd>
+<dt class="hdlist1"><code>inst.keymap=</code></dt>
+<dd>
+<p>Specifies the keyboard layout to be used by the installation program.
+Layout codes are the same as the ones used in the <code>keyboard</code> Kickstart
+command as described in <a href="#appe-kickstart-syntax-reference">???</a>.</p>
+</dd>
+<dt class="hdlist1"><code>inst.text</code></dt>
+<dd>
+<p>Forces the installation program to run in text mode instead of graphical
+mode. The text user interface is limited, for example, it does not allow you
+to modify the partition layout or set up LVM. When installing a system on a
+machine with a limited graphical capabilities, it is recommended to use VNC
+as described in <a href="#sect-boot-options-vnc">section_title</a>.</p>
+</dd>
+<dt class="hdlist1"><code>inst.cmdline</code></dt>
+<dd>
+<p>インストールプログラムをコマンドラインモードで強制実行します。このモードでは一切のやりとりが行えないため、オプションはすべてキックスタートファイル内またはコマンドライン上で指定しなければなりません。</p>
+</dd>
+<dt class="hdlist1"><code>inst.graphical</code></dt>
+<dd>
+<p>インストールプログラムをグラフィカルモードで強制実行します。このモードがデフォルトになります。</p>
+</dd>
+<dt class="hdlist1"><code>inst.resolution=</code></dt>
+<dd>
+<p>Specifies the screen resolution in graphical mode. The format is NxM, where
+N is the screen width and M is the screen height (in pixels).  The lowest
+supported resolution is <code>800x600</code>.</p>
+</dd>
+<dt class="hdlist1"><code>inst.xdriver=</code></dt>
+<dd>
+<p>Specifies the name of the X driver to be used both during the installation
+and on the installed system.</p>
+</dd>
+<dt class="hdlist1"><code>inst.usefbx</code></dt>
+<dd>
+<p>Tells the installation program to use the frame buffer X driver instead of a
+hardware-specific driver. This option is equivalent to <code>inst.xdriver=fbdev</code>.</p>
+</dd>
+<dt class="hdlist1"><code>modprobe.blacklist=</code></dt>
+<dd>
+<p>Blacklists (completely disables) one or more drivers. Drivers (mods)
+disabled using this option will be prevented from loading when the
+installation starts, and after the installation finishes, the installed
+system will keep these settings. The blacklisted drivers can then be found
+in the <code>/etc/modprobe.d/</code> directory.  + Use a comma-separated list to
+disable multiple drivers. For example:<br></p>
+</dd>
+</dl>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>modprobe.blacklist=ahci,firewire_ohci</pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>inst.sshd</code></dt>
+<dd>
+<p>Starts the sshd service during the installation, which allows you to connect
+to the system during the installation using SSH and monitor its
+progress. For more information on SSH, see the ssh(1) man page and the
+corresponding chapter in the Fedora System Administrator&#8217;s Guide,
+available at <a href="http://docs.fedoraproject.org/" class="bare">http://docs.fedoraproject.org/</a>. <br>
+<em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em>_</em>
+<strong>Note</strong></p>
+<div class="literalblock">
+<div class="content">
+<pre>During the installation, the root account has no password by default.  You
+can set a root password to be used during the installation with the `sshpw`
+Kickstart command as described in link:#sect-kickstart-commands-sshpw[???].
+_________________________________________________________________________________________________________________________________________________________________________________________________________________________________</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-boot-options-network"><a class="anchor" href="#sect-boot-options-network"></a>ネットワーク起動オプション</h3>
+<div class="paragraph">
+<p>Initial network initialization is handled by dracut. This section only lists
+some of the more commonly used options; for a complete list, see the
+dracut.cmdline(7) man page. Additional information on networking is also
+available in the Fedora Networking Guide, available at
+<a href="http://docs.fedoraproject.org/" class="bare">http://docs.fedoraproject.org/</a>.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>ip=</code></dt>
+<dd>
+<p>Configures one or more network interfaces. To configure multiple interfaces,
+use the <code>ip</code> option multiple times - once for each interface. If multiple
+interfaces are configured, you must specify a primary boot interface using
+the <code>bootdev</code> option described below.  + The following table lists valid
+values for this option: + .Network Interface Configuration Formats
+[width="100%",cols="34%,66%",options="header",]
+|=======================================================================
+|Configuration Method |Option format |Automatic configuration of any
+interface |<code>ip=method</code></p>
+<div class="literalblock">
+<div class="content">
+<pre>|Automatic configuration of a specific interface |`ip=interface:method`</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>|Static configuration |`ip=ip::gateway:netmask:hostname:interface:none`</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>|Automatic configuration of a specific interface with an override
+footnote:[Brings up the specified interface using the specified method of
+automatic configuration, such as `dhcp`, but overrides the automatically
+obtained IP address, gateway, netmask, hostname or other specified
+parameter. All parameters are optional; only specify the ones you wish to
+override and automatically obtained values will be used for the others.]
+|`ip=ip::gateway:netmask:hostname:interface:method:mtu`
+|======================================================================= +
+The `method` parameter can be any the following: + .Automatic Interface
+Configuration Methods [width="100%",cols="50%,50%",options="header",]
+|======================================== |Automatic configuration method
+|Value |DHCP |`dhcp` |IPv6 DHCP |`dhcp6` |IPv6 automatic configuration
+|`auto6` |iBFT (iSCSI Boot Firmware Table) |`ibft`
+|======================================== +
+_____________________________________________________________________________________________________________________________________________________________________________
+*Note*</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>If you use a boot option which requires network access, such as
+`inst.ks=http://host:/path`, without specifying the `ip` option, the
+installation program will use `ip=dhcp`.
+_____________________________________________________________________________________________________________________________________________________________________________
++ In the above tables, the ip parameter specifies the client's IP
+address. IPv6 addresses can be specified by putting them in square brackets,
+for example, `[2001:DB8::1]`.  + The gateway parameter is the default
+gateway. IPv6 addresses are accepted here as well.  + The netmask parameter
+is the netmask to be used. This can either be a full netmask (for example
+`255.255.255.0`) or a prefix (for example `64`).  + The hostname parameter
+is the host name of the client system. This parameter is optional.</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1"><code>nameserver=</code></dt>
+<dd>
+<p>ネームサーバーのアドレスを指定します。このオプションは複数回使用できます。</p>
+</dd>
+<dt class="hdlist1"><code>bootdev=</code></dt>
+<dd>
+<p>Specifies the boot interface. This option is mandatory if you use more than
+one <code>ip</code> option.</p>
+</dd>
+<dt class="hdlist1"><code>ifname=</code></dt>
+<dd>
+<p>Assigns a given interface name to a network device with a given MAC
+address. Can be used multiple times. The syntax is
+<code>ifname=interface:MAC</code>. For example:<br></p>
+</dd>
+</dl>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>ifname=eth0:01:23:45:67:89:ab</pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>inst.dhcpclass=</code></dt>
+<dd>
+<p>Specifies the DHCP vendor class identifier. The dhcpd service will see this
+value as <code>vendor-class-identifier</code>. The default value is <code>anaconda-$(uname
+-srm)</code>.</p>
+</dd>
+<dt class="hdlist1"><code>vlan=</code></dt>
+<dd>
+<p>Sets up a Virtual LAN (VLAN) device on a specified interface with a given
+name. The syntax is <code>vlan=name:interface</code>. For example:<br></p>
+</dd>
+</dl>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>vlan=vlan5:em1</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>  +
+  The above will set up a VLAN device named `vlan5` on the `em1`
+  interface. The name can take the following forms:
+  +
+  .VLAN Device Naming Conventions
+  [width="100%",cols="50%,50%",options="header",]
+  |=============================
+  |Naming scheme |Example
+  |VLAN_PLUS_VID |`vlan0005`
+  |VLAN_PLUS_VID_NO_PAD |`vlan5`
+  |DEV_PLUS_VID |`em1.0005`.
+  |DEV_PLUS_VID_NO_PAD |`em1.5`.
+  |=============================
+`bond=`::
+  Set up a bonding device with the following syntax:
+  `bond=name[:slaves][:options]`. Replace name with the bonding device name,
+  slaves with a comma-separated list of physical (ethernet)  interfaces, and
+  options with a comma-separated list of bonding options. For example: +</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>bond=bond0:em1,em2:mode=active-backup,tx_queues=32,downdelay=5000</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>  +
+  For a list of available options, execute the `modinfo bonding`
+  command.
+  +
+  Using this option without any parameters will assume
+  `bond=bond0:eth0,eth1:mode=balance-rr`.
+`team=`::
+  Set up a team device with the following syntax: `team=master:slaves`.
+  Replace master with the name of the master team device and slaves with a
+  comma-separated list of physical (ethernet) devices to be used as slaves in
+  the team device. For example: +</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>team=team0:em1,em2</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-boot-options-advanced"><a class="anchor" href="#sect-boot-options-advanced"></a>高度なインストールオプション</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>inst.multilib</code></dt>
+<dd>
+<p>Configure the system for multilib packages (that is, to allow installing
+32-bit packages on a 64-bit x86 system) and install packages specified in
+this section as such.  + Normally, on an AMD64 or Intel 64 system, only
+packages for this architecture (marked as <code>x86_64</code>) and packages for all
+architectures (marked as <code>noarch</code> would be installed. When you use this
+option, packages for 32-bit AMD or Intel systems (marked as <code>i686</code>) will be
+automatically installed as well if available.  + This only applies to
+packages directly specified in the <code>%packages</code> section. If a package is only
+installed as a dependency, only the exact specified dependency will be
+installed. For example, if you are installing package foo which depends on
+package bar, the former will be installed in multiple variants, while the
+latter will only be installed in variants specifically required.</p>
+</dd>
+<dt class="hdlist1"><code>inst.gpt</code></dt>
+<dd>
+<p>Force the installation program to install partition information into a GUID
+Partition Table (GPT) instead of a Master Boot Record (MBR). This option is
+meaningless on UEFI-based systems, unless they are in BIOS compatibility
+mode.  + Normally, BIOS-based systems and UEFI-based systems in BIOS
+compatibility mode will attempt to use the MBR schema for storing
+partitioning information, unless the disk is larger than 2 TB. Using this
+option will change this behavior, allowing a GPT to be written even to disks
+smaller than 2 TB.  + See
+<a href="#sect-installation-gui-manual-partitioning-recommended">???</a> for more
+information about GPT and MBR, and
+<a href="#sect-disk-partitioning-guid-partition-table">???</a> for more general
+information about GPT, MBR and disk partitioning in general.</p>
+</dd>
+<dt class="hdlist1"><code>inst.nosave=</code></dt>
+<dd>
+<p>This option controls which Kickstart files and installation logs are saved
+to the installed system. It can be especially useful to disable saving such
+data when performing OEM operating system installations, or when generating
+images using sensitive resources (such as internal repository URLs), as
+these resources might otherwise be mentioned in kickstart files and/or logs
+on the image. Possible values for this option are: + <code>input_ks</code> - disables
+saving of the input Kickstart file (if any).  + <code>output_ks</code> - disables
+saving of the output Kickstart file generated by Anaconda.  + <code>all_ks</code> -
+disables saving of both input and output Kickstart files.  + <code>logs</code> -
+disables saving of all installation logs.  + <code>all</code> - disables saving of all
+Kickstart files and all installation logs.  + Multiple values can be
+combined as a comma separated list, for example: <code>input_ks,logs</code></p>
+</dd>
+<dt class="hdlist1"><code>inst.zram</code></dt>
+<dd>
+<p>This option controls the usage of zRAM swap during the installation.  It
+creates a compressed block device inside the system RAM and uses it for swap
+space instead of the hard drive. This allows the installer to essentially
+increase the amount of memory available, which makes the installation faster
+on systems with low memory.  + By default, swap on zRAM is enabled on
+systems with 2 GB or less RAM, and disabled on systems with more than 2 GB
+of memory. You can use this option to change this behavior - on a system
+with more than 2 GB RAM, use <code>inst.zram=1</code> to enable it, and on systems with
+2 GB or less memory, use <code>inst.zram=0</code> to disable this feature.</p>
+</dd>
+<dt class="hdlist1"><code>inst.memcheck</code></dt>
+<dd>
+<p>Perform a check at the beginning of the installation to determine if there
+is enough available RAM. If there is not enough memory detected, the
+installation will stop with an error message. This option is enabled by
+default; use <code>inst.memcheck=0</code> to disable it.</p>
+</dd>
+<dt class="hdlist1"><code>inst.nodnf</code></dt>
+<dd>
+<p>Use the older Yum backend for package installation and dependency resolution
+instead of DNF. See the Fedora System Administrator&#8217;s Guide, available at
+<a href="https://docs.fedoraproject.org/" class="bare">https://docs.fedoraproject.org/</a>, for details about DNF.</p>
+</dd>
+<dt class="hdlist1"><code>inst.kdump_addon=</code></dt>
+<dd>
+<p>Turns the Kdump installer add-on <code>on</code> or <code>off</code> (the add-on is off by
+default). If you use <code>inst.kdump_addon=on</code>, a new screen, which allows you
+to configure the Kdump kernel crash dumping mechanism, will appear in the
+main menu of the graphical or text interface (see
+<a href="#sect-installation-gui-kdump">???</a>). Enabling this add-on is also
+necessary to use the <a href="#sect-kickstart-commands-kdump">???</a> Kickstart
+command.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-boot-options-vnc"><a class="anchor" href="#sect-boot-options-vnc"></a>VNC を使ってリモートアクセスを有効にする</h3>
+<div class="paragraph">
+<p>The following options are necessary to configure Anaconda for remote
+graphical installation. See <a href="#chap-vnc-installations">???</a> for more
+details.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>inst.vnc</code></dt>
+<dd>
+<p>Specifies that the installation program&#8217;s graphical interface should be run
+in a VNC session. If you specify this option, you will need to connect to
+the system using a VNC client application to be able to interact with the
+installation program. VNC sharing is enabled, so multiple clients can
+connect to the system at the same time. <br>
+<em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em>__</em> <strong>Note</strong></p>
+<div class="literalblock">
+<div class="content">
+<pre>A system installed using VNC will start in text mode by default.
+________________________________________________________________</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1"><code>inst.vncpassword=</code></dt>
+<dd>
+<p>VNC server used by the installation program. Any VNC client attempting to
+connect to the system will have to provide the correct password to gain
+access. For example, <code>inst.vncpassword=testpwd</code> will set the password to
+<code>testpwd</code>. The password must be between 6 and 8 characters long. <br>
+<em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em>_</em>
+<strong>Note</strong></p>
+<div class="literalblock">
+<div class="content">
+<pre>無効なパスワードを指定すると (長すぎるまたは短すぎるパスワード)、インストールプログラムにより別のパスワードの指定を求めるメッセージが出力されます。</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>VNC password must be six to eight characters long.
+Please enter a new one, or leave blank for no password.
+
+Password:</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>  _____________________________________________________________________________________________________________________________________________________________
+`inst.vncconnect=`::
+  Connect to a listening VNC client at a specified host and port once the
+  installation starts. The correct syntax is `inst.vncconnect=host:port`. The
+  port parameter is optional - if you do not specify one, the installation
+  program will use `5900`.</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-boot-options-debug"><a class="anchor" href="#sect-boot-options-debug"></a>デバッグとトラブルシューティング</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>inst.updates=</code></dt>
+<dd>
+<p>Specifies the location of the <code>updates.img</code> file to be applied to the
+installation program runtime. The syntax is the same as in the <code>inst.repo</code>
+option - see <a href="#tabl-boot-options-sources">table_title</a> for details. In
+all formats, if you do not specify a file name but only a directory, the
+installation program will look for a file named <code>updates.img</code>.</p>
+</dd>
+<dt class="hdlist1"><code>inst.loglevel=</code></dt>
+<dd>
+<p>Specifies the minimum level for messages to be logged on a terminal.  This
+only concerns real-time logging in a terminal; log files will always contain
+messages of all levels.  + Possible values for this option from the lowest
+to highest level are: <code>debug</code>, <code>info</code>, <code>warning</code>, <code>error</code> and
+<code>critical</code>. The default value is <code>info</code>, which means that by default, the
+logging terminal will display messages ranging from <code>info</code> to <code>critical</code>,
+but not <code>debug</code>.</p>
+</dd>
+<dt class="hdlist1"><code>inst.syslog=</code></dt>
+<dd>
+<p>Once the installation starts, this option sends log messages to the syslog
+process on the specified host. The remote syslog process must be configured
+to accept incoming connections.</p>
+</dd>
+<dt class="hdlist1"><code>inst.virtiolog=</code></dt>
+<dd>
+<p>Specifies a virtio port (a character device at <code>/dev/virtio-ports/name</code>) to
+be used for forwarding logs. The default value is
+<code>org.fedoraproject.anaconda.log.0</code>; if this port is present, it will be
+used.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-boot-options-deprecated"><a class="anchor" href="#sect-boot-options-deprecated"></a>廃止予定の起動オプション</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Options in this list are <em>deprecated</em>. They will still work, but there are
+other options which offer the same functionality and should be
+preferred. Using deprecated options is not recommended and they are expected
+to be removed in future releases.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Note</strong></p>
+</div>
+<div class="paragraph">
+<p>Note that as described in the introduction to this chapter, options specific
+to the installation program now use the <code>inst.</code> prefix. For example, the
+<code>vnc=</code> option is considered deprecated and replaced by the <code>inst.vnc=</code>
+option. However, these changes are not listed here.</p>
+</div>
+</blockquote>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>inst.headless</code></dt>
+<dd>
+<p>Used to specify that the machine being installed onto does not have any
+display hardware, and to prevent the installer from trying to detect a
+display.</p>
+</dd>
+<dt class="hdlist1"><code>method=</code></dt>
+<dd>
+<p>Configured the installation method. Use the <code>inst.repo=</code> option instead.</p>
+</dd>
+<dt class="hdlist1"><code>repo=nfsiso:server:/path</code></dt>
+<dd>
+<p>In NFS installations, specified that the target is an ISO image located on
+an NFS server instead of an installable tree. The difference is now detected
+automatically, which means this option is the same as
+<code>inst.repo=nfs:server:/path</code>.</p>
+</dd>
+<dt class="hdlist1"><code>dns=</code></dt>
+<dd>
+<p>Configured the Domain Name Server (DNS). Use the <code>nameserver=</code> option
+instead.</p>
+</dd>
+<dt class="hdlist1"><code>netmask=</code>, <code>gateway=</code>, <code>hostname=</code>, <code>ip=</code>, <code>ipv6=</code></dt>
+<dd>
+<p>These options have been consolidated under the <code>ip=</code> option.</p>
+</dd>
+<dt class="hdlist1"><code>ksdevice=</code></dt>
+<dd>
+<p>Select network device to be used at early stage of installation.  Different
+values have been replaced with different options; see the table below. <br>
+.Automatic Interface Configuration Methods
+[width="100%",cols="34%,66%",options="header",]
+|=======================================================================
+|Value |Current behavior |Not present |All devices are attempted to be
+activated using dhcp, unless desired device and configuration is specified
+by <code>ip=</code> option and/or the <code>BOOTIF</code> option.</p>
+<div class="literalblock">
+<div class="content">
+<pre>|`ksdevice=link` |Similar to the above, with the difference that network
+will always be activated in the initramfs, whether it is needed or not. The
+supported `rd.neednet` option (provided by dracut)  should be used instead.</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>|`ksdevice=bootif` |Ignored (the BOOTID= option is used by default when
+specified)</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>|`ksdevice=ibft` |Replaced with the `ip=ibft` option</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>|`ksdevice=MAC` |Replaced with `BOOTIF=MAC`</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>|`ksdevice=device` |Replaced by specifying the device name using the `ip=`
+option.
+|======================================================================= +
+____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+*Important*</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>When performing a Kickstart installation, booting from local media and
+having the Kickstart file on local media as well, the network will not be
+initialized. This means that any other Kickstart options requiring network
+access, such as pre-installation or post-installation scripts accessing a
+network location, will cause the installation to fail.  This is a known
+issue; see BZ#https://bugzilla.redhat.com/show_bug.cgi?id=1085310[1085310]
+for details.</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>To work around this issue, either use the `ksdevice=link` boot option, or
+add the `--device=link` option to the `network` command in your Kickstart
+file.
+____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1"><code>blacklist=</code></dt>
+<dd>
+<p>Used to disable specified drivers. This is now handled by the
+<code>modprobe.blacklist=</code> option.</p>
+</dd>
+<dt class="hdlist1"><code>nofirewire=</code></dt>
+<dd>
+<p>Disabled support for the FireWire interface. You can disable the FireWire
+driver (<code>firewire_ohci</code>) by using the <code>modprobe.blacklist=</code> option instead:
++</p>
+</dd>
+</dl>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>modprobe.blacklist=firewire_ohci</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-boot-options-removed"><a class="anchor" href="#sect-boot-options-removed"></a>削除済みの起動オプション</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following options are removed. They were present in previous releases of
+Fedora, but they cannot be used anymore.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>asknetwork</code></dt>
+<dd>
+<p>The installation program&#8217;s initramfs is now completely non-interactive,
+which means that this option are not available anymore. Use <code>ip=</code> to
+configure network settings.</p>
+</dd>
+<dt class="hdlist1"><code>serial</code></dt>
+<dd>
+<p>This option forced Anaconda to use the <code>/dev/ttyS0</code> console as the
+output. Use the <code>console=/dev/ttyS0</code> (or similar) instead.</p>
+</dd>
+<dt class="hdlist1"><code>updates=</code></dt>
+<dd>
+<p>Specified the location of updates for the installation program. Use the
+<code>inst.updates=</code> option instead.</p>
+</dd>
+<dt class="hdlist1"><code>essid=</code>, <code>wepkey=</code>, <code>wpakey=</code></dt>
+<dd>
+<p>Configured wireless network access. Network configuration is now being
+handled by dracut, which does not support wireless networking, rendering
+these options useless.</p>
+</dd>
+<dt class="hdlist1"><code>ethtool=</code></dt>
+<dd>
+<p>Used in the past to configure additional low-level network settings.  All
+network settings are now handled by the <code>ip=</code> option.</p>
+</dd>
+<dt class="hdlist1"><code>gdb</code></dt>
+<dd>
+<p>Allowed you to debug the loader. Use <code>rd.debug</code> instead.</p>
+</dd>
+<dt class="hdlist1"><code>mediacheck</code></dt>
+<dd>
+<p>Verified the installation media before starting the installation.  Replaced
+with the <code>rd.live.check</code> option.</p>
+</dd>
+<dt class="hdlist1"><code>ks=floppy</code></dt>
+<dd>
+<p>キックスタートファイルのソースをフロッピーディスクに指定するとき使用していました。フロッピードライブには対応しなくなります。</p>
+</dd>
+<dt class="hdlist1"><code>display=</code></dt>
+<dd>
+<p>Configured a remote display. Replaced with the <code>inst.vnc</code> option.</p>
+</dd>
+<dt class="hdlist1"><code>utf8</code></dt>
+<dd>
+<p>テキストモードでのインストールの際、UTF8 サポートの追加に使用していました。UTF8 サポートは自動的に動作するようになります。</p>
+</dd>
+<dt class="hdlist1"><code>noipv6</code></dt>
+<dd>
+<p>Used to disable IPv6 support in the installation program. IPv6 is now built
+into the kernel so the driver cannot be blacklisted; however, it is possible
+to disable IPv6 using the <code>ipv6.disable</code> option.</p>
+</dd>
+<dt class="hdlist1"><code>upgradeany</code></dt>
+<dd>
+<p>Upgrades are done in a different way in current Fedora releases. For more
+information about upgrading your system, see <a href="#chap-upgrading">???</a>.</p>
+</dd>
+<dt class="hdlist1"><code>vlanid=</code></dt>
+<dd>
+<p>Used to configure Virtual LAN (802.1q tag) devices. Use the <code>vlan=</code> option
+instead.</p>
+</dd>
+<dt class="hdlist1"><code>inst.dnf</code></dt>
+<dd>
+<p>Used to enable DNF to handle package installation and dependency resolution
+in Fedora 21. DNF is now used by default and this option has been
+replaced with <code>inst.nodnf</code>, which reverts back to Yum.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-boot-options-maintenance"><a class="anchor" href="#sect-boot-options-maintenance"></a>メンテナンスブートモードの使用</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="sect-boot-options-memtest"><a class="anchor" href="#sect-boot-options-memtest"></a>メモリー (RAM) テストモードのロード</h3>
+<div class="paragraph">
+<p>Faults in memory (RAM) modules may cause your system to freeze or crash
+unpredictably. In some cases, memory faults may only cause errors with
+particular combinations of software. For this reason, you should test the
+memory of a computer before you install Fedora for the first time, even
+if it has previously run other operating systems.</p>
+</div>
+<div class="paragraph">
+<p>Fedora includes the Memtest86+ memory testing application. To start
+memory testing mode, choose Troubleshooting &gt; Memory test at the boot
+menu. Testing will begin immediately. By default, Memtest86+ carries out ten
+tests in every pass; a different configuration can be specified by accessing
+the configuration screen using the c key. After the first pass completes, a
+message will appear at the bottom informing you of the current status, and
+another pass will start automatically.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Note</strong></p>
+</div>
+<div class="paragraph">
+<p>Memtest86+ only works on systems with BIOS firmware. Support for UEFI
+systems is currently unavailable.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="data:image/png;base64,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fzmJ4F/o2F+RX9LS0CigoRfMNjJqaGgCoaFDKQkloSSUhJJQEv87SRzYS38bfMNaQ6+BrPNqQyP8ZYo/5XNzKCWhJJSEklASSkJJHAC9HlVEROQoo+e8RUREFLxFREREwVtEREQUvEVERBS8RURERMFbREREFLxFREQUvEVERETBW0RERBS8RUREFLxFREREwVtEREQUvEVERBS8RURERMFbREREFLxFREQUvEVERETBW0RERBS8RUREFLxFREREwVtEREQUvEVERBS8RURERMFbREREFLxFREQUvEVERETBW0RERBS8RUREFLxFREREwVtEREQUvEVERETBW0RERMFbREREFLxFREREwVtERETBW0RERBS8RURERMFbREREwVtEREQUvEVERETBW0RERMFbREREFLxFREREwVtERETBW0RERBS8RURERMFbREREwVtEREQUvEVERETBW0RERMFbREREFLxFREREwVtERETBW0RERBS8RURERMFbREREwVtEREQUvEVERETBW0RERBS8RUREFLxFREREwVtEREQUvEVERBS8RURERMFbREREFLxFREQUvEVERETBW0RERBS8RUREFLxFREREwVtEREQUvEVERBS8RURERMFbREREFLxFREQUvEVERETBW0RERBS8RUREFLxFREREwVtEREQUvEVERBS8RURERMFbREREFLxFREQUvEVERETBW0RERBS8RURERMFbREREwVtEREQUvEVERETBW0REPgxwKgAAHmZJREFURMFbREREFLxFREREwVtERETBW0RERBS8RURERMFbREREwVtEREQUvEVERETBW0RERMFbREREFLxFREREwVtERETBW0RERBS8RURERMFbREREwVtEREQUvEVERETBW0RERMFbREREFLxFREREwVtERETBW0RERBS8RURERMFbREREFLxFREQUvEVERETBW0RERBS8RUREFLxFREREwVtEREQUvEVERBS8RURERMFbREREFLxFREQUvEVERETBW0RERBS8RUREFLxFREREwVtEREQUvEVERBS8RURERMFbREREFLxFREQUvEVERETBW0RERBS8RUREFLxFREREwVtEREQUvEVERBS8RURERMFbREREFLxFREQUvHUJREREFLxFREREwVtEREQUvEVERBS8RURERMFbREREFLxFREQU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" alt="Memory Check Using Memtest86+"></span></p>
+</div>
+<div class="paragraph">
+<p>テスト進行中に表示されるメイン画面は主に 3 エリアに分けられます。</p>
+</div>
+<div class="paragraph">
+<p>The upper left corner shows information about your system&#8217;s memory
+configuration - the amount of detected memory and processor cache and their
+throughputs and processor and chipset information. This information is
+detected when Memtest86+ starts.
+右上には、現在のパスの進捗状況、そのパスで現在実行中のテスト、テスト詳細など、テストに関する情報が表示されます。
+The central part of the screen is used to display information about the
+entire set of tests from the moment when the tool has started, such as the
+total time, the number of completed passes, number of detected errors and
+your test selection. On some systems, detailed information about the
+installed memory (such as the number of installed modules, their
+manufacturer, frequency and latency) will be also displayed here.  After the
+each pass completes, a short summary will appear in this location. For
+example:</p>
+</div>
+<div class="paragraph">
+<p>+</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>** Pass complete, no errors, press Esc to exit **</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>+
+If Memtest86+ detects an error, it will also be displayed in this area and
+highlighted red. The message will include detailed information such as which
+test detected a problem, the memory location which is failing, and others.</p>
+</div>
+<div class="paragraph">
+<p>ほとんどの場合、一つのパスでのテスト成功で、使用している RAM の健全性を十分に確認できます (10 種類の全テストを 1
+回実行)。ただし、まれに最初のパスでは検出されなかったエラーがその後のテストで出現する場合があります。重要なシステムで完全なテストを実施する場合は、複数パスを完了させるため一晩または数日、テストを実行させたままにしておきます。</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Note</strong></p>
+</div>
+<div class="paragraph">
+<p>The amount of time it takes to complete a single full pass of Memtest86+
+varies depending on your system&#8217;s configuration (notably the RAM size and
+speed). For example, on a system with 2 GB of DDR2 memory at 667 MHz, a
+single pass will take roughly 20 minutes to complete.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>To halt the tests and reboot your computer, press the Esc key at any time.</p>
+</div>
+<div class="paragraph">
+<p>For more information about using Memtest86+, see the official website at
+<a href="http://www.memtest.org/" class="bare">http://www.memtest.org/</a>. A <code>README</code> file is also located in
+<code>/usr/share/doc/memtest86+-version/</code> on Fedora systems with the
+memtest86+ package installed.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-boot-options-mediacheck"><a class="anchor" href="#sect-boot-options-mediacheck"></a>起動用メディアを検証する</h3>
+<div class="paragraph">
+<p>You can test the integrity of an ISO-based installation source before using
+it to install Fedora. These sources include DVDs and ISO images stored on
+a local hard drive or NFS server. Verifying that the ISO images are intact
+before you attempt an installation helps to avoid problems that are often
+encountered during installation.</p>
+</div>
+<div class="paragraph">
+<p>To test the integrity of an ISO image, append the <code>rd.live.check</code> to the
+boot loader command line. Note that this option is used automatically if you
+select the default installation option from the boot menu (Test this media &amp;
+install Fedora).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-boot-options-rescue"><a class="anchor" href="#sect-boot-options-rescue"></a>レスキューモードでコンピューターを起動する</h3>
+<div class="paragraph">
+<p>You may boot a command-line Linux system from an installation disc without
+actually installing Fedora on the computer. This enables you to use the
+utilities and functions of a running Linux system to modify or repair
+already installed operating systems.</p>
+</div>
+<div class="paragraph">
+<p>To load the rescue system with the installation disk or USB drive, choose
+Rescue a Fedora system from the Troubleshooting submenu in the boot menu,
+or use the <code>inst.rescue</code> boot option.</p>
+</div>
+<div class="paragraph">
+<p>その後に続く画面で言語、キーボードレイアウト、及びネットワークセッティングを
+レスキューシステムの為に指定します。最後のセットアップ画面は使用中のコンピュータ上の 既存システムへのアクセスを設定します。</p>
+</div>
+<div class="paragraph">
+<p>By default, rescue mode attaches an existing operating system to the rescue
+system under the directory <code>/mnt/sysimage/</code>.</p>
+</div>
+</div>
+</div>
+</div>
+      </div>
+    </div>
+  </div>
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+   <!-- Latest compiled and minified JavaScript -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+   <script type="text/javascript">
+    /*<![CDATA[*/
+    $(document).ready(function() {
+      $("[id^='topicGroup']").on('show.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicGroup']").on('hide.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicSubGroup']").on('show.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+      $("[id^='topicSubGroup']").on('hide.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+    });
+    /*]]>*/
+  </script>
+</body>
+</html>

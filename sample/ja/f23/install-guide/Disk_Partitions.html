@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Fedora 23 | Installation Guide | An Introduction to Disk Partitions</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <link href="../../f23/_stylesheets/asciibinder.css" rel="stylesheet" />
+
+   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+   <!--[if lt IE 9]>
+     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+   <![endif]-->
+
+  <link href="../../f23/_images/favicon32x32.png" rel="shortcut icon" type="text/css">
+  <!--[if IE]><link rel="shortcut icon" href="../../f23/_images/favicon.ico"><![endif]-->
+  <meta content="AsciiBinder" name="application-name">
+</head>
+<body>
+  <div class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="https://docs.fedoraproject.org/"><img alt="Fedora Documentation" src="../../f23/_images/fedora.svg"></a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <p class="toggle-nav visible-xs pull-left">
+      <button class="btn btn-default btn-sm" type="button" data-toggle="offcanvas">Toggle nav</button>
+    </p>
+    <ol class="breadcrumb">
+      <li class="sitename">
+        <a href="../../index.html">Fedora Documentation</a>
+      </li>
+      <li class="hidden-xs active">
+        <a href="../install-guide/Preface.html">Fedora 23</a>
+      </li>
+      <li class="hidden-xs active">
+        <a href="../install-guide/Preface.html">Installation Guide</a>
+      </li>
+      
+      <li class="hidden-xs active">
+        An Introduction to Disk Partitions
+      </li>
+    </ol>
+    <div class="row row-offcanvas row-offcanvas-left">
+      <div class="col-xs-8 col-sm-3 col-md-3 sidebar sidebar-offcanvas">
+        <ul class="nav nav-sidebar">
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup0">
+        <span id="tgSpan0" class="fa fa-angle-down"></span>Installation Guide
+      </a>
+      <ul id="topicGroup0" class="collapse in list-unstyled">
+            <li><a class="" href="../install-guide/Preface.html">Preface</a></li>
+            <li><a class="" href="../install-guide/Introduction.html">Introduction</a></li>
+            <li><a class="" href="../install-guide/Downloading_Fedora.html">Downloading Fedora</a></li>
+            <li><a class="" href="../install-guide/Preparing_for_Installation.html">Preparing for Installation</a></li>
+            <li><a class="" href="../install-guide/Booting_the_Installation.html">Booting the Installation</a></li>
+            <li class="nav-header">
+              <a class="" href="#" data-toggle="collapse" data-target="#topicSubGroup-0-5">
+                <span id="sgSpan-0-5" class="fa fa-caret-right"></span>&nbsp;Installing Using Anaconda
+              </a>
+              <ul id="topicSubGroup-0-5" class="nav-tertiary list-unstyled collapse">
+                  <li><a class="" href="../install-guide/installing_using_anaconda/Installing_Using_Anaconda.html">Installing Using Anaconda</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/WelcomeSpoke.html">Welcome Screen and Language Selection</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/SummaryHub.html">Installation Summary</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/DateTimeSpoke.html">Date & Time</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/KeyboardSpoke.html">Keyboard Layout</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/LangSupportSpoke.html">Language Support</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/SourceSpoke.html">Installation Source</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/SoftwareSpoke.html">Software Selection</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/StorageSpoke.html">Installation Destination</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/StorageSpoke_BootLoader.html">Boot Loader Installation</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/FilterSpoke.html">Installation Destination - Specialized & Network Disks</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/FilterSpoke_AddiSCSI.html">Add iSCSI Target</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/FilterSpoke_AddFCoE.html">Add FCoE SAN</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke.html">Manual Partitioning</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_AddPhysical.html">Creating Standard Partitions</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_SoftwareRAID.html">Creating Software RAID</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_AddLVM.html">Creating a Logical Volume Managament (LVM) Layout</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_AddBtrfs.html">Creating a Btrfs Layout</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_FileSystems.html">Device, File System and RAID Types</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_RecommendedScheme.html">Recommended Partitioning Scheme</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_PartitioningAdvice.html">Advice on Partitions</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/KdumpSpoke.html">Kdump</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/NetworkSpoke.html">Network & Hostname</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/NetworkSpoke_VirtualInterfaces.html">Adding a Virtual Network Interface</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/NetworkSpoke_EditConnection.html">Editing Network Interface Configuration</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/ProgressHub.html">Configuration and Installation Progress</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/PasswordSpoke.html">Root Password</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/UserSpoke.html">Create User</a></li>
+              </ul>
+            </li>
+            <li class="nav-header">
+              <a class="" href="#" data-toggle="collapse" data-target="#topicSubGroup-0-6">
+                <span id="sgSpan-0-6" class="fa fa-caret-right"></span>&nbsp;After the Installation
+              </a>
+              <ul id="topicSubGroup-0-6" class="nav-tertiary list-unstyled collapse">
+                  <li><a class="" href="../install-guide/after_installation/After_Installation.html">After the Installation</a></li>
+                  <li><a class="" href="../install-guide/after_installation/InitialSetupHub.html">Initial Setup</a></li>
+              </ul>
+            </li>
+            <li><a class="" href="../install-guide/Troubleshooting.html">Troubleshooting</a></li>
+            <li><a class="" href="../install-guide/Boot_Options.html">Boot Options</a></li>
+            <li><a class="" href="../install-guide/Kickstart_Installations.html">Automating the Installation with Kickstart</a></li>
+            <li><a class="" href="../install-guide/Network_based_Installations.html">Setting Up an Installation Server</a></li>
+            <li><a class="" href="../install-guide/VNC_Installations.html">Installing Using VNC</a></li>
+            <li><a class="" href="../install-guide/Upgrading_Your_Current_System.html">Upgrading Your Current System</a></li>
+            <li><a class="" href="../install-guide/Kickstart_Syntax_Reference.html">Kickstart Syntax Reference</a></li>
+            <li><a class=" active" href="../install-guide/Disk_Partitions.html">An Introduction to Disk Partitions</a></li>
+            <li><a class="" href="../install-guide/Understanding_LVM.html">Understanding LVM</a></li>
+            <li><a class="" href="../install-guide/Revision_History.html">Revision History</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup1">
+        <span id="tgSpan1" class="fa fa-angle-right"></span>Virtualization Getting Started Guide
+      </a>
+      <ul id="topicGroup1" class="collapse  list-unstyled">
+            <li><a class="" href="../virt-getting-started-guide/Preface.html">Preface</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Introduction.html">Introduction</a></li>
+            <li><a class="" href="../virt-getting-started-guide/What_Is_It.html">What is Virtualization?</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Advantages.html">Advantages and misconceptions of virtualization</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Products.html">Introduction to Fedora virtualization products</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Boxes.html">Introduction to Boxes</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Guest_Installation_Virt_Manager.html">Creating and Managing Guests with Virt-Manager</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Advanced_Virtualization.html">Advanced Virtualization Concepts</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Revision_History.html">Revision History</a></li>
+      </ul>
+    </li>
+</ul>
+      </div>
+      <div class="col-xs-12 col-sm-9 col-md-9 main">
+        <div class="page-header">
+          <h2>ディスクパーティションのための入門用の発行物</h2>
+        </div>
+        <div class="sect1">
+<h2 id="appe-disk-partitions-overview"><a class="anchor" href="#appe-disk-partitions-overview"></a>ディスクパーティションのための入門用の発行物</h2>
+<div class="sectionbody">
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Note</strong></p>
+</div>
+<div class="paragraph">
+<p>This appendix is not necessarily applicable to architectures other than
+AMD64 and Intel 64. However, the general concepts mentioned here may apply.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>このセクションでは、基本的なディスクの概念、ディスクパーティションの再設定、Linux
+システムで使用されるパーティション命名スキーム、および関連トピックについて説明しています。</p>
+</div>
+<div class="paragraph">
+<p>If you are comfortable with disk partitions, you can skip ahead to
+<a href="#sect-disk-partitions-making-room">section_title</a> for more information
+on the process of freeing up disk space to prepare for a Fedora
+installation.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-disk-partitions-basic-concepts"><a class="anchor" href="#sect-disk-partitions-basic-concepts"></a>ハードディスクの基本概念</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>ハードディスクの機能は、データを保存し、命令に応じて確実に取得するという非常に簡単なものです。</p>
+</div>
+<div class="paragraph">
+<p>ディスクパーティション設定などの問題を論議する場合、基礎となるハードウェアについての理解があることが重要となります。しかし、理論は非常に複雑で広範にわたるものなので、ここでは基本的な概念のみが説明されています。この付録では、簡素化されたディスクドライブの図を使用してパーティションにおけるプロセスと理論を説明しています。</p>
+</div>
+<div class="paragraph">
+<p><a href="#figu-partitions-unused-drive">figure_title</a>, shows a brand-new, unused
+disk drive.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADkAAABOCAIAAAAVXSmrAAAABGdBTUEAANbY1E9YMgAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAABQSURBVGje7c4BCQAACAOw9y+tJRQUtgRLWFS3ubq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6vr0yrAEozMquBv/AQwAAAABJRU5ErkJggg==" alt="An Unused Disk Drive"></span></p>
+</div>
+<div class="sect2">
+<h3 id="sect-disk-partitions-file-systems"><a class="anchor" href="#sect-disk-partitions-file-systems"></a>ファイルシステム</h3>
+<div class="paragraph">
+<p>To store data on a disk drive, it is necessary to format the disk drive
+first. Formatting (usually known as "making a file system") writes
+information to the drive, creating order out of the empty space in an
+unformatted drive.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFwAAABSCAIAAABWhyR/AAAABGdBTUEAANbY1E9YMgAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC2SURBVHja7dwxEoAgDADB/Jyn5KnaQ2GlJrCUjjY7THKVcTnLCQRQoLyHEn0OlAIo08PMfPzwy3egQIHSDGXUPiVuyr/3Yn0HChQozVAMWisZChQoBq2VrFOgQFG0ilanQIECxaC1kqFAgWLQKlqdAgWKolW0OgUKFCgGrZUMBQoURatodQoUKIrWoLWSoUCBYtBayToFChRFq2h1ChQoUAxaKxkKFCgGraLVKVCgbITiN4mno9y9kY8xAOnzYQAAAABJRU5ErkJggg==" alt="Disk Drive with a File System"></span></p>
+</div>
+<div class="paragraph">
+<p>As <a href="#figu-partitions-formatted-drive">figure_title</a>, implies, the order
+imposed by a file system involves some trade-offs:</p>
+</div>
+<div class="paragraph">
+<p>ファイルシステムに関連するデータを保存するためドライブの使用可能領域の数パーセントが使用され、オーバーヘッドになります。
+A file system splits the remaining space into small, consistently-sized
+segments. For Linux, these segments are known as blocks. <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</sup></p>
+</div>
+<div class="paragraph">
+<p>Note that there is no single, universal file system. As
+<a href="#figu-partitions-different-file-system">figure_title</a>, shows, a disk
+drive may have one of many different file systems written on it.  Different
+file systems tend to be incompatible; that is, an operating system that
+supports one file system (or a handful of related file system types) may not
+support another. However, Fedora supports a wide variety of file systems
+(including many commonly used by other operating systems such as Microsoft
+Windows), making data interchange between different file systems easy.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGIAAABdCAIAAADR6yQhAAAABGdBTUEAANbY1E9YMgAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAJDSURBVHja7Zwhb8MwEIX7zwcHA/MTCgsHDQsDBwMDAwO7k0/KTnE0baomf3bfoctLK0XP9svXus3lofpFXWSBbJJNskk2ySbZ9NP72ynZ1IhNB/EjV/niWjrRpmVZxlzWQHSKTSmlOZc1wzAsuayB6BSb7ve7j6Q127b5KWsgOsUmH0Mfz8OEJ+gUm+KEn6bJJ7w1EJ1i02HC+0iWC6GWLiBoGQhoOUWxCZhHURcQCAi6B4I1V7kQaukUm+zi/NAau9f4SFoD0QUEAoIugYCWR1Gn2GRT/T1XmQsEHRThPuH3a92vmKBDgWDLVS6EWrqAQEDQNxAAcwoEBLQ8irqAoE0g2L/NOCyEJ3U7fEan2DSO42cua3zC2ylrIDoRCG63m4+kNRBdQNA+ENTNo6izgACVR1Gn2GTr32/AZS4QdNCu738vnB6AwC7IJ7w3fmo/rK5zgcAS4fSGXUUXEDQLBMCcotgEzKOoCwgEBF1+QzDlchTeJzxEB/0ixQ+tiZ/UIbqAQEDQNxAAc4oFBKe5QNAFBM0CwTzPfsoaiE6xKV7i9Xp1ArYGonOBIKV0esOuogsImgICYB5FnWKTrX8fyTIXCDoICPzPD+WEJ+gCgpaB4C1XuRBq6VAgSLnKF9fSoUBAyykBgYBAQCAg+H5EybquEF1AICAQELwoEADzKOoCgtaAQFsGfwOC+MsQiA7dzvQ9snJbsZYuIGgZCLRlcG4TMI+IQADMo6jrYbN6Jm9PNr1IySbZJJtkk2ySTbJJ9fgCAt0aktx8FUMAAAAASUVORK5CYII=" alt="Disk Drive with a Different File System"></span></p>
+</div>
+<div class="paragraph">
+<p>Writing a file system to disk is only the first step. The goal of this
+process is to actually <em>store</em> and <em>retrieve</em> data. The figure below shows a
+drive disk after some data have been written to it:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFwAAABSCAIAAABWhyR/AAAABGdBTUEAANbY1E9YMgAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAE3SURBVHja7dyxDYMwEAVQNqXKDnTZgQVYKDsRakDyybIVH3lXRhbF43QfG5RpV5eaEECB0g9lylNQBkA5/biu6ydQ27YVr78sy6tUxTVQoEBJhvIeu4bolNua57kYEJEWq+gdKFCgJEMxaMudErmZR7Xqi2K0Q4ECJRmKQdsxkiO7oYr+ggIFSjIUg/YG5ZSRkaY4KhK3kUsNesgEBQoUg7Zjp9SduQf7IhLJp2iHAgVKMhSDtrz3CUZyZFmTHRMUKFCSoRi0lZEcOUDqtAYKFCjJUAzaZq9NW30I+Kh3yVCgQDFo629CpC+anN1fewcKFCjJUAzacqdEmmJv98VKjucUKFCgGLRDRPKjDpmgQIFi0P4+klvthh71nAIFChSDViRDgQLFoH1YJP/dyRsUKFD8TSKU/Qvsl5oQbi6CSwAAAABJRU5ErkJggg==" alt="Disk Drive with Data Written to It"></span></p>
+</div>
+<div class="paragraph">
+<p>As <a href="#figu-partitions-drive-with-data">figure_title</a>, shows, some of the
+previously-empty blocks are now holding data. However, by just looking at
+this picture, we cannot determine exactly how many files reside on this
+drive. There may only be one file or many, as all files use at least one
+block and some files use multiple blocks. Another important point to note is
+that the used blocks do not have to form a contiguous region; used and
+unused blocks may be interspersed. This is known as
+fragmentation. Fragmentation can play a part when attempting to resize an
+existing partition.</p>
+</div>
+<div class="paragraph">
+<p>多くのコンピューター関連の技術と同じように、ディスクドライブは導入されてから常に変化し続けており、特に大型化しています。物理的サイズが大きくなっているわけではなく、情報保存の容量が大きくなっています。さらに、この容量の増加がディスクドライブの使用方法を根本的に変化させてきました。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-disk-partitions-basics"><a class="anchor" href="#sect-disk-partitions-basics"></a>パーティション： 1 つのドライブを複数ドライブにする</h3>
+<div class="paragraph">
+<p>Disk drives can be divided into partitions. Each partition can be accessed
+as if it was a separate disk. This is done through the addition of a
+partition table.</p>
+</div>
+<div class="paragraph">
+<p>ディスク領域を個別のディスクパーティションに割り当てる理由には以下のようなものがあります。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>オペレーティングシステムのデータをユーザーのデータから論理的に分離させるため。</p>
+</li>
+<li>
+<p>異なるファイルシステムを使用するため。</p>
+</li>
+<li>
+<p>1 台のマシン上で複数のオペレーティングシステムを稼働させるため。</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>There are currently two partitioning layout standards for physical hard
+disks: Master Boot Record (MBR) and GUID Partition Table (GPT). MBR is an
+older method of disk partitioning used with BIOS-based computers. GPT is a
+newer partitioning layout that is a part of the Unified Extensible Firmware
+Interface (UEFI). This section and
+<a href="#sect-disk-partitions-extended">section_title</a> mainly describe the
+Master Boot Record (MBR) disk partitioning scheme. For information about the
+GUID Partition Table (GPT) partitioning layout, see
+<a href="#sect-disk-partitioning-guid-partition-table">section_title</a>.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Note</strong></p>
+</div>
+<div class="paragraph">
+<p>ここで示す図ではパーティションテーブルが実際のディスクドライブから離れていますが、本来の状況を正確に表しているわけではありません。実際には、パーティションテーブルはそのディスクの先頭部分となる、他のファイルシステムまたはユーザーデータの前に格納されています。ただし、わかりやすくするために図では別々に表示します。</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKcAAABOCAIAAADKP5HxAAAABGdBTUEAANbY1E9YMgAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAKZSURBVHja7d09bsJAEIZhHwAJSjo4AoX7UHIMbsAROAIULpEo4RZGoqCEjsYFN6BwQZl8ySDkOE6IlN+dfaew8ld48jDrXU8xySPxTZEEFGihTnxVPYyPJlqoE6gTqBOoE6gTQatvNpvxeNzv95OQQ/evLJQL6nfUT6fTcDhMfIUyUl6oN6sfDodOp6Nve73ecrk8n89BL7a6f2WhXJSR8lJ2qNfVVQ1GPplMnD1rp9OpwRdFgfordVvY9Q9yucnSR1nZpWlaliXqV3VteWxhd7y7tqU+y7LL5YL6c2ivq6uegqHT7na72WymFUtXfV39lbJTjqPRaL/fo3495Oga+vZNzKvVykpZVzFX4ZWdcux2u3me/1ymIan7eFej+q6u3vpaP6n+QbvdVppSPx6PqDtRf7sVfU+9tvij7rnWLc38JVB3ov7xcx11n+q3PbzF22UcdZ/qn8kWddRRRx111KNQn3oP1Kl11FFHHXXUUUf9f8cH/XXUfarzHj5GdXpuMarf7a+jTq2jznMd9dD38PTXOa+jjjrqqKOOepTq9NepdWodddRRRx111FH/06C/Hp067+FjVKfnFqM6/XVqnVrnuY66+z08/XXO66ijjjrqqKMepTr9dWqdWkcdddRRRx111P806K9Hp857+BjV6bnFqE5/nVqn1u+pxzb3BXWHM54a++u3GU+oRzfPbT6fM/elPrvR37hOC5vdOBgMrNCZ8VSf0+pvaKeRt1qt9Xpt6sxzi2Ims8gXi4WRM7uxfmYriiJN0+px7iHMsNFtFlrYb1W+3W6Z09pwUi/LMssy7XV1yElCDt2/srDt242cmczN6nbY1TKY+wpl9KNV3vDa65/He89F7XV1yAkaW/evLH5tjxIQ+hMV5l0mQRj3xQAAAABJRU5ErkJggg==" alt="Disk Drive with Partition Table"></span></p>
+</div>
+<div class="paragraph">
+<p>As <a href="#figu-partitions-partition-table">figure_title</a> shows, the partition
+table is divided into four sections or four primary partitions. A primary
+partition is a partition on a hard drive that can contain only one logical
+drive (or section). Each section can hold the information necessary to
+define a single partition, meaning that the partition table can define no
+more than four partitions.</p>
+</div>
+<div class="paragraph">
+<p>各パーティションテーブルのエントリーにはパーティションに関する重要な特徴が記載されています。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ディスク上のパーティションの開始点と終了点</p>
+</li>
+<li>
+<p>パーティションが「アクティブ」かどうか</p>
+</li>
+<li>
+<p>パーティションのタイプ</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>開始点と終了点により、パーティションサイズとディスク上の位置が定義されます。「アクティブ」フラグは特定のオペレーティングシステムのブートローダーによって使用されます。つまり、「アクティブ」の印が付いたパーティションにあるオペレーティングシステムが起動されます。</p>
+</div>
+<div class="paragraph">
+<p>The type is a number that identifies the partition&#8217;s anticipated usage.
+Some operating systems use the partition type to denote a specific file
+system type, to flag the partition as being associated with a particular
+operating system, to indicate that the partition contains a bootable
+operating system, or some combination of the three.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="#figu-partitions-single-part">figure_title</a> for an example of a disk
+drive with single partition.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAL8AAABSCAIAAACKUpINAAAABGdBTUEAANbY1E9YMgAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAQ8SURBVHja7Z2xTipBFIZ5ABO2pNM30IIeSzp9A30DHkHfAApKE0vopLPExMJSOhoSeANNKCi9f+7Jnbsuioozuzu73ynWyWQDc3Y/zvz/7sRpvBGeohFPeEuZuw490FMWer487fb2tsBzoAd6oAd6oIeAHsIbPVflDuiJqfYUW2n2LpDQAz250/Pw8HB5eXl0dNSIOTR+ZaFcoCcnelar1enpaaNaoYyUF/SEpWc2myVJos89PDzUIF5eXqKeRDR+ZaFclJHyUnao5lCqWb9OQ6fX61VMi9j1UnaLxQLHHqT22ISlC11JMaufhLJrt9vr9Rp6PNMjaWkTVoXdkE1hw+Fws9lAj0965E30cdtfY9JBBanf7y+Xy+3+dOfd3Z16np+fC0Tk6elJQ7UBq525iMqx2+0GHWEd6TFzvi2Tp9Pp8fGxjiJDDR3VKWLU1pis0wZ3dnamGzb9GwWiMxqNdBQ9OmpgaYCUnXJstVoaoRdDcH5+fn19jWr+dMGHLnSn03FX36Y2geIQcZ3NZrNwjyZ87+/vnVFXWz3pEzRI9Wvw8/n8919nSlE/vMlkUmvH/h16FGqrJ3OmOjUXaNCqQ5m7lb+3cj+snENTP/R8QY/40LSlX/A2PVaHdPPS5+dfezRzuTuqdoZm6/c1vVrtSZJE89fr6yv07KLHteV+3V0RN0IqMzsUq3sUgljHjO4JQY+kT+YpNvS8o0eyRjfj4uJC6Jiy0VFt9QgjoWOFRz06zbRz4Z7LIoOOd3o+fPuBan7n2O1ap525qzqZe+DLy4S200GNYR0du9+Pgx7ogR7ogR7oyYeeq6pHbvSgmqk93mpPTR079EAP9EAP9EAP9ASNHet78qQH1RwlOqPRyJYO6hj6PReOvVL0qN6kV52qHfQdO/RUip7tJf3QAz3UHuipk+5BNUfsufJZ34Nj53kP9EAP9EAP9EAP9NRSNbO+B8dO7SndzAU90AM90AM90INq5lmz/yjJ+h4ce5TolHN9D/REEKV9xw49EURp1/dAD7UH1YzuwbFTe3Z7rrKt74EenvdAD/RAD/SUnB5UM/Tg2H9CD+t7oIfaQ+2BHuiBHlQzqhl6cOw1oKec63ugJw50eM8FPXsG/0MDevaP8qzvQTVTe3Ds30v5s31Jq6R70vuSQk8eeyJH6rk+XN/j9kSGHvZj/3HYfuyDwUDobJt56Nk/5bd/u2z2er1KoqO8lN3JyYkVHi97IqOa/9OzWq2SJLHMK4nOwcHBeDw2esIpvDo6dvszm80MIBV5fWXsIlrjVxY2YQmdm5sbQ8c2UoUez/QoFotFu91O7zTeiTOazaZLQROWqzqPj49pVw89PulRrNfr4XAobyJz24g5NH5lYTLZoaPsgha8utNjD0tsy+MqhTIKWnXSNyaKCEWP0w3yJjK3UUOj8SuL3DQc9BAE9BDQQ0APUdn4A5smm8kUNNK+AAAAAElFTkSuQmCC" alt="Disk Drive With Single Partition"></span></p>
+</div>
+<div class="paragraph">
+<p>The single partition in this example is labeled as <code>DOS</code>. This label shows
+the <em>partition type</em>, with <code>DOS</code> being one of the most common ones. The
+table below shows a list of some of the commonly used partition types and
+hexadecimal numbers used to represent them.</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 99%;">
+<caption class="title">Table 1. パーティションタイプ</caption>
+<colgroup>
+<col style="width: 35%;">
+<col style="width: 16%;">
+<col style="width: 33%;">
+<col style="width: 16%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Partition Type</th>
+<th class="tableblock halign-left valign-top">Value</th>
+<th class="tableblock halign-left valign-top">Partition Type</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Empty</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">00</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Novell Netware 386</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">65</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DOS 12-bit FAT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">01</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PIC/IX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">75</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XENIX root</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">02</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Old MINIX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">80</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XENIX usr</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">03</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Linux/MINUX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">81</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DOS 16-bit &#8656;32M</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">04</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Linux swap</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">82</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Extended</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">05</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Linux native</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">83</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DOS 16-bit &gt;=32</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">06</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Linux extended</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">85</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OS/2 HPFS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">07</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amoeba</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">93</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AIX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">08</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amoeba BBT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">94</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AIX bootable</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">09</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BSD/386</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">a5</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OS/2 Boot Manager</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0a</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OpenBSD</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">a6</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Win95 FAT32</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0b</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NEXTSTEP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">a7</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Win95 FAT32 (LBA)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0c</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BSDI fs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">b7</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Win95 FAT16 (LBA)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0e</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BSDI swap</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">b8</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Win95 Extended (LBA)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0f</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Syrinx</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">c7</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Venix 80286</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">40</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CP/M</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">db</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Novell</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">51</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DOS access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">e1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PReP Boot</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">41</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DOS R/O</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">e3</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GNU HURD</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">63</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DOS secondary</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">f2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Novell Netware 286</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">64</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BBT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ff</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="sect-disk-partitions-extended"><a class="anchor" href="#sect-disk-partitions-extended"></a>パーティション内にさらにパーティションを設定する - 拡張パーティションの概要</h3>
+<div class="paragraph">
+<p>In case four partitions are insufficient for your needs, you can use
+extended partitions to create up additional partitions. You do this by
+setting the type of a partition to "Extended".</p>
+</div>
+<div class="paragraph">
+<p>An extended partition is like a disk drive in its own right - it has its own
+partition table which points to one or more partitions (now called logical
+partitions, as opposed to the four primary partitions) contained entirely
+within the extended partition itself.
+<a href="#figu-partitions-extended">figure_title</a>, shows a disk drive with one
+primary partition and one extended partition containing two logical
+partitions (along with some unpartitioned free space).</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="data:image/png;base64,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" alt="Disk Drive With Extended Partition"></span></p>
+</div>
+<div class="paragraph">
+<p>この図が示すように、プライマリーパーティションと論理パーティションには違いがあります。プライマリーパーティションは 4
+つしかできませんが、論理パーティションの数にはその制限がありません。しかし、Linux でのパーティションへのアクセス方法を考慮すると、1
+つのディスクドライブに 12 個を超える論理パーティションを定義するのは避けてください。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-disk-partitioning-guid-partition-table"><a class="anchor" href="#sect-disk-partitioning-guid-partition-table"></a>GUID パーティションテーブル (GPT)</h3>
+<div class="paragraph">
+<p>GUID Partition Table (GPT) is a newer partitioning scheme based on using
+Globally Unique Identifiers (GUID). GPT was developed to cope with
+limitations of the MBR partition table, especially with the limited maximum
+addressable storage space of a disk. Unlike MBR, which is unable to address
+storage space larger than 2.2 terabytes, GPT can be used with hard disks
+larger than this; the maximum addressable disk size is 2.2 zettabytes. In
+addition, GPT by default supports creating up to 128 primary
+partitions. This number could be extended by allocating more space to the
+partition table.</p>
+</div>
+<div class="paragraph">
+<p>GPT disks use logical block addressing (LBA) and the partition layout is as
+follows:</p>
+</div>
+<div class="paragraph">
+<p>To preserve backward compatibility with MBR disks, the first sector (LBA 0)
+of GPT is reserved for MBR data and it is called ``protective MBR''.
+The primary GPT header begins on the second logical block (LBA 1) of the
+device. The header contains the disk GUID, the location of the primary
+partition table, the location of the secondary GPT header, and CRC32
+checksums of itself and the primary partition table. It also specifies the
+number of partition entries of the table.
+The primary GPT table includes, by default, 128 partition entries, each with
+an entry size 128 bytes, its partition type GUID and unique partition GUID.
+The secondary GPT table is identical to the primary GPT table. It is used
+mainly as a backup table for recovery in case the primary partition table is
+corrupted.
+The secondary GPT header is located on the last logical sector of the disk
+and it can be used to recover GPT information in case the primary header is
+corrupted. It contains the disk GUID, the location of the secondary
+partition table and the primary GPT header, CRC32 checksums of itself and
+the secondary partition table, and the number of possible partition entries.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Important</strong></p>
+</div>
+<div class="paragraph">
+<p>There must be a BIOS boot partition for the boot loader to be installed
+successfully onto a disk that contains a GPT (GUID Partition Table).  This
+includes disks initialized by Anaconda. If the disk already contains a BIOS
+boot partition, it can be reused.</p>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-disk-partitions-making-room"><a class="anchor" href="#sect-disk-partitions-making-room"></a>ディスクのパーティション再設定に関するストラテジー</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>ディスクのパーティションを再設定する場合、いくつか異なる方法があります。このセクションでは以下の状況について説明します。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>パーティションが未設定の空き領域がある</p>
+</li>
+<li>
+<p>未使用のパーティションがある</p>
+</li>
+<li>
+<p>使用中のパーティションの中に空き領域がある</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>このセクションでは、上記の概念を理論的に説明しているだけです。実際にパーティションの再設定を行う詳細な手順については本セクションの範疇を越えるため触れていません。</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Note</strong></p>
+</div>
+<div class="paragraph">
+<p>Keep in mind that the following illustrations are simplified in the interest
+of clarity and do not reflect the exact partition layout that you encounter
+when actually installing Fedora.</p>
+</div>
+</blockquote>
+</div>
+<div class="sect2">
+<h3 id="sect-disk-partitions-using-free-space"><a class="anchor" href="#sect-disk-partitions-using-free-space"></a>空き領域の使用</h3>
+<div class="paragraph">
+<p>In this situation, the partitions already defined do not span the entire
+hard disk, leaving unallocated space that is not part of any defined
+partition. <a href="#figu-partitions-unused-space">figure_title</a>, shows what this
+might look like.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="data:image/png;base64,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" alt="Disk Drive with Unpartitioned Free Space" width="444"></span></p>
+</div>
+<div class="paragraph">
+<p>In the above example, <em>1</em> represents an undefined partition with unallocated
+space and <em>2</em> represents a defined partition with allocated space.</p>
+</div>
+<div class="paragraph">
+<p>An unused hard disk also falls into this category. The only difference is
+that <em>all</em> the space is not part of any defined partition.</p>
+</div>
+<div class="paragraph">
+<p>In any case, you can create the necessary partitions from the unused
+space. Unfortunately, this scenario, although very simple, is not very
+likely (unless you have just purchased a new disk just for Fedora).  Most
+pre-installed operating systems are configured to take up all available
+space on a disk drive (see
+<a href="#sect-disk-partitions-active-partition">section_title</a>).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-disk-partitions-unused-partition"><a class="anchor" href="#sect-disk-partitions-unused-partition"></a>未使用のパーティションの領域を使用する</h3>
+<div class="paragraph">
+<p>In this case, maybe you have one or more partitions that you do not use any
+longer. <a href="#figu-partitions-unused-partition">figure_title</a>, illustrates
+such a situation.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="data:image/png;base64,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" alt="Disk Drive with an Unused Partition" width="444"></span></p>
+</div>
+<div class="paragraph">
+<p>In the above example, <em>1</em> represents an unused partition and <em>2</em> represents
+reallocating an unused partition for Linux.</p>
+</div>
+<div class="paragraph">
+<p>この場合、未使用のパーティションに割り当てられている領域を使用します。まず、未使用のパーティションを削除し、次に、その場所に適切な Linux
+パーティションを作成します。未使用のパーティションの削除および新規パーティションの作成はインストール中に手動で行うことができます。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-disk-partitions-active-partition"><a class="anchor" href="#sect-disk-partitions-active-partition"></a>使用中のパーティションの空き領域を使用する</h3>
+<div class="paragraph">
+<p>これが最も一般的な状況です。ただし、最も扱いにくい状況でもあります。一番の問題は、たとえ十分な空き領域がある場合でも、それがすでに使用中のパーティションに割り当てられているということです。ソフトウェアが事前にインストールされているコンピューターを購入した場合、通常はハードディスクに
+OS とデータを格納した 1 つの大きなパーティションがあります。</p>
+</div>
+<div class="paragraph">
+<p>システムに新しくハードディスクドライブを追加する以外に、2 つの選択肢があります。</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><em>Destructive Repartitioning</em></dt>
+<dd>
+<p>In this case, the single large partition is deleted and several smaller ones
+are created instead. Any data held in the original partition is
+destroyed. This means that making a complete backup is necessary. It is
+highly recommended to make two backups, use verification (if available in
+your backup software), and try to read data from the backup <em>before</em>
+deleting the partition. <br>
+<em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em>__
+<strong>Warning</strong></p>
+<div class="literalblock">
+<div class="content">
+<pre>If an operating system was installed on that partition, it must be
+reinstalled if you want to use that system as well. Be aware that some
+computers sold with pre-installed operating systems may not include the
+installation media to reinstall the original operating system. You should
+check whether this applies to your system is _before_ you destroy your
+original partition and its operating system installation.
+____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
++ After creating a smaller partition for your existing operating system, you
+can reinstall software, restore your data, and start the installation.
+link:#figu-partitions-destructive-repartitioning[figure_title] shows this
+being done.  + image:partitions/dstrct-reprt.png[Disk Drive Being
+Destructively Repartitioned,width=444] + In the above example, _1_
+represents before and _2_ represents after.  +
+______________________________________________________________ *Warning*</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Any data previously present in the original partition is lost.
+______________________________________________________________</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1"><em>Non-Destructive Repartitioning</em></dt>
+<dd>
+<p>With non-destructive repartitioning you execute a program that makes a big
+partition smaller without losing any of the files stored in that
+partition. This method is usually reliable, but can be very time-consuming
+on large drives.  + While the process of non-destructive repartitioning is
+rather straightforward, there are three steps involved:<br></p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>既存データの圧縮とバックアップ</p>
+</li>
+<li>
+<p>既存パーティションのサイズ変更</p>
+</li>
+<li>
+<p>新規パーティションの作成</p>
+</li>
+</ol>
+</div>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>各ステップについて詳しく説明していきます。</p>
+</div>
+<div class="sect3">
+<h4 id="sect-disk-partitions-compress-data"><a class="anchor" href="#sect-disk-partitions-compress-data"></a>既存データの圧縮</h4>
+<div class="paragraph">
+<p>下図で示しているように、最初のステップでは既存パーティション内でデータを圧縮します。これを実行する理由は、データを再構成することでパーティションの
+「後部にある」 使用可能な空き領域を最大化するためです。</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="data:image/png;base64,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" alt="Disk Drive Being Compressed" width="444"></span></p>
+</div>
+<div class="paragraph">
+<p>In the above example, <em>1</em> represents before and <em>2</em> represents after.</p>
+</div>
+<div class="paragraph">
+<p>このステップは非常に重要です。このステップを実行しないと、データが存在する場所によっては希望通りにパーティションのサイズを変更できなくなります。様々な理由で移動できないデータがあることも留意してください。データが移動できず新しく作成するパーティションのサイズが大幅に制限されてしまう場合には、破壊的なディスクのパーティション再設定が必要となることがあります。</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="sect-disk-partitions-resize-existing"><a class="anchor" href="#sect-disk-partitions-resize-existing"></a>既存パーティションのサイズ変更</h4>
+<div class="paragraph">
+<p><a href="#figu-partitions-resize-existing">figure_title</a> shows the actual
+resizing process. While the actual result of the resizing operation varies
+depending on the software used, in most cases the newly freed space is used
+to create an unformatted partition of the same type as the original
+partition.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="data:image/png;base64,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" alt="Disk Drive with Partition Resized" width="444"></span></p>
+</div>
+<div class="paragraph">
+<p>In the above example, <em>1</em> represents before and <em>2</em> represents after.</p>
+</div>
+<div class="paragraph">
+<p>It is important to understand what the resizing software you use does with
+the newly freed space, so that you can take the appropriate steps.  In the
+case illustrated here, it would be best to delete the new DOS partition and
+create the appropriate Linux partition(s).</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="sect-disk-partitions-create-new"><a class="anchor" href="#sect-disk-partitions-create-new"></a>新規パーティションの作成</h4>
+<div class="paragraph">
+<p>As the previous step implied, it may or may not be necessary to create new
+partitions. However, unless your resizing software is Linux-aware, it is
+likely that you must delete the partition that was created during the
+resizing process.  <a href="#figu-partitions-final-configuration">figure_title</a>,
+shows this being done.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="data:image/png;base64,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" alt="Disk Drive with Final Partition Configuration" width="444"></span></p>
+</div>
+<div class="paragraph">
+<p>In the above example, <em>1</em> represents before and <em>2</em> represents after.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-partitioning-naming-schemes-and-mount-points"><a class="anchor" href="#sect-partitioning-naming-schemes-and-mount-points"></a>パーティション命名スキームおよびマウントポイント</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A common source of confusion for users unfamiliar with Linux is the matter
+of how partitions are used and accessed by the Linux operating system. In
+DOS/Windows, it is relatively simple: Each partition gets a "drive letter."
+You then use the correct drive letter to refer to files and directories on
+its corresponding partition. This is entirely different from how Linux deals
+with partitions and, for that matter, with disk storage in general. This
+section describes the main principles of partition naming scheme and the way
+how partitions are accessed in Fedora.</p>
+</div>
+<div class="sect2">
+<h3 id="sect-disk-partitions-naming-scheme"><a class="anchor" href="#sect-disk-partitions-naming-scheme"></a>パーティションの命名スキーム</h3>
+<div class="paragraph">
+<p>Linux uses a naming scheme that is file-based, with file names in the form
+of <code>/dev/xxyN</code>.</p>
+</div>
+<div class="paragraph">
+<p>以下は、デバイスおよびパーティションの名前の構成要素です。</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>/dev/</code></dt>
+<dd>
+<p>This is the name of the directory in which all device files reside.  Because
+partitions reside on hard disks, and hard disks are devices, the files
+representing all possible partitions reside in <code>/dev/</code>.</p>
+</dd>
+<dt class="hdlist1"><code>xx</code></dt>
+<dd>
+<p>The first two letters of the partition name indicate the type of device on
+which the partition resides, usually <code>sd</code>.</p>
+</dd>
+<dt class="hdlist1"><code>y</code></dt>
+<dd>
+<p>This letter indicates which device the partition is on. For example,
+<code>/dev/sda</code> for the first hard disk, <code>/dev/sdb</code> for the second, and so on.</p>
+</dd>
+<dt class="hdlist1"><code>N</code></dt>
+<dd>
+<p>The final number denotes the partition. The first four (primary or extended)
+partitions are numbered <code>1</code> through <code>4</code>. Logical partitions start at
+<code>5</code>. So, for example, <code>/dev/sda3</code> is the third primary or extended partition
+on the first hard disk, and <code>/dev/sdb6</code> is the second logical partition on
+the second hard disk.</p>
+</dd>
+</dl>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Note</strong></p>
+</div>
+<div class="paragraph">
+<p>Even if your system can identify and refer to all types of disk partitions,
+it might not be able to <em>read</em> the file system and therefore access stored
+data on every partition type. However, in many cases, it is possible to
+successfully access data on a partition dedicated to another operating
+system.</p>
+</div>
+</blockquote>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-disk-partitions-mount-points"><a class="anchor" href="#sect-disk-partitions-mount-points"></a>ディスクパーティションとマウントポイント</h3>
+<div class="paragraph">
+<p>Each partition is used to form part of the storage necessary to support a
+single set of files and directories. This is done by associating a partition
+with a directory through a process known as mounting. Mounting a partition
+makes its storage available starting at the specified directory (known as a
+mount point).</p>
+</div>
+<div class="paragraph">
+<p>For example, if partition <code>/dev/sda5</code> is mounted on <code>/usr/</code>, that would mean
+that all files and directories under <code>/usr/</code> physically reside on
+<code>/dev/sda5</code>. So the file <code>/usr/share/doc/FAQ/txt/Linux-FAQ</code> would be stored
+on <code>/dev/sda5</code>, while the file <code>/etc/gdm/custom.conf</code> would not.</p>
+</div>
+<div class="paragraph">
+<p>Continuing the example, it is also possible that one or more directories
+below <code>/usr/</code> would be mount points for other partitions. For instance, a
+partition (say, <code>/dev/sda7</code>) could be mounted on <code>/usr/local/</code>, meaning that
+<code>/usr/local/man/whatis</code> would then reside on <code>/dev/sda7</code> rather than
+<code>/dev/sda5</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-disk-partitions-how-many"><a class="anchor" href="#sect-disk-partitions-how-many"></a>パーティションの数はいくつ？</h3>
+<div class="paragraph">
+<p>At this point in the process of preparing to install Fedora, you should
+give some consideration to the number and size of the partitions to be used
+by your new operating system. However, there is no one right answer to this
+question. It depends on your needs and requirements.</p>
+</div>
+<div class="paragraph">
+<p>Unless you have a reason for doing otherwise, you should <em>at least</em> create a
+<code>/boot</code> partition and a <code>/</code> (root) partition. Depending on your system&#8217;s
+hardware specifications, additional partitions may be necessary, such as
+<code>/boot/efi</code> for 64-bit AMD and Intel systems with UEFI firmware, a biosboot
+partition for AMD and Intel systems with a GUID Partition Table (GPT) label
+on the system disk, or a PReP Boot partition on IBM Power Systems servers.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="#sect-installation-gui-manual-partitioning-recommended">???</a> for
+more information about the recommended partitioning scheme.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnote_1">
+<a href="#_footnoteref_1">1</a>. Blocks really <em>are</em> consistently sized, unlike our illustrations. Keep in mind, also, that an average disk drive contains thousands of blocks. The picture is simplified for the purposes of this discussion.
+</div>
+</div>
+      </div>
+    </div>
+  </div>
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+   <!-- Latest compiled and minified JavaScript -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+   <script type="text/javascript">
+    /*<![CDATA[*/
+    $(document).ready(function() {
+      $("[id^='topicGroup']").on('show.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicGroup']").on('hide.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicSubGroup']").on('show.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+      $("[id^='topicSubGroup']").on('hide.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+    });
+    /*]]>*/
+  </script>
+</body>
+</html>

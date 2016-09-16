@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Fedora Rawhide | Installation Guide | Downloading Fedora</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <link href="../../rawhide/_stylesheets/asciibinder.css" rel="stylesheet" />
+
+   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+   <!--[if lt IE 9]>
+     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+   <![endif]-->
+
+  <link href="../../rawhide/_images/favicon32x32.png" rel="shortcut icon" type="text/css">
+  <!--[if IE]><link rel="shortcut icon" href="../../rawhide/_images/favicon.ico"><![endif]-->
+  <meta content="AsciiBinder" name="application-name">
+</head>
+<body>
+  <div class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="https://docs.fedoraproject.org/"><img alt="Fedora Documentation" src="../../rawhide/_images/fedora.svg"></a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <p class="toggle-nav visible-xs pull-left">
+      <button class="btn btn-default btn-sm" type="button" data-toggle="offcanvas">Toggle nav</button>
+    </p>
+    <ol class="breadcrumb">
+      <li class="sitename">
+        <a href="../../index.html">Fedora Documentation</a>
+      </li>
+      <li class="hidden-xs active">
+        <a href="../install-guide/Preface.html">Fedora Rawhide</a>
+      </li>
+      <li class="hidden-xs active">
+        <a href="../install-guide/Preface.html">Installation Guide</a>
+      </li>
+      
+      <li class="hidden-xs active">
+        Downloading Fedora
+      </li>
+    </ol>
+    <div class="row row-offcanvas row-offcanvas-left">
+      <div class="col-xs-8 col-sm-3 col-md-3 sidebar sidebar-offcanvas">
+        <ul class="nav nav-sidebar">
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup0">
+        <span id="tgSpan0" class="fa fa-angle-down"></span>Installation Guide
+      </a>
+      <ul id="topicGroup0" class="collapse in list-unstyled">
+            <li><a class="" href="../install-guide/Preface.html">Preface</a></li>
+            <li><a class="" href="../install-guide/Introduction.html">Introduction</a></li>
+            <li><a class=" active" href="../install-guide/Downloading_Fedora.html">Downloading Fedora</a></li>
+            <li><a class="" href="../install-guide/Preparing_for_Installation.html">Preparing for Installation</a></li>
+            <li><a class="" href="../install-guide/Booting_the_Installation.html">Booting the Installation</a></li>
+            <li class="nav-header">
+              <a class="" href="#" data-toggle="collapse" data-target="#topicSubGroup-0-5">
+                <span id="sgSpan-0-5" class="fa fa-caret-right"></span>&nbsp;Installing Using Anaconda
+              </a>
+              <ul id="topicSubGroup-0-5" class="nav-tertiary list-unstyled collapse">
+                  <li><a class="" href="../install-guide/installing_using_anaconda/Installing_Using_Anaconda.html">Installing Using Anaconda</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/WelcomeSpoke.html">Welcome Screen and Language Selection</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/SummaryHub.html">Installation Summary</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/DateTimeSpoke.html">Date & Time</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/KeyboardSpoke.html">Keyboard Layout</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/LangSupportSpoke.html">Language Support</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/SourceSpoke.html">Installation Source</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/SoftwareSpoke.html">Software Selection</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/StorageSpoke.html">Installation Destination</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/StorageSpoke_BootLoader.html">Boot Loader Installation</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/FilterSpoke.html">Installation Destination - Specialized & Network Disks</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/FilterSpoke_AddiSCSI.html">Add iSCSI Target</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/FilterSpoke_AddFCoE.html">Add FCoE SAN</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke.html">Manual Partitioning</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_AddPhysical.html">Creating Standard Partitions</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_SoftwareRAID.html">Creating Software RAID</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_AddLVM.html">Creating a Logical Volume Managament (LVM) Layout</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_AddBtrfs.html">Creating a Btrfs Layout</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_FileSystems.html">Device, File System and RAID Types</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_RecommendedScheme.html">Recommended Partitioning Scheme</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_PartitioningAdvice.html">Advice on Partitions</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/KdumpSpoke.html">Kdump</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/NetworkSpoke.html">Network & Hostname</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/NetworkSpoke_VirtualInterfaces.html">Adding a Virtual Network Interface</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/NetworkSpoke_EditConnection.html">Editing Network Interface Configuration</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/ProgressHub.html">Configuration and Installation Progress</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/PasswordSpoke.html">Root Password</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/UserSpoke.html">Create User</a></li>
+              </ul>
+            </li>
+            <li class="nav-header">
+              <a class="" href="#" data-toggle="collapse" data-target="#topicSubGroup-0-6">
+                <span id="sgSpan-0-6" class="fa fa-caret-right"></span>&nbsp;After the Installation
+              </a>
+              <ul id="topicSubGroup-0-6" class="nav-tertiary list-unstyled collapse">
+                  <li><a class="" href="../install-guide/after_installation/After_Installation.html">After the Installation</a></li>
+                  <li><a class="" href="../install-guide/after_installation/InitialSetupHub.html">Initial Setup</a></li>
+              </ul>
+            </li>
+            <li><a class="" href="../install-guide/Troubleshooting.html">Troubleshooting</a></li>
+            <li><a class="" href="../install-guide/Boot_Options.html">Boot Options</a></li>
+            <li><a class="" href="../install-guide/Kickstart_Installations.html">Automating the Installation with Kickstart</a></li>
+            <li><a class="" href="../install-guide/Network_based_Installations.html">Setting Up an Installation Server</a></li>
+            <li><a class="" href="../install-guide/VNC_Installations.html">Installing Using VNC</a></li>
+            <li><a class="" href="../install-guide/Upgrading_Your_Current_System.html">Upgrading Your Current System</a></li>
+            <li><a class="" href="../install-guide/Kickstart_Syntax_Reference.html">Kickstart Syntax Reference</a></li>
+            <li><a class="" href="../install-guide/Disk_Partitions.html">An Introduction to Disk Partitions</a></li>
+            <li><a class="" href="../install-guide/Understanding_LVM.html">Understanding LVM</a></li>
+            <li><a class="" href="../install-guide/Revision_History.html">Revision History</a></li>
+      </ul>
+    </li>
+</ul>
+      </div>
+      <div class="col-xs-12 col-sm-9 col-md-9 main">
+        <div class="page-header">
+          <h2>Téléchargement de &PRODUCT;</h2>
+        </div>
+        <div class="sect1">
+<h2 id="chap-downloading-fedora"><a class="anchor" href="#chap-downloading-fedora"></a>Téléchargement de &PRODUCT;</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Fedora Flavors</strong></p>
+</div>
+<div class="paragraph">
+<p>Fedora provides three primary flavors tailored for some specific use
+cases. <a href="https://getfedora.org" class="bare">https://getfedora.org</a> offers Fedora Cloud for scalable
+infrastructure, Fedora Server for organizational infrastructure, and Fedora
+Workstation for the developer and desktop user.</p>
+</div>
+<div class="paragraph">
+<p>For alternative desktop environments or media built for more niche purposes,
+check out <a href="https://spins.fedoraproject.org">Fedora Spins</a>.</p>
+</div>
+<div class="paragraph">
+<p>Chacun de ces téléchargements fournit un jeu différent de paquets, mais vous
+pouvez en ajouter après l&#8217;installation initiale pour personnaliser votre
+système en fonction de vos besoins. Le processus d&#8217;installation est le même
+pour toutes les alternatives et variantes ; vous pouvez donc utiliser ce
+guide pour n&#8217;importe quel choix que vous ferez.</p>
+</div>
+<div class="paragraph">
+<p><strong>Which Architecture Is My Computer?</strong></p>
+</div>
+<div class="paragraph">
+<p>Most modern systems are 64 bit x86 architecture. If your computer was
+manufactured after 2007, or you aren&#8217;t sure, you probably have a <code>x86_64</code>
+system.</p>
+</div>
+<div class="paragraph">
+<p>Changing a Fedora installation from one architecture to another is not
+supported. Use the following table to determine the architecture of your
+computer according to the type of processor. Consult your manufacturer&#8217;s
+documentation for details on your processor, or resources such as
+<a href="http://ark.intel.com/" class="bare">http://ark.intel.com/</a> or <a href="http://products.amd.com/" class="bare">http://products.amd.com/</a>, if necessary.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. Types de processeur et d&#8217;architecture</caption>
+<colgroup>
+<col style="width: 75%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Processor manufacturer and model</th>
+<th class="tableblock halign-left valign-top">Architecture type for Fedora</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">some Intel Atom, Core series, Pentium 4, and recent vintage Xeon; AMD
+Athlon, Duron, some Semprons; and older; VIA C3, C7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">i386</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">some Intel Atom, Core 2 series, Core i series and Xeon; AMD: Athlon 64,
+Athlon II, Sempron64, Phenom series, Fusion series, Bulldozer series and
+Opteron; Apple MacBook, MacBook Pro, and MacBook Air</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">x86_64</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong>Media Types</strong></p>
+</div>
+<div class="paragraph">
+<p>Plusieurs types de médias sont disponibles. Choisissez celui qui correspond
+le mieux à vos besoins.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Image « Live »</dt>
+<dd>
+<p>Live images allow you to preview Fedora before installing it. Instead of
+booting directly into the installer, a live image loads the same environment
+you&#8217;ll get after installation. Fedora Workstation and Fedora Spins are live
+images.  + Use a live image to install your favorite system, test Fedora on
+new hardware, troubleshoot, or share with friends.</p>
+</dd>
+<dt class="hdlist1">Image DVD</dt>
+<dd>
+<p>DVD images boot directly into the installation enviroment, and allow you to
+choose from a variety of packages that are provided with it. In Fedora 21,
+the DVD option is only available in the Fedora Server flavor.  + Use the
+Fedora Server DVD image when you want customized Fedora Server installations
+using an offline installation source.</p>
+</dd>
+<dt class="hdlist1">Image d&#8217;installation réseau</dt>
+<dd>
+<p>The netinstall image boots directly into the installation environment, and
+uses the online Fedora package repositories as the installation source. With
+a netinstall image, you can select a wide variety of packages to create a
+customized installation of Fedora.  + The Fedora Server netinstall image is
+a universal one, and can be used to install any Fedora flavor or your own
+set of favorite packages.</p>
+</dd>
+<dt class="hdlist1">Images ARM</dt>
+<dd>
+<p>For many ARM systems, Fedora provides preconfigured filesystem images.
+Write the image to removable media and boot directly into a Fedora
+installation that&#8217;s ready to use.  + ARM devices often require special setup
+procedures that aren&#8217;t covered in this guide. Start learning about Fedora
+ARM at <a href="https://fedoraproject.org/wiki/Architectures/ARM" class="bare">https://fedoraproject.org/wiki/Architectures/ARM</a></p>
+</dd>
+<dt class="hdlist1">Images d&#8217;informatique en nuage</dt>
+<dd>
+<p>Fedora Cloud images are preconfigured filesystem images with very few
+packages installed by default. They include special tools for interacting
+with cloud platforms, and are not intended to be used outside of cloud
+environments.  + Fedora Cloud comes in several varieties. The Fedora Cloud
+Base image is a minimal base for cloud deployments. The Fedora Cloud Atomic
+image is a Docker container host that uses
+<a href="http://www.projectatomic.io/">Project Atomic</a> technology for updates. A
+Docker base image for Fedora is also available.  + Cloud images are
+preconfigured and do not require installation as described in this
+guide. Get started using Fedora Cloud at
+<a href="http://fedoraproject.org/wiki/Cloud" class="bare">http://fedoraproject.org/wiki/Cloud</a></p>
+</dd>
+<dt class="hdlist1">Images de démarrage</dt>
+<dd>
+<p>The tiny images at <a href="https://boot.fedoraproject.org/" class="bare">https://boot.fedoraproject.org/</a> are written to CDs, USB
+drives, or even floppy disks. The BFO image loads installation media from
+Fedora&#8217;s servers and directly loads an installation environment, like the
+netinstall ISO.  + BFO images work like PXE deployments, without having to
+set up a server.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+      </div>
+    </div>
+  </div>
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+   <!-- Latest compiled and minified JavaScript -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+   <script type="text/javascript">
+    /*<![CDATA[*/
+    $(document).ready(function() {
+      $("[id^='topicGroup']").on('show.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicGroup']").on('hide.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicSubGroup']").on('show.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+      $("[id^='topicSubGroup']").on('hide.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+    });
+    /*]]>*/
+  </script>
+</body>
+</html>

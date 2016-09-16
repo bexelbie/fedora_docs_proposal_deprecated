@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Fedora Rawhide | Installation Guide | Installing Using Anaconda | Add iSCSI Target</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <link href="../../../rawhide/_stylesheets/asciibinder.css" rel="stylesheet" />
+
+   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+   <!--[if lt IE 9]>
+     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+   <![endif]-->
+
+  <link href="../../../rawhide/_images/favicon32x32.png" rel="shortcut icon" type="text/css">
+  <!--[if IE]><link rel="shortcut icon" href="../../../rawhide/_images/favicon.ico"><![endif]-->
+  <meta content="AsciiBinder" name="application-name">
+</head>
+<body>
+  <div class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="https://docs.fedoraproject.org/"><img alt="Fedora Documentation" src="../../../rawhide/_images/fedora.svg"></a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <p class="toggle-nav visible-xs pull-left">
+      <button class="btn btn-default btn-sm" type="button" data-toggle="offcanvas">Toggle nav</button>
+    </p>
+    <ol class="breadcrumb">
+      <li class="sitename">
+        <a href="../../../index.html">Fedora Documentation</a>
+      </li>
+      <li class="hidden-xs active">
+        <a href="../../install-guide/Preface.html">Fedora Rawhide</a>
+      </li>
+      <li class="hidden-xs active">
+        <a href="../../install-guide/Preface.html">Installation Guide</a>
+      </li>
+      <li class="hidden-xs active"><a href="../../install-guide/installing_using_anaconda/Installing_Using_Anaconda.html">Installing Using Anaconda</a></li>
+      <li class="hidden-xs active">
+        Add iSCSI Target
+      </li>
+    </ol>
+    <div class="row row-offcanvas row-offcanvas-left">
+      <div class="col-xs-8 col-sm-3 col-md-3 sidebar sidebar-offcanvas">
+        <ul class="nav nav-sidebar">
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup0">
+        <span id="tgSpan0" class="fa fa-angle-down"></span>Installation Guide
+      </a>
+      <ul id="topicGroup0" class="collapse in list-unstyled">
+            <li><a class="" href="../../install-guide/Preface.html">Preface</a></li>
+            <li><a class="" href="../../install-guide/Introduction.html">Introduction</a></li>
+            <li><a class="" href="../../install-guide/Downloading_Fedora.html">Downloading Fedora</a></li>
+            <li><a class="" href="../../install-guide/Preparing_for_Installation.html">Preparing for Installation</a></li>
+            <li><a class="" href="../../install-guide/Booting_the_Installation.html">Booting the Installation</a></li>
+            <li class="nav-header">
+              <a class="" href="#" data-toggle="collapse" data-target="#topicSubGroup-0-5">
+                <span id="sgSpan-0-5" class="fa fa-caret-down"></span>&nbsp;Installing Using Anaconda
+              </a>
+              <ul id="topicSubGroup-0-5" class="nav-tertiary list-unstyled collapse in">
+                  <li><a class="" href="../../install-guide/installing_using_anaconda/Installing_Using_Anaconda.html">Installing Using Anaconda</a></li>
+                  <li><a class="" href="../../install-guide/installing_using_anaconda/WelcomeSpoke.html">Welcome Screen and Language Selection</a></li>
+                  <li><a class="" href="../../install-guide/installing_using_anaconda/SummaryHub.html">Installation Summary</a></li>
+                  <li><a class="" href="../../install-guide/installing_using_anaconda/DateTimeSpoke.html">Date & Time</a></li>
+                  <li><a class="" href="../../install-guide/installing_using_anaconda/KeyboardSpoke.html">Keyboard Layout</a></li>
+                  <li><a class="" href="../../install-guide/installing_using_anaconda/LangSupportSpoke.html">Language Support</a></li>
+                  <li><a class="" href="../../install-guide/installing_using_anaconda/SourceSpoke.html">Installation Source</a></li>
+                  <li><a class="" href="../../install-guide/installing_using_anaconda/SoftwareSpoke.html">Software Selection</a></li>
+                  <li><a class="" href="../../install-guide/installing_using_anaconda/StorageSpoke.html">Installation Destination</a></li>
+                  <li><a class="" href="../../install-guide/installing_using_anaconda/StorageSpoke_BootLoader.html">Boot Loader Installation</a></li>
+                  <li><a class="" href="../../install-guide/installing_using_anaconda/FilterSpoke.html">Installation Destination - Specialized & Network Disks</a></li>
+                  <li><a class=" active" href="../../install-guide/installing_using_anaconda/FilterSpoke_AddiSCSI.html">Add iSCSI Target</a></li>
+                  <li><a class="" href="../../install-guide/installing_using_anaconda/FilterSpoke_AddFCoE.html">Add FCoE SAN</a></li>
+                  <li><a class="" href="../../install-guide/installing_using_anaconda/CustomSpoke.html">Manual Partitioning</a></li>
+                  <li><a class="" href="../../install-guide/installing_using_anaconda/CustomSpoke_AddPhysical.html">Creating Standard Partitions</a></li>
+                  <li><a class="" href="../../install-guide/installing_using_anaconda/CustomSpoke_SoftwareRAID.html">Creating Software RAID</a></li>
+                  <li><a class="" href="../../install-guide/installing_using_anaconda/CustomSpoke_AddLVM.html">Creating a Logical Volume Managament (LVM) Layout</a></li>
+                  <li><a class="" href="../../install-guide/installing_using_anaconda/CustomSpoke_AddBtrfs.html">Creating a Btrfs Layout</a></li>
+                  <li><a class="" href="../../install-guide/installing_using_anaconda/CustomSpoke_FileSystems.html">Device, File System and RAID Types</a></li>
+                  <li><a class="" href="../../install-guide/installing_using_anaconda/CustomSpoke_RecommendedScheme.html">Recommended Partitioning Scheme</a></li>
+                  <li><a class="" href="../../install-guide/installing_using_anaconda/CustomSpoke_PartitioningAdvice.html">Advice on Partitions</a></li>
+                  <li><a class="" href="../../install-guide/installing_using_anaconda/KdumpSpoke.html">Kdump</a></li>
+                  <li><a class="" href="../../install-guide/installing_using_anaconda/NetworkSpoke.html">Network & Hostname</a></li>
+                  <li><a class="" href="../../install-guide/installing_using_anaconda/NetworkSpoke_VirtualInterfaces.html">Adding a Virtual Network Interface</a></li>
+                  <li><a class="" href="../../install-guide/installing_using_anaconda/NetworkSpoke_EditConnection.html">Editing Network Interface Configuration</a></li>
+                  <li><a class="" href="../../install-guide/installing_using_anaconda/ProgressHub.html">Configuration and Installation Progress</a></li>
+                  <li><a class="" href="../../install-guide/installing_using_anaconda/PasswordSpoke.html">Root Password</a></li>
+                  <li><a class="" href="../../install-guide/installing_using_anaconda/UserSpoke.html">Create User</a></li>
+              </ul>
+            </li>
+            <li class="nav-header">
+              <a class="" href="#" data-toggle="collapse" data-target="#topicSubGroup-0-6">
+                <span id="sgSpan-0-6" class="fa fa-caret-right"></span>&nbsp;After the Installation
+              </a>
+              <ul id="topicSubGroup-0-6" class="nav-tertiary list-unstyled collapse">
+                  <li><a class="" href="../../install-guide/after_installation/After_Installation.html">After the Installation</a></li>
+                  <li><a class="" href="../../install-guide/after_installation/InitialSetupHub.html">Initial Setup</a></li>
+              </ul>
+            </li>
+            <li><a class="" href="../../install-guide/Troubleshooting.html">Troubleshooting</a></li>
+            <li><a class="" href="../../install-guide/Boot_Options.html">Boot Options</a></li>
+            <li><a class="" href="../../install-guide/Kickstart_Installations.html">Automating the Installation with Kickstart</a></li>
+            <li><a class="" href="../../install-guide/Network_based_Installations.html">Setting Up an Installation Server</a></li>
+            <li><a class="" href="../../install-guide/VNC_Installations.html">Installing Using VNC</a></li>
+            <li><a class="" href="../../install-guide/Upgrading_Your_Current_System.html">Upgrading Your Current System</a></li>
+            <li><a class="" href="../../install-guide/Kickstart_Syntax_Reference.html">Kickstart Syntax Reference</a></li>
+            <li><a class="" href="../../install-guide/Disk_Partitions.html">An Introduction to Disk Partitions</a></li>
+            <li><a class="" href="../../install-guide/Understanding_LVM.html">Understanding LVM</a></li>
+            <li><a class="" href="../../install-guide/Revision_History.html">Revision History</a></li>
+      </ul>
+    </li>
+</ul>
+      </div>
+      <div class="col-xs-12 col-sm-9 col-md-9 main">
+        <div class="page-header">
+          <h2>Add iSCSI Target</h2>
+        </div>
+        <div class="sect1">
+<h2 id="sect-installation-gui-installation-destination-add-iscsi"><a class="anchor" href="#sect-installation-gui-installation-destination-add-iscsi"></a>Add iSCSI Target</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To use iSCSI storage devices, the installer must be able to discover
+them as iSCSI targets and be able to create an iSCSI session to access
+them. Both of these steps may require a user name and password for
+Challenge Handshake Authentication Protocol (CHAP) authentication.</p>
+</div>
+<div class="paragraph">
+<p>You can also configure an iSCSI target to authenticate the iSCSI
+initiator on the system to which the target is attached (reverse CHAP),
+both for discovery and for the session. Used together, CHAP and reverse
+CHAP are called mutual CHAP or two-way CHAP. Mutual CHAP provides the
+greatest level of security for iSCSI connections, particularly if the
+user name and password are different for CHAP authentication and reverse
+CHAP authentication.</p>
+</div>
+<div class="paragraph">
+<p>Follow the procedure below to add an iSCSI storage target to your
+system.</p>
+</div>
+<div class="paragraph">
+<p>Click the Add iSCSI Target button in the bottom right corner of the
+<a href="#sect-installation-gui-installation-destination">???</a> screen. A new
+dialog window titled Add iSCSI Storage Target will open.</p>
+</div>
+<div class="paragraph">
+<p>Enter the IP address of the iSCSI target in the Target IP Address field.</p>
+</div>
+<div class="paragraph">
+<p>Provide a name in the iSCSI Initiator Name field for the iSCSI initiator
+in iSCSI Qualified Name (IQN) format. A valid IQN entry contains:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The string <code>iqn.</code> (including the period).</p>
+</li>
+<li>
+<p>A date code specifying the year and month in which your organization&#8217;s
+Internet domain or subdomain name was registered, represented as four
+digits for the year, a dash, and two digits for the month, followed by a
+period. For example, represent September 2010 as <code>2010-09.</code></p>
+</li>
+<li>
+<p>Your organization&#8217;s Internet domain or subdomain name, presented in
+<em>reverse</em> order (with the top-level domain first). For example,
+represent the subdomain storage.example.com as <code>com.example.storage</code>.</p>
+</li>
+<li>
+<p>A colon (<code>:</code>) followed by a string which uniquely identifies this
+particular iSCSI initiator within your domain or subdomain. For example,
+<code>:diskarrays-sn-a8675309</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>A complete IQN will therefore look as follows:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>iqn.2010-09.com.example.storage:diskarrays-sn-a8675309</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>An example using the correct format is also displayed below the input
+field for reference.</p>
+</div>
+<div class="paragraph">
+<p>For more information about IQNs, see 3.2.6. iSCSI Names in RFC 3720 -
+Internet Small Computer Systems Interface (iSCSI), available from
+<a href="http://tools.ietf.org/html/rfc3720#section-3.2.6" class="bare">http://tools.ietf.org/html/rfc3720#section-3.2.6</a> and 1. iSCSI Names
+and Addresses in RFC 3721 - Internet Small Computer Systems Interface
+(iSCSI) Naming and Discovery, available from
+<a href="http://tools.ietf.org/html/rfc3721#section-1" class="bare">http://tools.ietf.org/html/rfc3721#section-1</a>.</p>
+</div>
+<div class="paragraph">
+<p>Specify the type of authentication to use for iSCSI discovery using the
+Discovery Authentication Type drop-down menu. Depending on which type of
+authentication you selected, additional input fields (such as CHAP
+Username and CHAP Password may then become visible. Fill in your
+authentication credentials; these should be provided by your
+organization.</p>
+</div>
+<div class="paragraph">
+<p>Click the Start Discovery button. The installer will now attempt to
+discover an iSCSI target based on the information you provided, and if
+the target requires CHAP or reverse CHAP authentication, it will attempt
+to use the credentials you provided. This process may take some time
+(generally less than 30 seconds), depending on your network.</p>
+</div>
+<div class="paragraph">
+<p>If the discovery was <em>not</em> successful, an error message will be
+displayed in the dialog window. This message will vary based on which
+part of the discovery failed. If the installer did not find the target
+you specified at all, you should check the IP address; if the problem is
+an authentication error, make sure you entered all CHAP and reverse CHAP
+credentials correctly and that you have access to the iSCSI target.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Note</strong></p>
+</div>
+<div class="paragraph">
+<p>The No nodes discovered error message may also mean that all nodes on
+the address you specified are already configured. During discovery,
+Anaconda ignores nodes which have already been added.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>If the discovery was successful, you will see a list of all discovered
+nodes.</p>
+</div>
+<div class="paragraph">
+<p>Select one or more nodes you want to log in to by marking or unmarking
+the check box next to each node discovered on the target. Below the
+list, select again the type of authentication you want to use; you can
+also select the Use the credentials from discovery option if the
+CHAP/reverse CHAP user name and password you used to discover the target
+are also valid for logging in to it.</p>
+</div>
+<div class="paragraph">
+<p>After selecting all nodes you want to use, click Log In to initiate an
+iSCSI session. Anaconda will attempt to log in to all selected nodes. If
+the login process is succesful, the Add iSCSI Storage Target dialog will
+close, and all nodes you have configured will now be shown in the list
+of network disks in
+<a href="#sect-installation-gui-installation-destination">???</a>.</p>
+</div>
+<div class="paragraph">
+<p>You can repeat this procedure to discover additional iSCSI targets, or
+to add more nodes from a previously configured target. However, note
+that once you click the Start Discovery button for the first time, you
+will not be able to change the iSCSI Initiator Name. If you made an
+error when configuring the initiator name, you must restart the
+installation.</p>
+</div>
+</div>
+</div>
+      </div>
+    </div>
+  </div>
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+   <!-- Latest compiled and minified JavaScript -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+   <script type="text/javascript">
+    /*<![CDATA[*/
+    $(document).ready(function() {
+      $("[id^='topicGroup']").on('show.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicGroup']").on('hide.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicSubGroup']").on('show.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+      $("[id^='topicSubGroup']").on('hide.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+    });
+    /*]]>*/
+  </script>
+</body>
+</html>

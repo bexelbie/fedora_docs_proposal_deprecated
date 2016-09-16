@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Fedora 24 | Virtualization Getting Started Guide | Revision History</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <link href="../../f24/_stylesheets/asciibinder.css" rel="stylesheet" />
+
+   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+   <!--[if lt IE 9]>
+     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+   <![endif]-->
+
+  <link href="../../f24/_images/favicon32x32.png" rel="shortcut icon" type="text/css">
+  <!--[if IE]><link rel="shortcut icon" href="../../f24/_images/favicon.ico"><![endif]-->
+  <meta content="AsciiBinder" name="application-name">
+</head>
+<body>
+  <div class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="https://docs.fedoraproject.org/"><img alt="Fedora Documentation" src="../../f24/_images/fedora.svg"></a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <p class="toggle-nav visible-xs pull-left">
+      <button class="btn btn-default btn-sm" type="button" data-toggle="offcanvas">Toggle nav</button>
+    </p>
+    <ol class="breadcrumb">
+      <li class="sitename">
+        <a href="../../index.html">Fedora Documentation</a>
+      </li>
+      <li class="hidden-xs active">
+        <a href="../install-guide/Preface.html">Fedora 24</a>
+      </li>
+      <li class="hidden-xs active">
+        <a href="../virt-getting-started-guide/Preface.html">Virtualization Getting Started Guide</a>
+      </li>
+      
+      <li class="hidden-xs active">
+        Revision History
+      </li>
+    </ol>
+    <div class="row row-offcanvas row-offcanvas-left">
+      <div class="col-xs-8 col-sm-3 col-md-3 sidebar sidebar-offcanvas">
+        <ul class="nav nav-sidebar">
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup0">
+        <span id="tgSpan0" class="fa fa-angle-right"></span>Installation Guide
+      </a>
+      <ul id="topicGroup0" class="collapse  list-unstyled">
+            <li><a class="" href="../install-guide/Preface.html">Preface</a></li>
+            <li><a class="" href="../install-guide/Introduction.html">Introduction</a></li>
+            <li><a class="" href="../install-guide/Downloading_Fedora.html">Downloading Fedora</a></li>
+            <li><a class="" href="../install-guide/Preparing_for_Installation.html">Preparing for Installation</a></li>
+            <li><a class="" href="../install-guide/Booting_the_Installation.html">Booting the Installation</a></li>
+            <li class="nav-header">
+              <a class="" href="#" data-toggle="collapse" data-target="#topicSubGroup-0-5">
+                <span id="sgSpan-0-5" class="fa fa-caret-right"></span>&nbsp;Installing Using Anaconda
+              </a>
+              <ul id="topicSubGroup-0-5" class="nav-tertiary list-unstyled collapse">
+                  <li><a class="" href="../install-guide/installing_using_anaconda/Installing_Using_Anaconda.html">Installing Using Anaconda</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/WelcomeSpoke.html">Welcome Screen and Language Selection</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/SummaryHub.html">Installation Summary</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/DateTimeSpoke.html">Date & Time</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/KeyboardSpoke.html">Keyboard Layout</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/LangSupportSpoke.html">Language Support</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/SourceSpoke.html">Installation Source</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/SoftwareSpoke.html">Software Selection</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/StorageSpoke.html">Installation Destination</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/StorageSpoke_BootLoader.html">Boot Loader Installation</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/FilterSpoke.html">Installation Destination - Specialized & Network Disks</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/FilterSpoke_AddiSCSI.html">Add iSCSI Target</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/FilterSpoke_AddFCoE.html">Add FCoE SAN</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke.html">Manual Partitioning</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_AddPhysical.html">Creating Standard Partitions</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_SoftwareRAID.html">Creating Software RAID</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_AddLVM.html">Creating a Logical Volume Managament (LVM) Layout</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_AddBtrfs.html">Creating a Btrfs Layout</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_FileSystems.html">Device, File System and RAID Types</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_RecommendedScheme.html">Recommended Partitioning Scheme</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_PartitioningAdvice.html">Advice on Partitions</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/KdumpSpoke.html">Kdump</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/NetworkSpoke.html">Network & Hostname</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/NetworkSpoke_VirtualInterfaces.html">Adding a Virtual Network Interface</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/NetworkSpoke_EditConnection.html">Editing Network Interface Configuration</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/ProgressHub.html">Configuration and Installation Progress</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/PasswordSpoke.html">Root Password</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/UserSpoke.html">Create User</a></li>
+              </ul>
+            </li>
+            <li class="nav-header">
+              <a class="" href="#" data-toggle="collapse" data-target="#topicSubGroup-0-6">
+                <span id="sgSpan-0-6" class="fa fa-caret-right"></span>&nbsp;After the Installation
+              </a>
+              <ul id="topicSubGroup-0-6" class="nav-tertiary list-unstyled collapse">
+                  <li><a class="" href="../install-guide/after_installation/After_Installation.html">After the Installation</a></li>
+                  <li><a class="" href="../install-guide/after_installation/InitialSetupHub.html">Initial Setup</a></li>
+              </ul>
+            </li>
+            <li><a class="" href="../install-guide/Troubleshooting.html">Troubleshooting</a></li>
+            <li><a class="" href="../install-guide/Boot_Options.html">Boot Options</a></li>
+            <li><a class="" href="../install-guide/Kickstart_Installations.html">Automating the Installation with Kickstart</a></li>
+            <li><a class="" href="../install-guide/Network_based_Installations.html">Setting Up an Installation Server</a></li>
+            <li><a class="" href="../install-guide/VNC_Installations.html">Installing Using VNC</a></li>
+            <li><a class="" href="../install-guide/Upgrading_Your_Current_System.html">Upgrading Your Current System</a></li>
+            <li><a class="" href="../install-guide/Kickstart_Syntax_Reference.html">Kickstart Syntax Reference</a></li>
+            <li><a class="" href="../install-guide/Disk_Partitions.html">An Introduction to Disk Partitions</a></li>
+            <li><a class="" href="../install-guide/Understanding_LVM.html">Understanding LVM</a></li>
+            <li><a class="" href="../install-guide/Revision_History.html">Revision History</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup1">
+        <span id="tgSpan1" class="fa fa-angle-down"></span>Virtualization Getting Started Guide
+      </a>
+      <ul id="topicGroup1" class="collapse in list-unstyled">
+            <li><a class="" href="../virt-getting-started-guide/Preface.html">Preface</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Introduction.html">Introduction</a></li>
+            <li><a class="" href="../virt-getting-started-guide/What_Is_It.html">What is Virtualization?</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Advantages.html">Advantages and misconceptions of virtualization</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Products.html">Introduction to Fedora virtualization products</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Boxes.html">Introduction to Boxes</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Guest_Installation_Virt_Manager.html">Creating and Managing Guests with Virt-Manager</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Advanced_Virtualization.html">Advanced Virtualization Concepts</a></li>
+            <li><a class=" active" href="../virt-getting-started-guide/Revision_History.html">Revision History</a></li>
+      </ul>
+    </li>
+</ul>
+      </div>
+      <div class="col-xs-12 col-sm-9 col-md-9 main">
+        <div class="page-header">
+          <h2>Revision History</h2>
+        </div>
+        <div class="sect1">
+<h2 id="appe-Virtualization_Getting_Started_Guide-Revision_History"><a class="anchor" href="#appe-Virtualization_Getting_Started_Guide-Revision_History"></a>Revision History</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>23-1 Monday, April 25, 2016 Glen Rundblom Virtualization Getting Started
+Guide Re-write for intended audience 23-0 Monday, Nov 2, 2015 Sandra
+McCann F23 Release Day publication 2.1-1 Monday, July 22, 2015 Glen
+Rundblom <a href="mailto:grundblom@fedoraproject.org">grundblom@fedoraproject.org</a> Removed 2.2, and 2.21, and moving
+machine between computers in Boxes as it does not fit with a getting
+started guide 2.1-0 Monday, July 20, 2015 Glen Rundblom
+<a href="mailto:grundblom@fedoraproject.org">grundblom@fedoraproject.org</a> Updated Changed buttons in Boxes for Fedora
+22 and added Screenshots 2.0-0 Monday, May 18, 2015 Sandra McCann
+<a href="mailto:mccann2@fedoraproject.org">mccann2@fedoraproject.org</a> Merged Products and Tools sections to simplify
+guide flow for new users, and finalized for Fedora 22 release. 1.0-16
+Friday March 29, 2015 Glen Rundblom <a href="mailto:grundblom@fedoraproject.org">grundblom@fedoraproject.org</a> Built
+out section on how to move a Boxes VM between hosts, as well as how to
+delete a Box, tested procedure Fedora and LinuxMint machines in my lab
+as I wrote the section. 1.0-15 Friday March 27, 2015 Glen Rundblom
+<a href="mailto:grundblom@fedoraproject.org">grundblom@fedoraproject.org</a> Broke boxes into it&#8217;s own chapter, edited it
+for grammer and made it more novice user oriented 1.0-14 Sunday March
+04, 2015 Glen Rundblom <a href="mailto:grundblom@fedoraproject.org">grundblom@fedoraproject.org</a> Edited boxes grammar
+and added better tags for readability in Products.xml 1.0-13 Sunday
+March 01, 2015 Glen Rundblom <a href="mailto:grundblom@fedoraproject.org">grundblom@fedoraproject.org</a> Created Guide
+on how to create Virtual machine using boxes interface 1.0-12 Wednesday
+June 12, 2013 Dayle Parker <a href="mailto:dayleparker@redhat.com">dayleparker@redhat.com</a> Publish draft to
+Fedora docs site. 1.0-11 Monday June 10, 2013 Dayle Parker
+<a href="mailto:dayleparker@redhat.com">dayleparker@redhat.com</a> Revised Para-virtualized Devices section based on
+SME feedback., Verified references to other Fedora virtualization
+guides., Added GNOME Boxes description to Tools. 1.0-10 Thursday May 30,
+2013 Dayle Parker <a href="mailto:dayleparker@redhat.com">dayleparker@redhat.com</a> Added virtio-rng description to
+Para-virtualized Devices section. 1.0-09 Monday May 27, 2013 Dayle
+Parker <a href="mailto:dayleparker@redhat.com">dayleparker@redhat.com</a> Updated CPU Models section based on SME
+feedback. 1.0-08 Thursday May 9, 2013 Dayle Parker
+<a href="mailto:dayleparker@redhat.com">dayleparker@redhat.com</a> Rearranged Migration section and included live
+storage migration feature description. 1.0-07 Monday May 6, 2013 Dayle
+Parker <a href="mailto:dayleparker@redhat.com">dayleparker@redhat.com</a> Added xHCI host controller to Emulated
+system components list. 1.0-06 Friday May 3, 2013 Dayle Parker
+<a href="mailto:dayleparker@redhat.com">dayleparker@redhat.com</a> Made initial general updates for Fedora 19.
+1.0-05 Monday October 22, 2012 Dayle Parker <a href="mailto:dayleparker@redhat.com">dayleparker@redhat.com</a>
+Branch for Fedora 18 Beta. 1.0-04 Monday October 22, 2012 Dayle Parker
+<a href="mailto:dayleparker@redhat.com">dayleparker@redhat.com</a> Added virtio-scsi feature description to 4.3.2.
+Para-virtualized devices. 1.0-03 Thursday September 6, 2012 Dayle Parker
+<a href="mailto:dayleparker@redhat.com">dayleparker@redhat.com</a> In Chapter 3: Advantages, added Flexibility point
+for (<a href="https://bugzilla.redhat.com/show_bug.cgi?id=853826">BZ#853826</a>).
+1.0-02 Thursday August 23 2012 Dayle Parker <a href="mailto:dayleparker@redhat.com">dayleparker@redhat.com</a> In
+Tools: deleted virt-inspector2, virt-cat warning, clarified --r/w
+warning as per feedback. 1.0-01 Tuesday August 14 2012 Dayle Parker
+<a href="mailto:dayleparker@redhat.com">dayleparker@redhat.com</a> Initial creation of book for Fedora.</p>
+</div>
+</div>
+</div>
+      </div>
+    </div>
+  </div>
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+   <!-- Latest compiled and minified JavaScript -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+   <script type="text/javascript">
+    /*<![CDATA[*/
+    $(document).ready(function() {
+      $("[id^='topicGroup']").on('show.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicGroup']").on('hide.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicSubGroup']").on('show.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+      $("[id^='topicSubGroup']").on('hide.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+    });
+    /*]]>*/
+  </script>
+</body>
+</html>

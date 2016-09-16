@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Fedora 24 | Virtualization Getting Started Guide | Advanced Virtualization Concepts</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <link href="../../f24/_stylesheets/asciibinder.css" rel="stylesheet" />
+
+   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+   <!--[if lt IE 9]>
+     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+   <![endif]-->
+
+  <link href="../../f24/_images/favicon32x32.png" rel="shortcut icon" type="text/css">
+  <!--[if IE]><link rel="shortcut icon" href="../../f24/_images/favicon.ico"><![endif]-->
+  <meta content="AsciiBinder" name="application-name">
+</head>
+<body>
+  <div class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="https://docs.fedoraproject.org/"><img alt="Fedora Documentation" src="../../f24/_images/fedora.svg"></a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <p class="toggle-nav visible-xs pull-left">
+      <button class="btn btn-default btn-sm" type="button" data-toggle="offcanvas">Toggle nav</button>
+    </p>
+    <ol class="breadcrumb">
+      <li class="sitename">
+        <a href="../../index.html">Fedora Documentation</a>
+      </li>
+      <li class="hidden-xs active">
+        <a href="../install-guide/Preface.html">Fedora 24</a>
+      </li>
+      <li class="hidden-xs active">
+        <a href="../virt-getting-started-guide/Preface.html">Virtualization Getting Started Guide</a>
+      </li>
+      
+      <li class="hidden-xs active">
+        Advanced Virtualization Concepts
+      </li>
+    </ol>
+    <div class="row row-offcanvas row-offcanvas-left">
+      <div class="col-xs-8 col-sm-3 col-md-3 sidebar sidebar-offcanvas">
+        <ul class="nav nav-sidebar">
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup0">
+        <span id="tgSpan0" class="fa fa-angle-right"></span>Installation Guide
+      </a>
+      <ul id="topicGroup0" class="collapse  list-unstyled">
+            <li><a class="" href="../install-guide/Preface.html">Preface</a></li>
+            <li><a class="" href="../install-guide/Introduction.html">Introduction</a></li>
+            <li><a class="" href="../install-guide/Downloading_Fedora.html">Downloading Fedora</a></li>
+            <li><a class="" href="../install-guide/Preparing_for_Installation.html">Preparing for Installation</a></li>
+            <li><a class="" href="../install-guide/Booting_the_Installation.html">Booting the Installation</a></li>
+            <li class="nav-header">
+              <a class="" href="#" data-toggle="collapse" data-target="#topicSubGroup-0-5">
+                <span id="sgSpan-0-5" class="fa fa-caret-right"></span>&nbsp;Installing Using Anaconda
+              </a>
+              <ul id="topicSubGroup-0-5" class="nav-tertiary list-unstyled collapse">
+                  <li><a class="" href="../install-guide/installing_using_anaconda/Installing_Using_Anaconda.html">Installing Using Anaconda</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/WelcomeSpoke.html">Welcome Screen and Language Selection</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/SummaryHub.html">Installation Summary</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/DateTimeSpoke.html">Date & Time</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/KeyboardSpoke.html">Keyboard Layout</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/LangSupportSpoke.html">Language Support</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/SourceSpoke.html">Installation Source</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/SoftwareSpoke.html">Software Selection</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/StorageSpoke.html">Installation Destination</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/StorageSpoke_BootLoader.html">Boot Loader Installation</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/FilterSpoke.html">Installation Destination - Specialized & Network Disks</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/FilterSpoke_AddiSCSI.html">Add iSCSI Target</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/FilterSpoke_AddFCoE.html">Add FCoE SAN</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke.html">Manual Partitioning</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_AddPhysical.html">Creating Standard Partitions</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_SoftwareRAID.html">Creating Software RAID</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_AddLVM.html">Creating a Logical Volume Managament (LVM) Layout</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_AddBtrfs.html">Creating a Btrfs Layout</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_FileSystems.html">Device, File System and RAID Types</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_RecommendedScheme.html">Recommended Partitioning Scheme</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/CustomSpoke_PartitioningAdvice.html">Advice on Partitions</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/KdumpSpoke.html">Kdump</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/NetworkSpoke.html">Network & Hostname</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/NetworkSpoke_VirtualInterfaces.html">Adding a Virtual Network Interface</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/NetworkSpoke_EditConnection.html">Editing Network Interface Configuration</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/ProgressHub.html">Configuration and Installation Progress</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/PasswordSpoke.html">Root Password</a></li>
+                  <li><a class="" href="../install-guide/installing_using_anaconda/UserSpoke.html">Create User</a></li>
+              </ul>
+            </li>
+            <li class="nav-header">
+              <a class="" href="#" data-toggle="collapse" data-target="#topicSubGroup-0-6">
+                <span id="sgSpan-0-6" class="fa fa-caret-right"></span>&nbsp;After the Installation
+              </a>
+              <ul id="topicSubGroup-0-6" class="nav-tertiary list-unstyled collapse">
+                  <li><a class="" href="../install-guide/after_installation/After_Installation.html">After the Installation</a></li>
+                  <li><a class="" href="../install-guide/after_installation/InitialSetupHub.html">Initial Setup</a></li>
+              </ul>
+            </li>
+            <li><a class="" href="../install-guide/Troubleshooting.html">Troubleshooting</a></li>
+            <li><a class="" href="../install-guide/Boot_Options.html">Boot Options</a></li>
+            <li><a class="" href="../install-guide/Kickstart_Installations.html">Automating the Installation with Kickstart</a></li>
+            <li><a class="" href="../install-guide/Network_based_Installations.html">Setting Up an Installation Server</a></li>
+            <li><a class="" href="../install-guide/VNC_Installations.html">Installing Using VNC</a></li>
+            <li><a class="" href="../install-guide/Upgrading_Your_Current_System.html">Upgrading Your Current System</a></li>
+            <li><a class="" href="../install-guide/Kickstart_Syntax_Reference.html">Kickstart Syntax Reference</a></li>
+            <li><a class="" href="../install-guide/Disk_Partitions.html">An Introduction to Disk Partitions</a></li>
+            <li><a class="" href="../install-guide/Understanding_LVM.html">Understanding LVM</a></li>
+            <li><a class="" href="../install-guide/Revision_History.html">Revision History</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup1">
+        <span id="tgSpan1" class="fa fa-angle-down"></span>Virtualization Getting Started Guide
+      </a>
+      <ul id="topicGroup1" class="collapse in list-unstyled">
+            <li><a class="" href="../virt-getting-started-guide/Preface.html">Preface</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Introduction.html">Introduction</a></li>
+            <li><a class="" href="../virt-getting-started-guide/What_Is_It.html">What is Virtualization?</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Advantages.html">Advantages and misconceptions of virtualization</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Products.html">Introduction to Fedora virtualization products</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Boxes.html">Introduction to Boxes</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Guest_Installation_Virt_Manager.html">Creating and Managing Guests with Virt-Manager</a></li>
+            <li><a class=" active" href="../virt-getting-started-guide/Advanced_Virtualization.html">Advanced Virtualization Concepts</a></li>
+            <li><a class="" href="../virt-getting-started-guide/Revision_History.html">Revision History</a></li>
+      </ul>
+    </li>
+</ul>
+      </div>
+      <div class="col-xs-12 col-sm-9 col-md-9 main">
+        <div class="page-header">
+          <h2>仮想化</h2>
+        </div>
+        <div class="sect1">
+<h2 id="appe-Virtualization_Getting_Started_Guide_Advanced_Virtualization"><a class="anchor" href="#appe-Virtualization_Getting_Started_Guide_Advanced_Virtualization"></a>仮想化</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="sec-virtualized-hardware-devices"><a class="anchor" href="#sec-virtualized-hardware-devices"></a>Virtualized hardware devices</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Fedora の仮想化は、仮想ゲストに3つの異なる形式のシステムデバイスを提示します。3つの形式は以下があります:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>仮想およびエミュレートデバイス</p>
+</li>
+<li>
+<p>準仮想化デバイス</p>
+</li>
+<li>
+<p>物理共有デバイス</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>これらのハードウェアはすべて仮想ゲストに物理的に接続されているように見えますが、デバイスドライバーは異なる方法で機能します。</p>
+</div>
+<div class="sect2">
+<h3 id="sec-virt-emulated-devices"><a class="anchor" href="#sec-virt-emulated-devices"></a>仮想およびエミュレートデバイス</h3>
+<div class="paragraph">
+<p>KVM implements many core devices for virtual machines in software. These
+emulated hardware devices are crucial for virtualizing operating systems.</p>
+</div>
+<div class="paragraph">
+<p>Emulated devices are virtual devices which exist entirely in software.</p>
+</div>
+<div class="paragraph">
+<p>Emulated drivers may use either a physical device or a virtual software
+device. Emulated drivers are a translation layer between the virtual machine
+and the Linux kernel (which manages the source device). The device level
+instructions are completely translated by the KVM hypervisor. Any device, of
+the same type (storage, network, keyboard, and mouse) and recognized by the
+Linux kernel, may be used as the backing source device for the emulated
+drivers.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Virtual CPUs (vCPUs)</dt>
+<dd>
+<p>A host system can have up to 160 virtual CPUs (vCPUs) that can be presented
+to guests for their use, regardless of the number of host CPUs.</p>
+</dd>
+<dt class="hdlist1">Emulated graphics devices</dt>
+<dd>
+<p>Two emulated graphics devices are provided. These devices can be connected
+to with the SPICE (Simple Protocol for Independent Computing Environments)
+protocol or with VNC:<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>A Cirrus CLGD 5446 PCI VGA card (using the <em>cirrus</em> device)</p>
+</li>
+<li>
+<p>A standard VGA graphics card with Bochs VESA extensions (hardware
+level, including all non-standard modes)</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Emulated system components</dt>
+<dd>
+<p>The following core system components are emulated to provide basic system
+functions:<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Intel i440FX host PCI bridge</p>
+</li>
+<li>
+<p>PIIX3 PCI to ISA bridge</p>
+</li>
+<li>
+<p>PS/2 mouse and keyboard</p>
+</li>
+<li>
+<p>EvTouch USB graphics tablet</p>
+</li>
+<li>
+<p>PCI UHCI USB controller and a virtualized USB hub</p>
+</li>
+<li>
+<p>Emulated serial ports</p>
+</li>
+<li>
+<p>EHCI controller, virtualized USB storage and a USB mouse</p>
+</li>
+<li>
+<p>USB 3.0 xHCI host controller</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Emulated sound devices</dt>
+<dd>
+<p>The following two emulated sound devices are also available, but are not
+recommended due to compatibility issues with certain guest operating
+systems:<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>ac97, an emulated Intel 82801AA AC97 Audio compatible sound card</p>
+</li>
+<li>
+<p>es1370, an emulated ENSONIQ AudioPCI ES1370 sound card</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Emulated watchdog devices</dt>
+<dd>
+<p>Fedora provides two emulated watchdog devices. A watchdog can be used to
+automatically reboot a virtual machine when it becomes overloaded or
+unresponsive.  + The watchdog package must be installed on the guest.  + The
+two devices available are:<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>i6300esb, an emulated Intel 6300 ESB PCI watchdog device.</p>
+</li>
+<li>
+<p>ib700, an emulated iBase 700 ISA watchdog device.</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Emulated network devices</dt>
+<dd>
+<p>There are two emulated network devices available:<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>The e1000 device emulates an Intel E1000 network adapter (Intel
+82540EM, 82573L, 82544GC).</p>
+</li>
+<li>
+<p>The rtl8139 device emulates a Realtek 8139 network adapter.</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Emulated storage drivers</dt>
+<dd>
+<p>Storage devices and storage pools can use these emulated devices to attach
+storage devices to virtual machines. The guest uses an emulated storage
+driver to access the storage pool.  + Note that like all virtual devices,
+the storage drivers are not storage devices. The drivers are used to attach
+a backing storage device, file or storage pool volume to a virtual
+machine. The backing storage device can be any supported type of storage
+device, file, or storage pool volume.</p>
+</dd>
+<dt class="hdlist1">The emulated IDE driver</dt>
+<dd>
+<p>KVM provides two emulated PCI IDE interfaces. An emulated IDE driver can be
+used to attach any combination of up to four virtualized IDE hard disks or
+virtualized IDE CD-ROM drives to each virtual machine.  The emulated IDE
+driver is also used for virtualized CD-ROM and DVD-ROM drives.</p>
+</dd>
+<dt class="hdlist1">The emulated floppy disk drive driver</dt>
+<dd>
+<p>The emulated floppy disk drive driver is used for creating virtualized
+floppy drives.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sec-storage-volumes"><a class="anchor" href="#sec-storage-volumes"></a>Storage volumes</h3>
+<div class="paragraph">
+<p>Storage pools are further divided into storage volumes. Storage volumes are
+an abstraction of physical partitions, LVM logical volumes, file-based disk
+images and other storage types handled by libvirt.  Storage volumes are
+presented to virtual machines as local storage devices regardless of the
+underlying hardware.</p>
+</div>
+<div class="paragraph">
+<p>For more information on storage and virtualization, refer to the Fedora
+Virtualization Deployment and Administration Guide.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="para-virtdevices"><a class="anchor" href="#para-virtdevices"></a>準仮想化デバイス</h3>
+<div class="paragraph">
+<p>Para-virtualized devices are drivers for virtual devices that increase the
+I/O performance of virtual machines.</p>
+</div>
+<div class="paragraph">
+<p>Para-virtualized devices decrease I/O latency and increase I/O throughput to
+near bare-metal levels. It is recommended to use the para-virtualized device
+drivers for virtual machines running I/O intensive applications.</p>
+</div>
+<div class="paragraph">
+<p>The para-virtualized devices must be installed on the guest operating
+system. The para-virtualized device drivers must be manually installed on
+Windows guests.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">The para-virtualized network driver (virtio-net)</dt>
+<dd>
+<p>The para-virtualized network driver can be used as the driver for existing
+network devices or new network devices for virtual machines.</p>
+</dd>
+<dt class="hdlist1">The para-virtualized block driver (virtio-blk)</dt>
+<dd>
+<p>The para-virtualized block driver is a driver for all storage devices, is
+supported by the hypervisor, and is attached to the virtual machine (except
+for floppy disk drives, which must be emulated).</p>
+</dd>
+<dt class="hdlist1">The para-virtualized controller device (virtio-scsi)</dt>
+<dd>
+<p>The para-virtualized SCSI controller device provides a more flexible and
+scalable alternative to virtio-blk. A virtio-scsi guest is capable of
+inheriting the feature set of the target device, and can handle hundreds of
+devices compared to virtio-blk, which can only handle 28 devices.</p>
+</dd>
+<dt class="hdlist1">The para-virtualized clock</dt>
+<dd>
+<p>Guests using the Time Stamp Counter (TSC) as a clock source may suffer
+timing issues. KVM works around hosts that do not have a constant Time Stamp
+Counter by providing guests with a para-virtualized clock.</p>
+</dd>
+<dt class="hdlist1">The para-virtualized serial driver (virtio-serial)</dt>
+<dd>
+<p>The para-virtualized serial driver is a bytestream-oriented, character
+stream driver, and provides a simple communication interface between the
+host&#8217;s user space and the guest&#8217;s user space.</p>
+</dd>
+<dt class="hdlist1">The balloon driver (virtio-balloon)</dt>
+<dd>
+<p>The balloon driver can designate part of a virtual machine&#8217;s RAM as not
+being used (a process known as balloon <em>inflation</em>), so that the memory
+can be freed for the host (or for other virtual machines on that host) to
+use. When the virtual machine needs the memory again, the balloon can be
+<em>deflated</em> and the host can distribute the RAM back to the virtual machine.</p>
+</dd>
+<dt class="hdlist1">The para-virtualized random number generator (virtio-rng)</dt>
+<dd>
+<p>The para-virtualized random number generator enables virtual machines to
+collect entropy, or randomness, directly from the host to use for encrypted
+data and security. Virtual machines can often be starved of entropy because
+typical inputs (such as hardware usage) are unavailable. Sourcing entropy
+can be time-consuming; virtio-rng makes this process faster by injecting
+entropy directly into guest virtual machines from the host.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sec-physical-host"><a class="anchor" href="#sec-physical-host"></a>Physical host devices</h3>
+<div class="paragraph">
+<p>Certain hardware platforms allow virtual machines to directly access various
+hardware devices and components. This process in virtualization is known as
+device assignment. Device assignment is also known as passthrough.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">PCI デバイス予約</dt>
+<dd>
+<p>The KVM hypervisor supports attaching PCI devices on the host system to
+virtual machines. PCI device assignment allows guests to have exclusive
+access to PCI devices for a range of tasks. It allows PCI devices to appear
+and behave as if they were physically attached to the guest virtual
+machine.  + Device assignment is supported on PCI Express devices, with the
+exception of graphics cards. Parallel PCI devices may be supported as
+assigned devices, but they have severe limitations due to security and
+system configuration conflicts.</p>
+</dd>
+<dt class="hdlist1">USB パススルー</dt>
+<dd>
+<p>KVM ハイパーバイザーはホストシステムにある USB デバイスを仮想ゲストに接続することをサポートしています。 USB
+デバイス予約は、タスクの範囲内で USB デバイスへの排他的アクセスを可能にします。 USB
+デバイスがゲストオペレーティングシステムに物理的に接続されているかのように、表れ、振る舞うことができるようになります。</p>
+</dd>
+<dt class="hdlist1">SR-IOV</dt>
+<dd>
+<p>SR-IOV (Single Root I/O Virtualization) is a PCI Express standard that
+extends a single physical PCI function to share its PCI resources as
+separate, virtual functions (VFs). Each function is capable of being used by
+a different virtual machine via PCI device assignment.  + An SR-IOV capable
+PCI-e device, provides a Single Root Function (for example, a single
+Ethernet port) and presents multiple, separate virtual devices as unique PCI
+device functions. Each virtual device may have its own unique PCI
+configuration space, memory-mapped registers, and individual MSI-based
+interrupts.</p>
+</dd>
+<dt class="hdlist1">NPIV</dt>
+<dd>
+<p>N_Port ID Virtualization (NPIV) is a functionality available with some Fibre
+Channel devices. NPIV shares a single physical N_Port as multiple N_Port
+IDs. NPIV provides similar functionality for Fibre Channel Host Bus Adapters
+(HBAs) that SR-IOV provides for PCIe interfaces. With NPIV, virtual machines
+can be provided with a virtual Fibre Channel initiator to Storage Area
+Networks (SANs).  + NPIV can provide high density virtualized environments
+with enterprise-level storage solutions.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="para-CPU_Models"><a class="anchor" href="#para-CPU_Models"></a>CPU モデル</h3>
+<div class="paragraph">
+<p>CPU models define which host CPU features are available to the guest
+operating system. qemu-kvm and libvirt contain definitions for a number of
+current processor models, allowing users to enable features that are
+available only in newer CPU models. The CPU feature set available to guests
+depends on support in the host CPU kernel. The qemu-kvm code must also allow
+the feature to be enabled.</p>
+</div>
+<div class="paragraph">
+<p>To safely migrate virtual machines between hosts with different CPU feature
+sets, qemu-kvm does not expose all CPU features from the host CPU to guest
+operating systems by default. Instead, CPU features are exposed to virtual
+machines based on the chosen CPU model.</p>
+</div>
+<div class="paragraph">
+<p>It is also possible to enable or disable specific CPU features in a virtual
+machine&#8217;s XML configuration. However, it is safer to use predefined CPU
+models, as incorrect configuration can cause compatibility issues with the
+guest operating system.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sec-storage-main"><a class="anchor" href="#sec-storage-main"></a>Storage</h3>
+<div class="paragraph">
+<p>仮想ゲストのストレージは、ゲストにより使用される物理ストレージから抽象化されます。準仮想化またはエミュレートのブロックデバイスドライバーを用いて仮想ゲストに接続されます。</p>
+</div>
+<div class="paragraph">
+<p>A storage pool is a file, directory, or storage device managed by libvirt
+for the purpose of providing storage to virtual machines.  Storage pools are
+divided into storage volumes that store virtual machine images or are
+attached to virtual machines as additional storage. Multiple guests can
+share the same storage pool, allowing for better allocation of storage
+resources.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">ローカルストレージプール</dt>
+<dd>
+<p>ローカルストレージプールは、ホストサーバーに直接接続されています。それらにはローカルディレクトリ、直接接続されたディスク、物理パーティションおよびローカルデバイス上の
+LVM
+ボリュームグループが含まれます。ローカルストレージプールは、マイグレーションや多くの仮想ゲストを必要としない、開発、テストおよび小規模環境に対して有用です。ローカルストレージプールは、ライブマイグレーションをサポートしないの、多くの本番環境に対しては適切ではないかもしれません。</p>
+</dd>
+<dt class="hdlist1">ネットワーク (共有) ストレージプール</dt>
+<dd>
+<p>Networked storage pools include storage devices shared over a network using
+standard protocols. Networked storage is required when migrating virtual
+machines between hosts with virt-manager, but is optional when migrating
+with <code>virsh</code>. Networked storage pools are managed by libvirt.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sec-guestfish"><a class="anchor" href="#sec-guestfish"></a>guestfish</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>guestfish is a command line tool for examining and modifying the file
+systems of the host. This tool uses libguestfs and exposes all functionality
+provided by the <code>guestfs</code> API. This tool ships in its own package entitled
+guestfish.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Warning</strong></p>
+</div>
+<div class="paragraph">
+<p>Using <code>guestfish</code> on running virtual machines can cause disk-image
+corruption. Use the <code>guestfish</code> command with the <code>--ro</code> (read-only)  option
+if the disk image is being used by a running virtual machine.</p>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sec-Other-Useful-tools"><a class="anchor" href="#sec-Other-Useful-tools"></a>Other useful tools</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following tools are used to access a virtual machine&#8217;s disk via the
+host. The guest&#8217;s disk is usually accessed directly via the <code>disk-image</code>
+file located on the host. However it is sometimes possible to gain access
+via the libvirt domain. The commands that follow are part of the libvirt
+domain and are used to gain access to the guest&#8217;s disk image.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>guestmount</code></dt>
+<dd>
+<p>A command line tool used to mount virtual machine file systems and disk
+images on the host machine. This tool is installed as part of the
+libguestfs-mount package. <br>
+<em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em>
+<strong>Warning</strong></p>
+<div class="literalblock">
+<div class="content">
+<pre>Using `guestmount` in `--r/w` (read/write) mode to access a disk that is
+currently being used by a guest can cause the disk to become corrupted. Do
+not use `guestmount` in `--r/w` (read/write) mode on live virtual
+machines. Use the `guestmount` command with the `--ro` (read-only) option if
+the disk image is being used.
+________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1"><code>virt-cat</code></dt>
+<dd>
+<p>A command line tool that can be used to quickly view the contents of one or
+more files in a specified virtual machine&#8217;s disk or disk image.  This tool
+is installed as part of the libguestfs-tools package.</p>
+</dd>
+<dt class="hdlist1"><code>virt-df</code></dt>
+<dd>
+<p>A command line tool used to show the actual physical disk usage of virtual
+machines. Similar to the command line tool <code>df</code>. Note that this tool does
+not work across remote connections. It is installed as part of the
+libguestfs-tools package.</p>
+</dd>
+<dt class="hdlist1"><code>virt-edit</code></dt>
+<dd>
+<p>A command line tool used to edit files that exist on a specified virtual
+machine. This tool is installed as part of the libguestfs-tools package. <br>
+<em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em>_
+<strong>Warning</strong></p>
+<div class="literalblock">
+<div class="content">
+<pre>Using `virt-edit` on live virtual machines can cause disk corruption in the
+virtual machine. Although the `virt-edit` command will try to prevent users
+from editing files on live virtual machines, it is not guaranteed to catch
+all instances. Do not use `virt-edit` on a live virtual machine.
+___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1"><code>virt-filesystems</code></dt>
+<dd>
+<p>A command line tool used to discover file systems, partitions, logical
+volumes and their sizes in a disk image or virtual machine. One common use
+is in shell scripts, to iterate over all file systems in a disk image. This
+tool is installed as part of the libguestfs-tools package.  + This tool
+replaces <code>virt-list-filesystems</code> and <code>virt-list-partitions</code>.</p>
+</dd>
+<dt class="hdlist1"><code>virt-inspector</code></dt>
+<dd>
+<p>A command line tool that can examine a virtual machine or disk image to
+determine the version of its operating system and other information. It can
+also produce XML output, which can be piped into other programs. Note that
+<code>virt-inspector</code> can only inspect one domain at a time. This tool is
+installed as part of the libguestfs-tools package.</p>
+</dd>
+<dt class="hdlist1"><code>virt-ls</code></dt>
+<dd>
+<p>A command line tool that lists files and directories inside a virtual
+machine. This tool is installed as part of the libguestfs-tools package.</p>
+</dd>
+<dt class="hdlist1"><code>virt-make-fs</code></dt>
+<dd>
+<p>A command line tool for creating a file system based on a tar archive or
+files in a directory. It is similar to tools like <code>mkisofs</code> and
+<code>mksquashfs</code>, but it can create common file system types such as ext2, ext3
+and NTFS, and the size of the file system created can be equal to or greater
+than the size of the files it is based on. This tool is provided as part of
+the libguestfs-tools package.</p>
+</dd>
+<dt class="hdlist1"><code>virt-rescue</code></dt>
+<dd>
+<p>A command line tool that provides a rescue shell and some simple recovery
+tools for unbootable virtual machines and disk images. It can be run on any
+virtual machine known to libvirt, or directly on disk images. This tool is
+installed as part of the libguestfs-tools package. <br>
+<em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em>__
+<strong>Warning</strong></p>
+<div class="literalblock">
+<div class="content">
+<pre>Using `virt-rescue` on running virtual machines can cause disk corruption in
+the virtual machine. `virt-rescue` attempts to prevent its own use on
+running virtual machines, but cannot catch all cases.</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Using the command with the `--ro` (read-only) option will not cause disk
+corruption, but may give strange or inconsistent results. It is better to
+avoid using `virt-rescue` on a running virtual machine.
+__________________________________________________________________________________________________________________________________________________________________________________________________________</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1"><code>virt-resize</code></dt>
+<dd>
+<p>A command line tool to resize virtual machine disks, and resize or delete
+any partitions on a virtual machine disk. It works by copying the guest
+image and leaving the original disk image untouched. This tool is installed
+as part of the libguestfs-tools package. <br>
+<em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em>_</em>
+<strong>Important</strong></p>
+<div class="literalblock">
+<div class="content">
+<pre>Using `virt-resize` on running virtual machines can give inconsistent
+results. It is best to shut down virtual machines before attempting to
+resize them.
+_________________________________________________________________________________________________________________________________________________________</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1"><code>virt-top</code></dt>
+<dd>
+<p>A command line utility similar to <code>top</code>, which shows statistics related to
+virtualized domains. This tool ships in its own package: virt-top.</p>
+</dd>
+<dt class="hdlist1"><code>virt-v2v</code></dt>
+<dd>
+<p>A graphical tool to convert virtual machines from Xen and VMware hypervisors
+to run on KVM. This tool ships in its own package: virt-v2v.</p>
+</dd>
+<dt class="hdlist1"><code>virt-viewer</code></dt>
+<dd>
+<p>A minimal tool for displaying the graphical console of a virtual machine via
+the VNC and SPICE protocols. This tool ships in its own package:
+virt-viewer.</p>
+</dd>
+<dt class="hdlist1"><code>virt-what</code></dt>
+<dd>
+<p>A shell script that detects whether a program is running in a virtual
+machine. This tool ships in its own package: virt-what.</p>
+</dd>
+<dt class="hdlist1"><code>virt-who</code></dt>
+<dd>
+<p>The virt-who package is a Fedora host agent that queries libvirt for guest
+UUIDs. It then passes that data to the local entitlement server for the
+purposes of issuing certificates. This tool ships in its own package:
+virt-who.</p>
+</dd>
+<dt class="hdlist1"><code>virt-win-reg</code></dt>
+<dd>
+<p>A command line tool to export and merge Windows Registry entries from a
+Windows guest, and perform simple Registry operations. This tool is
+installed as part of the libguestfs-tools package. <br>
+<em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em><em></em></em><em><em></em></em>
+<strong>Warning</strong></p>
+<div class="literalblock">
+<div class="content">
+<pre>Using `virt-win-reg` on running virtual machines will cause irreversible
+disk corruption in the virtual machine. `virt-win-reg` attempts to prevent
+its own use on running virtual machines, but cannot catch all cases.
+________________________________________________________________________________________________________________________________________________________________________________________________________________________
++
+___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+*Warning*</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Modifying the Windows Registry is an inherently risky operation, as the
+format is deliberately obscure and undocumented. Changes to the registry can
+leave the system unbootable, so ensure you have a reliable backup before you
+use the `--merge` option.
+___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1"><code>virt-xml-validate</code></dt>
+<dd>
+<p>A command line tool to validate libvirt XML files for compliance with the
+published schema. This tool is installed as part of the libvirt-client
+package.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+      </div>
+    </div>
+  </div>
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+   <!-- Latest compiled and minified JavaScript -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+   <script type="text/javascript">
+    /*<![CDATA[*/
+    $(document).ready(function() {
+      $("[id^='topicGroup']").on('show.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicGroup']").on('hide.bs.collapse', function (event) {
+        if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+          $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+        }
+      });
+      $("[id^='topicSubGroup']").on('show.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+      $("[id^='topicSubGroup']").on('hide.bs.collapse', function () {
+        $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+      });
+    });
+    /*]]>*/
+  </script>
+</body>
+</html>
